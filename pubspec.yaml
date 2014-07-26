@@ -1,0 +1,7 @@
+name: stagehand
+version: 0.0.1
+description: An extensible scaffolding generator for your Dart projects. Stagehand helps you get set up!
+authors:
+- Seth Ladd <sethladd@gmail.com>
+dev_dependencies:
+  unittest: any
