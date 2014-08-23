@@ -1,4 +1,4 @@
-# Stagehand
+# Stagehand - A Dart project generator
 
 ## Helps you get setup!
 
