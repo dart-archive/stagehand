@@ -14,29 +14,27 @@ class WebAppGenerator extends Generator {
       "be confused by too much going on.",
       categories: const ['dart', 'web']) {
         
-    // .gitignore and pubspec.yaml.
-    add(_gitignore);
-    add(_pubspec);
+    _addFile('.gitignore', gitIgnoreContents);
+    _addFile('pubspec.yaml', _pubspec);
+    var f = _addFile('main.dart', _main);
     
-    // TODO: index.html, css
-    // The web/ directory.
-    TemplateDirectory web = add(new TemplateDirectory('web'));
-    setEntrypoint(web.add(_main));
+    setEntrypoint(f);
   }
   
-  TemplateFile get _pubspec => new TemplateFile('pubspec.yaml', '''
+  String get _pubspec => '''
 name: {{projectName}}
 version: 0.0.1
 description: ${description}
 dependencies:
   browser: any
-''');
+''';
 
-  TemplateFile get _main => new TemplateFile('main.dart', '''
+  String get _main => '''
 main() {
   print('Hello world!');
 }
-''');
+''';
 
-  TemplateFile get _gitignore => new TemplateFile('.gitignore', gitIgnoreContents);
+  TemplateFile _addFile(String path, String contents) =>
+      addFile(new TemplateFile(path, contents));
 }

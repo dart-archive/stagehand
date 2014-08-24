@@ -29,11 +29,10 @@ abstract class Generator {
   final String description;
   final List<String> categories;
   
-  final TemplateDirectory root;
+  final List<TemplateFile> files = [];
   TemplateFile _entrypoint;
   
-  Generator(this.id, this.description, {this.categories: const []}) :
-      root = new TemplateDirectory('');
+  Generator(this.id, this.description, {this.categories: const []});
   
   /** 
    * The entrypoint of the application; the main file for the project, which an
@@ -44,9 +43,9 @@ abstract class Generator {
   /**
    * TODO:
    */
-  TemplateEntry add(TemplateEntry entry) {
-    root.add(entry);
-    return entry;
+  TemplateFile addFile(TemplateFile file) {
+    files.add(file);
+    return file;
   }
   
   void setEntrypoint(TemplateFile entrypoint) {
@@ -57,22 +56,14 @@ abstract class Generator {
   Future generate(String directoryName, GeneratorTarget target) {
     Map vars = {'projectName': directoryName};
     
-    return _generate(target, root, vars);
+    return Future.forEach(files, (TemplateFile file) {
+      return target.createFile(file.path, file.createContent(vars));
+    });
   }
   
-  int fileCount() => root.fileCount();
+  int numFiles() => files.length;
   
   String toString() => '[${id}: ${description}]';
-  
-  Future _generate(GeneratorTarget target, TemplateEntry entry, Map vars) {
-    if (entry is TemplateFile) {
-      return target.createFile(entry.path, entry.createContent(vars));
-    } else {
-      return Future.forEach((entry as TemplateDirectory).children, (child) {
-        return _generate(target, child, vars);
-      });
-    }
-  }
 }
 
 /**
@@ -88,43 +79,16 @@ abstract class GeneratorTarget {
 }
 
 /**
- * An abstract superclass of [TemplateFile] and [TemplateDirectory].
- */
-abstract class TemplateEntry {
-  static int _compare(TemplateEntry a, TemplateEntry b) {
-    if (a is TemplateFile && b is! TemplateFile) return -1;
-    if (a is! TemplateFile && b is TemplateFile) return 1;
-    return a.name.toLowerCase().compareTo(b.name.toLowerCase());
-  }
-  
-  /// The name of the entry.
-  final String name;
-  
-  /// The optional parent of the entry.
-  TemplateDirectory parent;
-  
-  TemplateEntry(this.name);
-  
-  /// The full path of the entry from the root node.
-  String get path => parent.isRoot ? name : '${parent.path}/${name}';
-  
-  /// The total file count for this entry and all sub-directories.
-  int fileCount();
-}
-
-/**
  * This class represents a file in a generator template. The contents could 
  * either be binary or text. If text, the contents may contain mustache 
  * variables that can be substituted (`{{myVar}}`).
  */
-class TemplateFile extends TemplateEntry {
+class TemplateFile {
+  final String path;
   final String content;
   final bool isBinary;
   
-  TemplateFile(String name, this.content, [this.isBinary = false]) :
-      super(name);
-
-  int fileCount() => 1;
+  TemplateFile(this.path, this.content, [this.isBinary = false]);
 
   List<int> createContent(Map vars) {
     if (isBinary) {
@@ -138,31 +102,5 @@ class TemplateFile extends TemplateEntry {
     // TODO:
     //CryptoUtils.base64StringToBytes(
     return null;
-  }
-}
-
-/**
- * This class represents a directory in a generator template.
- */
-class TemplateDirectory extends TemplateEntry {
-  final List<TemplateEntry> children = [];
-  
-  TemplateDirectory(String name) : super(name);
-  
-  TemplateEntry add(TemplateEntry entry) {
-    children.add(entry);
-    entry.parent = this;
-    children.sort(TemplateEntry._compare);
-    return entry;
-  }
-  
-  bool get isRoot => parent == null;
-  
-  String get path => isRoot ? '' : super.path;
-
-  int fileCount() {
-    return children
-      .map((child) => child.fileCount())
-      .fold(0, (a, b) => a + b);
   }
 }

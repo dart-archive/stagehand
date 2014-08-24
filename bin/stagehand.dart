@@ -75,7 +75,7 @@ class CliApp {
     
     _out("Creating ${id} application '${projectName}':");
     return generator.generate(projectName, generatorTarget).then((_) {
-      _out("${generator.fileCount()} files written.");
+      _out("${generator.numFiles()} files written.");
     });
   }
   
