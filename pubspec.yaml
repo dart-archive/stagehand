@@ -5,4 +5,5 @@ homepage: https://github.com/sethladd/stagehand
 authors:
 - Seth Ladd <sethladd@gmail.com>
 dev_dependencies:
+  path: any
   unittest: any

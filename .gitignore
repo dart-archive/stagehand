@@ -1,4 +1,5 @@
 .idea
 .DS_Store
+cache/
 packages
 pubspec.lock
