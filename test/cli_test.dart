@@ -13,29 +13,29 @@ void main() => defineTests();
 void defineTests() {
   group('cli', () {
     CliApp app;
-    CliControllerMock controller;
+    CliLoggerMock logger;
     GeneratorTargetMock target;
     
     setUp(() {
-      controller = new CliControllerMock();
+      logger = new CliLoggerMock();
       target = new GeneratorTargetMock();
-      app = new CliApp(generators, controller, target);
+      app = new CliApp(generators, logger, target);
     });
     
     void _expectOk([_]) {
-      expect(controller.getError(), isEmpty);
-      expect(controller.getStdout(), isNot(isEmpty));
+      expect(logger.getStderr(), isEmpty);
+      expect(logger.getStdout(), isNot(isEmpty));
     }
 
     Future _expectError(Future f, [bool hasStdout = true]) {
       return f
         .then((_) => fail('error expected'))
         .catchError((e) {
-          expect(controller.getError(), isNot(isEmpty));
+          expect(logger.getStderr(), isNot(isEmpty));
           if (hasStdout) {
-            expect(controller.getStdout(), isNot(isEmpty));
+            expect(logger.getStdout(), isNot(isEmpty));
           } else {
-            expect(controller.getStdout(), isEmpty);
+            expect(logger.getStdout(), isEmpty);
           }
         });
     }
@@ -69,15 +69,15 @@ void defineTests() {
   });
 }
 
-class CliControllerMock implements CliController {
-  StringBuffer _error = new StringBuffer();
+class CliLoggerMock implements CliLogger {
   StringBuffer _stdout = new StringBuffer();
+  StringBuffer _stderr = new StringBuffer();
 
-  void error(String message) => _error.write(message);
+  void stderr(String message) => _stderr.write(message);
   void stdout(String message) => _stdout.write(message);
 
-  String getError() => _error.toString();
   String getStdout() => _stdout.toString();
+  String getStderr() => _stderr.toString();
 }
 
 class GeneratorTargetMock implements GeneratorTarget {

@@ -16,7 +16,7 @@ class WebAppGenerator extends Generator {
         
     _addFile('.gitignore', gitIgnoreContents);
     _addFile('pubspec.yaml', _pubspec);
-    var f = _addFile('main.dart', _main);
+    var f = _addFile('web/main.dart', _main);
     
     setEntrypoint(f);
   }

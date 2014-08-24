@@ -11,36 +11,31 @@ import 'package:stagehand/stagehand.dart';
 const String APP_NAME = 'stagehand';
 
 void main(List<String> args) {
-  CliApp app = new CliApp(generators);
+  CliApp app = new CliApp(generators, new CliLogger());
   app.process(args).catchError((e) {
-    // TODO: print e
     io.exit(1);
   });
 }
 
 class CliApp {
   final List<Generator> generators;
+  final CliLogger logger;
+  GeneratorTarget target;
   
-  CliController controller;
-  GeneratorTarget generatorTarget;
-  
-  CliApp(this.generators, [this.controller, this.generatorTarget]) {
+  CliApp(this.generators, this.logger, [this.target]) {
     assert(generators != null);
+    assert(logger != null);
     
     generators.sort(Generator.compareGenerators);
-    
-    if (controller == null) {
-      controller = new CliController();
-    }
   }
   
   Future process(List<String> args) {
     if (args.length == 0) {
-      _usage(controller);
+      _usage();
       return new Future.value();
     } else if (args.length > 2) {
-      controller.error("Too many parameters given.\n");
-      _usage(controller);
+      logger.stderr("Too many parameters given.\n");
+      _usage();
       return new Future.error('too many paramaters');
     }
     
@@ -48,8 +43,8 @@ class CliApp {
     Generator generator = _getGenerator(id);
     
     if (generator == null) {
-      controller.error("'${id}' is not a valid generator.\n");
-      _usage(controller);
+      logger.stderr("'${id}' is not a valid generator.\n");
+      _usage();
       return new Future.error('invalid generator');
     }
 
@@ -63,18 +58,18 @@ class CliApp {
     String projectName = path.basename(dir.path);
     
     if (dir.existsSync()) {
-      controller.error("Error: '${dir.path}' already exists.\n");
+      logger.stderr("Error: '${dir.path}' already exists.\n");
       return new Future.error('target path already exists');
     }
     
     // TODO: validate name (no spaces)
     
-    if (generatorTarget == null) {
-      generatorTarget = new DirectoryGeneratorTarget(controller, dir);
+    if (target == null) {
+      target = new DirectoryGeneratorTarget(logger, dir);
     }
     
     _out("Creating ${id} application '${projectName}':");
-    return generator.generate(projectName, generatorTarget).then((_) {
+    return generator.generate(projectName, target).then((_) {
       _out("${generator.numFiles()} files written.");
     });
   }
@@ -83,9 +78,9 @@ class CliApp {
     return generators.firstWhere((g) => g.id == id, orElse: () => null);
   }
   
-  void _out(String str) => controller.stdout(str);
+  void _out(String str) => logger.stdout(str);
   
-  void _usage(CliController controller) {
+  void _usage() {
     _out('usage: ${APP_NAME} <generator> <output directory>');
     _out('');
     _out('generators\n----------');
@@ -94,27 +89,27 @@ class CliApp {
       .fold(0, (a, b) => max(a, b));
     generators
       .map((g) => "[${_pad(g.id, len)}] ${g.description}")
-      .forEach(controller.stdout);
+      .forEach(logger.stdout);
   }
 }
 
-class CliController {
-  void error(String message) => print(message);
+class CliLogger {
   void stdout(String message) => print(message);
+  void stderr(String message) => print(message);
 }
 
 class DirectoryGeneratorTarget extends GeneratorTarget {
-  final CliController controller;
+  final CliLogger logger;
   final io.Directory dir;
   
-  DirectoryGeneratorTarget(this.controller, this.dir) {
+  DirectoryGeneratorTarget(this.logger, this.dir) {
     dir.createSync();
   }
   
   Future createFile(String filePath, List<int> contents) {
     io.File file = new io.File(path.join(dir.path, filePath));
     
-    controller.stdout('  ${file.path}');
+    logger.stdout('  ${file.path}');
     
     return file
       .create(recursive: true)
