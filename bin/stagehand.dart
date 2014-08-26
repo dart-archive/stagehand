@@ -1,27 +1,7 @@
-//  Copyright (c) 2014, Google.
-//  All rights reserved.
-//
-//  Redistribution and use in source and binary forms, with or without
-//  modification, are permitted provided that the following conditions are met:
-//  * Redistributions of source code must retain the above copyright
-//  notice, this list of conditions and the following disclaimer.
-//  * Redistributions in binary form must reproduce the above copyright
-//  notice, this list of conditions and the following disclaimer in the
-//  documentation and/or other materials provided with the distribution.
-//  * Neither the name of the <organization> nor the
-//  names of its contributors may be used to endorse or promote products
-//  derived from this software without specific prior written permission.
-//
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-//  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-//  DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
-//  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-//  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-//  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-//  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-//  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-//  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+// Copyright (c) 2014, Google Inc. Please see the AUTHORS file for details.
+// All rights reserved. Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
 library stagehand.cli;
 
 import 'dart:async';
@@ -48,11 +28,11 @@ class CliApp {
 
   String _generatorName;
   String _outputDir;
-  
+
   CliApp(this.generators, this.logger, [this.target]) {
     assert(generators != null);
     assert(logger != null);
-    
+
     generators.sort(Generator.compareGenerators);
   }
 
@@ -97,42 +77,42 @@ class CliApp {
     .map((g) => "[${_pad(g.id, len)}] ${g.description}")
     .forEach(logger.stdout);
   }
-  
+
   Future process(List<String> args) {
     var argParser = _extractArgs(args);
 
     Generator generator = _getGenerator(_generatorName);
-    
+
     if (generator == null) {
       logger.stderr("'${_generatorName}' is not a valid generator.\n");
       _usage(argParser);
       return new Future.error('invalid generator');
     }
-    
+
     io.Directory dir = new io.Directory(_outputDir);
     String projectName = path.basename(dir.path);
-    
+
     if (dir.existsSync()) {
       logger.stderr("Error: '${dir.path}' already exists.\n");
       return new Future.error('target path already exists');
     }
-    
+
     // TODO: validate name (no spaces)
-    
+
     if (target == null) {
       target = new DirectoryGeneratorTarget(logger, dir);
     }
-    
+
     _out("Creating ${_generatorName} application '${projectName}':");
     return generator.generate(projectName, target).then((_) {
       _out("${generator.numFiles()} files written.");
     });
   }
-  
+
   Generator _getGenerator(String id) {
     return generators.firstWhere((g) => g.id == id, orElse: () => null);
   }
-  
+
   void _out(String str) => logger.stdout(str);
 
 }
@@ -145,16 +125,16 @@ class CliLogger {
 class DirectoryGeneratorTarget extends GeneratorTarget {
   final CliLogger logger;
   final io.Directory dir;
-  
+
   DirectoryGeneratorTarget(this.logger, this.dir) {
     dir.createSync();
   }
-  
+
   Future createFile(String filePath, List<int> contents) {
     io.File file = new io.File(path.join(dir.path, filePath));
-    
+
     logger.stdout('  ${file.path}');
-    
+
     return file
       .create(recursive: true)
       .then((_) => file.writeAsBytes(contents));
