@@ -32,6 +32,8 @@ It is a Dart project scaffolding generator, inspired by tools like Web Starter K
   * Dart + Polymer app
     * this is the most opinionated and complete option. for the developer that says “I just want to paint by numbers”
   * Dart + server-side
+  * Dart library (suitable to publish on pub.dartlang.org)
+* Anonymous and opt-in usage analytics
 * Creates
   * the project directory itself
   * all required directories
