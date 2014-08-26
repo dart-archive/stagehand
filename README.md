@@ -44,3 +44,7 @@ It is a Dart project scaffolding generator, inspired by tools like Web Starter K
 ## Issues and bugs
 
 Please file on [Github Issues](https://github.com/sethladd/stagehand/issues).
+
+## Disclaimer
+
+This is not an official Google product.
