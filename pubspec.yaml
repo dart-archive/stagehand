@@ -8,3 +8,4 @@ authors:
 dev_dependencies:
   path: any
   unittest: any
+  args: any

@@ -28,6 +28,7 @@ import 'dart:async';
 import 'dart:io' as io;
 import 'dart:math';
 
+import 'package:args/args.dart';
 import 'package:path/path.dart' as path;
 import 'package:stagehand/stagehand.dart';
 
@@ -44,6 +45,9 @@ class CliApp {
   final List<Generator> generators;
   final CliLogger logger;
   GeneratorTarget target;
+
+  String _generatorName;
+  String _outputDir;
   
   CliApp(this.generators, this.logger, [this.target]) {
     assert(generators != null);
@@ -51,33 +55,61 @@ class CliApp {
     
     generators.sort(Generator.compareGenerators);
   }
-  
-  Future process(List<String> args) {
-    if (args.length == 0) {
-      _usage();
-      return new Future.value();
-    } else if (args.length > 2) {
-      logger.stderr("Too many parameters given.\n");
-      _usage();
-      return new Future.error('too many paramaters');
-    }
-    
-    String id = args.first;
-    Generator generator = _getGenerator(id);
-    
-    if (generator == null) {
-      logger.stderr("'${id}' is not a valid generator.\n");
-      _usage();
-      return new Future.error('invalid generator');
+
+  ArgParser _extractArgs(List<String> args) {
+    var argParser = new ArgParser();
+
+    argParser.addOption('outdir', abbr: 'o', valueHelp: 'path', help: 'Where to put the files.');
+    argParser.addFlag('help', abbr: 'h', negatable: false);
+
+    try {
+      var options = argParser.parse(args);
+      if (options['help']) {
+        _usage(argParser);
+        io.exit(0);
+      }
+      if (options.rest == null || options.rest.isEmpty) {
+        throw new ArgumentError('No generator specified');
+      }
+      _generatorName = options.rest.first;
+      _outputDir = options['outdir'];
+      if (_outputDir == null) {
+        throw new ArgumentError('No output directory specified');
+      }
+    } catch(e) {
+      print('$e\n');
+      _usage(argParser);
+      io.exit(1);
     }
 
-    if (args.length == 1) {
-      _out("[${generator.id}] ${generator.description}\n");
-      _out("Create using: ${APP_NAME} ${generator.id} <output directory>");
-      return new Future.value();
+    return argParser;
+  }
+
+  void _usage(ArgParser argParser) {
+    _out('usage: ${APP_NAME} -o <output directory> generator-name');
+    _out(argParser.getUsage());
+    _out('');
+    _out('generators\n----------');
+    int len = generators
+    .map((g) => g.id.length)
+    .fold(0, (a, b) => max(a, b));
+    generators
+    .map((g) => "[${_pad(g.id, len)}] ${g.description}")
+    .forEach(logger.stdout);
+  }
+  
+  Future process(List<String> args) {
+    var argParser = _extractArgs(args);
+
+    Generator generator = _getGenerator(_generatorName);
+    
+    if (generator == null) {
+      logger.stderr("'${_generatorName}' is not a valid generator.\n");
+      _usage(argParser);
+      return new Future.error('invalid generator');
     }
     
-    io.Directory dir = new io.Directory(args[1]);
+    io.Directory dir = new io.Directory(_outputDir);
     String projectName = path.basename(dir.path);
     
     if (dir.existsSync()) {
@@ -91,7 +123,7 @@ class CliApp {
       target = new DirectoryGeneratorTarget(logger, dir);
     }
     
-    _out("Creating ${id} application '${projectName}':");
+    _out("Creating ${_generatorName} application '${projectName}':");
     return generator.generate(projectName, target).then((_) {
       _out("${generator.numFiles()} files written.");
     });
@@ -102,18 +134,7 @@ class CliApp {
   }
   
   void _out(String str) => logger.stdout(str);
-  
-  void _usage() {
-    _out('usage: ${APP_NAME} <generator> <output directory>');
-    _out('');
-    _out('generators\n----------');
-    int len = generators
-      .map((g) => g.id.length)
-      .fold(0, (a, b) => max(a, b));
-    generators
-      .map((g) => "[${_pad(g.id, len)}] ${g.description}")
-      .forEach(logger.stdout);
-  }
+
 }
 
 class CliLogger {
