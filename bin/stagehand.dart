@@ -71,11 +71,11 @@ class CliApp {
     _out('');
     _out('generators\n----------');
     int len = generators
-    .map((g) => g.id.length)
-    .fold(0, (a, b) => max(a, b));
+      .map((g) => g.id.length)
+      .fold(0, (a, b) => max(a, b));
     generators
-    .map((g) => "[${_pad(g.id, len)}] ${g.description}")
-    .forEach(logger.stdout);
+      .map((g) => "[${_pad(g.id, len)}] ${g.description}")
+      .forEach(logger.stdout);
   }
 
   Future process(List<String> args) {

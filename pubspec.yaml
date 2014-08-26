@@ -6,6 +6,6 @@ authors:
 - Seth Ladd <sethladd@gmail.com>
 - Devon Carew <devoncarew@google.com>
 dev_dependencies:
+  args: any
   path: any
   unittest: any
-  args: any
