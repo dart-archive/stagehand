@@ -26,9 +26,6 @@ class CliApp {
   final CliLogger logger;
   GeneratorTarget target;
 
-  String _generatorName;
-  String _outputDir;
-
   CliApp(this.generators, this.logger, [this.target]) {
     assert(generators != null);
     assert(logger != null);
@@ -36,31 +33,70 @@ class CliApp {
     generators.sort(Generator.compareGenerators);
   }
 
-  ArgParser _extractArgs(List<String> args) {
+  Future process(List<String> args) {
+    ArgParser argParser = _createArgParser();
+
+    var options = argParser.parse(args);
+    if (options['help'] || args.isEmpty) {
+      _usage(argParser);
+      return new Future.value();
+    }
+
+    if (options.rest.isEmpty) {
+      logger.stderr("No generator specified.\n");
+      _usage(argParser);
+      return new Future.error('invalid generator');
+    }
+
+    if (options.rest.length >= 2) {
+      logger.stderr("Error: too many arguments given.\n");
+      _usage(argParser);
+      return new Future.error('invalid generator');
+    }
+
+    String generatorName = options.rest.first;
+    Generator generator = _getGenerator(generatorName);
+
+    if (generator == null) {
+      logger.stderr("'${generatorName}' is not a valid generator.\n");
+      _usage(argParser);
+      return new Future.error('invalid generator');
+    }
+
+    String outputDir = options['outdir'];
+
+    if (outputDir == null) {
+      logger.stderr("No output directory specified.\n");
+      _usage(argParser);
+      return new Future.error('No output directory specified');
+    }
+
+    io.Directory dir = new io.Directory(outputDir);
+    String projectName = path.basename(dir.path);
+
+    if (dir.existsSync()) {
+      logger.stderr("Error: '${dir.path}' already exists.\n");
+      return new Future.error('target path already exists');
+    }
+
+    // TODO: Validate name (no spaces and such).
+
+    if (target == null) {
+      target = new DirectoryGeneratorTarget(logger, dir);
+    }
+
+    _out("Creating ${generatorName} application '${projectName}':");
+
+    return generator.generate(projectName, target).then((_) {
+      _out("${generator.numFiles()} files written.");
+    });
+  }
+
+  ArgParser _createArgParser() {
     var argParser = new ArgParser();
 
     argParser.addOption('outdir', abbr: 'o', valueHelp: 'path', help: 'Where to put the files.');
     argParser.addFlag('help', abbr: 'h', negatable: false);
-
-    try {
-      var options = argParser.parse(args);
-      if (options['help']) {
-        _usage(argParser);
-        io.exit(0);
-      }
-      if (options.rest == null || options.rest.isEmpty) {
-        throw new ArgumentError('No generator specified');
-      }
-      _generatorName = options.rest.first;
-      _outputDir = options['outdir'];
-      if (_outputDir == null) {
-        throw new ArgumentError('No output directory specified');
-      }
-    } catch(e) {
-      print('$e\n');
-      _usage(argParser);
-      io.exit(1);
-    }
 
     return argParser;
   }
@@ -78,43 +114,11 @@ class CliApp {
       .forEach(logger.stdout);
   }
 
-  Future process(List<String> args) {
-    var argParser = _extractArgs(args);
-
-    Generator generator = _getGenerator(_generatorName);
-
-    if (generator == null) {
-      logger.stderr("'${_generatorName}' is not a valid generator.\n");
-      _usage(argParser);
-      return new Future.error('invalid generator');
-    }
-
-    io.Directory dir = new io.Directory(_outputDir);
-    String projectName = path.basename(dir.path);
-
-    if (dir.existsSync()) {
-      logger.stderr("Error: '${dir.path}' already exists.\n");
-      return new Future.error('target path already exists');
-    }
-
-    // TODO: validate name (no spaces)
-
-    if (target == null) {
-      target = new DirectoryGeneratorTarget(logger, dir);
-    }
-
-    _out("Creating ${_generatorName} application '${projectName}':");
-    return generator.generate(projectName, target).then((_) {
-      _out("${generator.numFiles()} files written.");
-    });
-  }
-
   Generator _getGenerator(String id) {
     return generators.firstWhere((g) => g.id == id, orElse: () => null);
   }
 
   void _out(String str) => logger.stdout(str);
-
 }
 
 class CliLogger {
