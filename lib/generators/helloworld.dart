@@ -8,7 +8,7 @@ import '../src/common.dart';
 import '../stagehand.dart';
 
 /**
- * TODO:
+ * A generator for a hello world command-line application.
  */
 class HelloWorldGenerator extends Generator {
   HelloWorldGenerator() : super(
@@ -18,6 +18,7 @@ class HelloWorldGenerator extends Generator {
 
     _addFile('.gitignore', gitIgnoreContents);
     _addFile('pubspec.yaml', _pubspec);
+    _addFile('readme.md', _readme);
     _addFile('bin/helloworld.dart', _helloworld);
 
     setEntrypoint(files.last);
@@ -27,6 +28,12 @@ class HelloWorldGenerator extends Generator {
 name: {{projectName}}
 version: 0.0.1
 description: ${description}
+''';
+
+  String get _readme => '''
+# {{projectName}}
+
+A simple hello world command-line application.
 ''';
 
   String get _helloworld => '''

@@ -24,6 +24,9 @@ Generator getGenerator(String id) {
   return generators.firstWhere((g) => g.id == id, orElse: () => null);
 }
 
+/**
+ * TODO: doc
+ */
 abstract class Generator {
   static int compareGenerators(Generator a, Generator b) =>
       a.id.toLowerCase().compareTo(b.id.toLowerCase());
@@ -51,6 +54,9 @@ abstract class Generator {
     return file;
   }
 
+  /**
+   * TODO: doc
+   */
   void setEntrypoint(TemplateFile entrypoint) {
     assert(this._entrypoint == null);
     this._entrypoint = entrypoint;

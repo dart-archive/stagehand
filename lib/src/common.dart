@@ -3,20 +3,35 @@
 // license that can be found in the LICENSE file.
 
 /**
- * TODO:
+ * Some utilty methods for stagehand.
  */
 library stagehand.utils;
 
+/**
+ * A common `.gitignore` file for Dart projects.
+ */
 String gitIgnoreContents = '''
 .DS_Store
+build/
 packages
 pubspec.lock
 ''';
 
 /**
- * TODO:
+ * Given a String [str] with mustache templates, and a [Map] of String key /
+ * value pairs, substitute all instances of `{{key}}` for `value`. I.e.,
+ *
+ *     Foo {{projectName}} baz.
+ *
+ * and
+ *
+ *     {'projectName': 'bar'}
+ *
+ * becomes:
+ *
+ *     Foo bar baz.
  */
-String substituteVars(String str, Map vars) {
+String substituteVars(String str, Map<String, String> vars) {
   vars.forEach((key, value) {
     String sub = '{{${key}}}';
     str = str.replaceAll(sub, value);
