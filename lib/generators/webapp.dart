@@ -42,8 +42,8 @@ dependencies:
   String get _readme => '''
 # {{projectName}}
 
-A simple web application example. This is the most minimal option for the
-developer that doesn’t want to be confused by too much going on.
+A simple web application example. This is the minimal option for the developer
+that doesn’t want to be confused by too much going on.
 ''';
 
   String get _main => '''
