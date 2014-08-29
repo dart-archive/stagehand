@@ -13,8 +13,8 @@ import '../stagehand.dart';
 class WebAppGenerator extends Generator {
   WebAppGenerator() : super(
       'webapp',
-      "This is the most minimal option for the developer that doesn’t want to "
-      "be confused by too much going on.",
+      "A minimal web app for the developer that doesn’t want to be confused by "
+      "too much going on.",
       categories: const ['dart', 'web']) {
 
     _addFile('.gitignore', gitIgnoreContents);

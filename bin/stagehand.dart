@@ -105,12 +105,12 @@ class CliApp {
     _out('usage: ${APP_NAME} -o <output directory> generator-name');
     _out(argParser.getUsage());
     _out('');
-    _out('generators\n----------');
+    _out('Available generators:\n');
     int len = generators
       .map((g) => g.id.length)
       .fold(0, (a, b) => max(a, b));
     generators
-      .map((g) => "[${_pad(g.id, len)}] ${g.description}")
+      .map((g) => "${_pad(g.id, len)}: ${g.description}")
       .forEach(logger.stdout);
   }
 
