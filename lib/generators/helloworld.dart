@@ -26,8 +26,10 @@ class HelloWorldGenerator extends Generator {
 
   String get _pubspec => '''
 name: {{projectName}}
-version: 0.0.1
 description: ${description}
+version: 0.0.1
+#author: First Last <email>
+#homepage: http://www.example.com
 ''';
 
   String get _readme => '''

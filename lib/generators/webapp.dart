@@ -30,8 +30,11 @@ class WebAppGenerator extends Generator {
 
   String get _pubspec => '''
 name: {{projectName}}
+description: >
+${convertToYamlMultiLine(description)}
 version: 0.0.1
-description: ${description}
+#author: First Last <email>
+#homepage: http://www.example.com
 dependencies:
   browser: any
 ''';

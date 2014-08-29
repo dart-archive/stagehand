@@ -22,6 +22,17 @@ void defineTests() {
     test('substituteVars nosub', () {
       _expect('foo {{bar}} baz', {'aaa': 'bbb'}, 'foo {{bar}} baz');
     });
+
+    test('wrap', () {
+      expect(wrap('foo barbar baz'), ['foo barbar baz']);
+      expect(wrap('foo barbar baz', 10), ['foo barbar', 'baz']);
+    });
+
+    test('convertToYamlMultiLine', () {
+      expect(
+          convertToYamlMultiLine('one two three four five size seven eight nine ten eleven twelve thirteen fourteen fifteen'),
+          '  one two three four five size seven eight nine ten eleven twelve thirteen\n  fourteen fifteen');
+    });
   });
 }
 
