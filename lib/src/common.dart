@@ -20,6 +20,20 @@ pubspec.lock
 ''';
 
 /**
+ * Convert a directory name into a reasonably legal pub package name.
+ */
+String normalizeProjectName(String name) {
+  name = name.replaceAll('-', '_');
+
+  // Strip any extension (like .dart).
+  if (name.contains('.')) {
+    name = name.substring(0, name.indexOf('.'));
+  }
+
+  return name;
+}
+
+/**
  * Given a String [str] with mustache templates, and a [Map] of String key /
  * value pairs, substitute all instances of `{{key}}` for `value`. I.e.,
  *

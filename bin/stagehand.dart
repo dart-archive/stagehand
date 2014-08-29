@@ -11,6 +11,7 @@ import 'dart:math';
 import 'package:args/args.dart';
 import 'package:path/path.dart' as path;
 import 'package:stagehand/stagehand.dart';
+import 'package:stagehand/src/common.dart';
 
 const String APP_NAME = 'stagehand';
 
@@ -72,14 +73,19 @@ class CliApp {
     }
 
     io.Directory dir = new io.Directory(outputDir);
-    String projectName = path.basename(dir.path);
 
     if (dir.existsSync()) {
       logger.stderr("Error: '${dir.path}' already exists.\n");
       return new Future.error('target path already exists');
     }
 
-    // TODO: Validate name (no spaces and such).
+    // Validate and normalize the project name.
+    String projectName = path.basename(dir.path);
+    if (_validateName(projectName) != null) {
+      logger.stderr(_validateName(projectName));
+      return new Future.error(_validateName(projectName));
+    }
+    projectName = normalizeProjectName(projectName);
 
     if (target == null) {
       target = new DirectoryGeneratorTarget(logger, dir);
@@ -99,6 +105,19 @@ class CliApp {
     argParser.addFlag('help', abbr: 'h', negatable: false);
 
     return argParser;
+  }
+
+  String _validateName(String projectName) {
+    if (projectName.contains(' ')) {
+      return "The project name cannot contain spaces.";
+    }
+
+    if (!projectName.startsWith(new RegExp(r'[A-Za-z]'))) {
+      return "The project name must start with a letter.";
+    }
+
+    // Project name is valid.
+    return null;
   }
 
   void _usage(ArgParser argParser) {
