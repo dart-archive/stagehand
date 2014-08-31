@@ -22,7 +22,7 @@ pubspec.lock
 
 String get license {
   return '''
-Copyright (c) #{new DateTime.now().year}, <your name>.
+Copyright (c) ${new DateTime.now().year}, <your name>.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
