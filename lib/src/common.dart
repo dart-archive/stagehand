@@ -132,10 +132,17 @@ List<String> wrap(String str, [int col = 80]) {
   return lines;
 }
 
-class DefaultGenerator extends Generator {
-  DefaultGenerator(String id, String description, {List categories: const []})
+/**
+ * An abstract implementation of a [Generator] that includes default
+ * `.gitignore` and `LICENSE` files.
+ */
+abstract class DefaultGenerator extends Generator {
+  DefaultGenerator(String id, String description, {List<String> categories: const []})
       : super(id, description, categories: categories) {
     addFile('.gitignore', gitIgnoreContents);
     addFile('LICENSE', licenseContents);
   }
+
+  TemplateFile addFile(String path, String contents) =>
+      addTemplateFile(new TemplateFile(path, contents));
 }

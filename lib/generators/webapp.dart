@@ -18,16 +18,16 @@ class WebAppGenerator extends DefaultGenerator {
 
     addFile('pubspec.yaml', _pubspec);
     addFile('readme.md', _readme);
-    addFile('web/styles.css', _styles);
     setEntrypoint(addFile('web/index.html', _index));
     addFile('web/main.dart', _main);
+    addFile('web/styles.css', _styles);
   }
 
   String get _pubspec => '''
 name: {{projectName}}
+version: 0.0.1
 description: >
 ${convertToYamlMultiLine(description)}
-version: 0.0.1
 #author: First Last <email@example.com>
 #homepage: https://www.example.com
 environment:

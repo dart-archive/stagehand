@@ -73,9 +73,6 @@ abstract class Generator {
   int numFiles() => files.length;
 
   String toString() => '[${id}: ${description}]';
-
-  TemplateFile addFile(String path, String contents) =>
-    addTemplateFile(new TemplateFile(path, contents));
 }
 
 /**

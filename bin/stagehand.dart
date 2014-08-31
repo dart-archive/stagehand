@@ -5,6 +5,7 @@
 library stagehand.cli;
 
 import 'dart:async';
+import 'dart:convert' show JSON;
 import 'dart:io' as io;
 import 'dart:math';
 
@@ -38,15 +39,27 @@ class CliApp {
     ArgParser argParser = _createArgParser();
 
     var options = argParser.parse(args);
+
     if (options['help'] || args.isEmpty) {
       _usage(argParser);
+      return new Future.value();
+    }
+
+    // The `--machine` option emits the list of available generators to stdout
+    // as Json. This is useful for tools that don't want to have to parse the
+    // output of `--help`. It's an undocumented command line flag, and may go
+    // away or change.
+    if (options['machine']) {
+      Iterable itor = generators.map((generator) =>
+          {'name': generator.id, 'description': generator.description});
+      logger.stdout(JSON.encode(itor.toList()));
       return new Future.value();
     }
 
     if (options.rest.isEmpty) {
       logger.stderr("No generator specified.\n");
       _usage(argParser);
-      return new Future.error('invalid generator');
+      return new Future.error('no generator specified');
     }
 
     if (options.rest.length >= 2) {
@@ -104,6 +117,7 @@ class CliApp {
     argParser.addOption('outdir', abbr: 'o', valueHelp: 'path',
         help: 'Where to put the files.');
     argParser.addFlag('help', abbr: 'h', negatable: false);
+    argParser.addFlag('machine', negatable: false, hide: true);
 
     return argParser;
   }

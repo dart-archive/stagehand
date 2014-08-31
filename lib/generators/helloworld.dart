@@ -17,15 +17,13 @@ class HelloWorldGenerator extends DefaultGenerator {
 
     addFile('pubspec.yaml', _pubspec);
     addFile('readme.md', _readme);
-    addFile('bin/main.dart', _helloworld);
-
-    setEntrypoint(files.last);
+    setEntrypoint(addFile('bin/main.dart', _helloworld));
   }
 
   String get _pubspec => '''
 name: {{projectName}}
-description: ${description}
 version: 0.0.1
+description: ${description}
 #author: First Last <email@example.com>
 #homepage: https://www.example.com
 environment:
@@ -45,5 +43,4 @@ main() {
   print('Hello world!');
 }
 ''';
-
 }

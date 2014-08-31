@@ -5,6 +5,7 @@
 library stagehand.cli_test;
 
 import 'dart:async';
+import 'dart:convert' show JSON;
 
 import 'package:stagehand/stagehand.dart';
 import 'package:unittest/unittest.dart';
@@ -68,6 +69,14 @@ void defineTests() {
 
     test('three args', () {
       return _expectError(app.process(['-o', 'foobar', 'helloworld', 'foobar']));
+    });
+
+    test('machine format', () {
+      return app.process(['--machine']).then((_) {
+        _expectOk();
+        List results = JSON.decode(logger.getStdout());
+        expect(results, isNot(isEmpty));
+      });
     });
   });
 }
