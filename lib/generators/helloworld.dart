@@ -28,6 +28,10 @@ description: ${description}
 version: 0.0.1
 #author: First Last <email@example.com>
 #homepage: https://www.example.com
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+#dependencies:
+#  foo_bar: any
 ''';
 
   String get _readme => '''
