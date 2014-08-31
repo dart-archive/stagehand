@@ -49,7 +49,7 @@ abstract class Generator {
   /**
    * TODO:
    */
-  TemplateFile addFile(TemplateFile file) {
+  TemplateFile addTemplateFile(TemplateFile file) {
     files.add(file);
     return file;
   }
@@ -73,6 +73,9 @@ abstract class Generator {
   int numFiles() => files.length;
 
   String toString() => '[${id}: ${description}]';
+
+  TemplateFile addFile(String path, String contents) =>
+    addTemplateFile(new TemplateFile(path, contents));
 }
 
 /**

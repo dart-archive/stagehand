@@ -5,29 +5,23 @@
 library stagehand.webapp;
 
 import '../src/common.dart';
-import '../stagehand.dart';
 
 /**
  * A generator for a minimal web application.
  */
-class WebAppGenerator extends Generator {
+class WebAppGenerator extends DefaultGenerator {
   WebAppGenerator() : super(
       'webapp',
       "A minimal web app for the developer that doesn’t want to be confused by "
       "too much going on.",
       categories: const ['dart', 'web']) {
 
-    _addFile('.gitignore', gitIgnoreContents);
-    _addFile('pubspec.yaml', _pubspec);
-    _addFile('readme.md', _readme);
-    _addFile('web/styles.css', _styles);
-    setEntrypoint(_addFile('web/index.html', _index));
-    _addFile('web/main.dart', _main);
-    _addFile('LICENSE', license);
+    addFile('pubspec.yaml', _pubspec);
+    addFile('readme.md', _readme);
+    addFile('web/styles.css', _styles);
+    setEntrypoint(addFile('web/index.html', _index));
+    addFile('web/main.dart', _main);
   }
-
-  TemplateFile _addFile(String path, String contents) =>
-      addFile(new TemplateFile(path, contents));
 
   String get _pubspec => '''
 name: {{projectName}}
