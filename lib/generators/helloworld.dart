@@ -16,11 +16,9 @@ class HelloWorldGenerator extends Generator {
       "A simple hello world command-line application.",
       categories: const ['dart', 'helloworld']) {
 
-    _addFile('.gitignore', gitIgnoreContents);
-    _addFile('pubspec.yaml', _pubspec);
-    _addFile('readme.md', _readme);
-    _addFile('bin/helloworld.dart', _helloworld);
-    _addFile('LICENSE', license);
+    addFile('pubspec.yaml', _pubspec);
+    addFile('readme.md', _readme);
+    addFile('bin/helloworld.dart', _helloworld);
 
     setEntrypoint(files.last);
   }
@@ -45,6 +43,4 @@ main() {
 }
 ''';
 
-  TemplateFile _addFile(String path, String contents) =>
-      addFile(new TemplateFile(path, contents));
 }

@@ -38,7 +38,10 @@ abstract class Generator {
   final List<TemplateFile> files = [];
   TemplateFile _entrypoint;
 
-  Generator(this.id, this.description, {this.categories: const []});
+  Generator(this.id, this.description, {this.categories: const []}) {
+    addFile('.gitignore', gitIgnoreContents);
+    addFile('LICENSE', license);
+  }
 
   /**
    * The entrypoint of the application; the main file for the project, which an
@@ -49,7 +52,7 @@ abstract class Generator {
   /**
    * TODO:
    */
-  TemplateFile addFile(TemplateFile file) {
+  TemplateFile addTemplateFile(TemplateFile file) {
     files.add(file);
     return file;
   }
@@ -73,6 +76,9 @@ abstract class Generator {
   int numFiles() => files.length;
 
   String toString() => '[${id}: ${description}]';
+
+  TemplateFile addFile(String path, String contents) =>
+    addTemplateFile(new TemplateFile(path, contents));
 }
 
 /**
