@@ -129,7 +129,17 @@ class CliApp {
       .map((g) => g.id.length)
       .fold(0, (a, b) => max(a, b));
     generators
-      .map((g) => "${_pad(g.id, len)}: ${g.description}")
+      .map((g) {
+        var lines = wrap(g.description, 78-len);
+        var desc = lines.first;
+        if (lines.length > 1) {
+          desc += '\n' +
+            lines.sublist(1, lines.length)
+              .map((line) => '${_pad(' ', len + 2)}$line')
+              .join('\n');
+        }
+        return "${_pad(g.id, len)}: ${desc}";
+      })
       .forEach(logger.stdout);
   }
 
