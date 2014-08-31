@@ -3,7 +3,27 @@
 ## Helps you get setup!
 
 Stagehand helps you get your Dart projects set up and ready for the big show.
-It is a Dart project scaffolding generator, inspired by tools like Web Starter Kit and Yeoman.
+It is a Dart project scaffolding generator, inspired by tools like Web Starter
+Kit and Yeoman.
+
+## Installation
+
+Requirements:
+
+* Dart SDK 1.6 or greater on your path
+
+Install:
+
+    $> pub global activate stagehand
+
+## Usage
+
+    $> cd where_you_want_to_create_the_project_directory
+    $> pub global run stagehand -o _directory_name_ webapp
+
+To list all of the project templates:
+
+    $> pub global run stagehand
 
 ## Goals
 
@@ -28,9 +48,11 @@ It is a Dart project scaffolding generator, inspired by tools like Web Starter K
 * Single package
 * Generators for:
   * Dart + HTML app
-    * this is the most minimal option. for the developer that doesn’t want to be confused by too much going on.
+    * this is the most minimal option. for the developer that doesn’t want to
+      be confused by too much going on.
   * Dart + Polymer app
-    * this is the most opinionated and complete option. for the developer that says “I just want to paint by numbers”
+    * this is the most opinionated and complete option. for the developer that
+      says “I just want to paint by numbers”
   * Dart + server-side
   * Dart library (suitable to publish on pub.dartlang.org)
 * Anonymous and opt-in usage analytics
