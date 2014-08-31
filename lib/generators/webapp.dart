@@ -23,6 +23,7 @@ class WebAppGenerator extends Generator {
     _addFile('web/styles.css', _styles);
     setEntrypoint(_addFile('web/index.html', _index));
     _addFile('web/main.dart', _main);
+    _addFile('LICENSE', license);
   }
 
   TemplateFile _addFile(String path, String contents) =>
