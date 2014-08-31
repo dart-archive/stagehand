@@ -38,10 +38,7 @@ abstract class Generator {
   final List<TemplateFile> files = [];
   TemplateFile _entrypoint;
 
-  Generator(this.id, this.description, {this.categories: const []}) {
-    addFile('.gitignore', gitIgnoreContents);
-    addFile('LICENSE', license);
-  }
+  Generator(this.id, this.description, {this.categories: const []});
 
   /**
    * The entrypoint of the application; the main file for the project, which an

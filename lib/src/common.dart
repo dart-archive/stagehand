@@ -7,6 +7,8 @@
  */
 library stagehand.utils;
 
+import '../stagehand.dart';
+
 const int _RUNE_SPACE = 32;
 
 /**
@@ -127,4 +129,12 @@ List<String> wrap(String str, [int col = 80]) {
   }
 
   return lines;
+}
+
+class DefaultGenerator extends Generator {
+  DefaultGenerator(String id, String description, {List categories: const []})
+      : super(id, description, categories: categories) {
+    addFile('.gitignore', gitIgnoreContents);
+    addFile('LICENSE', license);
+  }
 }

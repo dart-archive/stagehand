@@ -5,12 +5,11 @@
 library stagehand.webapp;
 
 import '../src/common.dart';
-import '../stagehand.dart';
 
 /**
  * A generator for a minimal web application.
  */
-class WebAppGenerator extends Generator {
+class WebAppGenerator extends DefaultGenerator {
   WebAppGenerator() : super(
       'webapp',
       "A minimal web app for the developer that doesn’t want to be confused by "

@@ -5,12 +5,11 @@
 library stagehand.helloworld;
 
 import '../src/common.dart';
-import '../stagehand.dart';
 
 /**
  * A generator for a hello world command-line application.
  */
-class HelloWorldGenerator extends Generator {
+class HelloWorldGenerator extends DefaultGenerator {
   HelloWorldGenerator() : super(
       'helloworld',
       "A simple hello world command-line application.",
