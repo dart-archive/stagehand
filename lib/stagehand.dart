@@ -62,8 +62,8 @@ abstract class Generator {
     this._entrypoint = entrypoint;
   }
 
-  Future generate(String directoryName, GeneratorTarget target) {
-    Map vars = {'projectName': directoryName};
+  Future generate(String projectName, GeneratorTarget target) {
+    Map vars = {'projectName': projectName};
 
     return Future.forEach(files, (TemplateFile file) {
       return target.createFile(file.path, file.createContent(vars));

@@ -17,7 +17,7 @@ class HelloWorldGenerator extends DefaultGenerator {
 
     addFile('pubspec.yaml', _pubspec);
     addFile('readme.md', _readme);
-    addFile('bin/helloworld.dart', _helloworld);
+    addFile('bin/main.dart', _helloworld);
 
     setEntrypoint(files.last);
   }
