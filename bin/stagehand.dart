@@ -101,7 +101,8 @@ class CliApp {
   ArgParser _createArgParser() {
     var argParser = new ArgParser();
 
-    argParser.addOption('outdir', abbr: 'o', valueHelp: 'path', help: 'Where to put the files.');
+    argParser.addOption('outdir', abbr: 'o', valueHelp: 'path',
+        help: 'Where to put the files.');
     argParser.addFlag('help', abbr: 'h', negatable: false);
 
     return argParser;
@@ -130,7 +131,7 @@ class CliApp {
       .fold(0, (a, b) => max(a, b));
     generators
       .map((g) {
-        var lines = wrap(g.description, 78-len);
+        var lines = wrap(g.description, 78 - len);
         var desc = lines.first;
         if (lines.length > 1) {
           desc += '\n' +

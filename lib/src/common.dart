@@ -22,8 +22,10 @@ pubspec.lock
 .idea
 ''';
 
-String get license {
-  return '''
+/**
+ * The BSD 3-clause license.
+ */
+String get licenseContents => '''
 Copyright (c) ${new DateTime.now().year}, <your name>.
 All rights reserved.
 
@@ -49,7 +51,6 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ''';
-}
 
 /**
  * Convert a directory name into a reasonably legal pub package name.
@@ -135,6 +136,6 @@ class DefaultGenerator extends Generator {
   DefaultGenerator(String id, String description, {List categories: const []})
       : super(id, description, categories: categories) {
     addFile('.gitignore', gitIgnoreContents);
-    addFile('LICENSE', license);
+    addFile('LICENSE', licenseContents);
   }
 }
