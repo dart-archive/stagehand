@@ -34,8 +34,8 @@ name: {{projectName}}
 description: >
 ${convertToYamlMultiLine(description)}
 version: 0.0.1
-#author: First Last <email>
-#homepage: http://www.example.com
+#author: First Last <email@example.com>
+#homepage: https://www.example.com
 dependencies:
   browser: any
 ''';
@@ -51,8 +51,8 @@ that doesn’t want to be confused by too much going on.
 import 'dart:html';
 
 void main() {
-  var element = new DivElement();
-  element.text = "Hello, World!";
+  var element = new DivElement()
+    ..text = "Hello, World!";
   document.body.children.add(element);
 }
 ''';
