@@ -20,6 +20,7 @@ class HelloWorldGenerator extends Generator {
     _addFile('pubspec.yaml', _pubspec);
     _addFile('readme.md', _readme);
     _addFile('bin/helloworld.dart', _helloworld);
+    _addFile('LICENSE', license);
 
     setEntrypoint(files.last);
   }
@@ -28,8 +29,8 @@ class HelloWorldGenerator extends Generator {
 name: {{projectName}}
 description: ${description}
 version: 0.0.1
-#author: First Last <email>
-#homepage: http://www.example.com
+#author: First Last <email@example.com>
+#homepage: https://www.example.com
 ''';
 
   String get _readme => '''
