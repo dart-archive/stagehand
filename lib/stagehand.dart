@@ -12,12 +12,14 @@ import 'dart:convert';
 
 import 'generators/helloworld.dart';
 import 'generators/webapp.dart';
+import 'generators/publib.dart';
 import 'src/common.dart';
 
 /// A curated, prescriptive list of Dart project generators.
 final List<Generator> generators = [
   new HelloWorldGenerator(),
-  new WebAppGenerator()
+  new WebAppGenerator(),
+  new PubLibGenerator()
 ];
 
 Generator getGenerator(String id) {
@@ -56,9 +58,10 @@ abstract class Generator {
 
   /**
    * TODO: doc
+   * TODO: consider passing this to the constructor
    */
   void setEntrypoint(TemplateFile entrypoint) {
-    assert(this._entrypoint == null);
+    if (_entrypoint != null) throw new StateError('entrypoint already set');
     this._entrypoint = entrypoint;
   }
 
@@ -66,7 +69,8 @@ abstract class Generator {
     Map vars = {'projectName': projectName};
 
     return Future.forEach(files, (TemplateFile file) {
-      return target.createFile(file.path, file.createContent(vars));
+      var resultFile = file.runSubstitution(vars);
+      return target.createFile(resultFile.path, resultFile.content);
     });
   }
 
@@ -102,17 +106,33 @@ class TemplateFile {
 
   TemplateFile(this.path, this.content, [this.isBinary = false]);
 
-  List<int> createContent(Map vars) {
+  FileContents runSubstitution(Map parameters) {
+    var newPath = substituteVars(path, parameters);
+    var newContents = _createContent(parameters);
+
+    return new FileContents(newPath, newContents);
+  }
+
+  List<int> _decodeBinary() {
+    // TODO:
+    //CryptoUtils.base64StringToBytes(
+    return null;
+  }
+
+  List<int> _createContent(Map vars) {
     if (isBinary) {
-      return decodeBinary();
+      return _decodeBinary();
     } else {
       return UTF8.encode(substituteVars(content, vars));
     }
   }
 
-  List<int> decodeBinary() {
-    // TODO:
-    //CryptoUtils.base64StringToBytes(
-    return null;
-  }
+
+}
+
+class FileContents {
+  final String path;
+  final List<int> content;
+
+  FileContents(this.path, this.content);
 }
