@@ -16,12 +16,12 @@ class PubLibGenerator extends DefaultGenerator {
       categories: const ['dart']) {
 
     // TODO: add test/ contents
+    addFile('CHANGELOG.md', _changelog);
     addFile('pubspec.yaml', _pubspec);
     addFile('README.md', _readme);
-    addFile('CHANGELOG.md', _changelog);
-    addFile('lib/src/{{projectName}}.dart', _src);
     addFile('example/{{projectName}}.dart', _example);
     setEntrypoint(addFile('lib/{{projectName}}.dart', _lib));
+    addFile('lib/src/{{projectName}}_impl.dart', _srcLib);
   }
 
   String get _pubspec => '''
@@ -75,20 +75,20 @@ Please file feature requests and bugs at the [issue tracker][tracker].
 
 library {{projectName}};
 
-import 'src/changeme.dart';
+import 'src/{{projectName}}_impl.dart';
 
 class Awesome {
 
 }
 ''';
 
-  String get _src => '''
+  String get _srcLib => '''
 // Copyright (c) ${new DateTime.now().year}, the {{projectName}} project
 // authors. Please see the AUTHORS file for details. All rights reserved. Use
 // of this source code is governed by a BSD-style license that can be found
 // in the LICENSE file.
 
-library {{projectName}}.changeme;
+library {{projectName}}_impl;
 
 class DefaultAwesome extends Awesome {
 
