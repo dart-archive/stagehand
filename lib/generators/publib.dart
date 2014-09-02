@@ -75,9 +75,7 @@ Please file feature requests and bugs at the [issue tracker][tracker].
 
 library {{projectName}};
 
-// imports go here
-
-part 'src/changeme.dart';
+import 'src/changeme.dart';
 
 class Awesome {
 
@@ -90,7 +88,7 @@ class Awesome {
 // of this source code is governed by a BSD-style license that can be found
 // in the LICENSE file.
 
-part of {{projectName}};
+library {{projectName}}.changeme;
 
 class DefaultAwesome extends Awesome {
 
