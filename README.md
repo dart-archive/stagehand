@@ -1,6 +1,6 @@
 # Stagehand - A Dart project generator
 
-[ ![Codeship Status for google/stagehand](https://www.codeship.io/projects/5ca68bb0-1b8f-0132-5d1d-76ae1d6cec56/status)](https://www.codeship.io/projects/34963)
+[![Build Status](https://travis-ci.org/google/stagehand.svg?branch=master)](https://travis-ci.org/google/stagehand)
 
 ## Helps you get setup!
 
