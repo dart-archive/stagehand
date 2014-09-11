@@ -1,5 +1,7 @@
 # Stagehand - A Dart project generator
 
+[ ![Codeship Status for google/stagehand](https://www.codeship.io/projects/5ca68bb0-1b8f-0132-5d1d-76ae1d6cec56/status)](https://www.codeship.io/projects/34963)
+
 ## Helps you get setup!
 
 Stagehand helps you get your Dart projects set up and ready for the big show.
