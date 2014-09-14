@@ -1,10 +1,10 @@
 import 'dart:html';
 
 main() {
-  initWsk();
+  initPhoneLayout();
 }
 
-initWsk() {
+initPhoneLayout() {
   var navdrawerContainer = querySelector('.navdrawer-container');
   var appbarElement = querySelector('.app-bar');
   var menuBtn = querySelector('.menu');
