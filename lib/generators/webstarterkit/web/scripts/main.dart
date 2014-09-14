@@ -1,5 +1,9 @@
 import 'dart:html';
 
+main() {
+  initWsk();
+}
+
 initWsk() {
   var navdrawerContainer = querySelector('.navdrawer-container');
   var appbarElement = querySelector('.app-bar');
@@ -26,8 +30,4 @@ initWsk() {
       closeMenu();
     }
   });
-}
-
-main() {
-  initWsk();
 }
