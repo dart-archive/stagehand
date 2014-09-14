@@ -21,7 +21,8 @@ class PubLibGenerator extends DefaultGenerator {
     addFile('README.md', _readme);
     addFile('example/{{projectName}}.dart', _example);
     setEntrypoint(addFile('lib/{{projectName}}.dart', _lib));
-    addFile('lib/src/{{projectName}}_impl.dart', _srcLib);
+    addFile('lib/src/{{projectName}}_base.dart', _baseLib);
+    addFile('test/all_test.dart', _unitTest);
   }
 
   String get _pubspec => '''
@@ -73,25 +74,29 @@ Please file feature requests and bugs at the [issue tracker][tracker].
 // of this source code is governed by a BSD-style license that can be found
 // in the LICENSE file.
 
+/// The {{projectName}} library.
+///
+/// This is an awesome library. More dartdocs go here.
 library {{projectName}};
 
-import 'src/{{projectName}}_impl.dart';
+// TODO: Export any libraries intended for clients of this package.
 
-class Awesome {
-
-}
+export 'src/{{projectName}}_base.dart';
 ''';
 
-  String get _srcLib => '''
+  String get _baseLib => '''
 // Copyright (c) ${new DateTime.now().year}, the {{projectName}} project
 // authors. Please see the AUTHORS file for details. All rights reserved. Use
 // of this source code is governed by a BSD-style license that can be found
 // in the LICENSE file.
 
-library {{projectName}}_impl;
+// TODO: Put public facing types in this file.
 
-class DefaultAwesome extends Awesome {
+library {{projectName}}.base;
 
+/// Checks if you are awesome. Spoiler: you are.
+class Awesome {
+  bool get isAwesome => true;
 }
 ''';
 
@@ -107,6 +112,33 @@ import 'package:{{projectName}}/{{projectName}}.dart';
 
 main() {
   var awesome = new Awesome();
+  print(awesome.isAwesome);
+}
+''';
+
+  String get _unitTest => '''
+// Copyright (c) ${new DateTime.now().year}, the {{projectName}} project
+// authors. Please see the AUTHORS file for details. All rights reserved. Use
+// of this source code is governed by a BSD-style license that can be found
+// in the LICENSE file.
+
+library {{projectName}}.test;
+
+import 'package:unittest/unittest.dart';
+import 'package:{{projectName}}/{{projectName}}.dart';
+
+main() {
+  group('A group of tests', () {
+    Awesome awesome;
+
+    setUp(() {
+      awesome = new Awesome();
+    });
+
+    test('First Test', () {
+      expect(awesome.isAwesome, isTrue);
+    });
+  });
 }
 ''';
 }
