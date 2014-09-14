@@ -1,4 +1,4 @@
-name: {{ projectName }}
+name: foo
 description: An awesome mobile web experience.
 
 dependencies:

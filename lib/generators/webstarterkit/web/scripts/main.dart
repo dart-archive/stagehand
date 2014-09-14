@@ -1,6 +1,6 @@
 import 'dart:html';
 
-main() {
+initWsk() {
   var navdrawerContainer = querySelector('.navdrawer-container');
   var appbarElement = querySelector('.app-bar');
   var menuBtn = querySelector('.menu');
@@ -26,4 +26,8 @@ main() {
       closeMenu();
     }
   });
+}
+
+main() {
+  initWsk();
 }
