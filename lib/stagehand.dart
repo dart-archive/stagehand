@@ -57,16 +57,27 @@ abstract class Generator {
   }
 
   /**
+   * Return the template file wih the given [path].
+   */
+  TemplateFile getFile(String path) {
+    return files.firstWhere((file) => file.path == path, orElse: () => null);
+  }
+
+  /**
    * TODO: doc
    * TODO: consider passing this to the constructor
    */
   void setEntrypoint(TemplateFile entrypoint) {
     if (_entrypoint != null) throw new StateError('entrypoint already set');
+    if (entrypoint == null) throw new StateError('entrypoint is null');
     this._entrypoint = entrypoint;
   }
 
   Future generate(String projectName, GeneratorTarget target) {
-    Map vars = {'projectName': projectName};
+    Map vars = {
+      'projectName': projectName,
+      'description': description,
+    };
 
     return Future.forEach(files, (TemplateFile file) {
       var resultFile = file.runSubstitution(vars);
@@ -99,9 +110,12 @@ abstract class GeneratorTarget {
 class TemplateFile {
   final String path;
   final String content;
-  final bool isBinary;
 
-  TemplateFile(this.path, this.content, [this.isBinary = false]);
+  List<int> _binaryData;
+
+  TemplateFile(this.path, this.content);
+
+  TemplateFile.fromBinary(this.path, this._binaryData) : this.content = null;
 
   FileContents runSubstitution(Map parameters) {
     var newPath = substituteVars(path, parameters);
@@ -110,21 +124,15 @@ class TemplateFile {
     return new FileContents(newPath, newContents);
   }
 
-  List<int> _decodeBinary() {
-    // TODO:
-    //CryptoUtils.base64StringToBytes(
-    return null;
-  }
+  bool get isBinary => _binaryData != null;
 
   List<int> _createContent(Map vars) {
     if (isBinary) {
-      return _decodeBinary();
+      return _binaryData;
     } else {
       return UTF8.encode(substituteVars(content, vars));
     }
   }
-
-
 }
 
 class FileContents {

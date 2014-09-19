@@ -1,0 +1,111 @@
+// Copyright (c) 2014, Google Inc. Please see the AUTHORS file for details.
+// All rights reserved. Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+import 'dart:io';
+
+import 'package:crypto/crypto.dart';
+import 'package:grinder/grinder.dart';
+import 'package:path/path.dart' as path;
+
+final Directory BUILD_DIR = new Directory('build');
+
+final RegExp _imageFileTypes = new RegExp(
+    r'\.(jpe?g|png|gif|ico)$', caseSensitive: false);
+
+void main([List<String> args]) {
+  defineTask('init', taskFunction: init);
+
+  defineTask('build-examples', taskFunction: buildExamples, depends: ['init']);
+
+  defineTask('clean', taskFunction: clean);
+
+  startGrinder(args);
+}
+
+/**
+ * Do any necessary build set up.
+ */
+void init(GrinderContext context) {
+  // Verify we're running in the project root.
+  if (!getDir('lib').existsSync() || !getFile('pubspec.yaml').existsSync()) {
+    context.fail('This script must be run from the project root.');
+  }
+}
+
+/**
+ * Concatenate the example files into data files that the generators can
+ * consume.
+ */
+void buildExamples(GrinderContext context) {
+  // TODO: Test the generation - generate the code on the bots and analyze it.
+
+  // Build the helloworld example.
+  _concatenateFiles(
+      context,
+      getDir('example/helloworld'),
+      getFile('lib/generators/helloworld_data.dart'));
+}
+
+/**
+ * Delete all generated artifacts.
+ */
+void clean(GrinderContext context) {
+  // Delete the build/ dir.
+  deleteEntity(BUILD_DIR);
+}
+
+void _concatenateFiles(GrinderContext context, Directory src, File target) {
+  context.log('Creating ${target.path}');
+
+  List<String> results = [];
+
+  _traverse(src, '', results);
+
+  String str = results.map((s) => '  ${_toStr(s)}').join(',\n');
+
+  target.writeAsStringSync("""
+// Copyright (c) 2014, Google Inc. Please see the AUTHORS file for details.
+// All rights reserved. Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+List<String> data = [
+${str}
+];
+""");
+}
+
+String _toStr(String s) {
+  if (s.contains('\n')) {
+    return '"""${s}"""';
+  } else {
+    return '"${s}"';
+  }
+}
+
+void _traverse(Directory dir, String root, List<String> results) {
+  for (FileSystemEntity entity in dir.listSync(recursive: false, followLinks: false)) {
+    String name = path.basename(entity.path);
+
+    if (entity is Link) {
+      continue;
+    } else if (entity is Directory) {
+      _traverse(entity, '${root}${name}/', results);
+    } else {
+      File file = entity;
+      String fileType = _isImageFilename(name) ? 'binary' : 'text';
+      String data = CryptoUtils.bytesToBase64(
+          file.readAsBytesSync(), addLineSeparator: true);
+
+      results.add('${root}${name}');
+      results.add(fileType);
+      results.add(data);
+    }
+  }
+}
+
+/**
+ * Returns true if the given [filename] matches common image file name patterns.
+ */
+bool _isImageFilename(String filename) => _imageFileTypes.hasMatch(filename);
+

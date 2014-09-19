@@ -7,6 +7,10 @@
  */
 library stagehand.utils;
 
+import 'dart:convert' show UTF8;
+
+import 'package:crypto/crypto.dart';
+
 import '../stagehand.dart';
 
 const int _RUNE_SPACE = 32;
@@ -51,6 +55,27 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ''';
+
+List<TemplateFile> decodeConcanenatedData(List<String> data) {
+  List<TemplateFile> results = [];
+
+  for (int i = 0; i < data.length; i += 3) {
+    String path = data[i];
+    String type = data[i + 1];
+    String raw = data[i + 2];
+
+    List<int> decoded = CryptoUtils.base64StringToBytes(raw);
+
+    if (type == 'binary') {
+      results.add(new TemplateFile.fromBinary(path, decoded));
+    } else {
+      String source = UTF8.decode(decoded);
+      results.add(new TemplateFile(path, source));
+    }
+  }
+
+  return results;
+}
 
 /**
  * Convert a directory name into a reasonably legal pub package name.
