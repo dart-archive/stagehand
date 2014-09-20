@@ -7,6 +7,7 @@ import 'dart:io';
 import 'package:crypto/crypto.dart';
 import 'package:grinder/grinder.dart';
 import 'package:path/path.dart' as path;
+import 'package:ghpages_generator/ghpages_generator.dart' as gh;
 
 final Directory BUILD_DIR = new Directory('build');
 
@@ -16,6 +17,7 @@ final RegExp _binaryFileTypes = new RegExp(
 void main([List<String> args]) {
   defineTask('init', taskFunction: init);
   defineTask('build-examples', taskFunction: buildExamples, depends: ['init']);
+  defineTask('update-gh-pages', taskFunction: updateGhPages, depends: ['init']);
   defineTask('clean', taskFunction: clean);
 
   startGrinder(args);
@@ -49,6 +51,16 @@ void buildExamples(GrinderContext context) {
       context,
       getDir('templates/webstarterkit'),
       getFile('lib/generators/webstarterkit_data.dart'));
+}
+
+/**
+ * Generate a new version
+ */
+void updateGhPages(GrinderContext context) {
+  context.log('Updating gh-pages branch of the project');
+  new gh.Generator(rootDir: getDir('.').absolute.path)
+      ..templateDir = getDir('gh-pages-template').absolute.path
+      ..generate();
 }
 
 /**
