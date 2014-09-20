@@ -13,6 +13,8 @@ void defineTests() {
   group('generators', () {
     test('helloworld', () => validate(getGenerator('helloworld')));
     test('webapp', () => validate(getGenerator('webapp')));
+    test('webstarterkit', () => validate(getGenerator('webstarterkit')));
+    test('publib', () => validate(getGenerator('publib')));
   });
 }
 
