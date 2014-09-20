@@ -18,9 +18,11 @@ class WebAppGenerator extends DefaultGenerator {
 
     addFile('pubspec.yaml', _pubspec);
     addFile('readme.md', _readme);
-    setEntrypoint(addFile('web/index.html', _index));
+    addFile('web/index.html', _index);
     addFile('web/main.dart', _main);
     addFile('web/styles.css', _styles);
+
+    setEntrypoint(getFile('web/index.html'));
   }
 
   String get _pubspec => '''
