@@ -8,10 +8,11 @@ List<String> data = [
   "bWFpbigpIHsKICBwcmludCgnSGVsbG8gd29ybGQhJyk7Cn0K",
   "pubspec.yaml",
   "text",
-  """bmFtZToge3twcm9qZWN0TmFtZX19CnZlcnNpb246IDAuMC4xCmRlc2NyaXB0aW9uOiB7e2Rlc2Ny
-aXB0aW9ufX0KI2F1dGhvcjogRmlyc3QgTGFzdCA8ZW1haWxAZXhhbXBsZS5jb20+CiNob21lcGFn
-ZTogaHR0cHM6Ly93d3cuZXhhbXBsZS5jb20KZW52aXJvbm1lbnQ6CiAgc2RrOiAnPj0xLjAuMCA8
-Mi4wLjAnCiNkZXBlbmRlbmNpZXM6CiMgIGZvb19iYXI6IGFueQo=""",
+  """bmFtZToge3twcm9qZWN0TmFtZX19CnZlcnNpb246IDAuMC4xCmRlc2NyaXB0aW9uOiBBIHNpbXBs
+ZSBoZWxsbyB3b3JsZCBjb21tYW5kLWxpbmUgYXBwbGljYXRpb24uCiNhdXRob3I6IEZpcnN0IExh
+c3QgPGVtYWlsQGV4YW1wbGUuY29tPgojaG9tZXBhZ2U6IGh0dHBzOi8vd3d3LmV4YW1wbGUuY29t
+CmVudmlyb25tZW50OgogIHNkazogJz49MS4wLjAgPDIuMC4wJwojZGVwZW5kZW5jaWVzOgojICBm
+b29fYmFyOiBhbnkK""",
   "readme.md",
   "text",
   """IyB7e3Byb2plY3ROYW1lfX0KCkEgc2ltcGxlIGhlbGxvIHdvcmxkIGNvbW1hbmQtbGluZSBhcHBs

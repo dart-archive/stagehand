@@ -1,10 +1,10 @@
-name: foo
+name: {{projectName}}
 description: An awesome mobile web experience.
 
 dependencies:
-  script_inliner: ">=0.0.2 <0.1.0"
   browser: any
   sass: ">=0.3.0 <0.4.0"
+  script_inliner: ">=0.0.2 <0.1.0"
 
 transformers:
 - sass

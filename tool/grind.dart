@@ -10,14 +10,12 @@ import 'package:path/path.dart' as path;
 
 final Directory BUILD_DIR = new Directory('build');
 
-final RegExp _imageFileTypes = new RegExp(
-    r'\.(jpe?g|png|gif|ico)$', caseSensitive: false);
+final RegExp _binaryFileTypes = new RegExp(
+    r'\.(jpe?g|png|gif|ico|svg|ttf|eot|woff|woff2)$', caseSensitive: false);
 
 void main([List<String> args]) {
   defineTask('init', taskFunction: init);
-
   defineTask('build-examples', taskFunction: buildExamples, depends: ['init']);
-
   defineTask('clean', taskFunction: clean);
 
   startGrinder(args);
@@ -45,6 +43,12 @@ void buildExamples(GrinderContext context) {
       context,
       getDir('templates/helloworld'),
       getFile('lib/generators/helloworld_data.dart'));
+
+  // Build WSK.
+  _concatenateFiles(
+      context,
+      getDir('templates/webstarterkit'),
+      getFile('lib/generators/webstarterkit_data.dart'));
 }
 
 /**
@@ -93,7 +97,7 @@ void _traverse(Directory dir, String root, List<String> results) {
       _traverse(entity, '${root}${name}/', results);
     } else {
       File file = entity;
-      String fileType = _isImageFilename(name) ? 'binary' : 'text';
+      String fileType = _isBinaryFile(name) ? 'binary' : 'text';
       String data = CryptoUtils.bytesToBase64(
           file.readAsBytesSync(), addLineSeparator: true);
 
@@ -107,5 +111,5 @@ void _traverse(Directory dir, String root, List<String> results) {
 /**
  * Returns true if the given [filename] matches common image file name patterns.
  */
-bool _isImageFilename(String filename) => _imageFileTypes.hasMatch(filename);
+bool _isBinaryFile(String filename) => _binaryFileTypes.hasMatch(filename);
 
