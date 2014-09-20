@@ -43,7 +43,7 @@ void buildExamples(GrinderContext context) {
   // Build the helloworld example.
   _concatenateFiles(
       context,
-      getDir('example/helloworld'),
+      getDir('templates/helloworld'),
       getFile('lib/generators/helloworld_data.dart'));
 }
 

@@ -20,10 +20,11 @@ const int _RUNE_SPACE = 32;
  */
 const String gitIgnoreContents = '''
 .DS_Store
+.idea
+.pub/
 build/
 packages
 pubspec.lock
-.idea
 ''';
 
 /**

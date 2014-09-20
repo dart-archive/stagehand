@@ -1,6 +1,6 @@
 name: {{projectName}}
 version: 0.0.1
-description: {{description}}
+description: A simple hello world command-line application.
 #author: First Last <email@example.com>
 #homepage: https://www.example.com
 environment:
