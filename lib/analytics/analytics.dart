@@ -10,6 +10,8 @@ library stagehand.analytics;
 import 'dart:async';
 import 'dart:math' as math;
 
+import 'package:uuid/uuid.dart';
+
 // TODO: Under construction!
 
 // TODO: store a generated anonymous client id
@@ -28,35 +30,44 @@ class Analytics {
   final String applicationVersion;
   final String applicationId;
 
-  /// Anonymous Client ID. The value of this field should be a random UUID
-  /// (version 4).
-  String _clientId;
+  String applicationName;
+
   final _ThrottlingBucket _bucket = new _ThrottlingBucket(20);
 
   Analytics(this.trackingId, this.propertiesHandler, this.postHandler,
       {this.applicationVersion, this.applicationId}) {
     assert(trackingId != null);
+
+    _initClientId();
   }
 
-//  Future sendPageView() {
-//
-//  }
+  /**
+   * Anonymous Client ID. The value of this field should be a random UUID
+   * (version 4).
+   */
+  String get _clientId => propertiesHandler.getProperty('clientId');
 
-  Future sendScreenView() {
-    // TODO:
-    Map args = {};
+  Future sendScreenView(String viewName) {
+    Map args = {'cd': viewName};
     return _sendPayload('screenview', args);
   }
 
-  Future sendEvent() {
-    // TODO:
-    return new Future.value();
+  Future sendEvent(String category, String action, [String label]) {
+    Map args = {'ec': category, 'ea': action};
+    if (label != null) args['el'] = label;
+    return _sendPayload('event', args);
   }
 
   Future sendException(String description, [bool fatal]) {
     Map args = {'exd': description};
     if (fatal != null && fatal) args['exf'] = '1';
     return _sendPayload('exception', args);
+  }
+
+  void _initClientId() {
+    if (_clientId == null) {
+      propertiesHandler.setProperty('clientId', new Uuid().v4());
+    }
   }
 
   // Valid values for [hitType] are: 'pageview', 'screenview', 'event',
@@ -72,6 +83,7 @@ class Analytics {
 
       if (applicationId != null) args['aid'] = applicationId;
       if (applicationVersion != null) args['av'] = applicationVersion;
+      if (applicationName != null) args['an'] = applicationName;
 
       return postHandler.sendPost(_GA_URL, args);
     } else {
@@ -96,6 +108,38 @@ abstract class PostHandler {
    * TODO:
    */
   Future sendPost(String url, Map<String, String> parameters);
+
+  String postEncode(Map<String, String> map) {
+    // &foo=bar
+    return map.keys
+        .map((key) => "${key}=${Uri.encodeComponent(map[key])}")
+        .join('&');
+  }
+}
+
+class MockPropertiesHandler implements PropertiesHandler {
+  Map<String, dynamic> _map = {};
+
+  dynamic getProperty(String key) => _map[key];
+
+  void setProperty(String key, dynamic value) {
+    _map[key] = value;
+  }
+}
+
+class MockPostHandler extends PostHandler {
+  final bool _doPrint;
+
+  MockPostHandler([this._doPrint = false]);
+
+  Future sendPost(String url, Map<String, String> parameters) {
+    if (_doPrint) {
+      String data = postEncode(parameters);
+      print('[${url}: ${data}]');
+    }
+
+    return new Future.value();
+  }
 }
 
 /**

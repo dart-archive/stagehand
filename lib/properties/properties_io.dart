@@ -16,23 +16,21 @@ export 'properties.dart';
 /**
  * TODO: doc
  */
-class PropertiesIo extends Properties {
-  static Future<PropertiesIo> create(String name) {
+class PropertiesIO extends Properties {
+  static PropertiesIO create(String name) {
     String filename = '.${name.replaceAll(' ', '_')}';
     File file = new File(path.join(_userHomeDir(), filename));
 
-    return file.create().then((_) {
-      return file.readAsString();
-    }).then((String contents) {
-      if (contents.isEmpty) contents = '{}';
-      Map map = JSON.decode(contents);
-      return new PropertiesIo._(name, file, map);
-    });
+    file.createSync();
+    String contents = file.readAsStringSync();
+    if (contents.isEmpty) contents = '{}';
+    Map map = JSON.decode(contents);
+    return new PropertiesIO._(name, file, map);
   }
 
   final File file;
 
-  PropertiesIo._(String name, this.file, Map other) : super(name) {
+  PropertiesIO._(String name, this.file, Map other) : super(name) {
     // Copy the map.
     other.forEach((key, value) => this[key] = value);
     dirty = false;
