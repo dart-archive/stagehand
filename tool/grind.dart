@@ -54,12 +54,12 @@ void buildExamples(GrinderContext context) {
 }
 
 /**
- * Generate a new version
+ * Generate a new version of gh-pages.
  */
 void updateGhPages(GrinderContext context) {
   context.log('Updating gh-pages branch of the project');
   new gh.Generator(rootDir: getDir('.').absolute.path)
-      ..templateDir = getDir('gh-pages-template').absolute.path
+      ..templateDir = getDir('gh-pages-content').absolute.path
       ..generate();
 }
 
