@@ -33,16 +33,29 @@ class AnalyticsIO extends AnalyticsImpl {
 }
 
 class _PostHandler extends PostHandler {
+  String _userAgent;
+
+  _PostHandler() {
+    _userAgent = _createUserAgent();
+  }
+
   Future sendPost(String url, Map<String, String> parameters) {
     String data = postEncode(parameters);
 
     HttpClient client = new HttpClient();
+    client.userAgent = _userAgent;
     return client.postUrl(Uri.parse(url)).then((HttpClientRequest req) {
       req.write(data);
       return req.close();
     }).then((HttpClientResponse response) {
       response.drain();
     });
+  }
+
+  String _createUserAgent() {
+    // Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en)
+    String locale = Platform.environment['LANG'];
+    return "Dart/${Platform.version} (${Platform.operatingSystem}; ${locale})";
   }
 }
 

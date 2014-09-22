@@ -18,8 +18,8 @@ import 'package:stagehand/src/common.dart';
 const String APP_NAME = 'stagehand';
 const String APP_VERSION = '0.0.4';
 
-// TODO: This tracking ID is fake currently.
-const String _GA_TRACKING_ID = 'UA-55029513-1';
+// The Google Analytics tracking ID for stagehand.
+const String _GA_TRACKING_ID = 'UA-55033590-1';
 
 void main(List<String> args) {
   CliApp app = new CliApp(generators, new CliLogger());
