@@ -8,17 +8,31 @@
 library stagehand.analytics_io;
 
 import 'dart:async';
+import 'dart:convert' show JSON;
 import 'dart:io';
 
-import 'analytics.dart';
-import '../properties/properties_io.dart';
+import 'package:path/path.dart' as path;
+
+import 'src/analytics_impl.dart';
 
 export 'analytics.dart';
+
+// TODO: send OS
 
 /**
  * TODO:
  */
-class PostHandlerIO extends PostHandler {
+class AnalyticsIO extends AnalyticsImpl {
+  AnalyticsIO(String trackingId, String applicationName, String applicationVersion) :
+    super(
+      trackingId,
+      new _PersistentProperties(applicationName),
+      new _PostHandler(),
+      applicationName: applicationName,
+      applicationVersion: applicationVersion);
+}
+
+class _PostHandler extends PostHandler {
   Future sendPost(String url, Map<String, String> parameters) {
     String data = postEncode(parameters);
 
@@ -32,17 +46,29 @@ class PostHandlerIO extends PostHandler {
   }
 }
 
-class PropertiesHandlerIO implements PropertiesHandler {
-  Properties props;
+class _PersistentProperties extends PersistentProperties {
+  File _file;
+  Map _map;
 
-  PropertiesHandlerIO(String name) {
-    props = PropertiesIO.create('.${name}');
+  _PersistentProperties(String name) : super(name) {
+    String fileName = '.${name.replaceAll(' ', '_')}';
+    _file = new File(path.join(_userHomeDir(), fileName));
+    _file.createSync();
+    String contents = _file.readAsStringSync();
+    if (contents.isEmpty) contents = '{}';
+    _map = JSON.decode(contents);
   }
 
-  dynamic getProperty(String key) => props.getValue(key);
+  dynamic operator[](String key) => _map[key];
 
-  void setProperty(String key, dynamic value) {
-    props.setValue(key, value);
-    props.flush();
+  void operator[]=(String key, dynamic value) {
+    _map[key] = value;
+    _file.writeAsStringSync(JSON.encode(_map) + '\n');
   }
+}
+
+String _userHomeDir() {
+  String envKey = Platform.operatingSystem == 'windows' ? 'APPDATA' : 'HOME';
+  String value = Platform.environment[envKey];
+  return value == null ? '.' : value;
 }

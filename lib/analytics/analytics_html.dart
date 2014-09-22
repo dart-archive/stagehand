@@ -8,18 +8,43 @@
 library stagehand.analytics_html;
 
 import 'dart:async';
+import 'dart:convert' show JSON;
+import 'dart:html';
 
-import 'analytics.dart';
+import 'src/analytics_impl.dart';
 
 export 'analytics.dart';
 
-/**
- * TODO:
- */
-class PostHandlerHtml extends PostHandler {
-  Future sendPost(String url, Map<String, String> parameters) {
-    // TODO:
+class AnalyticsHtml extends AnalyticsImpl {
+  AnalyticsHtml(String trackingId, String applicationName, String applicationVersion) :
+    super(
+      trackingId,
+      new _PersistentProperties(applicationName),
+      new _PostHandler(),
+      applicationName: applicationName,
+      applicationVersion: applicationVersion);
+}
 
-    return new Future.value();
+class _PostHandler extends PostHandler {
+  Future sendPost(String url, Map<String, String> parameters) {
+    String data = postEncode(parameters);
+    return HttpRequest.request(url, method: "POST", sendData: data);
+  }
+}
+
+class _PersistentProperties extends PersistentProperties {
+  Map _map;
+
+  _PersistentProperties(String name) : super(name) {
+    String str = window.localStorage[name];
+    if (str == null || str.isEmpty) str = '{}';
+    _map = JSON.decode(str);
+  }
+
+  dynamic operator[](String key) => _map[key];
+
+  void operator[]=(String key, dynamic value) {
+    _map[key] = value;
+    window.localStorage[name] = JSON.encode(_map);
   }
 }

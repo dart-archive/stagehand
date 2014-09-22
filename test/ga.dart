@@ -5,11 +5,9 @@
 import 'package:stagehand/analytics/analytics_io.dart';
 
 void main() {
-  Analytics ga = new Analytics('UA-55029513-1',
-      new PropertiesHandlerIO('ga_test'),
-      new PostHandlerIO());
-      //new MockPostHandler(true));
+  Analytics ga = new AnalyticsIO('UA-55029513-1', 'ga_test', '1.0');
   ga.sendScreenView('home');
   ga.sendScreenView('files');
   ga.sendException('foo exception, line 123:56');
+  ga.sendEvent('create', 'helloworld', 'Hello World!');
 }
