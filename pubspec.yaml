@@ -22,3 +22,4 @@ dependencies:
 dev_dependencies:
   grinder: ">=0.5.0 <0.6.0"
   unittest: any
+  ghpages_generator: any
