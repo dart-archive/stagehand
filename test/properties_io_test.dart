@@ -12,18 +12,18 @@ void main() => defineTests();
 void defineTests() {
   group('properties_io', () {
     test('create', () {
-      return PropertiesIo.create('test_foo');
+      return PropertiesIO.create('test_foo');
     });
 
     test('set get', () {
-      return PropertiesIo.create('test_foo').then((Properties props) {
+      return PropertiesIO.create('test_foo').then((Properties props) {
         props['foo'] = 'bar';
         expect(props['foo'], 'bar');
       });
     });
 
     test('dirty', () {
-      return PropertiesIo.create('test_foo').then((Properties props) {
+      return PropertiesIO.create('test_foo').then((Properties props) {
         expect(props.dirty, false);
         props['foo'] = 'bar';
         expect(props.dirty, true);
