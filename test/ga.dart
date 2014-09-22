@@ -2,6 +2,11 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+/**
+ * A simple command-line app to hand-test the analytics library.
+ */
+library stagehand_ga;
+
 import 'package:stagehand/analytics/analytics_io.dart';
 
 void main() {

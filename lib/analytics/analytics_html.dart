@@ -15,6 +15,9 @@ import 'src/analytics_impl.dart';
 
 export 'analytics.dart';
 
+/**
+ * TODO: doc
+ */
 class AnalyticsHtml extends AnalyticsImpl {
   AnalyticsHtml(String trackingId, String applicationName, String applicationVersion) :
     super(

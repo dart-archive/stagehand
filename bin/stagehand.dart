@@ -12,35 +12,64 @@ import 'dart:math';
 import 'package:args/args.dart';
 import 'package:path/path.dart' as path;
 import 'package:stagehand/stagehand.dart';
+import 'package:stagehand/analytics/analytics_io.dart';
 import 'package:stagehand/src/common.dart';
 
 const String APP_NAME = 'stagehand';
+const String APP_VERSION = '0.0.4';
+
+// TODO: This tracking ID is fake currently.
+const String _GA_TRACKING_ID = 'UA-55029513-1';
 
 void main(List<String> args) {
   CliApp app = new CliApp(generators, new CliLogger());
-  app.process(args).catchError((e) {
-    io.exit(1);
-  });
+
+  try {
+    app.process(args).catchError((e, st) {
+      if (e is _ArgError) {
+        // These errors are expected.
+        io.exit(1);
+      } else {
+        print('Unexpected error: ${e}\n${st}');
+        app.analytics.sendException('${st}', true).then((_) {
+          io.exit(1);
+        });
+      }
+    });
+  } catch (e, st) {
+    print('Unexpected error: ${e}\n${st}');
+    app.analytics.sendException('${st}', true);
+  }
 }
 
 class CliApp {
   final List<Generator> generators;
   final CliLogger logger;
+
   GeneratorTarget target;
+  Analytics analytics;
 
   CliApp(this.generators, this.logger, [this.target]) {
     assert(generators != null);
     assert(logger != null);
 
+    analytics = new AnalyticsIO(_GA_TRACKING_ID, APP_NAME, APP_VERSION);
+
     generators.sort(Generator.compareGenerators);
   }
 
   Future process(List<String> args) {
+    // TODO: Analytics is currently implemented as opt-out. If we want to
+    // implement opt-in that would be done here. Something like check if
+    // enablementExplicitlyChanged == false, call disabled = true, then
+    // prompt the user to opt-in.
+
     ArgParser argParser = _createArgParser();
 
     var options = argParser.parse(args);
 
     if (options['help'] || args.isEmpty) {
+      analytics.sendScreenView(options['help'] ? 'help' : 'main');
       _usage(argParser);
       return new Future.value();
     }
@@ -50,6 +79,7 @@ class CliApp {
     // output of `--help`. It's an undocumented command line flag, and may go
     // away or change.
     if (options['machine']) {
+      analytics.sendScreenView('machine');
       Iterable itor = generators.map((generator) =>
           {'name': generator.id, 'description': generator.description});
       logger.stdout(JSON.encode(itor.toList()));
@@ -59,13 +89,13 @@ class CliApp {
     if (options.rest.isEmpty) {
       logger.stderr("No generator specified.\n");
       _usage(argParser);
-      return new Future.error('no generator specified');
+      return new Future.error(new _ArgError('no generator specified'));
     }
 
     if (options.rest.length >= 2) {
       logger.stderr("Error: too many arguments given.\n");
       _usage(argParser);
-      return new Future.error('invalid generator');
+      return new Future.error(new _ArgError('invalid generator'));
     }
 
     String generatorName = options.rest.first;
@@ -74,7 +104,7 @@ class CliApp {
     if (generator == null) {
       logger.stderr("'${generatorName}' is not a valid generator.\n");
       _usage(argParser);
-      return new Future.error('invalid generator');
+      return new Future.error(new _ArgError('invalid generator'));
     }
 
     String outputDir = options['outdir'];
@@ -82,21 +112,21 @@ class CliApp {
     if (outputDir == null) {
       logger.stderr("No output directory specified.\n");
       _usage(argParser);
-      return new Future.error('No output directory specified');
+      return new Future.error(new _ArgError('No output directory specified'));
     }
 
     io.Directory dir = new io.Directory(outputDir);
 
     if (dir.existsSync()) {
       logger.stderr("Error: '${dir.path}' already exists.\n");
-      return new Future.error('target path already exists');
+      return new Future.error(new _ArgError('target path already exists'));
     }
 
     // Validate and normalize the project name.
     String projectName = path.basename(dir.path);
     if (_validateName(projectName) != null) {
       logger.stderr(_validateName(projectName));
-      return new Future.error(_validateName(projectName));
+      return new Future.error(new _ArgError(_validateName(projectName)));
     }
     projectName = normalizeProjectName(projectName);
 
@@ -105,6 +135,9 @@ class CliApp {
     }
 
     _out("Creating ${generatorName} application '${projectName}':");
+
+    analytics.sendScreenView('create');
+    analytics.sendEvent('create', generatorName, generator.description);
 
     return generator.generate(projectName, target).then((_) {
       _out("${generator.numFiles()} files written.");
@@ -192,4 +225,10 @@ class DirectoryGeneratorTarget extends GeneratorTarget {
 String _pad(String str, int len) {
   while (str.length < len) str += ' ';
   return str;
+}
+
+class _ArgError implements Exception {
+  final String message;
+  _ArgError(this.message);
+  String toString() => message;
 }
