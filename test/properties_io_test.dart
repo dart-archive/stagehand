@@ -12,22 +12,20 @@ void main() => defineTests();
 void defineTests() {
   group('properties_io', () {
     test('create', () {
-      return PropertiesIO.create('test_foo');
+      PropertiesIO.create('test_foo');
     });
 
     test('set get', () {
-      return PropertiesIO.create('test_foo').then((Properties props) {
-        props['foo'] = 'bar';
-        expect(props['foo'], 'bar');
-      });
+      Properties props = PropertiesIO.create('test_foo');
+      props['foo'] = 'bar';
+      expect(props['foo'], 'bar');
     });
 
     test('dirty', () {
-      return PropertiesIO.create('test_foo').then((Properties props) {
-        expect(props.dirty, false);
-        props['foo'] = 'bar';
-        expect(props.dirty, true);
-      });
+      Properties props = PropertiesIO.create('test_foo');
+      expect(props.dirty, false);
+      props['foo'] = 'bar';
+      expect(props.dirty, true);
     });
   });
 }
