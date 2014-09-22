@@ -20,6 +20,6 @@ dependencies:
   uuid: ">=0.4.0 <0.5.0"
 
 dev_dependencies:
+  ghpages_generator: any
   grinder: ">=0.5.0 <0.6.0"
   unittest: any
-  ghpages_generator: any

@@ -5,9 +5,9 @@
 import 'dart:io';
 
 import 'package:crypto/crypto.dart';
+import 'package:ghpages_generator/ghpages_generator.dart' as ghpages;
 import 'package:grinder/grinder.dart';
 import 'package:path/path.dart' as path;
-import 'package:ghpages_generator/ghpages_generator.dart' as gh;
 
 final Directory BUILD_DIR = new Directory('build');
 
@@ -58,7 +58,7 @@ void buildExamples(GrinderContext context) {
  */
 void updateGhPages(GrinderContext context) {
   context.log('Updating gh-pages branch of the project');
-  new gh.Generator(rootDir: getDir('.').absolute.path)
+  new ghpages.Generator(rootDir: getDir('.').absolute.path)
       ..templateDir = getDir('gh-pages-content').absolute.path
       ..generate();
 }
