@@ -17,7 +17,7 @@ import 'src/analytics_impl.dart';
 
 export 'analytics.dart';
 
-// TODO: send OS
+// TODO: send the OS? Or is it parsed from the dart:io user agent?
 
 /**
  * TODO:

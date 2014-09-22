@@ -11,6 +11,8 @@
  */
 library stagehand.analytics;
 
+import 'dart:async';
+
 /**
  * TODO:
  */
@@ -27,9 +29,13 @@ abstract class Analytics {
    */
   bool get enablementExplicitlyChanged;
 
-  void sendScreenView(String viewName);
-  void sendEvent(String category, String action, [String label]);
-  void sendException(String description, [bool fatal]);
+  Future sendScreenView(String viewName);
+  Future sendEvent(String category, String action, [String label]);
+
+  /**
+   * TODO: document the GA restrictions here
+   */
+  Future sendException(String description, [bool fatal]);
 }
 
 class AnalyticsMock extends Analytics {
@@ -40,31 +46,23 @@ class AnalyticsMock extends Analytics {
 
   AnalyticsMock([this.logCalls = false]);
 
-  void sendScreenView(String viewName) {
-    if (logCalls) _log('screenView', viewName);
+  Future sendScreenView(String viewName) {
+    return _log('screenView', {'viewName': viewName});
   }
 
-  void sendEvent(String category, String action, [String label]) {
+  Future sendEvent(String category, String action, [String label]) {
+    return _log('event', {'category': category, 'action': action, 'label': label});
+  }
+
+  Future sendException(String description, [bool fatal]) {
+    return _log('exception', {'description': description, 'fatal': fatal});
+  }
+
+  Future _log(String hitType, Map m) {
     if (logCalls) {
-      if (label == null) {
-        _log('event', '${action}');
-      } else {
-        _log('event', '${action},${label}');
-      }
+      print('analytics: ${hitType} ${m}');
     }
-  }
 
-  void sendException(String description, [bool fatal]) {
-    if (logCalls) {
-      if (fatal == null) {
-        _log('event', '${description}');
-      } else {
-        _log('event', '${description},fatal=${fatal}');
-      }
-    }
-  }
-
-  void _log(String hitType, String message) {
-    print('analytics: ${hitType} ${message}');
+    return new Future.value();
   }
 }

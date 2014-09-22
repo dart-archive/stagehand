@@ -13,6 +13,8 @@ import '../analytics.dart';
 
 // https://developers.google.com/analytics/devguides/collection/protocol/policy
 
+final int _MAX_EXCEPTION_LENGTH = 100;
+
 String postEncode(Map<String, String> map) {
   // &foo=bar
   return map.keys
@@ -90,18 +92,24 @@ abstract class AnalyticsImpl implements Analytics {
     properties['disabled'] = value;
   }
 
-  void sendScreenView(String viewName) {
+  bool get enablementExplicitlyChanged => properties['disabled'] != null;
+
+  Future sendScreenView(String viewName) {
     Map args = {'cd': viewName};
     return _sendPayload('screenview', args);
   }
 
-  void sendEvent(String category, String action, [String label]) {
+  Future sendEvent(String category, String action, [String label]) {
     Map args = {'ec': category, 'ea': action};
     if (label != null) args['el'] = label;
     return _sendPayload('event', args);
   }
 
-  void sendException(String description, [bool fatal]) {
+  Future sendException(String description, [bool fatal]) {
+    if (description != null && description.length > _MAX_EXCEPTION_LENGTH) {
+      description = description.substring(1, _MAX_EXCEPTION_LENGTH);
+    }
+
     Map args = {'exd': description};
     if (fatal != null && fatal) args['exf'] = '1';
     return _sendPayload('exception', args);
@@ -115,7 +123,7 @@ abstract class AnalyticsImpl implements Analytics {
 
   // Valid values for [hitType] are: 'pageview', 'screenview', 'event',
   // 'transaction', 'item', 'social', 'exception', and 'timing'.
-  void _sendPayload(String hitType, Map args) {
+  Future _sendPayload(String hitType, Map args) {
     if (_bucket.removeDrop()) {
       args['v'] = '1'; // version
       args['tid'] = trackingId;
@@ -125,7 +133,9 @@ abstract class AnalyticsImpl implements Analytics {
       if (applicationName != null) args['an'] = applicationName;
       if (applicationVersion != null) args['av'] = applicationVersion;
 
-      postHandler.sendPost(_GA_URL, args);
+      return postHandler.sendPost(_GA_URL, args);
+    } else {
+      return new Future.value();
     }
   }
 }
