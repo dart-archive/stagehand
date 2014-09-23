@@ -109,12 +109,12 @@ abstract class GeneratorTarget {
  */
 class TemplateFile {
   final String path;
-  final String content;
+  final String _content;
   final List<int> _binaryData;
 
-  TemplateFile(this.path, this.content) : this._binaryData = null;
+  TemplateFile(this.path, this._content) : this._binaryData = null;
 
-  TemplateFile.fromBinary(this.path, this._binaryData) : this.content = null;
+  TemplateFile.fromBinary(this.path, this._binaryData) : this._content = null;
 
   FileContents runSubstitution(Map parameters) {
     var newPath = substituteVars(path, parameters);
@@ -129,7 +129,7 @@ class TemplateFile {
     if (isBinary) {
       return _binaryData;
     } else {
-      return UTF8.encode(substituteVars(content, vars));
+      return UTF8.encode(substituteVars(_content, vars));
     }
   }
 }
