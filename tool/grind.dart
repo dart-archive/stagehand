@@ -7,6 +7,7 @@ import 'dart:io';
 import 'package:crypto/crypto.dart';
 import 'package:ghpages_generator/ghpages_generator.dart' as ghpages;
 import 'package:grinder/grinder.dart';
+import 'package:grinder/grinder_utils.dart' show PubTools;
 import 'package:path/path.dart' as path;
 
 final Directory BUILD_DIR = new Directory('build');
@@ -16,8 +17,9 @@ final RegExp _binaryFileTypes = new RegExp(
 
 void main([List<String> args]) {
   defineTask('init', taskFunction: init);
-  defineTask('build-examples', taskFunction: buildExamples, depends: ['init']);
-  defineTask('update-gh-pages', taskFunction: updateGhPages, depends: ['init']);
+  defineTask('build-templates', taskFunction: buildTemplates, depends: ['init']);
+  defineTask('build-site', taskFunction: buildSite, depends: ['init']);
+  defineTask('update-gh-pages', taskFunction: updateGhPages, depends: ['build-site']);
   defineTask('clean', taskFunction: clean);
 
   startGrinder(args);
@@ -34,10 +36,10 @@ void init(GrinderContext context) {
 }
 
 /**
- * Concatenate the example files into data files that the generators can
+ * Concatenate the template files into data files that the generators can
  * consume.
  */
-void buildExamples(GrinderContext context) {
+void buildTemplates(GrinderContext context) {
   // TODO: Test the generation - generate the code on the bots and analyze it.
 
   // Build the helloworld example.
@@ -59,8 +61,17 @@ void buildExamples(GrinderContext context) {
 void updateGhPages(GrinderContext context) {
   context.log('Updating gh-pages branch of the project');
   new ghpages.Generator(rootDir: getDir('.').absolute.path)
-      ..templateDir = getDir('gh-pages-content').absolute.path
+      ..templateDir = getDir('gh-pages-content/build').absolute.path
       ..generate();
+}
+
+/**
+ * Generate the site: stagehand.pub
+ */
+void buildSite(GrinderContext context) {
+  context.log('Building the site');
+  new PubTools()
+    ..build(context, mode: 'release', directories: ['site']);
 }
 
 /**
@@ -69,6 +80,7 @@ void updateGhPages(GrinderContext context) {
 void clean(GrinderContext context) {
   // Delete the build/ dir.
   deleteEntity(BUILD_DIR);
+  deleteEntity('site/build');
 }
 
 void _concatenateFiles(GrinderContext context, Directory src, File target) {
