@@ -4,7 +4,6 @@
 
 library stagehand.analytics_impl_test;
 
-import 'package:stagehand/analytics/src/analytics_impl.dart';
 import 'package:unittest/unittest.dart';
 
 void main() => defineTests();
