@@ -131,7 +131,7 @@ class CliApp {
     projectName = normalizeProjectName(projectName);
 
     if (target == null) {
-      target = new DirectoryGeneratorTarget(logger, dir);
+      target = new _DirectoryGeneratorTarget(logger, dir);
     }
 
     _out("Creating ${generatorName} application '${projectName}':");
@@ -192,11 +192,11 @@ class CliLogger {
   void stderr(String message) => print(message);
 }
 
-class DirectoryGeneratorTarget extends GeneratorTarget {
+class _DirectoryGeneratorTarget extends GeneratorTarget {
   final CliLogger logger;
   final io.Directory dir;
 
-  DirectoryGeneratorTarget(this.logger, this.dir) {
+  _DirectoryGeneratorTarget(this.logger, this.dir) {
     dir.createSync();
   }
 
