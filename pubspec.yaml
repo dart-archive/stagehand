@@ -13,6 +13,10 @@ authors:
 - Seth Ladd <sethladd@gmail.com>
 - Devon Carew <devoncarew@google.com>
 
+# Add the bin/stagehand.dart script to the scripts pub installs.
+executables:
+  stagehand:
+
 dependencies:
   args: ">=0.12.0+1 <0.13.0"
   crypto: any
