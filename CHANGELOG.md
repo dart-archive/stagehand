@@ -2,7 +2,7 @@
 
 ## 0.0.5
 
-* Added [Web Starter Kit}(https://developers.google.com/web/starter-kit/)!
+* Added [Web Starter Kit](https://developers.google.com/web/starter-kit/)!
 * Added anonymous user metrics via Google Analytics
 
 ## 0.0.4
