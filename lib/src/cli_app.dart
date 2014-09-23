@@ -144,20 +144,6 @@ class CliApp {
     });
   }
 
-  ArgParser _createArgParser() {
-    var argParser = new ArgParser();
-
-    argParser.addOption('outdir', abbr: 'o', valueHelp: 'path',
-        help: 'Where to put the files.');
-    argParser.addFlag('help', abbr: 'h', negatable: false,
-        help: 'Help!');
-    argParser.addFlag('analytics', negatable: true,
-        help: 'Opt-out of anonymous usage and crash reporting.');
-    argParser.addFlag('machine', negatable: false, hide: true);
-
-    return argParser;
-  }
-
   String _validateName(String projectName) {
     if (projectName.contains(' ')) {
       return "The project name cannot contain spaces.";
@@ -224,6 +210,15 @@ class DirectoryGeneratorTarget extends GeneratorTarget {
       .then((_) => file.writeAsBytes(contents));
   }
 }
+
+ArgParser _createArgParser() => new ArgParser()
+  ..addOption('outdir', abbr: 'o', valueHelp: 'path',
+      help: 'Where to put the files.')
+  ..addFlag('help', abbr: 'h', negatable: false,
+      help: 'Help!')
+  ..addFlag('analytics', negatable: true,
+      help: 'Opt-out of anonymous usage and crash reporting.')
+  ..addFlag('machine', negatable: false, hide: true);
 
 String _pad(String str, int len) {
   while (str.length < len) str += ' ';
