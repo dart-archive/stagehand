@@ -24,15 +24,14 @@ const String _GA_TRACKING_ID = 'UA-55033590-1';
 class CliApp {
   final List<Generator> generators;
   final CliLogger logger;
+  final Analytics analytics;
 
   GeneratorTarget target;
-  Analytics analytics;
 
-  CliApp(this.generators, this.logger, [this.target]) {
+  CliApp(this.generators, this.logger, [this.target])
+      : analytics = new AnalyticsIO(_GA_TRACKING_ID, APP_NAME, APP_VERSION) {
     assert(generators != null);
     assert(logger != null);
-
-    analytics = new AnalyticsIO(_GA_TRACKING_ID, APP_NAME, APP_VERSION);
 
     generators.sort(Generator.compareGenerators);
   }
