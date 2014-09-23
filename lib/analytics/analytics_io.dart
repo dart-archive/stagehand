@@ -38,6 +38,10 @@ class _PostHandler extends PostHandler {
   }
 
   Future sendPost(String url, Map<String, String> parameters) {
+    // Add custom parameters for OS and the Dart version.
+    parameters['cd1'] = Platform.operatingSystem;
+    parameters['cd2'] = 'dart ${Platform.version}';
+
     String data = postEncode(parameters);
 
     // TODO: Should we try and re-use this client?
