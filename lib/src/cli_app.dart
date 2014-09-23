@@ -221,8 +221,7 @@ ArgParser _createArgParser() => new ArgParser()
   ..addFlag('machine', negatable: false, hide: true);
 
 String _pad(String str, int len) {
-  while (str.length < len) str += ' ';
-  return str;
+  return str.padRight(len, ' ');
 }
 
 class ArgError implements Exception {
