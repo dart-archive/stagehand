@@ -6,16 +6,12 @@
 
 // TODO: document how to support an opt-in workflow
 
-/**
- * TODO:
- */
+// TODO: docs
 library stagehand.analytics;
 
 import 'dart:async';
 
-/**
- * TODO:
- */
+// TODO: docs
 abstract class Analytics {
   /**
    * Whether analytics has been disabled by the user. Also, enable or disable
@@ -32,9 +28,7 @@ abstract class Analytics {
   Future sendScreenView(String viewName);
   Future sendEvent(String category, String action, [String label]);
 
-  /**
-   * TODO: document the GA restrictions here
-   */
+  // TODO: document the GA restrictions here
   Future sendException(String description, [bool fatal]);
 }
 

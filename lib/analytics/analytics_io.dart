@@ -2,9 +2,7 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-/**
- * TODO:
- */
+// TODO: docs
 library stagehand.analytics_io;
 
 import 'dart:async';
@@ -17,9 +15,7 @@ import 'src/analytics_impl.dart';
 
 export 'analytics.dart';
 
-/**
- * TODO:
- */
+// TODO: docs
 class AnalyticsIO extends AnalyticsImpl {
   AnalyticsIO(String trackingId, String applicationName, String applicationVersion) :
     super(

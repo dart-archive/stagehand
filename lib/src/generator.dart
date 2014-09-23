@@ -28,9 +28,7 @@ abstract class Generator {
    */
   TemplateFile get entrypoint => _entrypoint;
 
-  /**
-   * TODO:
-   */
+  // TODO: docs
   TemplateFile addTemplateFile(TemplateFile file) {
     files.add(file);
     return file;
@@ -43,10 +41,8 @@ abstract class Generator {
     return files.firstWhere((file) => file.path == path, orElse: () => null);
   }
 
-  /**
-   * TODO: doc
-   * TODO: consider passing this to the constructor
-   */
+  // TODO: doc
+  // TODO: consider passing this to the constructor
   void setEntrypoint(TemplateFile entrypoint) {
     if (_entrypoint != null) throw new StateError('entrypoint already set');
     if (entrypoint == null) throw new StateError('entrypoint is null');
