@@ -1,0 +1,11 @@
+name: stagehand_site
+description: Website for stagehand.
+
+dependencies:
+  browser: any
+  sass: ">=0.3.0 <0.4.0"
+  script_inliner: ">=0.0.2 <0.1.0"
+
+transformers:
+- sass
+- script_inliner

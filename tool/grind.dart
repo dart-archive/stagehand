@@ -61,7 +61,7 @@ void buildTemplates(GrinderContext context) {
 void updateGhPages(GrinderContext context) {
   context.log('Updating gh-pages branch of the project');
   new ghpages.Generator(rootDir: getDir('.').absolute.path)
-      ..templateDir = getDir('gh-pages-content/build').absolute.path
+      ..templateDir = getDir('site/build/web').absolute.path
       ..generate();
 }
 
@@ -71,7 +71,7 @@ void updateGhPages(GrinderContext context) {
 void buildSite(GrinderContext context) {
   context.log('Building the site');
   new PubTools()
-    ..build(context, mode: 'release', directories: ['site']);
+    ..build(context, mode: 'release', workingDir: 'site');
 }
 
 /**
@@ -79,8 +79,8 @@ void buildSite(GrinderContext context) {
  */
 void clean(GrinderContext context) {
   // Delete the build/ dir.
-  deleteEntity(BUILD_DIR);
-  deleteEntity('site/build');
+  deleteEntity(BUILD_DIR, context);
+  deleteEntity(new Directory('site/build'), context);
 }
 
 void _concatenateFiles(GrinderContext context, Directory src, File target) {
