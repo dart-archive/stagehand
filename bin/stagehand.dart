@@ -16,7 +16,7 @@ import 'package:stagehand/analytics/analytics_io.dart';
 import 'package:stagehand/src/common.dart';
 
 const String APP_NAME = 'stagehand';
-const String APP_VERSION = '0.0.4';
+const String APP_VERSION = '0.0.5-dev';
 
 // The Google Analytics tracking ID for stagehand.
 const String _GA_TRACKING_ID = 'UA-55033590-1';
@@ -59,14 +59,24 @@ class CliApp {
   }
 
   Future process(List<String> args) {
-    // TODO: Analytics is currently implemented as opt-out. If we want to
-    // implement opt-in that would be done here. Something like check if
-    // enablementExplicitlyChanged == false, call disabled = true, then
-    // prompt the user to opt-in.
+    if (!analytics.enablementExplicitlyChanged) {
+      _out('Welcome to Stagehand! We collect anonymous usage statistics and crash reports');
+      _out("in order to improve the tool. Run 'stagehand --no-analytics' to opt-out.");
+      _out('');
+
+      analytics.disabled = false;
+    }
 
     ArgParser argParser = _createArgParser();
 
-    var options = argParser.parse(args);
+    ArgResults options = argParser.parse(args);
+
+    if (options.wasParsed('analytics')) {
+      analytics.disabled = !options['analytics'];
+      analytics.sendScreenView('analytics');
+      _out("Analytics ${analytics.disabled ? 'disabled' : 'enabled'}.");
+      return new Future.value();
+    }
 
     if (options['help'] || args.isEmpty) {
       analytics.sendScreenView(options['help'] ? 'help' : 'main');
@@ -149,7 +159,10 @@ class CliApp {
 
     argParser.addOption('outdir', abbr: 'o', valueHelp: 'path',
         help: 'Where to put the files.');
-    argParser.addFlag('help', abbr: 'h', negatable: false);
+    argParser.addFlag('help', abbr: 'h', negatable: false,
+        help: 'Help!');
+    argParser.addFlag('analytics', negatable: true,
+        help: 'Opt-out of anonymous usage and crash reporting.');
     argParser.addFlag('machine', negatable: false, hide: true);
 
     return argParser;

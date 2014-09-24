@@ -17,8 +17,6 @@ import 'src/analytics_impl.dart';
 
 export 'analytics.dart';
 
-// TODO: send the OS? Or is it parsed from the dart:io user agent?
-
 /**
  * TODO:
  */
@@ -40,8 +38,13 @@ class _PostHandler extends PostHandler {
   }
 
   Future sendPost(String url, Map<String, String> parameters) {
+    // Add custom parameters for OS and the Dart version.
+    parameters['cd1'] = Platform.operatingSystem;
+    parameters['cd2'] = 'dart ${Platform.version}';
+
     String data = postEncode(parameters);
 
+    // TODO: Should we try and re-use this client?
     HttpClient client = new HttpClient();
     client.userAgent = _userAgent;
     return client.postUrl(Uri.parse(url)).then((HttpClientRequest req) {
@@ -54,8 +57,9 @@ class _PostHandler extends PostHandler {
 
   String _createUserAgent() {
     // Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en)
+    String os = Platform.operatingSystem;
     String locale = Platform.environment['LANG'];
-    return "Dart/${Platform.version} (${Platform.operatingSystem}; ${locale})";
+    return "Dart/${Platform.version} (${os}; ${os}; ${os}; ${locale})";
   }
 }
 
