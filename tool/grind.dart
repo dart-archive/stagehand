@@ -15,10 +15,10 @@ final RegExp _binaryFileTypes = new RegExp(
     r'\.(jpe?g|png|gif|ico|svg|ttf|eot|woff|woff2)$', caseSensitive: false);
 
 void main([List<String> args]) {
-  defineTask('init', taskFunction: init);
-  defineTask('build-examples', taskFunction: buildExamples, depends: ['init']);
-  defineTask('update-gh-pages', taskFunction: updateGhPages, depends: ['init']);
-  defineTask('clean', taskFunction: clean);
+  task('init', init);
+  task('build-examples', buildExamples, ['init']);
+  task('update-gh-pages', updateGhPages, ['init']);
+  task('clean', clean);
 
   startGrinder(args);
 }
