@@ -4,7 +4,7 @@
 
 name: stagehand
 # When changing this version, change the bin/stagehand.dart version as well.
-version: 0.0.4
+version: 0.0.5-dev
 description: >
   A scaffolding generator for your Dart projects. Stagehand helps you get set
   up!
