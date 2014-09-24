@@ -1,0 +1,46 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 80px;
+  background-color: #e5e4ec;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 700px;
+}
+
+.footer {
+  position: absolute;
+  padding: 20px 0 20px 0;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.jumbotron {
+  background-image: url('banner_stagehand.png');
+
+  background-repeat: no-repeat;
+  background-color: #22132E;
+  height: 330px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.jumbotron h1 {
+  color: white;
+  
+}
+
+.jumbotron p {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
