@@ -45,12 +45,6 @@ void buildTemplates(GrinderContext context) {
       context,
       getDir('templates/helloworld'),
       getFile('lib/generators/helloworld_data.dart'));
-
-  // Build WSK.
-  _concatenateFiles(
-      context,
-      getDir('templates/webstarterkit'),
-      getFile('lib/generators/webstarterkit_data.dart'));
 }
 
 /**

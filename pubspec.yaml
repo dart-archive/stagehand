@@ -10,7 +10,7 @@ description: >
   up!
 homepage: https://github.com/google/stagehand
 authors:
-- Seth Ladd <sethladd@gmail.com>
+- Seth Ladd <sethladd@google.com>
 - Devon Carew <devoncarew@google.com>
 
 # Add the bin/stagehand.dart script to the scripts pub installs.
