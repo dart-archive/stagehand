@@ -12,7 +12,6 @@ import 'dart:convert';
 
 import 'generators/helloworld.dart';
 import 'generators/webapp.dart';
-import 'generators/webstarterkit.dart';
 import 'generators/publib.dart';
 import 'src/common.dart';
 
@@ -20,7 +19,6 @@ import 'src/common.dart';
 final List<Generator> generators = [
   new HelloWorldGenerator(),
   new WebAppGenerator(),
-  new WebStarterKitGenerator(),
   new PubLibGenerator()
 ];
 
