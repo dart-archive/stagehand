@@ -60,7 +60,7 @@ void buildTemplates(GrinderContext context) {
 void updateGhPages(GrinderContext context) {
   context.log('Updating gh-pages branch of the project');
   new ghpages.Generator(rootDir: getDir('.').absolute.path)
-      ..templateDir = getDir('site/build/web').absolute.path
+      ..templateDir = getDir('site').absolute.path
       ..generate();
 }
 
