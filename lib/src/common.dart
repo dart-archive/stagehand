@@ -11,7 +11,8 @@ import 'dart:convert' show UTF8;
 
 import 'package:crypto/crypto.dart';
 
-import '../stagehand.dart';
+import 'generator.dart';
+import 'template_file.dart';
 
 const int _RUNE_SPACE = 32;
 
