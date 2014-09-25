@@ -67,3 +67,9 @@ pre code {
   overflow-wrap: normal;
   white-space: pre;
 }
+
+aside.alert-warning {
+  margin-top: 20px;
+  text-align: center;
+  background-color: #E3BB52;
+}
