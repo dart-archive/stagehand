@@ -48,9 +48,9 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-.jumbotron h1 {
-  font-size: 83px;
-}
+  .jumbotron h1 {
+    font-size: 83px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -64,6 +64,12 @@ body {
 }
 
 pre code {
-    overflow-wrap: normal;
-    white-space: pre;
+  overflow-wrap: normal;
+  white-space: pre;
+}
+
+aside.alert-warning {
+  margin-top: 20px;
+  text-align: center;
+  background-color: #E3BB52;
 }
