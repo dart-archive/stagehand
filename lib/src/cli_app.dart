@@ -31,8 +31,8 @@ class CliApp {
 
   CliApp(Iterable<Generator> generators, this.logger, [this.target])
       : analytics = new AnalyticsIO(_GA_TRACKING_ID, APP_NAME, APP_VERSION),
-        this.generators = new UnmodifiableListView(generators.toList()
-            ..sort(Generator.compareGenerators)) {
+        this.generators = new UnmodifiableListView(generators.toList()..sort())
+  {
     assert(logger != null);
   }
 

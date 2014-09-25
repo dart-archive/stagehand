@@ -9,10 +9,7 @@ import 'template_file.dart';
 
 
 // TODO: doc
-abstract class Generator {
-  static int compareGenerators(Generator a, Generator b) =>
-      a.id.toLowerCase().compareTo(b.id.toLowerCase());
-
+abstract class Generator implements Comparable<Generator> {
   final String id;
   final String description;
   final List<String> categories;
@@ -64,4 +61,6 @@ abstract class Generator {
   int numFiles() => files.length;
 
   String toString() => '[${id}: ${description}]';
+
+  int compareTo(Generator other) => this.id.toLowerCase().compareTo(other.id.toLowerCase());
 }
