@@ -45,6 +45,12 @@ void buildTemplates(GrinderContext context) {
       context,
       getDir('templates/helloworld'),
       getFile('lib/generators/helloworld_data.dart'));
+
+  // Build the webapp example.
+  _concatenateFiles(
+      context,
+      getDir('templates/webapp'),
+      getFile('lib/generators/webapp_data.dart'));
 }
 
 /**

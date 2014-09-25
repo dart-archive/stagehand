@@ -12,14 +12,14 @@ import 'dart:convert';
 
 import 'generators/helloworld.dart';
 import 'generators/webapp.dart';
-import 'generators/publib.dart';
+import 'generators/package.dart';
 import 'src/common.dart';
 
 /// A curated, prescriptive list of Dart project generators.
 final List<Generator> generators = [
   new HelloWorldGenerator(),
   new WebAppGenerator(),
-  new PubLibGenerator()
+  new PackageGenerator()
 ];
 
 Generator getGenerator(String id) {
