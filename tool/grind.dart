@@ -18,8 +18,7 @@ final RegExp _binaryFileTypes = new RegExp(
 void main([List<String> args]) {
   task('init', init);
   task('build-examples', buildExamples, ['init']);
-  task('build-site', buildSite, ['init']);
-  task('update-gh-pages', updateGhPages, ['build-site']);
+  task('update-gh-pages', updateGhPages, ['init']);
   task('clean', clean);
 
   startGrinder(args);
@@ -63,15 +62,6 @@ void updateGhPages(GrinderContext context) {
   new ghpages.Generator(rootDir: getDir('.').absolute.path)
       ..templateDir = getDir('site/build/web').absolute.path
       ..generate();
-}
-
-/**
- * Generate the site: stagehand.pub
- */
-void buildSite(GrinderContext context) {
-  context.log('Building the site');
-  new PubTools()
-    ..build(context, mode: 'release', workingDir: 'site');
 }
 
 /**
