@@ -5,6 +5,7 @@
 library stagehand.cli_app;
 
 import 'dart:async';
+import 'dart:collection';
 import 'dart:convert' show JSON;
 import 'dart:io' as io;
 import 'dart:math';
@@ -13,7 +14,7 @@ import 'package:args/args.dart';
 import 'package:path/path.dart' as path;
 import 'package:stagehand/stagehand.dart';
 import 'package:stagehand/analytics/analytics_io.dart';
-import 'package:stagehand/src/common.dart';
+import 'common.dart';
 
 const String APP_NAME = 'stagehand';
 const String APP_VERSION = '0.0.4';
@@ -28,12 +29,11 @@ class CliApp {
 
   GeneratorTarget target;
 
-  CliApp(this.generators, this.logger, [this.target])
-      : analytics = new AnalyticsIO(_GA_TRACKING_ID, APP_NAME, APP_VERSION) {
-    assert(generators != null);
+  CliApp(Iterable<Generator> generators, this.logger, [this.target])
+      : analytics = new AnalyticsIO(_GA_TRACKING_ID, APP_NAME, APP_VERSION),
+        this.generators = new UnmodifiableListView(generators.toList()
+            ..sort(Generator.compareGenerators)) {
     assert(logger != null);
-
-    generators.sort(Generator.compareGenerators);
   }
 
   Future process(List<String> args) {
