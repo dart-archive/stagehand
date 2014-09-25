@@ -80,7 +80,6 @@ void buildSite(GrinderContext context) {
 void clean(GrinderContext context) {
   // Delete the build/ dir.
   deleteEntity(BUILD_DIR, context);
-  deleteEntity(new Directory('site/build'), context);
 }
 
 void _concatenateFiles(GrinderContext context, Directory src, File target) {
