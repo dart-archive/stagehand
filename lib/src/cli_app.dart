@@ -220,9 +220,7 @@ ArgParser _createArgParser() => new ArgParser()
       help: 'Opt-out of anonymous usage and crash reporting.')
   ..addFlag('machine', negatable: false, hide: true);
 
-String _pad(String str, int len) {
-  return str.padRight(len, ' ');
-}
+String _pad(String str, int len) => str.padRight(len, ' ');
 
 class ArgError implements Exception {
   final String message;
