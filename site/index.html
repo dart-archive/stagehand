@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stagehand - Easily create your Dart apps</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto|Oswald:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body>
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Stagehand</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#get-started">Get Started</a></li>
+            <li><a href="#usage">Usage</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/google/stagehand/issues">Feedback</a></li>
+            <li><a href="https://github.com/google/stagehand">Get Involved</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+      <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbowrapper">
+      <div class="jumbotron">
+        <h1><span>STAGEHAND</span></h1>
+        <p>Easily create your next Dart app.</p>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <h1 id="about">About Stagehand</h1>
+
+      <p>Stagehand helps you quickly, easily, and correctly create Dart
+      applications. It generates the scaffolding that you need so you
+      can get productive, faster. Stagehand supports generating client-side web
+      apps and server-side apps.</p>
+
+      <h1 id="get-started">Get Started</h1>
+
+      <p>Installing Stagehand requires the Dart SDK, version 1.6 or greater.
+      Once Dart SDK is on your path, you can install the stagehand pub
+      package:</p>
+
+      <p>
+      <pre><code>
+$ pub global activate stagehand
+      </code></pre>
+      </p>
+
+      <h1 id="usage">Usage</h1>
+
+      <p>Stagehand is easy to use.</p>
+
+      <p>
+      <pre><code>
+$ cd &lt;location for your app&gt;
+$ pub global run stagehand -o &lt;appname&gt; webapp
+      </code></pre>
+      </p>
+
+      <p>Stagehand contains a highly curated list of templates.</p>
+
+      <ul>
+      <li>helloworld - <em>the most basic command line app</em></li>
+      <li>webapp - <em>a basic HTML app</em></li>
+      <li>publib - <em>a library, with tests</em></li>
+      <li>More to come!</li>
+      </ul>
+
+
+    </div> <!-- /container -->
+
+    <div class="footer">
+      <div class="container">
+        <p class="text-muted">
+        This work is licensed under a
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-55033590-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- Built with love using Web Starter Kit -->
+  </body>
+</html>

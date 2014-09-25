@@ -16,7 +16,7 @@ final RegExp _binaryFileTypes = new RegExp(
 
 void main([List<String> args]) {
   task('init', init);
-  task('build-examples', buildExamples, ['init']);
+  task('build-examples', buildTemplates, ['init']);
   task('update-gh-pages', updateGhPages, ['init']);
   task('clean', clean);
 
@@ -34,10 +34,10 @@ void init(GrinderContext context) {
 }
 
 /**
- * Concatenate the example files into data files that the generators can
+ * Concatenate the template files into data files that the generators can
  * consume.
  */
-void buildExamples(GrinderContext context) {
+void buildTemplates(GrinderContext context) {
   // TODO: Test the generation - generate the code on the bots and analyze it.
 
   // Build the helloworld example.
@@ -59,7 +59,7 @@ void buildExamples(GrinderContext context) {
 void updateGhPages(GrinderContext context) {
   context.log('Updating gh-pages branch of the project');
   new ghpages.Generator(rootDir: getDir('.').absolute.path)
-      ..templateDir = getDir('gh-pages-content').absolute.path
+      ..templateDir = getDir('site').absolute.path
       ..generate();
 }
 
@@ -68,7 +68,7 @@ void updateGhPages(GrinderContext context) {
  */
 void clean(GrinderContext context) {
   // Delete the build/ dir.
-  deleteEntity(BUILD_DIR);
+  deleteEntity(BUILD_DIR, context);
 }
 
 void _concatenateFiles(GrinderContext context, Directory src, File target) {
