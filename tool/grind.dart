@@ -7,7 +7,6 @@ import 'dart:io';
 import 'package:crypto/crypto.dart';
 import 'package:ghpages_generator/ghpages_generator.dart' as ghpages;
 import 'package:grinder/grinder.dart';
-import 'package:grinder/grinder_utils.dart' show PubTools;
 import 'package:path/path.dart' as path;
 
 final Directory BUILD_DIR = new Directory('build');
@@ -17,7 +16,7 @@ final RegExp _binaryFileTypes = new RegExp(
 
 void main([List<String> args]) {
   task('init', init);
-  task('build-examples', buildExamples, ['init']);
+  task('build-examples', buildTemplates, ['init']);
   task('update-gh-pages', updateGhPages, ['init']);
   task('clean', clean);
 
