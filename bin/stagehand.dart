@@ -31,14 +31,14 @@ void main(List<String> args) {
         io.exit(1);
       } else {
         print('Unexpected error: ${e}\n${st}');
-        app.analytics.sendException('${st}', true).then((_) {
+        _sendException(app.analytics, e, st).then((_) {
           io.exit(1);
         });
       }
     });
   } catch (e, st) {
     print('Unexpected error: ${e}\n${st}');
-    app.analytics.sendException('${st}', true);
+    _sendException(app.analytics, e, st);
   }
 }
 
@@ -69,7 +69,19 @@ class CliApp {
 
     ArgParser argParser = _createArgParser();
 
-    ArgResults options = argParser.parse(args);
+    ArgResults options;
+
+    try {
+      options = argParser.parse(args);
+    } catch (e, st) {
+      // FormatException: Could not find an option named "foo".
+      if (e is FormatException) {
+        _out('Error: ${e.message}');
+        return new Future.error(new _ArgError(e.message));
+      } else {
+        return new Future.error(e, st);
+      }
+    }
 
     if (options.wasParsed('analytics')) {
       analytics.disabled = !options['analytics'];
@@ -238,6 +250,21 @@ class DirectoryGeneratorTarget extends GeneratorTarget {
 String _pad(String str, int len) {
   while (str.length < len) str += ' ';
   return str;
+}
+
+Future _sendException(Analytics analytics, var e, var st) {
+  String str = '${st}';
+
+  // Shorten the stacktrace up a bit.
+  str = str.replaceAll('.dart', '')
+      .replaceAll('package:', '')
+      .replaceAll('dart:', '')
+      .replaceAll('file:/', '')
+      .replaceAll(new RegExp(r'\s+'), '');
+
+  str = '${e.runtimeType}:' + str;
+
+  return analytics.sendException(str, true);
 }
 
 class _ArgError implements Exception {
