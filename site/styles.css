@@ -5,9 +5,10 @@ html {
 
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 100px;
+  margin-bottom: 120px;
   background-color: #e5e4ec;
   font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
 
 .navbar {
@@ -31,22 +32,19 @@ body {
 .jumbowrapper {
   background-color: #22132E;
   height: 440px;
-  background-image: url('banner_stagehand.png');
+  background-image: url('banner_stagehand.jpg');
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .jumbotron {
+  color: white;
   height: 440px;
   max-width: 900px;
   margin: 0 auto;
   font-family: 'Oswald', sans-serif;
   background-color: transparent;
   text-align: center;
-}
-
-.jumbotron h1 {
-  color: white;
 }
 
 @media screen and (min-width: 768px) {
@@ -62,7 +60,10 @@ body {
 }
 
 .jumbotron p {
-  color: white;
   font-family: 'Roboto', sans-serif;
 }
 
+pre code {
+    overflow-wrap: normal;
+    white-space: pre;
+}
