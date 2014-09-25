@@ -1,0 +1,11 @@
+name: {{projectName}}
+version: 0.0.1
+description: >
+  A minimal web app for the developer that doesn’t want to be confused by too
+  much going on.
+#author: First Last <email@example.com>
+#homepage: https://www.example.com
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+dependencies:
+  browser: any

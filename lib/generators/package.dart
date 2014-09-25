@@ -2,20 +2,19 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-library stagehand.publib;
+library stagehand.package;
 
 import '../src/common.dart';
 
 /**
  * A generator for a pub library.
  */
-class PubLibGenerator extends DefaultGenerator {
-  PubLibGenerator() : super(
-      'publib',
+class PackageGenerator extends DefaultGenerator {
+  PackageGenerator() : super(
+      'package',
       "A library useful for applications or for sharing on pub.dartlang.org.",
       categories: const ['dart']) {
 
-    // TODO: add test/ contents
     addFile('CHANGELOG.md', _changelog);
     addFile('pubspec.yaml', _pubspec);
     addFile('README.md', _readme);
