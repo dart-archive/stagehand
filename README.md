@@ -1,5 +1,7 @@
 # Stagehand - A Dart project generator
 
+![Stagehand banner](/site/stagehand_banner.jpg?raw=true)
+
 [![Build Status](https://travis-ci.org/google/stagehand.svg?branch=master)](https://travis-ci.org/google/stagehand)
 
 ## Helps you get setup!
