@@ -2,10 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-import 'dart:html';
+// This file is only used by Dart Editor. It displays errors and warnings
+// after analyzing a polymer.dart app.
 
-void main() {
-  var element = new DivElement()
-    ..text = "Hello, World!";
-  document.body.children.add(element);
-}
+export 'package:polymer/default_build.dart';
