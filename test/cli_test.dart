@@ -10,7 +10,7 @@ import 'dart:convert' show JSON;
 import 'package:stagehand/stagehand.dart';
 import 'package:unittest/unittest.dart';
 
-import '../bin/stagehand.dart';
+import 'package:stagehand/src/cli_app.dart';
 
 void main() => defineTests();
 

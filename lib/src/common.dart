@@ -11,7 +11,8 @@ import 'dart:convert' show UTF8;
 
 import 'package:crypto/crypto.dart';
 
-import '../stagehand.dart';
+import 'generator.dart';
+import 'template_file.dart';
 
 const int _RUNE_SPACE = 32;
 
@@ -118,9 +119,8 @@ String substituteVars(String str, Map<String, String> vars) {
  * Convert the given String into a String with newlines wrapped at an 80 column
  * boundary, with 2 leading spaces for each line.
  */
-String convertToYamlMultiLine(String str) {
-  return wrap(str, 78).map((line) => '  ${line}').join('\n');
-}
+String convertToYamlMultiLine(String str) =>
+    wrap(str, 78).map((line) => '  ${line}').join('\n');
 
 /**
  * Break the given String into lines wrapped on a [col] boundary.
