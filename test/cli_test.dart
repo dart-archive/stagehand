@@ -49,7 +49,7 @@ void defineTests() {
     });
 
     test('one arg', () {
-      return _expectError(app.process(['helloworld']));
+      return _expectError(app.process(['consoleapp']));
     });
 
     test('one arg (bad)', () {
@@ -57,18 +57,18 @@ void defineTests() {
     });
 
     test('two args', () {
-      return app.process(['-o', 'foobar', 'helloworld']).then((_) {
+      return app.process(['-o', 'foobar', 'consoleapp']).then((_) {
         _expectOk();
         expect(target.createdCount, isPositive);
       });
     });
 
     test('two args (directory exists)', () {
-      return _expectError(app.process(['-o', 'packages', 'helloworld']), false);
+      return _expectError(app.process(['-o', 'packages', 'consoleapp']), false);
     });
 
     test('three args', () {
-      return _expectError(app.process(['-o', 'foobar', 'helloworld', 'foobar']));
+      return _expectError(app.process(['-o', 'foobar', 'consoleapp', 'foobar']));
     });
 
     test('machine format', () {
