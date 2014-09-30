@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.0.6
+
+* Removed Web Starter Kit, waiting for at least WSK 0.6.0
+* Renamed `helloworld` to `consoleapp`
+* Adding default BSD license to projects
+* Added `polymer` template
+
 ## 0.0.5
 
 * Added [Web Starter Kit](https://developers.google.com/web/starter-kit/)!
