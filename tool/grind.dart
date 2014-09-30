@@ -98,6 +98,8 @@ void _traverse(Directory dir, String root, List<String> results) {
 
     if (entity is Link) continue;
 
+    // TODO(devoncarew): Instead of hard-coded file names, we should parse the
+    // `.gitignore` file at the root of the project.
     if (name.endsWith('.lock') || name.endsWith('.buildlog')) {
       continue;
     }
