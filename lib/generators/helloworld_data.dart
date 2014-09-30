@@ -13,7 +13,7 @@ ZSBoZWxsbyB3b3JsZCBjb21tYW5kLWxpbmUgYXBwbGljYXRpb24uCiNhdXRob3I6IEZpcnN0IExh
 c3QgPGVtYWlsQGV4YW1wbGUuY29tPgojaG9tZXBhZ2U6IGh0dHBzOi8vd3d3LmV4YW1wbGUuY29t
 CmVudmlyb25tZW50OgogIHNkazogJz49MS4wLjAgPDIuMC4wJwojZGVwZW5kZW5jaWVzOgojICBm
 b29fYmFyOiBhbnkK""",
-  "readme.md",
+  "README.md",
   "text",
   """IyB7e3Byb2plY3ROYW1lfX0KCkEgc2ltcGxlIGhlbGxvIHdvcmxkIGNvbW1hbmQtbGluZSBhcHBs
 aWNhdGlvbi4K"""

@@ -13,13 +13,15 @@ import 'dart:convert';
 import 'generators/helloworld.dart';
 import 'generators/webapp.dart';
 import 'generators/package.dart';
+import 'generators/polymer.dart';
 import 'src/common.dart';
 
 /// A curated, prescriptive list of Dart project generators.
 final List<Generator> generators = [
   new HelloWorldGenerator(),
   new WebAppGenerator(),
-  new PackageGenerator()
+  new PackageGenerator(),
+  new PolymerGenerator()
 ];
 
 Generator getGenerator(String id) {
@@ -77,6 +79,7 @@ abstract class Generator {
     Map vars = {
       'projectName': projectName,
       'description': description,
+      'year': new DateTime.now().year.toString()
     };
 
     return Future.forEach(files, (TemplateFile file) {
