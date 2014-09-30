@@ -11,7 +11,7 @@ void main() => defineTests();
 
 void defineTests() {
   group('generators', () {
-    test('helloworld', () => validate(getGenerator('helloworld')));
+    test('consoleapp', () => validate(getGenerator('consoleapp')));
     test('package', () => validate(getGenerator('package')));
     test('webapp', () => validate(getGenerator('webapp')));
   });
