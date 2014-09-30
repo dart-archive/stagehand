@@ -16,7 +16,7 @@ final RegExp _binaryFileTypes = new RegExp(
 
 void main([List<String> args]) {
   task('init', init);
-  task('build-examples', buildTemplates, ['init']);
+  task('build-templates', buildTemplates, ['init']);
   task('update-gh-pages', updateGhPages, ['init']);
   task('clean', clean);
 
@@ -51,6 +51,11 @@ void buildTemplates(GrinderContext context) {
       context,
       getDir('templates/webapp'),
       getFile('lib/generators/webapp_data.dart'));
+
+  _concatenateFiles(
+      context,
+      getDir('templates/polymer'),
+      getFile('lib/generators/polymer_data.dart'));
 }
 
 /**

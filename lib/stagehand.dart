@@ -19,7 +19,8 @@ import 'src/common.dart';
 final List<Generator> generators = [
   new HelloWorldGenerator(),
   new WebAppGenerator(),
-  new PackageGenerator()
+  new PackageGenerator(),
+  new PolymerGenerator()
 ];
 
 Generator getGenerator(String id) {
