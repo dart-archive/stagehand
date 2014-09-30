@@ -18,3 +18,6 @@ dartanalyzer --fatal-warnings bin/stagehand.dart lib/stagehand.dart test/all.dar
 
 # Run the tests.
 dart test/all.dart
+
+# Run all the generators and analyze the generated code.
+./grind test-generators
