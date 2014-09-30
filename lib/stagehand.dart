@@ -13,6 +13,7 @@ import 'dart:convert';
 import 'generators/helloworld.dart';
 import 'generators/webapp.dart';
 import 'generators/package.dart';
+import 'generators/polymer.dart';
 import 'src/common.dart';
 
 /// A curated, prescriptive list of Dart project generators.
