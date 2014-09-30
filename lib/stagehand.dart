@@ -77,6 +77,7 @@ abstract class Generator {
     Map vars = {
       'projectName': projectName,
       'description': description,
+      'year': new DateTime.now().year.toString()
     };
 
     return Future.forEach(files, (TemplateFile file) {
