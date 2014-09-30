@@ -1,7 +1,6 @@
 .DS_Store
 .idea
 .pub/
-.buildlog
 build/
 packages
 pubspec.lock
