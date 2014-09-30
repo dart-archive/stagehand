@@ -8,6 +8,7 @@ import 'package:crypto/crypto.dart';
 import 'package:ghpages_generator/ghpages_generator.dart' as ghpages;
 import 'package:grinder/grinder.dart';
 import 'package:path/path.dart' as path;
+import 'package:stagehand/stagehand.dart' as stagehand;
 
 final Directory BUILD_DIR = new Directory('build');
 
@@ -18,6 +19,7 @@ void main([List<String> args]) {
   task('init', init);
   task('build-templates', buildTemplates, ['init']);
   task('update-gh-pages', updateGhPages, ['init']);
+  task('test-generators', testGenerators, ['init']);
   task('clean', clean);
 
   startGrinder(args);
@@ -54,6 +56,53 @@ void updateGhPages(GrinderContext context) {
   new ghpages.Generator(rootDir: getDir('.').absolute.path)
       ..templateDir = getDir('site').absolute.path
       ..generate();
+}
+
+/**
+ * Run each generator and analyze the output. This ensures that:
+ * - each generator can run without errors
+ * - we generate code that analyzes cleanly
+ */
+void testGenerators(GrinderContext context) {
+  Directory fooDir = new Directory('foo');
+
+  if (fooDir.existsSync()) {
+    fooDir.deleteSync(recursive: true);
+  }
+
+  try {
+    for (stagehand.Generator generator in stagehand.generators) {
+      context.log('');
+      context.log('${generator.id} template:');
+
+      runDartScript(context, 'bin/stagehand.dart',
+          arguments: ['-o', 'foo', generator.id]);
+
+      File file = joinFile(fooDir, [generator.entrypoint.path]);
+
+      // TODO: Run pub? We'll need to do this when we start analyzing the
+      // polymer template.
+
+      // TODO: This does not locate the polymer template Dart entrypoint.
+      File dartFile = _locateDartFile(file);
+
+      // Run the analyzer.
+      if (dartFile != null) {
+        // TODO(devoncarew): A horrible hack. See #28 for how to improve this.
+        String filePath = dartFile.path;
+        filePath = filePath.replaceAll('projectName', 'foo');
+
+        Analyzer.analyzePath(context, filePath, fatalWarnings: true);
+      }
+
+      fooDir.deleteSync(recursive: true);
+    }
+  } catch (e) {
+    try { fooDir.deleteSync(recursive: true); }
+    catch (_) { }
+
+    rethrow;
+  }
 }
 
 /**
@@ -124,3 +173,9 @@ void _traverse(Directory dir, String root, List<String> results) {
  */
 bool _isBinaryFile(String filename) => _binaryFileTypes.hasMatch(filename);
 
+File _locateDartFile(File file) {
+  if (file.path.endsWith('.dart')) return file;
+
+  return file.parent.listSync().firstWhere(
+      (f) => f.path.endsWith('.dart'), orElse: () => null);
+}
