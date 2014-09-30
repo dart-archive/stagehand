@@ -31,8 +31,7 @@ To list all of the project templates:
 
 ## Goals
 
-* Opinionated and prescriptive
-  * minimal to no options
+* Opinionated and prescriptive; minimal to no options
 * Mobile-first
 * Support server and client apps
 * Becomes the best way to create a new Dart project

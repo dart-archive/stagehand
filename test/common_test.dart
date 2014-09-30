@@ -11,10 +11,6 @@ void main() => defineTests();
 
 void defineTests() {
   group('common', () {
-    test('gitIgnoreContents', () {
-      expect(gitIgnoreContents, isNot(isEmpty));
-    });
-
     test('normalizeProjectName', () {
       expect(normalizeProjectName('foo.dart'), 'foo');
       expect(normalizeProjectName('foo-bar'), 'foo_bar');

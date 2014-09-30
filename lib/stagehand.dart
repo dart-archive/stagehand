@@ -84,7 +84,9 @@ abstract class Generator {
 
     return Future.forEach(files, (TemplateFile file) {
       var resultFile = file.runSubstitution(vars);
-      return target.createFile(resultFile.path, resultFile.content);
+      String filePath = resultFile.path;
+      filePath = filePath.replaceAll('projectName', projectName);
+      return target.createFile(filePath, resultFile.content);
     });
   }
 

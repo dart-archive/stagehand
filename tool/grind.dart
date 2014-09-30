@@ -38,9 +38,7 @@ void init(GrinderContext context) {
  * consume.
  */
 void buildTemplates(GrinderContext context) {
-  // TODO: Test the generation - generate the code on the bots and analyze it.
-
-  ['consoleapp', 'webapp', 'polymer'].forEach((template) {
+  ['consoleapp', 'package', 'polymer', 'webapp'].forEach((template) {
     _concatenateFiles(
         context,
         getDir('templates/${template}'),

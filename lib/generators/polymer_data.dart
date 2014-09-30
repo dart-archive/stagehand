@@ -5,7 +5,8 @@
 List<String> data = [
   ".gitignore",
   "text",
-  "LkRTX1N0b3JlCi5pZGVhCi5wdWIvCmJ1aWxkLwpwYWNrYWdlcwpwdWJzcGVjLmxvY2sK",
+  """LkRTX1N0b3JlCi5pZGVhCi5wdWIvCi5idWlsZGxvZwpidWlsZC8KcGFja2FnZXMKcHVic3BlYy5s
+b2NrCg==""",
   "build.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSB7e3llYXJ9fSwgPHlvdXIgbmFtZT4uIEFsbCByaWdodHMgcmVzZXJ2

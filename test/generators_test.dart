@@ -13,6 +13,7 @@ void defineTests() {
   group('generators', () {
     test('consoleapp', () => validate(getGenerator('consoleapp')));
     test('package', () => validate(getGenerator('package')));
+    test('polymer', () => validate(getGenerator('polymer')));
     test('webapp', () => validate(getGenerator('webapp')));
   });
 }

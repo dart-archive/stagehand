@@ -15,48 +15,6 @@ import '../stagehand.dart';
 
 const int _RUNE_SPACE = 32;
 
-/**
- * A common `.gitignore` file for Dart projects.
- */
-const String gitIgnoreContents = '''
-.DS_Store
-.idea
-.pub/
-build/
-packages
-pubspec.lock
-''';
-
-/**
- * The BSD 3-clause license.
- */
-String get licenseContents => '''
-Copyright (c) ${new DateTime.now().year}, <your name>.
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright
-      notice, this list of conditions and the following disclaimer in the
-      documentation and/or other materials provided with the distribution.
-    * Neither the name of the <organization> nor the
-      names of its contributors may be used to endorse or promote products
-      derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
-DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-''';
-
 List<TemplateFile> decodeConcanenatedData(List<String> data) {
   List<TemplateFile> results = [];
 
@@ -159,15 +117,11 @@ List<String> wrap(String str, [int col = 80]) {
 }
 
 /**
- * An abstract implementation of a [Generator] that includes default
- * `.gitignore` and `LICENSE` files.
+ * An abstract implementation of a [Generator].
  */
 abstract class DefaultGenerator extends Generator {
   DefaultGenerator(String id, String description, {List<String> categories: const []})
-      : super(id, description, categories: categories) {
-    addFile('.gitignore', gitIgnoreContents);
-    addFile('LICENSE', licenseContents);
-  }
+      : super(id, description, categories: categories);
 
   TemplateFile addFile(String path, String contents) =>
       addTemplateFile(new TemplateFile(path, contents));
