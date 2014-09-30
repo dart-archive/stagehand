@@ -8,12 +8,19 @@ import 'dart:html';
 /**
  * A Polymer hello-world element.
  */
-@CustomTag('hello-world')
+@CustomTag('main-app')
 
-class HelloWorld extends PolymerElement {
+class MainApp extends PolymerElement {
 
-  /// Constructor used to create instance of HelloWorld.
-  HelloWorld.created() : super.created();
+  @observable String input = '';
+  @observable String reversed = '';
+
+  /// Constructor used to create instance of MainApp.
+  MainApp.created() : super.created();
+
+  void inputChanged(String oldValue, String newValue) {
+    reversed = input.split('').reversed.join('');
+  }
 
   /*
    * Optional lifecycle methods - uncomment if needed.
@@ -32,11 +39,13 @@ class HelloWorld extends PolymerElement {
   /// Called when an attribute (such as  a class) of an instance of
   /// hello-world is added, changed, or removed.
   attributeChanged(String name, String oldValue, String newValue) {
+    super.attributeChanges(name, oldValue, newValue);
   }
 
   /// Called when hello-world has been fully prepared (Shadow DOM created,
   /// property observers set up, event listeners attached).
   ready() {
+    super.ready();
   }
    
   */

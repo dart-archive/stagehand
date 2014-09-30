@@ -7,14 +7,21 @@
 <!-- import polymer-element's definition -->
 <link rel="import" href="packages/polymer/polymer.html">
 
-<polymer-element name="hello-world">
+<link rel="import" href="packages/paper_elements/paper_input.html">
+
+<polymer-element name="main-app">
   <template>
     <style>
       :host {
         display: block;
       }
     </style>
-    <h1>Hello, world!</h1>
+
+    <paper-input label="Type something..." value="{{input}}"></paper-input>
+
+    <p>
+      Reversed: {{ reversed }}
+    </p>
   </template>
   <script type="application/dart" src="hello_world.dart"></script>
 </polymer-element>

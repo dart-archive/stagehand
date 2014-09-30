@@ -14,23 +14,22 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="scaffolded-by" content="https://github.com/google/stagehand">
   <title>{{projectName}}</title>
-  
+
+  <!-- required by polymer.dart -->  
   <script src="packages/web_components/dart_support.js"></script>
 
-  <link rel="import" href="packages/paper_elements/roboto.html">
   <!-- example of using a paper element -->
-  <link rel="import" href="packages/paper_elements/paper_input.html">
+  <link rel="import" href="packages/paper_elements/roboto.html">
+
   <!-- example of your own custom element -->
-  <link rel="import" href="hello_world.html">
+  <link rel="import" href="packages/{{projectName}}/main_app.html">
 
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body unresolved>
 
-  <hello-world></hello-world>
-
-  <paper-input label="Type something..."></paper-input>
+  <main-app></main-app>
 
   <script type="application/dart">export 'package:polymer/init.dart';</script>
 </body>
