@@ -11,8 +11,6 @@ import 'package:uuid/uuid.dart';
 
 import '../analytics.dart';
 
-// https://developers.google.com/analytics/devguides/collection/protocol/policy
-
 final int _MAX_EXCEPTION_LENGTH = 100;
 
 String postEncode(Map<String, String> map) {
@@ -124,6 +122,8 @@ abstract class AnalyticsImpl implements Analytics {
   // Valid values for [hitType] are: 'pageview', 'screenview', 'event',
   // 'transaction', 'item', 'social', 'exception', and 'timing'.
   Future _sendPayload(String hitType, Map args) {
+    if (disabled) return new Future.value();
+
     if (_bucket.removeDrop()) {
       args['v'] = '1'; // version
       args['tid'] = trackingId;

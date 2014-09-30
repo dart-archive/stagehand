@@ -3,7 +3,11 @@
 // license that can be found in the LICENSE file.
 
 /**
- * TODO:
+ * In order to use this library import the `analytics_html.dart` file and
+ * instantiate the [AnalyticsHtml] class.
+ *
+ * You'll need to provide a Google Analytics tracking ID, the application name,
+ * and the application version.
  */
 library stagehand.analytics_html;
 
@@ -16,7 +20,7 @@ import 'src/analytics_impl.dart';
 export 'analytics.dart';
 
 /**
- * TODO: doc
+ * An interface to a Google Analytics session, suitable for use in web apps.
  */
 class AnalyticsHtml extends AnalyticsImpl {
   AnalyticsHtml(String trackingId, String applicationName, String applicationVersion) :

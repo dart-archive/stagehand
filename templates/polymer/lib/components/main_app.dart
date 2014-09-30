@@ -33,7 +33,7 @@ class MainApp extends PolymerElement {
 //    super.detached();
 //  }
 
-//  /// Called when an attribute (such as  a class) of an instance of
+//  /// Called when an attribute (such as a class) of an instance of
 //  /// main-app is added, changed, or removed.
 //  attributeChanged(String name, String oldValue, String newValue) {
 //    super.attributeChanges(name, oldValue, newValue);

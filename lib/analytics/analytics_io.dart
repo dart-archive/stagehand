@@ -3,7 +3,11 @@
 // license that can be found in the LICENSE file.
 
 /**
- * TODO:
+ * In order to use this library import the `analytics_io.dart` file and
+ * instantiate the [AnalyticsIo] class.
+ *
+ * You'll need to provide a Google Analytics tracking ID, the application name,
+ * and the application version.
  */
 library stagehand.analytics_io;
 
@@ -18,7 +22,8 @@ import 'src/analytics_impl.dart';
 export 'analytics.dart';
 
 /**
- * TODO:
+ * An interface to a Google Analytics session, suitable for use in command-line
+ * applications.
  */
 class AnalyticsIO extends AnalyticsImpl {
   AnalyticsIO(String trackingId, String applicationName, String applicationVersion) :
