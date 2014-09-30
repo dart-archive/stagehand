@@ -40,22 +40,12 @@ void init(GrinderContext context) {
 void buildTemplates(GrinderContext context) {
   // TODO: Test the generation - generate the code on the bots and analyze it.
 
-  // Build the helloworld example.
-  _concatenateFiles(
-      context,
-      getDir('templates/helloworld'),
-      getFile('lib/generators/helloworld_data.dart'));
-
-  // Build the webapp example.
-  _concatenateFiles(
-      context,
-      getDir('templates/webapp'),
-      getFile('lib/generators/webapp_data.dart'));
-
-  _concatenateFiles(
-      context,
-      getDir('templates/polymer'),
-      getFile('lib/generators/polymer_data.dart'));
+  ['consoleapp', 'webapp', 'polymer'].forEach((template) {
+    _concatenateFiles(
+        context,
+        getDir('templates/${template}'),
+        getFile('lib/generators/${template}_data.dart'));
+  });
 }
 
 /**

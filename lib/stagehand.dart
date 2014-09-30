@@ -10,7 +10,7 @@ library stagehand;
 import 'dart:async';
 import 'dart:convert';
 
-import 'generators/helloworld.dart';
+import 'generators/consoleapp.dart';
 import 'generators/webapp.dart';
 import 'generators/package.dart';
 import 'generators/polymer.dart';
@@ -18,7 +18,7 @@ import 'src/common.dart';
 
 /// A curated, prescriptive list of Dart project generators.
 final List<Generator> generators = [
-  new HelloWorldGenerator(),
+  new ConsoleAppGenerator(),
   new WebAppGenerator(),
   new PackageGenerator(),
   new PolymerGenerator()

@@ -14,5 +14,5 @@ void main() {
   ga.sendScreenView('home');
   ga.sendScreenView('files');
   ga.sendException('foo exception, line 123:56');
-  ga.sendEvent('create', 'helloworld', 'Hello World!');
+  ga.sendEvent('create', 'consoleapp', 'Console App');
 }

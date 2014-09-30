@@ -16,7 +16,7 @@ class WebAppGenerator extends DefaultGenerator {
       'webapp',
       "A minimal web app for the developer that doesn’t want to be confused by "
       "too much going on.",
-      categories: const ['dart', 'web']) {
+      categories: const ['dart', 'web', 'minimal']) {
 
     for (TemplateFile file in decodeConcanenatedData(data)) {
       addTemplateFile(file);
