@@ -98,7 +98,7 @@ void _traverse(Directory dir, String root, List<String> results) {
   for (FileSystemEntity entity in dir.listSync(recursive: false, followLinks: false)) {
     String name = path.basename(entity.path);
 
-    if (entity is Link) {
+    if (entity is Link || name.endsWith('.lock')) {
       continue;
     } else if (entity is Directory) {
       _traverse(entity, '${root}${name}/', results);
