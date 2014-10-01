@@ -84,7 +84,12 @@ class _PersistentProperties extends PersistentProperties {
   dynamic operator[](String key) => _map[key];
 
   void operator[]=(String key, dynamic value) {
-    _map[key] = value;
+    if (value == null) {
+      _map.remove(key);
+    } else {
+      _map[key] = value;
+    }
+
     _file.writeAsStringSync(JSON.encode(_map) + '\n');
   }
 }
