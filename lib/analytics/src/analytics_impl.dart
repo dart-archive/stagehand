@@ -105,7 +105,7 @@ abstract class AnalyticsImpl implements Analytics {
 
   Future sendException(String description, [bool fatal]) {
     if (description != null && description.length > _MAX_EXCEPTION_LENGTH) {
-      description = description.substring(1, _MAX_EXCEPTION_LENGTH);
+      description = description.substring(0, _MAX_EXCEPTION_LENGTH);
     }
 
     Map args = {'exd': description};

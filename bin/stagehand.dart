@@ -260,9 +260,11 @@ Future _sendException(Analytics analytics, var e, var st) {
       .replaceAll('package:', '')
       .replaceAll('dart:', '')
       .replaceAll('file:/', '')
-      .replaceAll(new RegExp(r'\s+'), '');
+      .replaceAll(new RegExp(r'\s+'), ' ');
 
-  str = '${e.runtimeType}:' + str;
+  if (e != null) {
+    str = '${e.runtimeType}: ${str}';
+  }
 
   return analytics.sendException(str, true);
 }
