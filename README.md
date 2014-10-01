@@ -70,6 +70,15 @@ To list all of the project templates:
 
 Please file on [Github Issues](https://github.com/sethladd/stagehand/issues).
 
+## Analytics and crash reports
+
+Learn more about how
+[Stagehand uses Google Analytics][analytics] for measuring usage and error reporting,
+and how you can opt-out.
+
 ## Disclaimer
 
 This is not an official Google product.
+
+
+[analytics]: https://github.com/google/stagehand/wiki/Anonymous-analytics-and-crash-reports
