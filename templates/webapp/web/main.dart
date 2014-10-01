@@ -5,7 +5,10 @@
 import 'dart:html';
 
 void main() {
-  var element = new DivElement()
-    ..text = "Hello, World!";
-  document.body.children.add(element);
+  // something about grabbing the input and doing something with it
+  var output = querySelector('#out');
+  var input = querySelector('#name');
+  input.onKeyUp.listen((_) {
+    output.text = input.value.split('').reversed.join();
+  });
 }
