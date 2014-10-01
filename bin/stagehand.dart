@@ -59,14 +59,6 @@ class CliApp {
   }
 
   Future process(List<String> args) {
-    if (!analytics.enablementExplicitlyChanged) {
-      _out('Welcome to Stagehand! We collect anonymous usage statistics and crash reports');
-      _out("in order to improve the tool. Run 'stagehand --no-analytics' to opt-out.");
-      _out('');
-
-      analytics.disabled = false;
-    }
-
     ArgParser argParser = _createArgParser();
 
     ArgResults options;
@@ -83,6 +75,10 @@ class CliApp {
       }
     }
 
+    if (!analytics.enablementExplicitlyChanged) {
+      analytics.disabled = false;
+    }
+
     if (options.wasParsed('analytics')) {
       analytics.disabled = !options['analytics'];
       analytics.sendScreenView('analytics');
@@ -90,10 +86,9 @@ class CliApp {
       return new Future.value();
     }
 
-    if (options['help'] || args.isEmpty) {
-      analytics.sendScreenView(options['help'] ? 'help' : 'main');
-      _usage(argParser);
-      return new Future.value();
+    // This hidden option is used so that our build bots don't send emit data.
+    if (options['mock-analytics']) {
+      analytics = new AnalyticsMock();
     }
 
     // The `--machine` option emits the list of available generators to stdout
@@ -105,6 +100,16 @@ class CliApp {
       Iterable itor = generators.map((generator) =>
           {'name': generator.id, 'description': generator.description});
       logger.stdout(JSON.encode(itor.toList()));
+      return new Future.value();
+    }
+
+    if (options['help'] || args.isEmpty) {
+      _out('Welcome to Stagehand! We collect anonymous usage statistics and crash reports');
+      _out("in order to improve the tool. Run 'stagehand --no-analytics' to opt-out.");
+      _out('');
+
+      analytics.sendScreenView(options['help'] ? 'help' : 'main');
+      _usage(argParser);
       return new Future.value();
     }
 
@@ -176,6 +181,7 @@ class CliApp {
     argParser.addFlag('analytics', negatable: true,
         help: 'Opt-out of anonymous usage and crash reporting.');
     argParser.addFlag('machine', negatable: false, hide: true);
+    argParser.addFlag('mock-analytics', negatable: false, hide: true);
 
     return argParser;
   }

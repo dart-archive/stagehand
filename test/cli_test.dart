@@ -8,6 +8,7 @@ import 'dart:async';
 import 'dart:convert' show JSON;
 
 import 'package:stagehand/stagehand.dart';
+import 'package:stagehand/analytics/analytics.dart';
 import 'package:unittest/unittest.dart';
 
 import '../bin/stagehand.dart';
@@ -24,6 +25,7 @@ void defineTests() {
       logger = new CliLoggerMock();
       target = new GeneratorTargetMock();
       app = new CliApp(generators, logger, target);
+      app.analytics = new AnalyticsMock();
     });
 
     void _expectOk([_]) {
