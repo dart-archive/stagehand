@@ -43,6 +43,16 @@ void defineTests() {
       expect(mock.disabled, true);
       expect(mock.mockPostHandler.sentValues, isEmpty);
     });
+
+    test('disable clears clientID', () {
+      AnalyticsImplMock mock = new AnalyticsImplMock('UA-0');
+      mock.sendScreenView('main');
+      expect(mock.disabled, false);
+      expect(mock.mockProperties['clientId'], isNotNull);
+      String id1 = mock.mockProperties['clientId'];
+      mock.disabled = true;
+      expect(mock.mockProperties['clientId'], isNot(id1));
+    });
   });
 }
 

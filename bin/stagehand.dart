@@ -104,8 +104,8 @@ class CliApp {
     }
 
     if (options['help'] || args.isEmpty) {
-      _out('Welcome to Stagehand! We collect anonymous usage statistics and crash reports');
-      _out("in order to improve the tool. Run 'stagehand --no-analytics' to opt-out.");
+      _out("Welcome to Stagehand! We collect anonymous usage statistics and crash reports in order");
+      _out("to improve the tool (http://goo.gl/6wsncI). Run 'stagehand --no-analytics' to opt-out.");
       _out('');
 
       analytics.sendScreenView(options['help'] ? 'help' : 'main');
