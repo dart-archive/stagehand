@@ -76,7 +76,7 @@ void testGenerators(GrinderContext context) {
       context.log('${generator.id} template:');
 
       runDartScript(context, 'bin/stagehand.dart',
-          arguments: ['-o', 'foo', generator.id]);
+          arguments: ['--mock-analytics', '-o', 'foo', generator.id]);
 
       File file = joinFile(fooDir, [generator.entrypoint.path]);
 

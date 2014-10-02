@@ -76,18 +76,13 @@ abstract class AnalyticsImpl implements Analytics {
   AnalyticsImpl(this.trackingId, this.properties, this.postHandler,
       {this.applicationName, this.applicationVersion}) {
     assert(trackingId != null);
-    _initClientId();
   }
-
-  /**
-   * Anonymous Client ID. The value of this field should be a random UUID v4.
-   */
-  String get _clientId => properties['clientId'];
 
   bool get disabled => properties['disabled'] == true;
 
   set disabled(bool value) {
     properties['disabled'] = value;
+    if (value == true) _clearClientId();
   }
 
   bool get enablementExplicitlyChanged => properties['disabled'] != null;
@@ -105,7 +100,7 @@ abstract class AnalyticsImpl implements Analytics {
 
   Future sendException(String description, [bool fatal]) {
     if (description != null && description.length > _MAX_EXCEPTION_LENGTH) {
-      description = description.substring(1, _MAX_EXCEPTION_LENGTH);
+      description = description.substring(0, _MAX_EXCEPTION_LENGTH);
     }
 
     Map args = {'exd': description};
@@ -113,9 +108,20 @@ abstract class AnalyticsImpl implements Analytics {
     return _sendPayload('exception', args);
   }
 
+  /**
+   * Anonymous Client ID. The value of this field should be a random UUID v4.
+   */
+  String get _clientId => properties['clientId'];
+
   void _initClientId() {
     if (_clientId == null) {
       properties['clientId'] = new Uuid().v4();
+    }
+  }
+
+  void _clearClientId() {
+    if (_clientId != null) {
+      properties['clientId'] = null;
     }
   }
 
@@ -125,6 +131,8 @@ abstract class AnalyticsImpl implements Analytics {
     if (disabled) return new Future.value();
 
     if (_bucket.removeDrop()) {
+      _initClientId();
+
       args['v'] = '1'; // version
       args['tid'] = trackingId;
       args['cid'] = _clientId;
