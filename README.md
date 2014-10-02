@@ -30,12 +30,31 @@ Install:
 
 ## Usage
 
+As an example, here is how you create a webapp with Stagehand:
+
+With Dart 1.6:
+
     $> cd where_you_want_to_create_the_project_directory
     $> pub global run stagehand -o _directory_name_ webapp
+    
+With Dart 1.7 or greater:
 
-To list all of the project templates:
+    $> cd where_you_want_to_create_the_project_directory
+    $> stagehand -o _directory_name_ webapp
+
+Here is how you list all of the project templates:
+
+With Dart 1.6:
 
     $> pub global run stagehand
+    
+With Dart 1.7 or greater:
+
+    $> stagehand
+    
+or
+
+    $> stagehand --help
 
 ## Goals
 
