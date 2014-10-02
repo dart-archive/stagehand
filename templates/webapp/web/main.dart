@@ -3,12 +3,30 @@
 // license that can be found in the LICENSE file.
 
 import 'dart:html';
+import 'package:{{projectName}}/nav_menu.dart';
+import 'package:{{projectName}}/reverser.dart';
+import 'package:route_hierarchical/client.dart';
 
 void main() {
-  // something about grabbing the input and doing something with it
-  var output = querySelector('#out');
-  var input = querySelector('#name');
-  input.onKeyUp.listen((_) {
-    output.text = input.value.split('').reversed.join();
-  });
+  initNavMenu();
+  initReverser();
+
+  // Webapps need routing to listen for changes to the URL
+
+  var router = new Router();
+  router.root
+    ..addRoute(name: 'about', path: '/about', enter: showAbout)
+    ..addRoute(name: 'home', defaultRoute: true, path: '/', enter: showHome);
+  router.listen();
+}
+
+void showAbout(RouteEvent e) {
+  // Extremely simple and non-scalable way to show different views
+  querySelector('#home').style.display = 'none';
+  querySelector('#about').style.display = '';
+}
+
+void showHome(RouteEvent e) {
+  querySelector('#home').style.display = '';
+  querySelector('#about').style.display = 'none';
 }
