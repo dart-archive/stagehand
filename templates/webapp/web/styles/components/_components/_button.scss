@@ -39,7 +39,6 @@
   @if $isInverted { border-color: transparent;}
 }
 
-
 .button--primary {
   @extend .button;
   @include style-button(#4285f4, #ffffff);

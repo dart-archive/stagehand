@@ -4,7 +4,6 @@
 *
 **/
 
-
 @include medium-only {
   // Generating grid classes for medium view
   @for $i from 1 through $mediumColCount {
@@ -47,7 +46,6 @@
   .g--pull-half { margin-right: 50% + $mediumGutterWidth/2; }
 }
 
-
 @include wide {
   // Generating grid classes for wide view
   @for $i from 1 through $wideColCount {
@@ -89,7 +87,6 @@
   .g--pull-half { margin-right: 50% + $wideGutterWidth/2; }
 }
 
-
 // This is a global 'last' class
 // to be used with global grid classes, such as 'half' or 'third'
 // Example usage:
@@ -97,7 +94,6 @@
 //  <div class="third"></div>
 //  <div class="third last"></div>
 .g--last { margin-right: 0; }
-
 
 // This is a global 'centered' class
 .g--centered {

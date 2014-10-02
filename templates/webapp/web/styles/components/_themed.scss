@@ -56,7 +56,6 @@
 
 }
 
-
 // Wrapped content in .article-container so we can
 // encapsulate what needs to be themed without overriding
 // anything outside of this container.
@@ -71,7 +70,6 @@
 
   .article--performance & { color: $colorPerformance; }
 }
-
 
 // Let's make sure this is at the end so we can override
 // previous rules. Specicifity rules.
