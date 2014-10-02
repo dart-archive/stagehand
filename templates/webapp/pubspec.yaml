@@ -1,4 +1,4 @@
-name: 'foo'
+name: '{{projectName}}'
 version: 0.0.1
 description: >
   A minimal web app for the developer that doesn’t want to be confused by too
