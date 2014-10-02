@@ -8,9 +8,9 @@ This template features:
 
 * Responsive web design, thanks to Web Starter Kit
 * CSS minification, thanks to Sass
-* Inlining scripts, thanks to script_inliner
-* Routing and views, thanks to route_hierarchical
-* Handling input, thanks to dart:html
+* Inlining scripts, thanks to `script_inliner`
+* Routing and views, thanks to `route_hierarchical`
+* Handling input, thanks to `dart:html`
 
 ## Responsive
 
