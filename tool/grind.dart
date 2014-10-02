@@ -80,8 +80,10 @@ void testGenerators(GrinderContext context) {
 
       File file = joinFile(fooDir, [generator.entrypoint.path]);
 
-      // TODO: Run pub? We'll need to do this when we start analyzing the
-      // polymer template.
+      if (joinFile(fooDir, ['pubspec.yaml']).existsSync()) {
+        runProcess(context, 'pub', arguments: ['get'],
+            workingDirectory: fooDir.path);
+      }
 
       // TODO: This does not locate the polymer template Dart entrypoint.
       File dartFile = _locateDartFile(file);
