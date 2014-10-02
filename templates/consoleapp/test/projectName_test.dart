@@ -2,8 +2,17 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-import 'package:{{projectName}}/{{projectName}}.dart';
+library {{projectName}}_test;
 
-main() {
-  doStuff();
+import 'package:{{projectName}}/{{projectName}}.dart';
+import 'package:unittest/unittest.dart';
+
+void main() => defineTests();
+
+void defineTests() {
+  group('main tests', () {
+    test('doStuff', () {
+      expect(doStuff(), null);
+    });
+  });
 }

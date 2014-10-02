@@ -2,8 +2,10 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-import 'package:{{projectName}}/{{projectName}}.dart';
+library all_tests;
 
-main() {
-  doStuff();
+import '{{projectName}}_test.dart' as {{projectName}}_test;
+
+void main() {
+  {{projectName}}_test.defineTests();
 }
