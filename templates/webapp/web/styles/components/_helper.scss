@@ -4,7 +4,6 @@
 *
 **/
 
-
 .clear {
   &::before,
   &::after {
@@ -15,7 +14,6 @@
     clear: both;
   }
 }
-
 
 /*==========  COLORS  ==========*/
 
@@ -50,8 +48,6 @@
 .color--user-secondary { color: $colorUserSecondary; }
 .color--media-secondary { color: $colorMediaSecondary; }
 .color--performance-secondary { color: $colorPerformanceSecondary; }
-
-
 
 /*==========  TEXT DIVIDER  ==========*/
 
@@ -95,12 +91,10 @@
   }
 }
 
-
 /*==========  GENERIC  ==========*/
 .centered {
   text-align: center;
 }
-
 
 /*==========  TAG  ==========*/
 .tag {
