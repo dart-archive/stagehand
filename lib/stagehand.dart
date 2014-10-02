@@ -3,7 +3,9 @@
 // license that can be found in the LICENSE file.
 
 /**
- * TODO: lots o' library docs
+ * Stagehand is a Dart project generator.
+ *
+ * TODO:
  */
 library stagehand;
 
@@ -29,7 +31,8 @@ Generator getGenerator(String id) {
 }
 
 /**
- * TODO: doc
+ * An abstract class which both defines a template generator and can generate a
+ * user project baed on this template.
  */
 abstract class Generator {
   static int compareGenerators(Generator a, Generator b) =>
@@ -51,7 +54,7 @@ abstract class Generator {
   TemplateFile get entrypoint => _entrypoint;
 
   /**
-   * TODO:
+   * Add a new template file.
    */
   TemplateFile addTemplateFile(TemplateFile file) {
     files.add(file);
@@ -66,8 +69,9 @@ abstract class Generator {
   }
 
   /**
-   * TODO: doc
-   * TODO: consider passing this to the constructor
+   * Set the main entrypoint of this template. This is the 'most important' file
+   * of this template. An IDE might use this information to open this file after
+   * the user's project is generated.
    */
   void setEntrypoint(TemplateFile entrypoint) {
     if (_entrypoint != null) throw new StateError('entrypoint already set');

@@ -318,7 +318,7 @@ Ozwvc2NyaXB0Pgo8L2JvZHk+CjwvaHRtbD4K""",
   "web/robots.txt",
   "text",
   """IyB3d3cucm9ib3RzdHh0Lm9yZy8KCiMgQWxsb3cgY3Jhd2xpbmcgb2YgYWxsIGNvbnRlbnQKVXNl
-ci1hZ2VudDogKgpEaXNhbGxvdzo=""",
+ci1hZ2VudDogKgpEaXNhbGxvdzoK""",
   "web/styles.css",
   "text",
   """LyogQ29weXJpZ2h0IChjKSB7e3llYXJ9fSwgPHlvdXIgbmFtZT4uIEFsbCByaWdodHMgcmVzZXJ2
