@@ -10,6 +10,14 @@ Stagehand helps you get your Dart projects set up and ready for the big show.
 It is a Dart project scaffolding generator, inspired by tools like Web Starter
 Kit and Yeoman.
 
+## Things you can create with Stagehand
+
+* consoleapp - a minimal command-line script
+* package - a library for pub, complete with tests
+* webapp - a minimal responsive web app, with Sass, routing, and more
+* polymer - a web app with Polymer.dart and paper (material design) elements
+* More to come!
+
 ## Installation
 
 Requirements:
