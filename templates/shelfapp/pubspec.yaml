@@ -1,0 +1,9 @@
+name: '{{projectName}}'
+version: 0.0.1
+description: A minimal web server using the shelf package.
+#author: First Last <email@example.com>
+#homepage: https://www.example.com
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+dependencies:
+  shelf: '>=0.5.5 <0.6.0'

@@ -40,7 +40,8 @@ void init(GrinderContext context) {
  * consume.
  */
 void buildTemplates(GrinderContext context) {
-  ['consoleapp', 'package', 'polymer', 'webapp'].forEach((template) {
+  ['consoleapp', 'package', 'polymer', 'shelfapp', 'webapp']
+      .forEach((template) {
     _concatenateFiles(
         context,
         getDir('templates/${template}'),
