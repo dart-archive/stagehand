@@ -6,6 +6,7 @@ library stagehand.analytics_impl_test;
 
 import 'dart:async';
 
+import 'package:stagehand/analytics/analytics.dart';
 import 'package:stagehand/analytics/src/analytics_impl.dart';
 import 'package:unittest/unittest.dart';
 
@@ -24,6 +25,21 @@ void defineTests() {
         expect(bucket.removeDrop(), true);
       }
       expect(bucket.removeDrop(), false);
+    });
+  });
+
+  group('sanitizeFilePaths', () {
+    test('replace file', () {
+      expect(sanitizeFilePaths(
+          '(file:///Users/sethladd/tmp/error.dart:3:13)'),
+          '(error.dart:3:13)');
+    });
+
+    test('replace files', () {
+      expect(sanitizeFilePaths(
+          'foo (file:///Users/sethladd/tmp/error.dart:3:13)\n'
+          'bar (file:///Users/sethladd/tmp/error.dart:3:13)'),
+          'foo (error.dart:3:13)\nbar (error.dart:3:13)');
     });
   });
 
@@ -52,6 +68,13 @@ void defineTests() {
       String id1 = mock.mockProperties['clientId'];
       mock.disabled = true;
       expect(mock.mockProperties['clientId'], isNot(id1));
+    });
+
+    test('exception file paths', () {
+      AnalyticsImplMock mock = new AnalyticsImplMock('UA-0');
+      mock.sendException('foo bar (file:///Users/sethladd/tmp/error.dart:3:13)');
+      String exd = mock.mockPostHandler.sentValues[0]['exd'];
+      expect(exd, 'foo bar (');
     });
   });
 }

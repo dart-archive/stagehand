@@ -99,6 +99,13 @@ abstract class AnalyticsImpl implements Analytics {
   }
 
   Future sendException(String description, [bool fatal]) {
+    // In order to ensure that the client of this API is not sending any PII
+    // data, we strip out any stack trace that may reference a path on the
+    // user's drive (file:/...).
+    if (description.contains('file:/')) {
+      description = description.substring(0, description.indexOf('file:/'));
+    }
+
     if (description != null && description.length > _MAX_EXCEPTION_LENGTH) {
       description = description.substring(0, _MAX_EXCEPTION_LENGTH);
     }

@@ -261,11 +261,13 @@ String _pad(String str, int len) {
 Future _sendException(Analytics analytics, var e, var st) {
   String str = '${st}';
 
+  // Sanitize (file:///Users/sethladd/tmp/error.dart:3:13) to (error.dart:3:13).
+  str = sanitizeFilePaths(str);
+
   // Shorten the stacktrace up a bit.
   str = str.replaceAll('.dart', '')
       .replaceAll('package:', '')
       .replaceAll('dart:', '')
-      .replaceAll('file:/', '')
       .replaceAll(new RegExp(r'\s+'), ' ');
 
   if (e != null) {
