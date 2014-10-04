@@ -17,9 +17,9 @@ final RegExp _binaryFileTypes = new RegExp(
 
 void main([List<String> args]) {
   task('init', init);
-  task('build-templates', buildTemplates, ['init']);
+  task('build', buildTemplates, ['init']);
   task('update-gh-pages', updateGhPages, ['init']);
-  task('test-generators', testGenerators, ['init']);
+  task('test', testGenerators, ['init']);
   task('clean', clean);
 
   startGrinder(args);

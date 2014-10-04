@@ -31,4 +31,4 @@ dartanalyzer --fatal-warnings \
 dart test/all.dart
 
 # Run all the generators and analyze the generated code.
-./grind test-generators
+./grind test
