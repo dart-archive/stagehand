@@ -11,8 +11,8 @@ void main() => defineTests();
 
 void defineTests() {
   group('main tests', () {
-    test('doStuff', () {
-      expect(doStuff(), null);
+    test('calculate', () {
+      expect(calculate(), 42);
     });
   });
 }

@@ -2,11 +2,9 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-/**
- * The {{projectName}} library.
- */
+/// The {{projectName}} library.
 library {{projectName}};
 
-void doStuff() {
-  print('Hello world!');
+int calculate() {
+  return 6 * 7;
 }

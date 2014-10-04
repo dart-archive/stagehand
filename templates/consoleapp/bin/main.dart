@@ -5,5 +5,6 @@
 import 'package:{{projectName}}/{{projectName}}.dart';
 
 main() {
-  doStuff();
+  print('Hello world!');
+  print('value: ${{{projectName}}.calculate()}');
 }
