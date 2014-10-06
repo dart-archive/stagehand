@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-import 'package:{{projectName}}/{{projectName}}.dart' as {{projectName}};
+/// The {{projectName}} library.
+library {{projectName}};
 
-main() {
-  print('Hello world!');
-  print('value: ${{{projectName}}.calculate()}');
+int calculate() {
+  return 6 * 7;
 }
