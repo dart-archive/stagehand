@@ -1,13 +1,11 @@
-// Copyright (c) {{year}}, <your name>. All rights reserved.
-// Use of this source code is governed by a BSD-style
-// license that can be found in the LICENSE file.
+// Copyright (c) {{year}}, <your name>. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 
 library nav_menu;
 
 import 'dart:html';
 
 initNavMenu() {
-
   var navdrawerContainer = querySelector('.navdrawer-container');
   var appbarElement = querySelector('.app-bar');
   var menuBtn = querySelector('.menu');
@@ -33,5 +31,4 @@ initNavMenu() {
       closeMenu(event);
     }
   });
-
 }
