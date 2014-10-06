@@ -5,7 +5,20 @@
 /**
  * Stagehand is a Dart project generator.
  *
- * TODO:
+ * Stagehand helps you get your Dart projects set up and ready for the big show.
+ * It is a Dart project scaffolding generator, inspired by tools like Web
+ * Starter Kit and Yeoman.
+ *
+ * It can be used as a command-line application, or as a regular Dart library
+ * composed it a larger development tool. To use as a command-line app, run:
+ *
+ *     `pub global run stagehand`
+ *
+ * to see a list of all app types you can create, and:
+ *
+ *     `pub global run stagehand -o foobar webapp`
+ *
+ * to create a new instance of the `webapp` template in a `foobar` subdirectory.
  */
 library stagehand;
 

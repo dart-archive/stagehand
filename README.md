@@ -14,8 +14,8 @@ Kit and Yeoman.
 
 * consoleapp - a minimal command-line script
 * package - a library for pub, complete with tests
-* webapp - a minimal responsive web app, with Sass, routing, and more
 * polymer - a web app with Polymer.dart and paper (material design) elements
+* webapp - a minimal responsive web app, with Sass, routing, and more
 * More to come!
 
 ## Installation
@@ -68,7 +68,7 @@ or
 ## Non-goals
 
 * Fostering an entire ecosystem of generators
-  * This project is too opinionated. It’s not a framework for generators.
+* This project is opinionated. It’s not a framework for generators.
 
 ## Requirements
 
@@ -82,7 +82,7 @@ or
       be confused by too much going on.
   * Dart + Polymer app
     * this is the most opinionated and complete option. for the developer that
-      says “I just want to paint by numbers”
+      says "I just want to paint by numbers"
   * Dart + server-side
   * Dart library (suitable to publish on pub.dartlang.org)
 * Anonymous and opt-in usage analytics
@@ -99,13 +99,11 @@ Please file on [Github Issues](https://github.com/sethladd/stagehand/issues).
 
 ## Analytics and crash reports
 
-Learn more about how
-[Stagehand uses Google Analytics][analytics] for measuring usage and error reporting,
-and how you can opt-out.
+Learn more about how [Stagehand uses Google Analytics][analytics] for measuring
+usage and error reporting, and how you can opt-out.
 
 ## Disclaimer
 
 This is not an official Google product.
-
 
 [analytics]: https://github.com/google/stagehand/wiki/Anonymous-analytics-and-crash-reports
