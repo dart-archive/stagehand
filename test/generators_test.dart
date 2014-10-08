@@ -11,10 +11,9 @@ void main() => defineTests();
 
 void defineTests() {
   group('generators', () {
-    test('consoleapp', () => validate(getGenerator('consoleapp')));
-    test('package', () => validate(getGenerator('package')));
-    test('polymer', () => validate(getGenerator('polymer')));
-    test('webapp', () => validate(getGenerator('webapp')));
+    generators.forEach((generator) {
+      test(generator.id, () => validate(getGenerator(generator.id)));
+    });
   });
 }
 

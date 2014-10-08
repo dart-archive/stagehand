@@ -35,10 +35,10 @@ import 'src/common.dart';
 /// A curated, prescriptive list of Dart project generators.
 final List<Generator> generators = [
   new ConsoleAppGenerator(),
-  new WebAppGenerator(),
   new PackageGenerator(),
   new PolymerGenerator(),
-  new ShelfAppGenerator()
+  new ShelfAppGenerator(),
+  new WebAppGenerator()
 ];
 
 Generator getGenerator(String id) {
