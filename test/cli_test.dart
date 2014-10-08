@@ -9,9 +9,8 @@ import 'dart:convert' show JSON;
 
 import 'package:stagehand/stagehand.dart';
 import 'package:stagehand/analytics/analytics.dart';
+import 'package:stagehand/src/cli_app.dart';
 import 'package:unittest/unittest.dart';
-
-import '../bin/stagehand.dart';
 
 void main() => defineTests();
 
