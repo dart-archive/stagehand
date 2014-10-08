@@ -34,7 +34,7 @@ class CliApp {
 
     analytics = new AnalyticsIO(_GA_TRACKING_ID, APP_NAME, APP_VERSION);
 
-    generators.sort(Generator.compareGenerators);
+    generators.sort();
   }
 
   Future process(List<String> args) {
