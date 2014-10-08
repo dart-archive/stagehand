@@ -1,7 +1,6 @@
-.idea
 .DS_Store
-cache/
+.idea
+.pub/
+build/
 packages
 pubspec.lock
-build
-.pub
