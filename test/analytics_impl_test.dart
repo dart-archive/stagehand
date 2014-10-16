@@ -47,28 +47,26 @@ void defineTests() {
     test('simple', () {
       AnalyticsImplMock mock = new AnalyticsImplMock('UA-0');
       mock.sendScreenView('main');
-      expect(mock.disabled, false);
       expect(mock.mockProperties['clientId'], isNotNull);
       expect(mock.mockPostHandler.sentValues, isNot(isEmpty));
     });
 
-    test('respects disabled', () {
+    test('respects disabled 1', () {
       AnalyticsImplMock mock = new AnalyticsImplMock('UA-0');
-      mock.disabled = true;
-      mock.sendScreenView('main');
-      expect(mock.disabled, true);
+      mock.optIn = false;
+      mock.sendException('FooBar exception');
+      expect(mock.optIn, false);
       expect(mock.mockPostHandler.sentValues, isEmpty);
     });
 
-    test('disable clears clientID', () {
-      AnalyticsImplMock mock = new AnalyticsImplMock('UA-0');
-      mock.sendScreenView('main');
-      expect(mock.disabled, false);
-      expect(mock.mockProperties['clientId'], isNotNull);
-      String id1 = mock.mockProperties['clientId'];
-      mock.disabled = true;
-      expect(mock.mockProperties['clientId'], isNot(id1));
-    });
+//    test('respects disabled 2', () {
+//      AnalyticsImplMock mock = new AnalyticsImplMock('UA-0');
+//      mock.optIn = false;
+//      mock.sendScreenView('fooBar');
+//      expect(mock.optIn, false);
+//      String viewName = mock.mockPostHandler.sentValues[0]['cd'];
+//      expect(viewName, 'main');
+//    });
 
     test('exception file paths', () {
       AnalyticsImplMock mock = new AnalyticsImplMock('UA-0');
@@ -84,7 +82,9 @@ class AnalyticsImplMock extends AnalyticsImpl {
   MockPostHandler get mockPostHandler => postHandler;
 
   AnalyticsImplMock(String trackingId) :
-    super(trackingId, new MockProperties(), new MockPostHandler());
+    super(trackingId, new MockProperties(), new MockPostHandler()) {
+    optIn = true;
+  }
 }
 
 class MockProperties extends PersistentProperties {

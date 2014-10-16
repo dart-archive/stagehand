@@ -78,14 +78,13 @@ abstract class AnalyticsImpl implements Analytics {
     assert(trackingId != null);
   }
 
-  bool get disabled => properties['disabled'] == true;
+  bool get optIn => properties['optIn'] == true;
 
-  set disabled(bool value) {
-    properties['disabled'] = value;
-    if (value == true) _clearClientId();
+  set optIn(bool value) {
+    properties['optIn'] = value;
   }
 
-  bool get enablementExplicitlyChanged => properties['disabled'] != null;
+  bool get hasSetOptIn => properties['optIn'] != null;
 
   Future sendScreenView(String viewName) {
     Map args = {'cd': viewName};
@@ -93,12 +92,16 @@ abstract class AnalyticsImpl implements Analytics {
   }
 
   Future sendEvent(String category, String action, [String label]) {
+    if (!optIn) return new Future.value();
+
     Map args = {'ec': category, 'ea': action};
     if (label != null) args['el'] = label;
     return _sendPayload('event', args);
   }
 
   Future sendException(String description, [bool fatal]) {
+    if (!optIn) return new Future.value();
+
     // In order to ensure that the client of this API is not sending any PII
     // data, we strip out any stack trace that may reference a path on the
     // user's drive (file:/...).
@@ -126,17 +129,9 @@ abstract class AnalyticsImpl implements Analytics {
     }
   }
 
-  void _clearClientId() {
-    if (_clientId != null) {
-      properties['clientId'] = null;
-    }
-  }
-
   // Valid values for [hitType] are: 'pageview', 'screenview', 'event',
   // 'transaction', 'item', 'social', 'exception', and 'timing'.
   Future _sendPayload(String hitType, Map args) {
-    if (disabled) return new Future.value();
-
     if (_bucket.removeDrop()) {
       _initClientId();
 
