@@ -54,20 +54,34 @@ class CliApp {
       }
     }
 
-    if (!analytics.enablementExplicitlyChanged) {
-      analytics.disabled = false;
-    }
-
     if (options.wasParsed('analytics')) {
-      analytics.disabled = !options['analytics'];
-      analytics.sendScreenView('analytics');
-      _out("Analytics ${analytics.disabled ? 'disabled' : 'enabled'}.");
+      analytics.optIn = options['analytics'];
+      _out("Analytics ${analytics.optIn ? 'enabled' : 'disabled'}.");
+      if (analytics.optIn) analytics.sendScreenView('analytics');
       return new Future.value();
     }
 
-    // This hidden option is used so that our build bots don't send emit data.
+    // This hidden option is used so that our build bots don't emit data.
     if (options['mock-analytics']) {
       analytics = new AnalyticsMock();
+    }
+
+    if (options['help'] || args.isEmpty) {
+      // Prompt to opt into advanced analytics.
+      if (!analytics.hasSetOptIn) {
+        _out("Welcome to Stagehand! We collect anonymous usage statistics and crash reports in");
+        _out("order to improve the tool (http://goo.gl/6wsncI). Would you like to opt-in to");
+        io.stdout.write("additional analytics to help us improve Stagehand [y/yes/no]? ");
+        io.stdout.flush();
+        String response = io.stdin.readLineSync();
+        response = response.toLowerCase().trim();
+        analytics.optIn = (response == 'y' || response == 'yes');
+        _out('');
+      }
+
+      _screenView(options['help'] ? 'help' : 'main');
+      _usage(argParser);
+      return new Future.value();
     }
 
     // The `--machine` option emits the list of available generators to stdout
@@ -75,20 +89,11 @@ class CliApp {
     // output of `--help`. It's an undocumented command line flag, and may go
     // away or change.
     if (options['machine']) {
-      analytics.sendScreenView('machine');
+      _screenView('machine');
+
       Iterable itor = generators.map((generator) =>
           {'name': generator.id, 'description': generator.description});
       logger.stdout(JSON.encode(itor.toList()));
-      return new Future.value();
-    }
-
-    if (options['help'] || args.isEmpty) {
-      _out("Welcome to Stagehand! We collect anonymous usage statistics and crash reports in order");
-      _out("to improve the tool (http://goo.gl/6wsncI). Run 'stagehand --no-analytics' to opt-out.");
-      _out('');
-
-      analytics.sendScreenView(options['help'] ? 'help' : 'main');
-      _usage(argParser);
       return new Future.value();
     }
 
@@ -142,7 +147,7 @@ class CliApp {
 
     _out("Creating ${generatorName} application '${projectName}':");
 
-    analytics.sendScreenView('create');
+    _screenView('create');
     analytics.sendEvent('create', generatorName, generator.description);
 
     return generator.generate(projectName, target).then((_) {
@@ -188,7 +193,7 @@ class CliApp {
       .fold(0, (a, b) => max(a, b));
     generators
       .map((g) {
-        var lines = wrap(g.description, 78 - len);
+        var lines = wrap(g.description, 80 - len);
         var desc = lines.first;
         if (lines.length > 1) {
           desc += '\n' +
@@ -206,6 +211,12 @@ class CliApp {
   }
 
   void _out(String str) => logger.stdout(str);
+
+  void _screenView(String view) {
+    // If the user hasn't opted in, only send a version check - no page data.
+    if (!analytics.optIn) view = 'main';
+    analytics.sendScreenView(view);
+  }
 }
 
 class ArgError implements Exception {

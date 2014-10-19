@@ -95,7 +95,9 @@ void testGenerators(GrinderContext context) {
         String filePath = dartFile.path;
         filePath = filePath.replaceAll('projectName', 'foo');
 
-        Analyzer.analyzePath(context, filePath, fatalWarnings: true);
+        // TODO: We should be able to pass a cwd into `analyzePath`.
+        Analyzer.analyzePath(context, filePath, fatalWarnings: true,
+            packageRoot: new Directory('foo/packages'));
       }
 
       fooDir.deleteSync(recursive: true);

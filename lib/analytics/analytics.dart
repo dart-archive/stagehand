@@ -15,17 +15,9 @@
  * For both classes, you need to provide a Google Analytics tracking ID, the
  * application name, and the application version.
  *
- * Your application should provide an opt-out option for the user. If they
- * opt-out, set the [disabled] field to `true`. This setting will persist
- * across sessions automatically. You can continue to call the `send*` methods;
- * the library itself will make sure that no data is sent when the [disabled]
- * flag is true;
- *
- * For an opt-in workflow, query the [enablementExplicitlyChanged] at startup.
- * This will be false if the [disabled] flag has never been set. Set the flag to
- * `true`, and prompt the user about GA opt-in. Once the [disabled] flag is set
- * (either way), the [enablementExplicitlyChanged] flag will always be true
- * (you won't have to re-prompt the user on each run of the application).
+ * Your application should provide an opt-in option for the user. If they
+ * opt-in, set the [optIn] field to `true`. This setting will persist across
+ * sessions automatically.
  *
  * For more information, please see the Google Analytics Measurement Protocol
  * [Policy](https://developers.google.com/analytics/devguides/collection/protocol/policy).
@@ -46,18 +38,18 @@ abstract class Analytics {
   String get trackingId;
 
   /**
-   * Whether analytics has been disabled by the user. Also, enable or disable
-   * analytics.
+   * Whether the user has opt-ed in to additional analytics.
    */
-  bool disabled;
+  bool optIn;
 
   /**
-   * Whether the [disabled] value has been explicitly set (either enabled or
-   * disabled).
+   * Whether the [optIn] value has been explicitly set (either `true` or
+   * `false`).
    */
-  bool get enablementExplicitlyChanged;
+  bool get hasSetOptIn;
 
   Future sendScreenView(String viewName);
+
   Future sendEvent(String category, String action, [String label]);
 
   /**
@@ -99,8 +91,8 @@ class AnalyticsMock extends Analytics {
   String get trackingId => 'UA-0';
   final bool logCalls;
 
-  bool disabled = false;
-  bool enablementExplicitlyChanged = false;
+  bool optIn = false;
+  bool hasSetOptIn = true;
 
   AnalyticsMock([this.logCalls = false]);
 

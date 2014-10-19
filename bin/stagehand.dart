@@ -21,15 +21,24 @@ void main(List<String> args) {
         io.exit(1);
       } else {
         print('Unexpected error: ${e}\n${st}');
+
         _sendException(app.analytics, e, st).then((_) {
           io.exit(1);
         });
       }
-    });
+    }).whenComplete(_startExitTimer);
   } catch (e, st) {
     print('Unexpected error: ${e}\n${st}');
     _sendException(app.analytics, e, st);
   }
+}
+
+void _startExitTimer() {
+  // Always exit quickly after performing work. If the user has opted into
+  // analytics, the analytics I/O can cause the CLI to wait to terminate. This
+  // is annoying to the user, as the tool has already completed its work from
+  // their perspective.
+  new Timer(new Duration(milliseconds: 200), () => io.exit(0));
 }
 
 Future _sendException(Analytics analytics, var e, var st) {
@@ -50,4 +59,3 @@ Future _sendException(Analytics analytics, var e, var st) {
 
   return analytics.sendException(str, true);
 }
-
