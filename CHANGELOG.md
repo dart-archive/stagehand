@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## 0.0.6
+## 0.1.0
 
 * Removed Web Starter Kit, waiting for at least WSK 0.6.0
 * Renamed `helloworld` to `consoleapp`
 * Added `polymer` template
 * Added `shelfapp` template
 * Added default BSD license to projects
+* Analytics are opt-in. Version update ping is still automatic.
 
 ## 0.0.5
 
