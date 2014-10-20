@@ -18,7 +18,7 @@ import 'package:stagehand/src/common.dart';
 const String APP_NAME = 'stagehand';
 
 // This version must be updated in tandem with the pubspec version.
-const String APP_VERSION = '0.0.5-dev';
+const String APP_VERSION = '0.1.0';
 
 // The Google Analytics tracking ID for stagehand.
 const String _GA_TRACKING_ID = 'UA-55033590-1';
