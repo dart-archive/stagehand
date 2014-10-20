@@ -4,8 +4,9 @@
 
 * Removed Web Starter Kit, waiting for at least WSK 0.6.0
 * Renamed `helloworld` to `consoleapp`
-* Adding default BSD license to projects
 * Added `polymer` template
+* Added `shelfapp` template
+* Added default BSD license to projects
 
 ## 0.0.5
 

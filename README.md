@@ -15,8 +15,8 @@ Kit and Yeoman.
 * consoleapp - a minimal command-line script
 * package - a library for pub, complete with tests
 * polymer - a web app with Polymer.dart and paper (material design) elements
+* shelfapp - a minimal web server using the shelf package
 * webapp - a minimal responsive web app, with Sass, routing, and more
-* More to come!
 
 ## Installation
 
@@ -32,29 +32,25 @@ Install:
 
 As an example, here is how you create a webapp with Stagehand:
 
-With Dart 1.6:
-
-    $> cd where_you_want_to_create_the_project_directory
-    $> pub global run stagehand -o _directory_name_ webapp
-    
 With Dart 1.7 or greater:
 
     $> cd where_you_want_to_create_the_project_directory
     $> stagehand -o _directory_name_ webapp
 
+With Dart 1.6:
+
+    $> cd where_you_want_to_create_the_project_directory
+    $> pub global run stagehand -o _directory_name_ webapp
+
 Here is how you list all of the project templates:
+
+With Dart 1.7 or greater:
+
+    $> stagehand
 
 With Dart 1.6:
 
     $> pub global run stagehand
-    
-With Dart 1.7 or greater:
-
-    $> stagehand
-    
-or
-
-    $> stagehand --help
 
 ## Goals
 
@@ -64,34 +60,7 @@ or
 * Becomes the best way to create a new Dart project
 * Used by WebStorm, CDE, Sublime, and more
 * Distributed as a pub package
-
-## Non-goals
-
-* Fostering an entire ecosystem of generators
-* This project is opinionated. It’s not a framework for generators.
-
-## Requirements
-
-* Open source, hosted on github
-* Run the generators via `pub global run`
-  * or, via an API exposed by the package
-* Single package
-* Generators for:
-  * Dart + HTML app
-    * this is the most minimal option. for the developer that doesn’t want to
-      be confused by too much going on.
-  * Dart + Polymer app
-    * this is the most opinionated and complete option. for the developer that
-      says "I just want to paint by numbers"
-  * Dart + server-side
-  * Dart library (suitable to publish on pub.dartlang.org)
-* Anonymous and opt-in usage analytics
-* Creates
-  * the project directory itself
-  * all required directories
-  * pubspec.yaml file
-  * .gitignore file
-  * initial files like index.html
+* Non-goal: fostering an entire ecosystem of generators. This project is opinionated. It’s not a framework for generators.
 
 ## Issues and bugs
 
