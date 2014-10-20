@@ -51,8 +51,8 @@
     <div class="container">
 
       <aside class="alert alert-warning">
-        Stagehand is pre-alpha. Only for the brave, but we'd love
-        <a href="https://github.com/google/stagehand/issues">feedback</a>.
+        Stagehand is beta. We love
+        <a href="https://github.com/google/stagehand/issues">feedback</a>!
       </aside>
 
       <h1 id="about">About Stagehand</h1>
@@ -64,7 +64,8 @@
 
       <h1 id="get-started">Get Started</h1>
 
-      <p>Installing Stagehand requires the Dart SDK, version 1.6 or greater.
+      <p>Installing Stagehand requires the Dart SDK, version 1.6 or greater
+      (Dart 1.7 is highly recommended).
       Once Dart SDK is on your path, you can install the stagehand pub
       package:</p>
 
@@ -76,23 +77,27 @@ $ pub global activate stagehand
 
       <h1 id="usage">Usage</h1>
 
-      <p>Stagehand is easy to use.</p>
+      <p>
+        Stagehand is easy to use.
+        First, make sure
+        <a href="https://www.dartlang.org/tools/pub/cmd/pub-global.html#running-a-script-from-your-path">pub scripts are on your PATH</a>.
+      </p>
 
       <p>
       <pre><code>
 $ cd &lt;location for your app&gt;
-$ pub global run stagehand -o &lt;appname&gt; webapp
+$ stagehand -o &lt;appname&gt; webapp
       </code></pre>
       </p>
 
       <p>Stagehand contains a highly curated list of templates.</p>
 
       <ul>
-      <li>consoleapp - <em>a minimal command line app</em></li>
-      <li>webapp - <em>a minimal HTML app</em></li>
-      <li>package - <em>a library, with tests, as a pub package</em></li>
-      <li>polymer - <em>a polymer and paper HTML app</em></li>
-      <li>More to come!</li>
+      <li>consoleapp - <em>A minimal command-line app.</em></li>
+      <li>webapp - <em>A minimal HTML app.</em></li>
+      <li>package - <em>A library, with tests, as a pub package.</em></li>
+      <li>polymer - <em>A polymer and paper HTML app.</em></li>
+      <li>shelfapp - <em>A minimal web server using the shelf package.</em></li>
       </ul>
 
     </div> <!-- /container -->
