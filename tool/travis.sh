@@ -18,6 +18,10 @@ export PATH="$DART_SDK/bin:$PATH"
 # Display installed versions.
 dart --version
 
+# Globally install grinder
+pub global activate grinder
+export PATH=~/.pub-cache/bin:$PATH
+
 # Get our packages.
 pub get
 
@@ -31,4 +35,4 @@ dartanalyzer --fatal-warnings \
 dart test/all.dart
 
 # Run all the generators and analyze the generated code.
-./grind test
+grind test
