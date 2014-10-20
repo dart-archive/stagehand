@@ -64,7 +64,8 @@
 
       <h1 id="get-started">Get Started</h1>
 
-      <p>Installing Stagehand requires the Dart SDK, version 1.6 or greater.
+      <p>Installing Stagehand requires the Dart SDK, version 1.6 or greater
+      (Dart 1.7 is highly recommended).
       Once Dart SDK is on your path, you can install the stagehand pub
       package:</p>
 
@@ -76,12 +77,16 @@ $ pub global activate stagehand
 
       <h1 id="usage">Usage</h1>
 
-      <p>Stagehand is easy to use.</p>
+      <p>
+        Stagehand is easy to use.
+        First, make sure
+        <a href="https://www.dartlang.org/tools/pub/cmd/pub-global.html#running-a-script-from-your-path">pub scripts are on your PATH</a>.
+      </p>
 
       <p>
       <pre><code>
 $ cd &lt;location for your app&gt;
-$ pub global run stagehand -o &lt;appname&gt; webapp
+$ stagehand -o &lt;appname&gt; webapp
       </code></pre>
       </p>
 
