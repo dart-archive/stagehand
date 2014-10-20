@@ -66,6 +66,10 @@ With Dart 1.6:
 
 Please file on [Github Issues](https://github.com/sethladd/stagehand/issues).
 
+## Contributing
+
+Contributions welcome! Please read this short [guide](https://github.com/google/stagehand/wiki/Contributing) first.
+
 ## Analytics and crash reports
 
 Learn more about how [Stagehand uses Google Analytics][analytics] for measuring
