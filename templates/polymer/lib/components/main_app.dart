@@ -5,9 +5,7 @@ import 'dart:html';
 
 import 'package:polymer/polymer.dart';
 
-/**
- * A Polymer `<main-app>` element.
- */
+/// A Polymer `<main-app>` element.
 @CustomTag('main-app')
 class MainApp extends PolymerElement {
   @observable String input = '';
