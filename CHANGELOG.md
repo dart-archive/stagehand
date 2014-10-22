@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.1
+
+* changed to allow stagehand to generate a project into an existing directory
+
 ## 0.1.0
 
 * Removed Web Starter Kit, waiting for at least WSK 0.6.0
