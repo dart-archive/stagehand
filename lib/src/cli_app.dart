@@ -93,9 +93,7 @@ class CliApp {
     if (options['machine']) {
       _screenView('machine');
 
-      Iterable itor = generators.map((generator) =>
-          {'name': generator.id, 'description': generator.description});
-      logger.stdout(JSON.encode(itor.toList()));
+      logger.stdout(_createMachineInfo(generators));
       return new Future.value();
     }
 
@@ -130,11 +128,6 @@ class CliApp {
 
     io.Directory dir = new io.Directory(outputDir);
 
-    if (dir.existsSync()) {
-      logger.stderr("Error: '${dir.path}' already exists.\n");
-      return new Future.error(new ArgError('target path already exists'));
-    }
-
     // Validate and normalize the project name.
     String projectName = path.basename(dir.path);
     if (_validateName(projectName) != null) {
@@ -155,6 +148,22 @@ class CliApp {
     return generator.generate(projectName, target).then((_) {
       _out("${generator.numFiles()} files written.");
     });
+  }
+
+  String _createMachineInfo(List<Generator> generators) {
+    Iterable itor = generators.map((Generator generator) {
+      Map m = {
+        'name': generator.id,
+        'description': generator.description
+      };
+
+      if (generator.entrypoint != null) {
+        m['entrypoint'] = generator.entrypoint.path;
+      }
+
+      return m;
+    });
+    return JSON.encode(itor.toList());
   }
 
   ArgParser _createArgParser() {

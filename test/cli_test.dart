@@ -64,10 +64,6 @@ void defineTests() {
       });
     });
 
-    test('two args (directory exists)', () {
-      return _expectError(app.process(['-o', 'packages', 'consoleapp']), false);
-    });
-
     test('three args', () {
       return _expectError(app.process(['-o', 'foobar', 'consoleapp', 'foobar']));
     });
