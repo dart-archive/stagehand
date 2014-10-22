@@ -28,6 +28,11 @@ Install:
 
     $> pub global activate stagehand
 
+Update:
+
+    # activate stagehand again
+    $> pub global activate stagehand
+
 ## Usage
 
 As an example, here is how you create a webapp with Stagehand:
