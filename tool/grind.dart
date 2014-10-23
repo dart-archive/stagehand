@@ -67,18 +67,15 @@ void updateGhPages(GrinderContext context) {
 void testGenerators(GrinderContext context) {
   Directory fooDir = new Directory('foo');
 
-  if (fooDir.existsSync()) {
-    fooDir.deleteSync(recursive: true);
-  }
-
-  fooDir.createSync();
-
   try {
     for (stagehand.Generator generator in stagehand.generators) {
+      if (fooDir.existsSync()) fooDir.deleteSync(recursive: true);
+      fooDir.createSync();
+
       context.log('');
       context.log('${generator.id} template:');
 
-      runDartScript(context, 'bin/stagehand.dart',
+      runDartScript(context, '../bin/stagehand.dart',
           arguments: ['--mock-analytics', generator.id],
           workingDirectory: fooDir.path);
 
