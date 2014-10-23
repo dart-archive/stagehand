@@ -6,14 +6,14 @@ library stagehand.polymer;
 
 import '../stagehand.dart';
 import '../src/common.dart';
-import 'polymer_data.dart';
+import 'polymerapp_data.dart';
 
 /**
  * A generator for a polymer.dart application.
  */
-class PolymerGenerator extends DefaultGenerator {
-  PolymerGenerator() : super(
-      'polymer',
+class PolymerAppGenerator extends DefaultGenerator {
+  PolymerAppGenerator() : super(
+      'polymerapp',
       "A polymer.dart web app.",
       categories: const ['dart', 'web']) {
 
