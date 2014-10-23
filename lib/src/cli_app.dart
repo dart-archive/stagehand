@@ -18,7 +18,7 @@ import 'package:stagehand/src/common.dart';
 const String APP_NAME = 'stagehand';
 
 // This version must be updated in tandem with the pubspec version.
-const String APP_VERSION = '0.1.1';
+const String APP_VERSION = '0.1.2';
 
 // The Google Analytics tracking ID for stagehand.
 const String _GA_TRACKING_ID = 'UA-55033590-1';
@@ -29,6 +29,7 @@ class CliApp {
 
   GeneratorTarget target;
   Analytics analytics;
+  io.Directory _cwd;
 
   CliApp(this.generators, this.logger, [this.target]) {
     assert(generators != null);
@@ -37,6 +38,15 @@ class CliApp {
     analytics = new AnalyticsIO(_GA_TRACKING_ID, APP_NAME, APP_VERSION);
 
     generators.sort();
+  }
+
+  io.Directory get cwd => _cwd != null ? _cwd : io.Directory.current;
+
+  /**
+   * An override for the directory to generate into; public for testing.
+   */
+  set cwd(io.Directory value) {
+    _cwd = value;
   }
 
   Future process(List<String> args) {
@@ -118,15 +128,19 @@ class CliApp {
       return new Future.error(new ArgError('invalid generator'));
     }
 
-    String outputDir = options['outdir'];
+    io.Directory dir = cwd;
 
-    if (outputDir == null) {
-      logger.stderr("No output directory specified.\n");
-      _usage(argParser);
-      return new Future.error(new ArgError('No output directory specified'));
+    // TOOD(devoncarew): Remove this deprecated option.
+    if (options['outdir'] != null) {
+      dir = new io.Directory(options['outdir']);
     }
 
-    io.Directory dir = new io.Directory(outputDir);
+    if (!options['override'] && !_isDirEmpty(dir)) {
+      logger.stderr(
+'The current directory is not empty. Please create a new project directory, or '
+'use --override to force generation into the current directory.');
+      return new Future.error(new ArgError('project directory not empty'));
+    }
 
     // Validate and normalize the project name.
     String projectName = path.basename(dir.path);
@@ -169,13 +183,20 @@ class CliApp {
   ArgParser _createArgParser() {
     var argParser = new ArgParser();
 
-    argParser.addOption('outdir', abbr: 'o', valueHelp: 'path',
-        help: 'Where to put the files.');
-    argParser.addFlag('help', abbr: 'h', negatable: false,
-        help: 'Help!');
+    argParser.addFlag('help', abbr: 'h', negatable: false, help: 'Help!');
     argParser.addFlag('analytics', negatable: true,
         help: 'Opt-out of anonymous usage and crash reporting.');
+
+    // This option is deprecated and will go away.
+    argParser.addOption('outdir', abbr: 'o', valueHelp: 'path', hide: true);
+
+    // Really, really generate into the current directory.
+    argParser.addFlag('override', negatable: false, hide: true);
+
+    // Output the list of available projects as json to stdout.
     argParser.addFlag('machine', negatable: false, hide: true);
+
+    // Mock out analytics - for use on our testing bots.
     argParser.addFlag('mock-analytics', negatable: false, hide: true);
 
     return argParser;
@@ -195,25 +216,16 @@ class CliApp {
   }
 
   void _usage(ArgParser argParser) {
-    _out('usage: ${APP_NAME} -o <output directory> generator-name');
+    _out('Stagehand will generate the given application type into the current directory.');
+    _out('usage: ${APP_NAME} <generator-name>');
     _out(argParser.getUsage());
     _out('');
-    _out('Available generators:\n');
+    _out('Available generators:');
     int len = generators
       .map((g) => g.id.length)
       .fold(0, (a, b) => max(a, b));
     generators
-      .map((g) {
-        var lines = wrap(g.description, 80 - len);
-        var desc = lines.first;
-        if (lines.length > 1) {
-          desc += '\n' +
-            lines.sublist(1, lines.length)
-              .map((line) => '${_pad(' ', len + 2)}$line')
-              .join('\n');
-        }
-        return "${_pad(g.id, len)}: ${desc}";
-      })
+      .map((g) => "  ${_pad(g.id, len)} - ${g.description}")
       .forEach(logger.stdout);
   }
 
@@ -227,6 +239,19 @@ class CliApp {
     // If the user hasn't opted in, only send a version check - no page data.
     if (!analytics.optIn) view = 'main';
     analytics.sendScreenView(view);
+  }
+
+  /**
+   * Return true if there are any non-symlinked, non-hidden sub-directories in
+   * the given directory.
+   */
+  bool _isDirEmpty(io.Directory dir) {
+    var isHiddenDir = (dir) => path.basename(dir.path).startsWith('.');
+
+    return dir.listSync(followLinks: false)
+        .where((entity) => entity is io.Directory)
+        .where((entity) => !isHiddenDir(entity))
+        .isEmpty;
   }
 }
 

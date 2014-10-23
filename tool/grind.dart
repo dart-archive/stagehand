@@ -71,13 +71,16 @@ void testGenerators(GrinderContext context) {
     fooDir.deleteSync(recursive: true);
   }
 
+  fooDir.createSync();
+
   try {
     for (stagehand.Generator generator in stagehand.generators) {
       context.log('');
       context.log('${generator.id} template:');
 
       runDartScript(context, 'bin/stagehand.dart',
-          arguments: ['--mock-analytics', '-o', 'foo', generator.id]);
+          arguments: ['--mock-analytics', generator.id],
+          workingDirectory: fooDir.path);
 
       File file = joinFile(fooDir, [generator.entrypoint.path]);
 
