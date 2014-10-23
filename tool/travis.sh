@@ -18,7 +18,7 @@ export PATH="$DART_SDK/bin:$PATH"
 # Display installed versions.
 dart --version
 
-# Globally install grinder
+# Globally install grinder.
 pub global activate grinder
 export PATH=~/.pub-cache/bin:$PATH
 

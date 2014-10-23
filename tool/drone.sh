@@ -10,6 +10,10 @@ set -e
 # Display installed versions.
 dart --version
 
+# Globally install grinder.
+pub global activate grinder
+export PATH=~/.pub-cache/bin:$PATH
+
 # Get our packages.
 pub get
 
@@ -20,4 +24,4 @@ dartanalyzer --fatal-warnings bin/stagehand.dart lib/stagehand.dart test/all.dar
 dart test/all.dart
 
 # Run all the generators and analyze the generated code.
-./grind test
+grind test
