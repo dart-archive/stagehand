@@ -14,8 +14,8 @@ import 'shelfapp_data.dart';
 class ShelfAppGenerator extends DefaultGenerator {
   ShelfAppGenerator() : super(
       'shelfapp',
-      "A minimal web server using the shelf package.",
-      categories: const ['dart', 'shelf', 'web server', 'minimal']) {
+      "A web server using the shelf package.",
+      categories: const ['dart', 'shelf', 'server']) {
 
     for (TemplateFile file in decodeConcanenatedData(data)) {
       addTemplateFile(file);

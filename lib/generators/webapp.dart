@@ -14,9 +14,9 @@ import 'webapp_data.dart';
 class WebAppGenerator extends DefaultGenerator {
   WebAppGenerator() : super(
       'webapp',
-      "A minimal web app for the developer that doesn’t want to be confused by "
-      "too much going on.",
-      categories: const ['dart', 'web', 'minimal']) {
+      "A web app for the developer that doesn’t want to be confused by too "
+      "much going on.",
+      categories: const ['dart', 'web']) {
 
     for (TemplateFile file in decodeConcanenatedData(data)) {
       addTemplateFile(file);
