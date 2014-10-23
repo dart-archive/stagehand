@@ -28,7 +28,7 @@ import 'dart:convert';
 import 'generators/consoleapp.dart';
 import 'generators/webapp.dart';
 import 'generators/package.dart';
-import 'generators/polymer.dart';
+import 'generators/polymerapp.dart';
 import 'generators/shelfapp.dart';
 import 'src/common.dart';
 
@@ -36,7 +36,7 @@ import 'src/common.dart';
 final List<Generator> generators = [
   new ConsoleAppGenerator(),
   new PackageGenerator(),
-  new PolymerGenerator(),
+  new PolymerAppGenerator(),
   new ShelfAppGenerator(),
   new WebAppGenerator()
 ];
