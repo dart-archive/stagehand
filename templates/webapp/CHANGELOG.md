@@ -1,5 +1,5 @@
-# CHANGELOG
+# Changelog
 
 ## 0.0.1
 
-* Initial version, created by Stangehand.
+* Initial version, created by Stagehand.

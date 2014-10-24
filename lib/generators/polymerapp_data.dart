@@ -17,7 +17,7 @@ d2FybmluZ3MgYWZ0ZXIKLy8gYW5hbHl6aW5nIGEgcG9seW1lci5kYXJ0IGFwcC4KCmV4cG9ydCAn
 cGFja2FnZTpwb2x5bWVyL2RlZmF1bHRfYnVpbGQuZGFydCc7Cg==""",
   "CHANGELOG.md",
   "text",
-  """IyBDSEFOR0VMT0cKCiMjIDAuMC4xCgoqIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
+  """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgoqIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
 ZWhhbmQuCg==""",
   "lib/main_app.dart",
   "text",

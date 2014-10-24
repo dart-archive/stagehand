@@ -8,8 +8,8 @@ List<String> data = [
   "LkRTX1N0b3JlCi5pZGVhCi5wdWIvCmJ1aWxkLwpwYWNrYWdlcwpwdWJzcGVjLmxvY2sK",
   "CHANGELOG.md",
   "text",
-  """IyBDSEFOR0VMT0cKCiMjIDAuMC4xCgoqIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFu
-Z2VoYW5kLgo=""",
+  """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgoqIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
+ZWhhbmQuCg==""",
   "lib/nav_menu.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSB7e3llYXJ9fSwgPHlvdXIgbmFtZT4uIEFsbCByaWdodHMgcmVzZXJ2
@@ -81,7 +81,7 @@ cjogYW55CiAgc2FzczogJz49MC40LjAgPDAuNS4wJwogIHNjcmlwdF9pbmxpbmVyOiAnPj0wLjAu
 MyA8MC4xLjAnCiAgcm91dGVfaGllcmFyY2hpY2FsOiAnPj0wLjUuMCA8MC42LjAnCnRyYW5zZm9y
 bWVyczoKICAtIHNhc3M6CiAgICAgIHN0eWxlOiBjb21wcmVzc2VkCiAgLSBzY3JpcHRfaW5saW5l
 cgo=""",
-  "readme.md",
+  "README.md",
   "text",
   """IyBNaW5pbWFsIERhcnQgV2ViYXBwCgpBIHN0YXJ0aW5nIHBvaW50IGZvciBhIHdlYmFwcCBidWls
 dCB3aXRoIERhcnQuIFRoaXMgdGVtcGxhdGUKaXMgcmVjb21tZW5kZWQgaWYgeW91IGRvbid0IHdh
