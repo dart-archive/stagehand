@@ -8,7 +8,8 @@ List<String> data = [
   "LkRTX1N0b3JlCi5pZGVhCi5wdWIvCmJ1aWxkLwpwYWNrYWdlcwpwdWJzcGVjLmxvY2sK",
   "CHANGELOG.md",
   "text",
-  "IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgoqIEluaXRpYWwgcHJvamVjdCBjcmVhdGlvbgo=",
+  """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgoqIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
+ZWhhbmQuCg==""",
   "example/projectName.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSB7e3llYXJ9fSwgPHlvdXIgbmFtZT4uIEFsbCByaWdodHMgcmVzZXJ2

@@ -28,7 +28,8 @@ IHJldHVybiBuZXcgc2hlbGYuUmVzcG9uc2Uub2soJ1JlcXVlc3QgZm9yICIke3JlcXVlc3QudXJs
 fSInKTsKfQo=""",
   "CHANGELOG.md",
   "text",
-  "IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgoqIEluaXRpYWwgcHJvamVjdCBjcmVhdGlvbgo=",
+  """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgoqIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
+ZWhhbmQuCg==""",
   "LICENSE",
   "text",
   """Q29weXJpZ2h0IChjKSB7e3llYXJ9fSwgPHlvdXIgbmFtZT4uCkFsbCByaWdodHMgcmVzZXJ2ZWQu

@@ -16,7 +16,8 @@ dE5hbWV9fTsKCm1haW4oKSB7CiAgcHJpbnQoJ0hlbGxvIHdvcmxkOiAke3t7cHJvamVjdE5hbWV9
 fS5jYWxjdWxhdGUoKX0nKTsKfQo=""",
   "CHANGELOG.md",
   "text",
-  "IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgoqIEluaXRpYWwgcHJvamVjdCBjcmVhdGlvbgo=",
+  """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgoqIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
+ZWhhbmQuCg==""",
   "lib/projectName.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSB7e3llYXJ9fSwgPHlvdXIgbmFtZT4uIEFsbCByaWdodHMgcmVzZXJ2

@@ -2,4 +2,4 @@
 
 ## 0.0.1
 
-* Initial project creation
+* Initial version, created by Stagehand.
