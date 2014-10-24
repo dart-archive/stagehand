@@ -103,6 +103,10 @@ abstract class Generator implements Comparable<Generator> {
       vars[key] = additionalVars[key];
     });
 
+    if (!vars.containsKey('author')) {
+      vars['author'] = '<your name>';
+    }
+
     return Future.forEach(files, (TemplateFile file) {
       var resultFile = file.runSubstitution(vars);
       String filePath = resultFile.path;
