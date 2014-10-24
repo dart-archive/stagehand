@@ -133,6 +133,7 @@ class CliApp {
     // TOOD(devoncarew): Remove this deprecated option.
     if (options['outdir'] != null) {
       dir = new io.Directory(options['outdir']);
+      if (!dir.existsSync()) dir.createSync();
     }
 
     if (!options['override'] && !_isDirEmpty(dir)) {
