@@ -160,9 +160,38 @@ class CliApp {
     _screenView('create');
     analytics.sendEvent('create', generatorName, generator.description);
 
-    return generator.generate(projectName, target).then((_) {
+    String author = options['author'];
+
+    Map vars = {'author': author};
+
+    return generator.generate(projectName, target, additionalVars: vars).then(
+        (_) {
       _out("${generator.numFiles()} files written.");
     });
+  }
+
+  ArgParser _createArgParser() {
+    var argParser = new ArgParser();
+
+    argParser.addFlag('help', abbr: 'h', negatable: false, help: 'Help!');
+    argParser.addFlag('analytics', negatable: true,
+        help: 'Opt-out of anonymous usage and crash reporting.');
+    argParser.addOption('author', defaultsTo: '<your name>',
+        help: 'The author name to use for file headers.');
+
+    // This option is deprecated and will go away.
+    argParser.addOption('outdir', abbr: 'o', valueHelp: 'path', hide: true);
+
+    // Really, really generate into the current directory.
+    argParser.addFlag('override', negatable: false, hide: true);
+
+    // Output the list of available projects as json to stdout.
+    argParser.addFlag('machine', negatable: false, hide: true);
+
+    // Mock out analytics - for use on our testing bots.
+    argParser.addFlag('mock-analytics', negatable: false, hide: true);
+
+    return argParser;
   }
 
   String _createMachineInfo(List<Generator> generators) {
@@ -179,28 +208,6 @@ class CliApp {
       return m;
     });
     return JSON.encode(itor.toList());
-  }
-
-  ArgParser _createArgParser() {
-    var argParser = new ArgParser();
-
-    argParser.addFlag('help', abbr: 'h', negatable: false, help: 'Help!');
-    argParser.addFlag('analytics', negatable: true,
-        help: 'Opt-out of anonymous usage and crash reporting.');
-
-    // This option is deprecated and will go away.
-    argParser.addOption('outdir', abbr: 'o', valueHelp: 'path', hide: true);
-
-    // Really, really generate into the current directory.
-    argParser.addFlag('override', negatable: false, hide: true);
-
-    // Output the list of available projects as json to stdout.
-    argParser.addFlag('machine', negatable: false, hide: true);
-
-    // Mock out analytics - for use on our testing bots.
-    argParser.addFlag('mock-analytics', negatable: false, hide: true);
-
-    return argParser;
   }
 
   String _validateName(String projectName) {

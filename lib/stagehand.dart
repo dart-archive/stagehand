@@ -91,12 +91,17 @@ abstract class Generator implements Comparable<Generator> {
     this._entrypoint = entrypoint;
   }
 
-  Future generate(String projectName, GeneratorTarget target) {
+  Future generate(String projectName, GeneratorTarget target,
+      {Map<String, String> additionalVars}) {
     Map vars = {
       'projectName': projectName,
       'description': description,
       'year': new DateTime.now().year.toString()
     };
+
+    additionalVars.keys.forEach((key) {
+      vars[key] = additionalVars[key];
+    });
 
     return Future.forEach(files, (TemplateFile file) {
       var resultFile = file.runSubstitution(vars);

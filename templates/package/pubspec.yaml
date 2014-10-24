@@ -2,7 +2,7 @@ name: {{projectName}}
 description: >
   A library useful for applications or for sharing on pub.dartlang.org.
 version: 0.0.1
-#author: First Last <email@example.com>
+#author: {{author}} <email@example.com>
 #homepage: https://www.example.com
 #dependencies:
 #  lib_name: any
