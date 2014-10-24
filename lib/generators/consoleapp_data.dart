@@ -13,7 +13,7 @@ ZWQuIFVzZSBvZiB0aGlzIHNvdXJjZSBjb2RlCi8vIGlzIGdvdmVybmVkIGJ5IGEgQlNELXN0eWxl
 IGxpY2Vuc2UgdGhhdCBjYW4gYmUgZm91bmQgaW4gdGhlIExJQ0VOU0UgZmlsZS4KCmltcG9ydCAn
 cGFja2FnZTp7e3Byb2plY3ROYW1lfX0ve3twcm9qZWN0TmFtZX19LmRhcnQnIGFzIHt7cHJvamVj
 dE5hbWV9fTsKCm1haW4oKSB7CiAgcHJpbnQoJ0hlbGxvIHdvcmxkOiAke3t7cHJvamVjdE5hbWV9
-fS5jYWxjdWxhdGUoKX0nKTsKfQo=""",
+fS5jYWxjdWxhdGUoKX0hJyk7Cn0K""",
   "CHANGELOG.md",
   "text",
   """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgoqIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn

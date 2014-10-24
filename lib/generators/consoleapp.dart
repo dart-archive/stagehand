@@ -14,7 +14,7 @@ import 'consoleapp_data.dart';
 class ConsoleAppGenerator extends DefaultGenerator {
   ConsoleAppGenerator() : super(
       'consoleapp',
-      "A minimal command-line application.",
+      "A simple command-line application.",
       categories: const ['dart', 'console', 'minimal']) {
 
     for (TemplateFile file in decodeConcanenatedData(data)) {

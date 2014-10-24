@@ -5,6 +5,7 @@
 * removed the `-o` option; we now generate the selected template into the current directory
 * added pre-generated css to the `webapp` template
 * some changes to better support stagehand being driven by existing tooling (IDEs)
+* the `polymer` template was renamed to `polymerapp`
 
 ## 0.1.1
 
