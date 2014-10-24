@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.1.2
+
+* removed the `-o` option; we now generate the selected template into the current directory
+* added pre-generated css to the `webapp` template
+* some changes to better support stagehand being driven by existing tooling (IDEs)
+
 ## 0.1.1
 
 * changed to allow stagehand to generate a project into an existing directory
