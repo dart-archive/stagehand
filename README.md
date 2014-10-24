@@ -72,7 +72,7 @@ With Dart 1.6:
 
 ## Issues and bugs
 
-Please file on [Github Issues](https://github.com/sethladd/stagehand/issues).
+Please file reports on the [GitHub Issue Tracker](https://github.com/sethladd/stagehand/issues).
 
 ## Contributing
 
