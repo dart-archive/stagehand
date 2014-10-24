@@ -6,6 +6,7 @@ library stagehand.cli_test;
 
 import 'dart:async';
 import 'dart:convert' show JSON;
+import 'dart:io';
 
 import 'package:stagehand/stagehand.dart';
 import 'package:stagehand/analytics/analytics.dart';
@@ -24,6 +25,7 @@ void defineTests() {
       logger = new CliLoggerMock();
       target = new GeneratorTargetMock();
       app = new CliApp(generators, logger, target);
+      app.cwd = new Directory('test');
       app.analytics = new AnalyticsMock();
     });
 
@@ -50,7 +52,10 @@ void defineTests() {
     });
 
     test('one arg', () {
-      return _expectError(app.process(['consoleapp']));
+      return app.process(['consoleapp']).then((_) {
+        _expectOk();
+        expect(target.createdCount, isPositive);
+      });
     });
 
     test('one arg (bad)', () {
@@ -58,14 +63,7 @@ void defineTests() {
     });
 
     test('two args', () {
-      return app.process(['-o', 'foobar', 'consoleapp']).then((_) {
-        _expectOk();
-        expect(target.createdCount, isPositive);
-      });
-    });
-
-    test('three args', () {
-      return _expectError(app.process(['-o', 'foobar', 'consoleapp', 'foobar']));
+      return _expectError(app.process(['consoleapp', 'foobar']));
     });
 
     test('machine format', () {

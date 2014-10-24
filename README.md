@@ -35,17 +35,20 @@ Update:
 
 ## Usage
 
-As an example, here is how you create a webapp with Stagehand:
+Stagehand will generate a project skeleton into the current directry. As an
+example, here is how you create a webapp with Stagehand:
 
 With Dart 1.7 or greater:
 
-    $> cd where_you_want_to_create_the_project_directory
-    $> stagehand -o _directory_name_ webapp
+    $> mkdir fancy_project
+    $> cd fancy_project
+    $> stagehand webapp
 
 With Dart 1.6:
 
-    $> cd where_you_want_to_create_the_project_directory
-    $> pub global run stagehand -o _directory_name_ webapp
+    $> mkdir fancy_project
+    $> cd fancy_project
+    $> pub global run stagehand webapp
 
 Here is how you list all of the project templates:
 
