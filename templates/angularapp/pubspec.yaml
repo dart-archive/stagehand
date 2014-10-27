@@ -1,0 +1,15 @@
+name: '{{projectName}}'
+version: 0.0.1
+description: >
+  A starter template for a AngularDart web app.
+#author: {{author}} <email@example.com>
+#homepage: https://www.example.com
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+dependencies:
+  browser: any
+  angular: '>=1.0.0 <2.0.0'
+  web_components: any
+
+transformers:
+- angular
