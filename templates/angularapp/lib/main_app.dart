@@ -3,7 +3,7 @@
 
 import 'package:angular/angular.dart';
 
-/// A Polymer `<main-app>` element.
+/// A Angular `<main-app>` element.
 @Component(
   selector : 'main-app',
   templateUrl : 'packages/{{projectName}}/main_app.html',
