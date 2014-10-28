@@ -117,10 +117,16 @@ abstract class Generator implements Comparable<Generator> {
 
   int numFiles() => files.length;
 
-  String toString() => '[${id}: ${description}]';
-
   int compareTo(Generator other) =>
       this.id.toLowerCase().compareTo(other.id.toLowerCase());
+
+  /**
+   * Return some user facing instructions about how to finish installation of
+   * the template.
+   */
+  String getInstallInstructions() => '';
+
+  String toString() => '[${id}: ${description}]';
 }
 
 /**
