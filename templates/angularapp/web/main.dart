@@ -3,7 +3,6 @@
 
 import 'package:angular/angular.dart';
 import 'package:angular/application_factory.dart';
-
 import 'package:{{projectName}}/main_app.dart';
 
 class MyAppModule extends Module {
@@ -15,6 +14,6 @@ class MyAppModule extends Module {
 
 void main() {
   applicationFactory()
-  .addModule(new MyAppModule())
-  .run();
+    .addModule(new MyAppModule())
+    .run();
 }
