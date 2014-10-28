@@ -175,6 +175,11 @@ class CliApp {
     Future f = generator.generate(projectName, target, additionalVars: vars);
     return f.then((_) {
       _out("${generator.numFiles()} files written.");
+
+      String message = generator.getInstallInstructions();
+      if (message != null && message.isNotEmpty) {
+        _out("\n${message}");
+      }
     }).then((_) {
       return _timeout(Future.wait(futures));
     });

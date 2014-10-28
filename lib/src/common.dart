@@ -125,4 +125,12 @@ abstract class DefaultGenerator extends Generator {
 
   TemplateFile addFile(String path, String contents) =>
       addTemplateFile(new TemplateFile(path, contents));
+
+  String getInstallInstructions() {
+    if (getFile('pubspec.yaml') != null) {
+      return "In order to provision packages locally, run 'pub get'.";
+    } else {
+      return '';
+    }
+  }
 }
