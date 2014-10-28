@@ -1,3 +1,3 @@
 # {{ projectName }}
 
-A starter template for a AngularDart web app.
+A starter template for a angular web app.

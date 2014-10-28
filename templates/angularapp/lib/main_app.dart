@@ -3,7 +3,7 @@
 
 import 'package:angular/angular.dart';
 
-/// A Angular `<main-app>` element.
+/// A angular `<main-app>` element.
 @Component(
   selector : 'main-app',
   templateUrl : 'packages/{{projectName}}/main_app.html',
