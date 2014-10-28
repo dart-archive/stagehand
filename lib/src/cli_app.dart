@@ -69,8 +69,13 @@ class CliApp {
     if (options.wasParsed('analytics')) {
       analytics.optIn = options['analytics'];
       _out("Analytics ${analytics.optIn ? 'enabled' : 'disabled'}.");
-      if (analytics.optIn) analytics.sendScreenView('analytics');
-      return new Future.value();
+      Future f;
+      if (analytics.optIn) {
+        f = _timeout(analytics.sendScreenView('analytics'));
+      } else {
+        f = new Future.value();
+      }
+      return f;
     }
 
     // This hidden option is used so that our build bots don't emit data.
@@ -91,9 +96,9 @@ class CliApp {
         _out('');
       }
 
-      _screenView(options['help'] ? 'help' : 'main');
+      Future f = _screenView(options['help'] ? 'help' : 'main');
       _usage(argParser);
-      return new Future.value();
+      return _timeout(f);
     }
 
     // The `--machine` option emits the list of available generators to stdout
@@ -101,10 +106,10 @@ class CliApp {
     // output of `--help`. It's an undocumented command line flag, and may go
     // away or change.
     if (options['machine']) {
-      _screenView('machine');
+      Future f = _screenView('machine');
 
       logger.stdout(_createMachineInfo(generators));
-      return new Future.value();
+      return _timeout(f);
     }
 
     if (options.rest.isEmpty) {
@@ -157,16 +162,21 @@ class CliApp {
 
     _out("Creating ${generatorName} application '${projectName}':");
 
-    _screenView('create');
-    analytics.sendEvent('create', generatorName, generator.description);
+    List<Future> futures = [];
+
+    futures.add(_screenView('create'));
+    futures.add(analytics.sendEvent(
+        'create', generatorName, generator.description));
 
     String author = options['author'];
 
     Map vars = {'author': author};
 
-    return generator.generate(projectName, target, additionalVars: vars).then(
-        (_) {
+    Future f = generator.generate(projectName, target, additionalVars: vars);
+    return f.then((_) {
       _out("${generator.numFiles()} files written.");
+    }).then((_) {
+      return _timeout(Future.wait(futures));
     });
   }
 
@@ -243,10 +253,10 @@ class CliApp {
 
   void _out(String str) => logger.stdout(str);
 
-  void _screenView(String view) {
+  Future _screenView(String view) {
     // If the user hasn't opted in, only send a version check - no page data.
     if (!analytics.optIn) view = 'main';
-    analytics.sendScreenView(view);
+    return analytics.sendScreenView(view);
   }
 
   /**
@@ -260,6 +270,13 @@ class CliApp {
         .where((entity) => entity is io.Directory)
         .where((entity) => !isHiddenDir(entity))
         .isEmpty;
+  }
+
+  /**
+   * Return a future that always completes in no more then 500 ms.
+   */
+  Future _timeout(Future f) {
+    return f.timeout(new Duration(milliseconds: 500), onTimeout: () => null);
   }
 }
 
