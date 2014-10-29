@@ -23,4 +23,7 @@ class PolymerAppGenerator extends DefaultGenerator {
 
     setEntrypoint(getFile('web/index.html'));
   }
+
+  String getInstallInstructions() => "${super.getInstallInstructions()}\n"
+      "to run your app, use 'pub serve'";
 }
