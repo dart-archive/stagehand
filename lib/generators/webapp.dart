@@ -25,6 +25,8 @@ class WebAppGenerator extends DefaultGenerator {
     setEntrypoint(getFile('web/index.html'));
   }
 
-  String getInstallInstructions() => "${super.getInstallInstructions()}\n"
-      "to run your app, use 'pub serve'";
+  String getInstallInstructions() =>
+      "${super.getInstallInstructions()}\n"
+      "sass is required if you want to modify the sass styles (sass-lang.com/install)\n"
+      "to run your app, use 'pub serve'\n";
 }
