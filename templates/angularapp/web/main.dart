@@ -6,7 +6,6 @@ import 'package:angular/application_factory.dart';
 import 'package:{{projectName}}/main_app.dart';
 
 class MyAppModule extends Module {
-
   MyAppModule() {
     bind(MainApp);
   }
