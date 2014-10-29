@@ -128,7 +128,7 @@ abstract class DefaultGenerator extends Generator {
 
   String getInstallInstructions() {
     if (getFile('pubspec.yaml') != null) {
-      return "In order to provision packages locally, run 'pub get'.";
+      return "to provision required packages, run 'pub get'";
     } else {
       return '';
     }
