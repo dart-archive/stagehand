@@ -1,0 +1,15 @@
+name: '{{projectName}}'
+version: 0.0.1
+description: >
+  A starter template for an angular web app.
+#author: {{author}} <email@example.com>
+#homepage: https://www.example.com
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+dependencies:
+  browser: any
+  angular: '>=1.0.0 <2.0.0'
+  web_components: '>=0.9.0 <0.10.0'
+
+transformers:
+- angular
