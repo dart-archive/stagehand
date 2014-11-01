@@ -14,9 +14,10 @@ Kit and Yeoman.
 
 * consoleapp - a minimal command-line script
 * package - a library for pub, complete with tests
+* webapp - a responsive web app, with Sass, routing, and more
+* angularapp - a starter template for an angular web app
 * polymerapp - a web app with polymer.dart and paper (material design) elements
-* shelfapp - a minimal web server using the shelf package
-* webapp - a minimal responsive web app, with Sass, routing, and more
+* shelfapp - a web server using the shelf package
 
 ## Installation
 
