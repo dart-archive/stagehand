@@ -11,6 +11,7 @@ import 'package:path/path.dart' as path;
 import 'package:stagehand/stagehand.dart' as stagehand;
 
 final Directory BUILD_DIR = new Directory('build');
+final Directory TEMPLATES_DIR = new Directory('templates');
 
 final RegExp _binaryFileTypes = new RegExp(
     r'\.(jpe?g|png|gif|ico|svg|ttf|eot|woff|woff2)$', caseSensitive: false);
@@ -40,11 +41,12 @@ void init(GrinderContext context) {
  * consume.
  */
 void buildTemplates(GrinderContext context) {
-  stagehand.generators.forEach((generator) {
+  var generatorIds = TEMPLATES_DIR.listSync().map((e) => path.basename(e.path));
+  generatorIds.forEach((String id) {
     _concatenateFiles(
         context,
-        getDir('templates/${generator.id}'),
-        getFile('lib/generators/${generator.id}_data.dart'));
+        getDir('templates/${id}'),
+        getFile('lib/generators/${id}_data.dart'));
   });
 }
 

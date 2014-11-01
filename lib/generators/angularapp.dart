@@ -2,26 +2,26 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-library stagehand.polymer;
+library stagehand.angularapp;
 
 import '../stagehand.dart';
 import '../src/common.dart';
-import 'polymerapp_data.dart';
+import 'angularapp_data.dart';
 
 /**
- * A generator for a polymer.dart application.
+ * A generator for an Angular.dart application.
  */
-class PolymerAppGenerator extends DefaultGenerator {
-  PolymerAppGenerator() : super(
-      'polymerapp',
-      "A web app using polymer.dart.",
-      categories: const ['dart', 'web', 'polymer']) {
+class AngularAppGenerator extends DefaultGenerator {
+  AngularAppGenerator() : super(
+      'angularapp',
+      "A starter template for an angular web app.",
+      categories: const ['dart', 'web', 'angular']) {
 
     for (TemplateFile file in decodeConcanenatedData(data)) {
       addTemplateFile(file);
     }
 
-    setEntrypoint(getFile('web/index.html'));
+    setEntrypoint(getFile('web/main.dart'));
   }
 
   String getInstallInstructions() => "${super.getInstallInstructions()}\n"
