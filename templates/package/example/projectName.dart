@@ -7,5 +7,5 @@ import 'package:{{projectName}}/{{projectName}}.dart';
 
 main() {
   var awesome = new Awesome();
-  print(awesome.isAwesome);
+  print('awesome: ${awesome.isAwesome}');
 }
