@@ -83,6 +83,11 @@ class CliApp {
       analytics = new AnalyticsMock();
     }
 
+    if (options['version']) {
+      _out('${APP_NAME} version ${APP_VERSION}');
+      return new Future.value();
+    }
+
     if (options['help'] || args.isEmpty) {
       // Prompt to opt into advanced analytics.
       if (!analytics.hasSetOptIn) {
@@ -189,11 +194,12 @@ class CliApp {
   ArgParser _createArgParser() {
     var argParser = new ArgParser();
 
-    argParser.addFlag('help', abbr: 'h', negatable: false, help: 'Help!');
     argParser.addFlag('analytics', negatable: true,
         help: 'Opt-out of anonymous usage and crash reporting.');
     argParser.addOption('author', defaultsTo: '<your name>',
         help: 'The author name to use for file headers.');
+    argParser.addFlag('help', abbr: 'h', negatable: false, help: 'Help!');
+    argParser.addFlag('version', negatable: false);
 
     // This option is deprecated and will go away.
     argParser.addOption('outdir', abbr: 'o', valueHelp: 'path', hide: true);
