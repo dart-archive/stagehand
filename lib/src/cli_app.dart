@@ -183,6 +183,7 @@ class CliApp {
 
       String message = generator.getInstallInstructions();
       if (message != null && message.isNotEmpty) {
+        message = message.trim();
         message = message.split('\n').map((line) => "--> ${line}").join("\n");
         _out("\n${message}");
       }

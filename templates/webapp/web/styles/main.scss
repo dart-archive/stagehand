@@ -236,6 +236,10 @@ main {
   min-height: 100%;
 }
 
+sass-hidden {
+  display: none;
+}
+
 /** Larger Screens - desktops and tablets **/
 @media all and (min-width: 990px) {
   .app-bar {

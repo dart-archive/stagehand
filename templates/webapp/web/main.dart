@@ -2,6 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'dart:html';
+
 import 'package:{{projectName}}/nav_menu.dart';
 import 'package:{{projectName}}/reverser.dart';
 import 'package:route_hierarchical/client.dart';
@@ -10,8 +11,7 @@ void main() {
   initNavMenu();
   initReverser();
 
-  // Webapps need routing to listen for changes to the URL
-
+  // Webapps need routing to listen for changes to the URL.
   var router = new Router();
   router.root
     ..addRoute(name: 'about', path: '/about', enter: showAbout)
@@ -20,7 +20,7 @@ void main() {
 }
 
 void showAbout(RouteEvent e) {
-  // Extremely simple and non-scalable way to show different views
+  // Extremely simple and non-scalable way to show different views.
   querySelector('#home').style.display = 'none';
   querySelector('#about').style.display = '';
 }
