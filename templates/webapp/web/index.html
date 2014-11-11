@@ -27,7 +27,10 @@
   <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
   <meta name="msapplication-TileColor" content="#3372DF">
 
-  <link rel="stylesheet" href="styles/main.css">
+  <!-- TODO: Swap the two stylesheet references in order to use Sass (and
+       uncomment the sass transformer in the pubspec.yaml file. -->
+  <link rel="stylesheet" href="styles/main_gen.css">
+  <!-- link rel="stylesheet" href="styles/main.css" -->
 </head>
 
 <body>
@@ -80,6 +83,13 @@
       </p>
     </div>
 
+    <div class="sass-hidden">
+      <p>
+        Note: to use Sass with this application, switch the stylesheet
+        references in the &lt;head&gt; section and uncomment the sass
+        transformer in the pubspec.yaml file.
+      </p>
+    </div>
   </main>
 
   <script type="application/dart" src="main.dart"></script>
