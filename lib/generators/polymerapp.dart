@@ -14,7 +14,7 @@ import 'polymerapp_data.dart';
 class PolymerAppGenerator extends DefaultGenerator {
   PolymerAppGenerator() : super(
       'polymerapp',
-      "A web app using polymer.dart.",
+      'A web app built using polymer.dart.',
       categories: const ['dart', 'web']) {
 
     for (TemplateFile file in decodeConcanenatedData(data)) {

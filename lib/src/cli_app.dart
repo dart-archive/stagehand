@@ -197,10 +197,11 @@ class CliApp {
 
     argParser.addFlag('analytics', negatable: true,
         help: 'Opt-out of anonymous usage and crash reporting.');
+    argParser.addFlag('help', abbr: 'h', negatable: false, help: 'Help!');
+    argParser.addFlag('version', negatable: false,
+        help: 'Display the version for Stagehand.');
     argParser.addOption('author', defaultsTo: '<your name>',
         help: 'The author name to use for file headers.');
-    argParser.addFlag('help', abbr: 'h', negatable: false, help: 'Help!');
-    argParser.addFlag('version', negatable: false);
 
     // This option is deprecated and will go away.
     argParser.addOption('outdir', abbr: 'o', valueHelp: 'path', hide: true);
@@ -248,6 +249,7 @@ class CliApp {
 
   void _usage(ArgParser argParser) {
     _out('Stagehand will generate the given application type into the current directory.');
+    _out('');
     _out('usage: ${APP_NAME} <generator-name>');
     _out(argParser.getUsage());
     _out('');
