@@ -6,15 +6,15 @@ library stagehand.shelfapp;
 
 import '../stagehand.dart';
 import '../src/common.dart';
-import 'shelfapp_data.dart';
+import 'shelfserver_data.dart';
 
 /**
  * A generator for a hello world command-line application.
  */
-class ShelfAppGenerator extends DefaultGenerator {
-  ShelfAppGenerator() : super(
-      'shelfapp',
-      'A web server written using the shelf package.',
+class ShelfServerGenerator extends DefaultGenerator {
+  ShelfServerGenerator() : super(
+      'shelfserver',
+      'A web server built using the shelf package.',
       categories: const ['dart', 'shelf', 'server']) {
 
     for (TemplateFile file in decodeConcanenatedData(data)) {

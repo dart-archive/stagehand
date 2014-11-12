@@ -12,11 +12,11 @@ Kit and Yeoman.
 
 ## Things you can create with Stagehand
 
-* consoleapp - a minimal command-line script
-* package - a library for pub, complete with tests
-* polymerapp - a web app with polymer.dart and paper (material design) elements
-* shelfapp - a minimal web server using the shelf package
-* webapp - a minimal responsive web app, with Sass, routing, and more
+* consoleapp - a simple command-line application
+* package - a starting point for Dart libraries or applications
+* polymerapp - a web app built using polymer.dart
+* shelfserver - a web server built using the shelf package
+* webapp - a web app for the developer that doesn’t want to be confused by too much going on
 
 ## Installation
 
