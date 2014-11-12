@@ -29,7 +29,7 @@ import 'generators/consoleapp.dart';
 import 'generators/webapp.dart';
 import 'generators/package.dart';
 import 'generators/polymerapp.dart';
-import 'generators/shelfapp.dart';
+import 'generators/shelfserver.dart';
 import 'src/common.dart';
 
 /// A curated, prescriptive list of Dart project generators.
@@ -37,7 +37,7 @@ final List<Generator> generators = [
   new ConsoleAppGenerator(),
   new PackageGenerator(),
   new PolymerAppGenerator(),
-  new ShelfAppGenerator(),
+  new ShelfServerGenerator(),
   new WebAppGenerator()
 ];
 
