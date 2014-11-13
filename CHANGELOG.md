@@ -1,10 +1,25 @@
 # CHANGELOG
 
+## 0.1.3
+
+* added a `label` attribute to the templates and to the `--machine` output
+* renamed the `shelfapp` template to `shelfserver`
+* added a --version command-line option
+* clarified and simplified some template descriptions
+* made useage of Sass in the `webapp` template optional; added instructions in
+  the template about how to enable it
+* added instructions after project generation to tell the user how best to run
+  the project
+* Stagehand is now integrated into the Editor, the Eclipe plugins, Chrome Dev
+  Editor, and the Sublime plugin
+
 ## 0.1.2
 
-* removed the `-o` option; we now generate the selected template into the current directory
+* removed the `-o` option; we now generate the selected template into the
+  current directory
 * added pre-generated css to the `webapp` template
-* some changes to better support stagehand being driven by existing tooling (IDEs)
+* some changes to better support stagehand being driven by existing tooling
+  (IDEs)
 * the `polymer` template was renamed to `polymerapp`
 
 ## 0.1.1
