@@ -14,6 +14,7 @@ import 'package_data.dart';
 class PackageGenerator extends DefaultGenerator {
   PackageGenerator() : super(
       'package',
+      'Dart Package',
       'A starting point for Dart libraries or applications.',
       categories: const ['dart']) {
 

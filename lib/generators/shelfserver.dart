@@ -14,6 +14,7 @@ import 'shelfserver_data.dart';
 class ShelfServerGenerator extends DefaultGenerator {
   ShelfServerGenerator() : super(
       'shelfserver',
+      'Shelf Web Server',
       'A web server built using the shelf package.',
       categories: const ['dart', 'shelf', 'server']) {
 
