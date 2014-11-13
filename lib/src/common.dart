@@ -120,8 +120,9 @@ List<String> wrap(String str, [int col = 80]) {
  * An abstract implementation of a [Generator].
  */
 abstract class DefaultGenerator extends Generator {
-  DefaultGenerator(String id, String description, {List<String> categories: const []})
-      : super(id, description, categories: categories);
+  DefaultGenerator(String id, String label, String description,
+      {List<String> categories: const []})
+      : super(id, label, description, categories: categories);
 
   TemplateFile addFile(String path, String contents) =>
       addTemplateFile(new TemplateFile(path, contents));

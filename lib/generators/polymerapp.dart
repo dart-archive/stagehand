@@ -14,6 +14,7 @@ import 'polymerapp_data.dart';
 class PolymerAppGenerator extends DefaultGenerator {
   PolymerAppGenerator() : super(
       'polymerapp',
+      'Polymer Web Application',
       'A web app built using polymer.dart.',
       categories: const ['dart', 'web']) {
 

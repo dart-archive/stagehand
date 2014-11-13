@@ -222,6 +222,7 @@ class CliApp {
     Iterable itor = generators.map((Generator generator) {
       Map m = {
         'name': generator.id,
+        'label': generator.label,
         'description': generator.description
       };
 
@@ -251,7 +252,7 @@ class CliApp {
     _out('Stagehand will generate the given application type into the current directory.');
     _out('');
     _out('usage: ${APP_NAME} <generator-name>');
-    _out(argParser.getUsage());
+    _out(argParser.usage);
     _out('');
     _out('Available generators:');
     int len = generators

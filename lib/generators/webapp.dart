@@ -14,6 +14,7 @@ import 'webapp_data.dart';
 class WebAppGenerator extends DefaultGenerator {
   WebAppGenerator() : super(
       'webapp',
+      'Web Application',
       "A web app for the developer that doesn’t want to be confused by too "
       "much going on.",
       categories: const ['dart', 'web']) {
