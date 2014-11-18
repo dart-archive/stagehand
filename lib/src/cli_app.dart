@@ -93,7 +93,7 @@ class CliApp {
       if (!analytics.hasSetOptIn) {
         _out("Welcome to Stagehand! We collect anonymous usage statistics and crash reports in");
         _out("order to improve the tool (http://goo.gl/6wsncI). Would you like to opt-in to");
-        io.stdout.write("additional analytics to help us improve Stagehand [y/yes/no]? ");
+        _out("additional analytics to help us improve Stagehand [y/yes/no]? ");
         io.stdout.flush();
         String response = io.stdin.readLineSync();
         response = response.toLowerCase().trim();
