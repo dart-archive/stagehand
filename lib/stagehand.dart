@@ -25,6 +25,7 @@ library stagehand;
 import 'dart:async';
 import 'dart:convert';
 
+import 'generators/appengineapp.dart';
 import 'generators/consoleapp.dart';
 import 'generators/webapp.dart';
 import 'generators/package.dart';
@@ -34,6 +35,7 @@ import 'src/common.dart';
 
 /// A curated, prescriptive list of Dart project generators.
 final List<Generator> generators = [
+  new AppEngineAppGenerator(),
   new ConsoleAppGenerator(),
   new PackageGenerator(),
   new PolymerAppGenerator(),
