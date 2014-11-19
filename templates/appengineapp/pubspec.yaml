@@ -1,6 +1,6 @@
 name: {{projectName}}
 version: 0.0.1
-description: A minimal AppEngine application.
+description: A simple AppEngine application.
 #author: {{author}} <email@example.com>
 #homepage: https://www.example.com
 environment:
