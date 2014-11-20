@@ -289,12 +289,10 @@ class CliApp {
   }
 
   /**
-   * Return a future that always completes in no more then 500 ms.
-   *
-   * In addition, it (optionally) does not report any exceptions from the
-   * underlying `Future`.
+   * Return a future that always completes in no more then 500 ms. In addition,
+   * it does not report any exceptions from the underlying `Future`.
    */
-  Future _timeout(Future f, {bool quiet: false}) {
+  Future _timeout(Future f, {bool quiet: true}) {
     if (quiet) {
       f = f.catchError((e) => null);
     }
