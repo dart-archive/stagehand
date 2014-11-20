@@ -100,9 +100,11 @@ abstract class Generator implements Comparable<Generator> {
       'year': new DateTime.now().year.toString()
     };
 
-    additionalVars.keys.forEach((key) {
-      vars[key] = additionalVars[key];
-    });
+    if (additionalVars != null) {
+      additionalVars.keys.forEach((key) {
+        vars[key] = additionalVars[key];
+      });
+    }
 
     if (!vars.containsKey('author')) {
       vars['author'] = '<your name>';
