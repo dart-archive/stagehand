@@ -88,8 +88,9 @@ getRequestHandler(HttpRequest request) {
       .then((_) => response.writeln('Cleared cache!'))
       .whenComplete(response.close);
   } else {
-    // Print usage.
-    printUsage(response);
+    // Serve some static content. This must be located in 'build/web' or some
+    // subdirectory of 'build/web'.
+    context.assets.serve('/usage.html');
   }
 }
 
