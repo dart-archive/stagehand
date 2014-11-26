@@ -1,0 +1,9 @@
+name: {{projectName}}
+version: 0.0.1
+description: A simple AppEngine application.
+#author: {{author}} <email@example.com>
+#homepage: https://www.example.com
+environment:
+  sdk: '>=1.5.0 <2.0.0'
+dependencies:
+  appengine: '>=0.2.3 <0.3.0'

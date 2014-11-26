@@ -1,0 +1,8 @@
+version: v1
+runtime: custom
+vm: true
+api_version: 1
+threadsafe: true
+
+manual_scaling:
+  instances: 1
