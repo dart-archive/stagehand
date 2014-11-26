@@ -199,7 +199,7 @@ class CliApp {
         help: 'Opt-out of anonymous usage and crash reporting.');
     argParser.addFlag('help', abbr: 'h', negatable: false, help: 'Help!');
     argParser.addFlag('version', negatable: false,
-        help: 'Display the version for Stagehand.');
+        help: 'Display the version for ${APP_NAME}.');
     argParser.addOption('author', defaultsTo: '<your name>',
         help: 'The author name to use for file headers.');
 

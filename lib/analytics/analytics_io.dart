@@ -4,7 +4,7 @@
 
 /**
  * In order to use this library import the `analytics_io.dart` file and
- * instantiate the [AnalyticsIo] class.
+ * instantiate the [AnalyticsIO] class.
  *
  * You'll need to provide a Google Analytics tracking ID, the application name,
  * and the application version.
