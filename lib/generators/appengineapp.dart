@@ -4,9 +4,9 @@
 
 library stagehand.appengineapp;
 
+import 'appengineapp_data.dart';
 import '../stagehand.dart';
 import '../src/common.dart';
-import 'appengineapp_data.dart';
 
 /**
  * A generator for a hello world AppEngine application.
@@ -16,7 +16,7 @@ class AppEngineAppGenerator extends DefaultGenerator {
       'appengineapp',
       'AppEngine Application',
       'A simple AppEngine application.',
-      categories: const ['dart', 'appengine', 'simple']) {
+      categories: const ['dart', 'appengine', 'server']) {
 
     for (TemplateFile file in decodeConcanenatedData(data)) {
       addTemplateFile(file);
@@ -25,6 +25,7 @@ class AppEngineAppGenerator extends DefaultGenerator {
     setEntrypoint(getFile('bin/server.dart'));
   }
 
-  String getInstallInstructions() => "${super.getInstallInstructions()}\n"
+  String getInstallInstructions() =>
+      "${super.getInstallInstructions()}\n"
       "run your app using 'gcloud preview app run app.yaml'";
 }
