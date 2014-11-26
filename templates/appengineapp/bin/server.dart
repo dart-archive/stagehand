@@ -24,12 +24,12 @@ void requestHandler(HttpRequest request) {
   initialized.then((_) {
     // We only handle GET requests in this simple example.
     if (request.method == 'GET') {
-      getRequestHandler(request);
+      handleGetRequest(request);
     } else {
       request.response
         ..statusCode = HttpStatus.METHOD_NOT_ALLOWED
-       ..write('Unsupported HTTP request method: ${request.method}.')
-       ..close();
+        ..write('Unsupported HTTP request method: ${request.method}.')
+        ..close();
     }
   }).catchError((_) => request.response
       ..write('Failed handling request: ${request.toString()}.')
@@ -49,15 +49,15 @@ Future initializeCache() {
 
   // Initialize the cache and set the default value.
   return memcache.clear()
-      .then((_) => memcache.set(DEFAULT_KEY, 'there!')
-          .then((_) => cacheInitialized = true));
+      .then((_) => memcache.set(DEFAULT_KEY, 'there!'))
+      .then((_) => cacheInitialized = true);
 }
 
 /// GET request handler.
 ///
 /// Parses the url to determine what command to run and the corresponding
 /// input data.
-getRequestHandler(HttpRequest request) {
+handleGetRequest(HttpRequest request) {
   HttpResponse response = request.response;
   // Determine command.
   if (request.uri.path == '/write_cache') {
