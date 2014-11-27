@@ -35,20 +35,20 @@ Future clear() {
 
 /// Helper method to write a set of key/value pairs to the memcache.
 void write(HttpResponse response, Map<String, String> valueMap) {
-var memcache = context.services.memcache;
-Future.forEach(valueMap.keys, (key) {
-  var value = valueMap[key];
-  return memcache.set(key, value)
-      .then((_) => response.writeln('"${key}": "${value}"'));
-}).whenComplete(response.close);
+  var memcache = context.services.memcache;
+  Future.forEach(valueMap.keys, (key) {
+    var value = valueMap[key];
+    return memcache.set(key, value)
+        .then((_) => response.writeln('"${key}": "${value}"'));
+  }).whenComplete(response.close);
 }
 
 /// Helper method to read a set of values from the memcache.
 void read(HttpResponse response, Iterable<String> keys) {
-var memcache = context.services.memcache;
-Future.forEach(keys, (key) => memcache.get(key)
-    .then((value) => response.writeln('"${key}": "${value}"'))
-    .catchError((_) => response.writeln('"${key}": value not found!')))
-  .whenComplete(response.close);
+  var memcache = context.services.memcache;
+  Future.forEach(keys, (key) => memcache.get(key)
+      .then((value) => response.writeln('"${key}": "${value}"'))
+      .catchError((_) => response.writeln('"${key}": value not found!')))
+    .whenComplete(response.close);
 }
 
