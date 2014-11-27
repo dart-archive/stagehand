@@ -5,6 +5,7 @@ library {{projectName}}.memcache;
 
 import 'dart:async';
 import 'dart:io';
+
 import 'package:appengine/appengine.dart';
 
 const String DEFAULT_KEY = 'hello';
@@ -51,4 +52,3 @@ void read(HttpResponse response, Iterable<String> keys) {
       .catchError((_) => response.writeln('"${key}": value not found!')))
     .whenComplete(response.close);
 }
-
