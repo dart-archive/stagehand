@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.4
+* Added a new `appengineapp` sample (thanks @wibling!)
+* updates to the webapp, shelfapp, and polymerapp samples
+
 ## 0.1.3
 
 * Added a `label` attribute to the templates and to the `--machine` output
