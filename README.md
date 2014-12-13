@@ -12,6 +12,7 @@ Kit and Yeoman.
 
 ## Things you can create with Stagehand
 
+* appengineapp - a simple AppEngine application
 * consoleapp - a simple command-line application
 * package - a starting point for Dart libraries or applications
 * polymerapp - a web app built using polymer.dart
