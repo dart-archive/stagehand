@@ -31,6 +31,7 @@ import 'generators/webapp.dart';
 import 'generators/package.dart';
 import 'generators/polymerapp.dart';
 import 'generators/shelfserver.dart';
+import 'generators/ubersimplewebapp.dart';
 import 'src/common.dart';
 
 /// A curated, prescriptive list of Dart project generators.
@@ -40,7 +41,8 @@ final List<Generator> generators = [
   new PackageGenerator(),
   new PolymerAppGenerator(),
   new ShelfServerGenerator(),
-  new WebAppGenerator()
+  new WebAppGenerator(),
+  new UberSimpleWebAppGenerator()
 ];
 
 Generator getGenerator(String id) {
