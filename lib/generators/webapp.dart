@@ -15,7 +15,8 @@ class WebAppGenerator extends DefaultGenerator {
   WebAppGenerator() : super(
       'webapp',
       'Web Application',
-      "A mobile-friendly web app.",
+      "A mobile-friendly web app with routing, responsive CSS, and "
+      "(optional) Sass support.",
       categories: const ['dart', 'web']) {
 
     for (TemplateFile file in decodeConcanenatedData(data)) {
