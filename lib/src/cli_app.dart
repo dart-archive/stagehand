@@ -19,7 +19,9 @@ import 'package:stagehand/stagehand.dart';
 const String APP_NAME = 'stagehand';
 
 // This version must be updated in tandem with the pubspec version.
-const String APP_VERSION = '0.1.5+1';
+const String APP_VERSION = '0.1.5+1'
+
+const String APP_PUB_INFO = 'https://pub.dartlang.org/packages/stagehand.json';
 
 // The Google Analytics tracking ID for stagehand.
 const String _GA_TRACKING_ID = 'UA-55033590-1';
@@ -86,13 +88,12 @@ class CliApp {
 
     if (options['version']) {
       _out('${APP_NAME} version: ${APP_VERSION}');
-      return http.get('https://pub.dartlang.org/packages/stagehand.json')
-        .then((response) {
-          List versions = JSON.decode(response.body)['versions'];
-          if (APP_VERSION != versions.last) {
-            _out("Version ${versions.last} is available! Run `pub global "
-                 "activate stagehand` to get the latest.");
-          }
+      return http.get(APP_PUB_INFO).then((response) {
+        List versions = JSON.decode(response.body)['versions'];
+        if (APP_VERSION != versions.last) {
+          _out("Version ${versions.last} is available! Run `pub global activate"
+               " stagehand` to get the latest.");
+        }
       }).catchError((e) => null);
     }
 
