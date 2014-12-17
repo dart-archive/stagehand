@@ -1,7 +1,12 @@
 # CHANGELOG
 
+## 0.1.5
+
+* Added a new `ubersimplewebapp` template.
+
 ## 0.1.4
-* Added a new `appengineapp` sample (thanks @wibling!)
+
+* Added a new `appengineapp` template (thanks @wibling!)
 * updates to the webapp, shelfapp, and polymerapp samples
 
 ## 0.1.3
