@@ -10,10 +10,11 @@ import 'dart:io' as io;
 import 'dart:math';
 
 import 'package:args/args.dart';
+import 'package:http/http.dart' as http;
 import 'package:path/path.dart' as path;
-import 'package:stagehand/stagehand.dart';
 import 'package:stagehand/analytics/analytics_io.dart';
 import 'package:stagehand/src/common.dart';
+import 'package:stagehand/stagehand.dart';
 
 const String APP_NAME = 'stagehand';
 
@@ -84,8 +85,15 @@ class CliApp {
     }
 
     if (options['version']) {
-      _out('${APP_NAME} version ${APP_VERSION}');
-      return new Future.value();
+      _out('${APP_NAME} version: ${APP_VERSION}');
+      return http.get('https://pub.dartlang.org/packages/stagehand.json')
+        .then((response) {
+          List versions = JSON.decode(response.body)['versions'];
+          if (APP_VERSION != versions.last) {
+            _out("Version ${versions.last} is available! Run `pub global "
+                 "activate stagehand` to get the latest.");
+          }
+      }).catchError((e) => null);
     }
 
     if (options['help'] || args.isEmpty) {
