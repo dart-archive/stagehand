@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.5+1
+
+* Update README to mention ubersimplewebapp
+
 ## 0.1.5
 
 * Added a new `ubersimplewebapp` template.
