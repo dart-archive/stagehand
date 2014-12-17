@@ -17,7 +17,8 @@ Kit and Yeoman.
 * package - a starting point for Dart libraries or applications
 * polymerapp - a web app built using polymer.dart
 * shelfserver - a web server built using the shelf package
-* webapp - a web app for the developer that doesn’t want to be confused by too much going on
+* ubersimplewebapp - an absolute bare-bones web app
+* webapp - a mobile-friendly web app with routing, responsive CSS, and (optional) Sass support
 
 ## Installation
 
