@@ -3,20 +3,13 @@
 // license that can be found in the LICENSE file.
 
 List<String> data = [
-  "pubspec.yaml",
-  "text",
-  """bmFtZTogJ3t7cHJvamVjdE5hbWV9fScKdmVyc2lvbjogMC4wLjEKZGVzY3JpcHRpb246ID4KICBB
-biBhYnNvbHV0ZSBiYXJlLWJvbmVzIHdlYiBhcHAuCiNhdXRob3I6IHt7YXV0aG9yfX0gPGVtYWls
-QGV4YW1wbGUuY29tPgojaG9tZXBhZ2U6IGh0dHBzOi8vd3d3LmV4YW1wbGUuY29tCmVudmlyb25t
-ZW50OgogIHNkazogJz49MS4wLjAgPDIuMC4wJwpkZXBlbmRlbmNpZXM6CiAgYnJvd3NlcjogYW55
-Cg==""",
-  "README.md",
-  "text",
-  """IyBVYmVyLXNpbXBsZSB3ZWIgYXBwCgpHZW5lcmF0ZWQgYnkgU3RhZ2VoYW5kLiBTZWUgTElDRU5T
-RS4=""",
   ".gitignore",
   "text",
   "LkRTX1N0b3JlCi5pZGVhCi5wdWIvCmJ1aWxkLwpwYWNrYWdlcwpwdWJzcGVjLmxvY2sK",
+  "CHANGELOG.md",
+  "text",
+  """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgoqIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
+ZWhhbmQuCg==""",
   "LICENSE",
   "text",
   """Q29weXJpZ2h0IChjKSB7e3llYXJ9fSwge3thdXRob3J9fS4KQWxsIHJpZ2h0cyByZXNlcnZlZC4K
@@ -46,6 +39,17 @@ SVRZLCBXSEVUSEVSIElOIENPTlRSQUNULCBTVFJJQ1QgTElBQklMSVRZLCBPUiBUT1JUCihJTkNM
 VURJTkcgTkVHTElHRU5DRSBPUiBPVEhFUldJU0UpIEFSSVNJTkcgSU4gQU5ZIFdBWSBPVVQgT0Yg
 VEhFIFVTRSBPRiBUSElTClNPRlRXQVJFLCBFVkVOIElGIEFEVklTRUQgT0YgVEhFIFBPU1NJQklM
 SVRZIE9GIFNVQ0ggREFNQUdFLgo=""",
+  "README.md",
+  "text",
+  """IyBVYmVyLXNpbXBsZSB3ZWIgYXBwCgpHZW5lcmF0ZWQgYnkgU3RhZ2VoYW5kLiBTZWUgTElDRU5T
+RS4=""",
+  "pubspec.yaml",
+  "text",
+  """bmFtZTogJ3t7cHJvamVjdE5hbWV9fScKdmVyc2lvbjogMC4wLjEKZGVzY3JpcHRpb246ID4KICBB
+biBhYnNvbHV0ZSBiYXJlLWJvbmVzIHdlYiBhcHAuCiNhdXRob3I6IHt7YXV0aG9yfX0gPGVtYWls
+QGV4YW1wbGUuY29tPgojaG9tZXBhZ2U6IGh0dHBzOi8vd3d3LmV4YW1wbGUuY29tCmVudmlyb25t
+ZW50OgogIHNkazogJz49MS4wLjAgPDIuMC4wJwpkZXBlbmRlbmNpZXM6CiAgYnJvd3NlcjogYW55
+Cg==""",
   "web/index.html",
   "text",
   """PCFET0NUWVBFIGh0bWw+Cgo8IS0tCiAgQ29weXJpZ2h0IChjKSB7e3llYXJ9fSwge3thdXRob3J9
@@ -61,12 +65,6 @@ L21haW4uY3NzIj4KPC9oZWFkPgoKPGJvZHk+CgogIDxkaXYgaWQ9Im91dHB1dCI+PC9kaXY+Cgo8
 c2NyaXB0IHR5cGU9ImFwcGxpY2F0aW9uL2RhcnQiIHNyYz0ibWFpbi5kYXJ0Ij48L3NjcmlwdD4K
 PHNjcmlwdCBkYXRhLXB1Yi1pbmxpbmUgc3JjPSJwYWNrYWdlcy9icm93c2VyL2RhcnQuanMiPjwv
 c2NyaXB0Pgo8L2JvZHk+CjwvaHRtbD4K""",
-  "web/styles/main.css",
-  "text",
-  """QGltcG9ydCB1cmwoaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PVJvYm90
-byk7CgpodG1sLCBib2R5IHsKICAgIHdpZHRoOiAxMDAlOwogICAgaGVpZ2h0OiAxMDAlOwogICAg
-bWFyZ2luOiAwOwogICAgcGFkZGluZzogMDsKICAgIGZvbnQtZmFtaWx5OiAnUm9ib3RvJywgc2Fu
-cy1zZXJpZjsKfQo=""",
   "web/main.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSB7e3llYXJ9fSwge3thdXRob3J9fS4gQWxsIHJpZ2h0cyByZXNlcnZl
@@ -74,8 +72,10 @@ ZC4gVXNlIG9mIHRoaXMgc291cmNlIGNvZGUKLy8gaXMgZ292ZXJuZWQgYnkgYSBCU0Qtc3R5bGUg
 bGljZW5zZSB0aGF0IGNhbiBiZSBmb3VuZCBpbiB0aGUgTElDRU5TRSBmaWxlLgoKaW1wb3J0ICdk
 YXJ0Omh0bWwnOwoKdm9pZCBtYWluKCkgewogIHF1ZXJ5U2VsZWN0b3IoJyNvdXRwdXQnKS50ZXh0
 ID0gJ0RhcnQgaXMgcnVubmluZy4nOwp9Cg==""",
-  "CHANGELOG.md",
+  "web/styles/main.css",
   "text",
-  """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgotIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
-ZWhhbmQuCg=="""
+  """QGltcG9ydCB1cmwoaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PVJvYm90
+byk7CgpodG1sLCBib2R5IHsKICAgIHdpZHRoOiAxMDAlOwogICAgaGVpZ2h0OiAxMDAlOwogICAg
+bWFyZ2luOiAwOwogICAgcGFkZGluZzogMDsKICAgIGZvbnQtZmFtaWx5OiAnUm9ib3RvJywgc2Fu
+cy1zZXJpZjsKfQo="""
 ];

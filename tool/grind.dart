@@ -146,7 +146,8 @@ String _toStr(String s) {
 }
 
 void _traverse(Directory dir, String root, List<String> results) {
-  for (FileSystemEntity entity in dir.listSync(recursive: false, followLinks: false)) {
+  var files = _listSync(dir, recursive: false, followLinks: false);
+  for (FileSystemEntity entity in files) {
     String name = path.basename(entity.path);
 
     if (entity is Link) continue;
@@ -177,6 +178,19 @@ bool _isBinaryFile(String filename) => _binaryFileTypes.hasMatch(filename);
 File _locateDartFile(File file) {
   if (file.path.endsWith('.dart')) return file;
 
-  return file.parent.listSync().firstWhere(
+  return _listSync(file.parent).firstWhere(
       (f) => f.path.endsWith('.dart'), orElse: () => null);
+}
+
+/**
+ * Return the list of children for the given directory. This list is normalized
+ * (by sorting on the file path) in order to prevent large merge diffs in the
+ * generated template data files.
+ */
+List<FileSystemEntity> _listSync(Directory dir,
+    {bool recursive: false, bool followLinks: true}) {
+  List<FileSystemEntity> results = dir.listSync(
+      recursive: recursive, followLinks: followLinks);
+  results.sort((entity1, entity2) => entity1.path.compareTo(entity2.path));
+  return results;
 }
