@@ -3,10 +3,6 @@
 // license that can be found in the LICENSE file.
 
 List<String> data = [
-  "app.yaml",
-  "text",
-  """dmVyc2lvbjogdjEKcnVudGltZTogY3VzdG9tCnZtOiB0cnVlCmFwaV92ZXJzaW9uOiAxCnRocmVh
-ZHNhZmU6IHRydWUKCm1hbnVhbF9zY2FsaW5nOgogIGluc3RhbmNlczogMQo=""",
   "bin/server.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSB7e3llYXJ9fSwge3thdXRob3J9fS4gQWxsIHJpZ2h0cyByZXNlcnZl
@@ -60,6 +56,17 @@ bGVhcmVkIGNhY2hlIScpKQogICAgICAud2hlbkNvbXBsZXRlKHJlc3BvbnNlLmNsb3NlKTsKICB9
 IGVsc2UgewogICAgLy8gU2VydmUgc29tZSBzdGF0aWMgY29udGVudC4gVGhpcyBtdXN0IGJlIGxv
 Y2F0ZWQgaW4gJ2J1aWxkL3dlYicgb3Igc29tZQogICAgLy8gc3ViZGlyZWN0b3J5IG9mICdidWls
 ZC93ZWInLgogICAgY29udGV4dC5hc3NldHMuc2VydmUoJy91c2FnZS5odG1sJyk7CiAgfQp9Cg==""",
+  "pubspec.yaml",
+  "text",
+  """bmFtZToge3twcm9qZWN0TmFtZX19CnZlcnNpb246IDAuMC4xCmRlc2NyaXB0aW9uOiBBIHNpbXBs
+ZSBBcHBFbmdpbmUgYXBwbGljYXRpb24uCiNhdXRob3I6IHt7YXV0aG9yfX0gPGVtYWlsQGV4YW1w
+bGUuY29tPgojaG9tZXBhZ2U6IGh0dHBzOi8vd3d3LmV4YW1wbGUuY29tCmVudmlyb25tZW50Ogog
+IHNkazogJz49MS41LjAgPDIuMC4wJwpkZXBlbmRlbmNpZXM6CiAgYXBwZW5naW5lOiAnPj0wLjIu
+MyA8MC4zLjAnCg==""",
+  "app.yaml",
+  "text",
+  """dmVyc2lvbjogdjEKcnVudGltZTogY3VzdG9tCnZtOiB0cnVlCmFwaV92ZXJzaW9uOiAxCnRocmVh
+ZHNhZmU6IHRydWUKCm1hbnVhbF9zY2FsaW5nOgogIGluc3RhbmNlczogMQo=""",
   "build/web/usage.html",
   "text",
   """PCFET0NUWVBFIGh0bWw+Cgo8aHRtbD4KICA8aGVhZD4KICAJPG1ldGEgY2hhcnNldD0idXRmLTgi
@@ -74,10 +81,12 @@ ICAgICAgICAgICAgICAgICAgLSBSZWFkcyBiYWNrIHRoZSB2YWx1ZXMgY29ycmVzcG9uZGluZyB0
 byB0aGUgZ2l2ZW4ga2V5cy4KICAgICAgJmx0O2Jhc2UtdXJsPi9jbGVhcl9jYWNoZSAgICAgICAg
 ICAgICAgICAgICAgICAgICAgICAgICAgIC0gQ2xlYXJzIHRoZSBjYWNoZSBhbmQgc2V0cyB0aGUg
 aW5pdGlhbCBrZXkvdmFsdWUgcGFpci4KICAgIDwvcHJlPgogIDwvYm9keT4KPC9odG1sPgo=""",
-  "CHANGELOG.md",
+  "README.md",
   "text",
-  """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgoqIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
-ZWhhbmQuCg==""",
+  """IyB7e3Byb2plY3ROYW1lfX0KClRoaXMgaXMgYSBzaW1wbGUgQXBwRW5naW5lIERhcnQgYXBwbGlj
+YXRpb24uIEl0IHNob3dzIGEgc2ltcGxlIHdheSBvZiBoYW5kbGluZyBIVFRQIHJlcXVlc3RzIGFu
+ZCBob3cgdG8gdXNlIHRoZSBwcmVjb25maWd1cmVkIEFwcEVuZ2luZSBtZW1jYWNoZSBBUEkgc2Vy
+dmljZS4K""",
   "Dockerfile",
   "text",
   "RlJPTSBnb29nbGUvZGFydC1ydW50aW1lCg==",
@@ -143,17 +152,8 @@ SVRZLCBXSEVUSEVSIElOIENPTlRSQUNULCBTVFJJQ1QgTElBQklMSVRZLCBPUiBUT1JUCihJTkNM
 VURJTkcgTkVHTElHRU5DRSBPUiBPVEhFUldJU0UpIEFSSVNJTkcgSU4gQU5ZIFdBWSBPVVQgT0Yg
 VEhFIFVTRSBPRiBUSElTClNPRlRXQVJFLCBFVkVOIElGIEFEVklTRUQgT0YgVEhFIFBPU1NJQklM
 SVRZIE9GIFNVQ0ggREFNQUdFLgo=""",
-  "pubspec.yaml",
+  "CHANGELOG.md",
   "text",
-  """bmFtZToge3twcm9qZWN0TmFtZX19CnZlcnNpb246IDAuMC4xCmRlc2NyaXB0aW9uOiBBIHNpbXBs
-ZSBBcHBFbmdpbmUgYXBwbGljYXRpb24uCiNhdXRob3I6IHt7YXV0aG9yfX0gPGVtYWlsQGV4YW1w
-bGUuY29tPgojaG9tZXBhZ2U6IGh0dHBzOi8vd3d3LmV4YW1wbGUuY29tCmVudmlyb25tZW50Ogog
-IHNkazogJz49MS41LjAgPDIuMC4wJwpkZXBlbmRlbmNpZXM6CiAgYXBwZW5naW5lOiAnPj0wLjIu
-MyA8MC4zLjAnCg==""",
-  "README.md",
-  "text",
-  """IyB7e3Byb2plY3ROYW1lfX0KClRoaXMgaXMgYSBzaW1wbGUgQXBwRW5naW5lIERhcnQgYXBwbGlj
-YXRpb24uIEl0IHNob3dzIGEgc2ltcGxlIHdheSBvZiBoYW5kbGluZyBIVFRQIHJlcXVlc3RzIGFu
-ZCBob3cgdG8gdXNlIHRoZSBwcmVjb25maWd1cmVkIEFwcEVuZ2luZSBtZW1jYWNoZSBBUEkgc2Vy
-dmljZS4K"""
+  """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgotIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
+ZWhhbmQuCg=="""
 ];

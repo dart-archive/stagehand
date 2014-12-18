@@ -3,9 +3,6 @@
 // license that can be found in the LICENSE file.
 
 List<String> data = [
-  ".gitignore",
-  "text",
-  "LkRTX1N0b3JlCi5pZGVhCi5wdWIvCmJ1aWxkLwpwYWNrYWdlcwpwdWJzcGVjLmxvY2sK",
   "bin/server.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSB7e3llYXJ9fSwge3thdXRob3J9fS4gQWxsIHJpZ2h0cyByZXNlcnZl
@@ -26,10 +23,20 @@ dCBodHRwOi8vJHtzZXJ2ZXIuYWRkcmVzcy5ob3N0fToke3NlcnZlci5wb3J0fScpOwogIH0pOwp9
 CgpzaGVsZi5SZXNwb25zZSBfZWNob1JlcXVlc3Qoc2hlbGYuUmVxdWVzdCByZXF1ZXN0KSB7CiAg
 cmV0dXJuIG5ldyBzaGVsZi5SZXNwb25zZS5vaygnUmVxdWVzdCBmb3IgIiR7cmVxdWVzdC51cmx9
 IicpOwp9Cg==""",
-  "CHANGELOG.md",
+  "pubspec.yaml",
   "text",
-  """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgoqIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
-ZWhhbmQuCg==""",
+  """bmFtZTogJ3t7cHJvamVjdE5hbWV9fScKdmVyc2lvbjogMC4wLjEKZGVzY3JpcHRpb246IEEgbWlu
+aW1hbCB3ZWIgc2VydmVyIHVzaW5nIHRoZSBzaGVsZiBwYWNrYWdlLgojYXV0aG9yOiB7e2F1dGhv
+cn19IDxlbWFpbEBleGFtcGxlLmNvbT4KI2hvbWVwYWdlOiBodHRwczovL3d3dy5leGFtcGxlLmNv
+bQplbnZpcm9ubWVudDoKICBzZGs6ICc+PTEuMC4wIDwyLjAuMCcKZGVwZW5kZW5jaWVzOgogIGFy
+Z3M6ICc+PTAuMTAuMCA8MC4xMy4wJwogIHNoZWxmOiAnPj0wLjUuNSA8MC42LjAnCg==""",
+  "README.md",
+  "text",
+  """IyB7e3Byb2plY3ROYW1lfX0KCkEgbWluaW1hbCB3ZWIgc2VydmVyIHVzaW5nIFtTaGVsZl0oaHR0
+cHM6Ly9wdWIuZGFydGxhbmcub3JnL3BhY2thZ2VzL3NoZWxmKS4K""",
+  ".gitignore",
+  "text",
+  "LkRTX1N0b3JlCi5pZGVhCi5wdWIvCmJ1aWxkLwpwYWNrYWdlcwpwdWJzcGVjLmxvY2sK",
   "LICENSE",
   "text",
   """Q29weXJpZ2h0IChjKSB7e3llYXJ9fSwge3thdXRob3J9fS4KQWxsIHJpZ2h0cyByZXNlcnZlZC4K
@@ -59,15 +66,8 @@ SVRZLCBXSEVUSEVSIElOIENPTlRSQUNULCBTVFJJQ1QgTElBQklMSVRZLCBPUiBUT1JUCihJTkNM
 VURJTkcgTkVHTElHRU5DRSBPUiBPVEhFUldJU0UpIEFSSVNJTkcgSU4gQU5ZIFdBWSBPVVQgT0Yg
 VEhFIFVTRSBPRiBUSElTClNPRlRXQVJFLCBFVkVOIElGIEFEVklTRUQgT0YgVEhFIFBPU1NJQklM
 SVRZIE9GIFNVQ0ggREFNQUdFLgo=""",
-  "pubspec.yaml",
+  "CHANGELOG.md",
   "text",
-  """bmFtZTogJ3t7cHJvamVjdE5hbWV9fScKdmVyc2lvbjogMC4wLjEKZGVzY3JpcHRpb246IEEgbWlu
-aW1hbCB3ZWIgc2VydmVyIHVzaW5nIHRoZSBzaGVsZiBwYWNrYWdlLgojYXV0aG9yOiB7e2F1dGhv
-cn19IDxlbWFpbEBleGFtcGxlLmNvbT4KI2hvbWVwYWdlOiBodHRwczovL3d3dy5leGFtcGxlLmNv
-bQplbnZpcm9ubWVudDoKICBzZGs6ICc+PTEuMC4wIDwyLjAuMCcKZGVwZW5kZW5jaWVzOgogIGFy
-Z3M6ICc+PTAuMTAuMCA8MC4xMy4wJwogIHNoZWxmOiAnPj0wLjUuNSA8MC42LjAnCg==""",
-  "README.md",
-  "text",
-  """IyB7e3Byb2plY3ROYW1lfX0KCkEgbWluaW1hbCB3ZWIgc2VydmVyIHVzaW5nIFtTaGVsZl0oaHR0
-cHM6Ly9wdWIuZGFydGxhbmcub3JnL3BhY2thZ2VzL3NoZWxmKS4K"""
+  """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgotIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
+ZWhhbmQuCg=="""
 ];
