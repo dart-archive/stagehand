@@ -8,8 +8,8 @@ List<String> data = [
   "LkRTX1N0b3JlCi5pZGVhCi5wdWIvCmJ1aWxkLwpwYWNrYWdlcwpwdWJzcGVjLmxvY2sK",
   "CHANGELOG.md",
   "text",
-  """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgoqIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
-ZWhhbmQuCg==""",
+  """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgotIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
+ZWhhbmQK""",
   "LICENSE",
   "text",
   """Q29weXJpZ2h0IChjKSB7e3llYXJ9fSwge3thdXRob3J9fS4KQWxsIHJpZ2h0cyByZXNlcnZlZC4K

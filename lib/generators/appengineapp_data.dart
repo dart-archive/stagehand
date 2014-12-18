@@ -5,8 +5,8 @@
 List<String> data = [
   "CHANGELOG.md",
   "text",
-  """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgoqIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
-ZWhhbmQuCg==""",
+  """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgotIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
+ZWhhbmQK""",
   "Dockerfile",
   "text",
   "RlJPTSBnb29nbGUvZGFydC1ydW50aW1lCg==",
