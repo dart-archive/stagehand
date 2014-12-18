@@ -8,8 +8,8 @@ import 'dart:async';
 import 'dart:io' as io;
 
 import 'package:stagehand/stagehand.dart';
-import 'package:stagehand/analytics/analytics_io.dart';
 import 'package:stagehand/src/cli_app.dart';
+import 'package:usage/usage_io.dart';
 
 void main(List<String> args) {
   CliApp app = new CliApp(generators, new CliLogger());
@@ -40,20 +40,8 @@ void main(List<String> args) {
 }
 
 Future _sendException(Analytics analytics, var e, var st) {
-  String str = '${st}';
-
-  // Sanitize (file:///Users/sethladd/tmp/error.dart:3:13) to (error.dart:3:13).
-  str = sanitizeFilePaths(str);
-
-  // Shorten the stacktrace up a bit.
-  str = str.replaceAll('.dart', '')
-      .replaceAll('package:', '')
-      .replaceAll('dart:', '')
-      .replaceAll(new RegExp(r'\s+'), ' ');
-
-  if (e != null) {
-    str = '${e.runtimeType}: ${str}';
-  }
-
-  return analytics.sendException(str, true);
+  // Sanitize (file:///Users/user/tmp/error.dart:3:13) to (error.dart:3:13).
+  String str = sanitizeStacktrace(st);
+  if (e != null) str = '${e.runtimeType}: ${str}';
+  return analytics.sendException(str, fatal: true);
 }

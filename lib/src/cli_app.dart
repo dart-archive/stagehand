@@ -12,9 +12,9 @@ import 'dart:math';
 import 'package:args/args.dart';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart' as path;
-import 'package:stagehand/analytics/analytics_io.dart';
 import 'package:stagehand/src/common.dart';
 import 'package:stagehand/stagehand.dart';
+import 'package:usage/usage_io.dart';
 
 const String APP_NAME = 'stagehand';
 
@@ -180,7 +180,7 @@ class CliApp {
 
     futures.add(_screenView('create'));
     futures.add(analytics.sendEvent(
-        'create', generatorName, generator.description));
+        'create', generatorName, label: generator.description));
 
     String author = options['author'];
 
