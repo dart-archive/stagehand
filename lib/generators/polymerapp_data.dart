@@ -5,8 +5,8 @@
 List<String> data = [
   ".gitignore",
   "text",
-  """LkRTX1N0b3JlCi5pZGVhCi5wdWIvCi5idWlsZGxvZwpidWlsZC8KcGFja2FnZXMKcHVic3BlYy5s
-b2NrCg==""",
+  """LmJ1aWxkbG9nCi5EU19TdG9yZQouaWRlYQoucHViLwpidWlsZC8KcGFja2FnZXMvCnB1YnNwZWMu
+bG9jawo=""",
   "CHANGELOG.md",
   "text",
   """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgotIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn

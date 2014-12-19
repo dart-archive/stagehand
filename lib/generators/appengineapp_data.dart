@@ -3,6 +3,10 @@
 // license that can be found in the LICENSE file.
 
 List<String> data = [
+  ".gitignore",
+  "text",
+  """LmJ1aWxkbG9nCi5EU19TdG9yZQouaWRlYQoucHViLwpidWlsZC8KcGFja2FnZXMvCnB1YnNwZWMu
+bG9jawo=""",
   "CHANGELOG.md",
   "text",
   """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgotIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
