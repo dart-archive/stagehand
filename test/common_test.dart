@@ -7,8 +7,6 @@ library stagehand.common_test;
 import 'package:stagehand/src/common.dart';
 import 'package:unittest/unittest.dart';
 
-void main() => defineTests();
-
 void defineTests() {
   group('common', () {
     test('normalizeProjectName', () {
@@ -31,8 +29,11 @@ void defineTests() {
 
     test('convertToYamlMultiLine', () {
       expect(
-          convertToYamlMultiLine('one two three four five size seven eight nine ten eleven twelve thirteen fourteen fifteen'),
-          '  one two three four five size seven eight nine ten eleven twelve thirteen\n  fourteen fifteen');
+          convertToYamlMultiLine(
+              'one two three four five size seven eight nine '
+              'ten eleven twelve thirteen fourteen fifteen'),
+          '  one two three four five size seven eight nine ten eleven twelve '
+          'thirteen\n  fourteen fifteen');
     });
   });
 }

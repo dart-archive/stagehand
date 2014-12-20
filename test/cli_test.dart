@@ -13,8 +13,6 @@ import 'package:stagehand/src/cli_app.dart';
 import 'package:unittest/unittest.dart';
 import 'package:usage/usage.dart';
 
-void main() => defineTests();
-
 void defineTests() {
   group('cli', () {
     CliApp app;
