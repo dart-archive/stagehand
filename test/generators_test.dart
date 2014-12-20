@@ -7,8 +7,6 @@ library stagehand.generators_test;
 import 'package:stagehand/stagehand.dart';
 import 'package:unittest/unittest.dart';
 
-void main() => defineTests();
-
 void defineTests() {
   group('generators', () {
     generators.forEach((generator) {
