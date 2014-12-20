@@ -160,12 +160,12 @@ void _traverse(Directory dir, String root, List<String> results) {
     } else {
       File file = entity;
       String fileType = _isBinaryFile(name) ? 'binary' : 'text';
-      String data = CryptoUtils.bytesToBase64(
-          file.readAsBytesSync(), addLineSeparator: true);
+      String compressedData = CryptoUtils.bytesToBase64(
+          ZLIB.encode(file.readAsBytesSync()), addLineSeparator: true);
 
       results.add('${root}${name}');
       results.add(fileType);
-      results.add(data);
+      results.add(compressedData);
     }
   }
 }
