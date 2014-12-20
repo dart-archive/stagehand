@@ -7,6 +7,7 @@
  */
 library stagehand.utils;
 
+import 'dart:io';
 import 'dart:convert' show UTF8;
 
 import 'package:crypto/crypto.dart';
@@ -21,9 +22,10 @@ List<TemplateFile> decodeConcanenatedData(List<String> data) {
   for (int i = 0; i < data.length; i += 3) {
     String path = data[i];
     String type = data[i + 1];
-    String raw = data[i + 2];
+    String compressedRaw = data[i + 2];
 
-    List<int> decoded = CryptoUtils.base64StringToBytes(raw);
+    List<int> decoded =
+        ZLIB.decode(CryptoUtils.base64StringToBytes(compressedRaw));
 
     if (type == 'binary') {
       results.add(new TemplateFile.fromBinary(path, decoded));
