@@ -1,6 +1,8 @@
 # CHANGELOG
 
-- changed over to using the `usage` library for Google Analytics
+## 0.1.5+2
+
+- Changed to using the `usage` library for Google Analytics
 
 ## 0.1.5+1
 
@@ -8,7 +10,7 @@
 
 ## 0.1.5
 
-_ Added a new `ubersimplewebapp` template.
+- Added a new `ubersimplewebapp` template.
 
 ## 0.1.4
 
