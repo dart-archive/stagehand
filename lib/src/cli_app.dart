@@ -21,12 +21,14 @@ const String APP_NAME = 'stagehand';
 // This version must be updated in tandem with the pubspec version.
 const String APP_VERSION = '0.1.5+3';
 
-const String APP_PUB_INFO = 'https://pub.dartlang.org/packages/stagehand.json';
+const String APP_PUB_INFO = 'https://pub.dartlang.org/packages/${APP_NAME}.json';
 
 // The Google Analytics tracking ID for stagehand.
 const String _GA_TRACKING_ID = 'UA-55033590-1';
 
 class CliApp {
+  static final Duration _timeout = const Duration(milliseconds: 500);
+
   final List<Generator> generators;
   final CliLogger logger;
 
@@ -72,13 +74,8 @@ class CliApp {
     if (options.wasParsed('analytics')) {
       analytics.optIn = options['analytics'];
       _out("Analytics ${analytics.optIn ? 'enabled' : 'disabled'}.");
-      Future f;
-      if (analytics.optIn) {
-        f = _timeout(analytics.sendScreenView('analytics'));
-      } else {
-        f = new Future.value();
-      }
-      return f;
+      if (analytics.optIn) analytics.sendScreenView('analytics');
+      return analytics.waitForLastPing(timeout: _timeout);
     }
 
     // This hidden option is used so that our build bots don't emit data.
@@ -92,7 +89,7 @@ class CliApp {
         List versions = JSON.decode(response.body)['versions'];
         if (APP_VERSION != versions.last) {
           _out("Version ${versions.last} is available! Run `pub global activate"
-               " stagehand` to get the latest.");
+               " ${APP_NAME}` to get the latest.");
         }
       }).catchError((e) => null);
     }
@@ -110,9 +107,9 @@ class CliApp {
         _out('');
       }
 
-      Future f = _screenView(options['help'] ? 'help' : 'main');
+      _screenView(options['help'] ? 'help' : 'main');
       _usage(argParser);
-      return _timeout(f);
+      return analytics.waitForLastPing(timeout: _timeout);
     }
 
     // The `--machine` option emits the list of available generators to stdout
@@ -120,10 +117,9 @@ class CliApp {
     // output of `--help`. It's an undocumented command line flag, and may go
     // away or change.
     if (options['machine']) {
-      Future f = _screenView('machine');
-
+      _screenView('machine');
       logger.stdout(_createMachineInfo(generators));
-      return _timeout(f);
+      return analytics.waitForLastPing(timeout: _timeout);
     }
 
     if (options.rest.isEmpty) {
@@ -176,11 +172,8 @@ class CliApp {
 
     _out("Creating ${generatorName} application '${projectName}':");
 
-    List<Future> futures = [];
-
-    futures.add(_screenView('create'));
-    futures.add(analytics.sendEvent(
-        'create', generatorName, label: generator.description));
+    _screenView('create');
+    analytics.sendEvent('create', generatorName, label: generator.description);
 
     String author = options['author'];
 
@@ -197,7 +190,7 @@ class CliApp {
         _out("\n${message}");
       }
     }).then((_) {
-      return _timeout(Future.wait(futures));
+      return analytics.waitForLastPing(timeout: _timeout);
     });
   }
 
@@ -278,10 +271,10 @@ class CliApp {
 
   void _out(String str) => logger.stdout(str);
 
-  Future _screenView(String view) {
+  void _screenView(String view) {
     // If the user hasn't opted in, only send a version check - no page data.
     if (!analytics.optIn) view = 'main';
-    return analytics.sendScreenView(view);
+    analytics.sendScreenView(view);
   }
 
   /**
@@ -295,17 +288,6 @@ class CliApp {
         .where((entity) => entity is io.Directory)
         .where((entity) => !isHiddenDir(entity))
         .isEmpty;
-  }
-
-  /**
-   * Return a future that always completes in no more then 500 ms. In addition,
-   * it does not report any exceptions from the underlying `Future`.
-   */
-  Future _timeout(Future f, {bool quiet: true}) {
-    if (quiet) {
-      f = f.catchError((e) => null);
-    }
-    return f.timeout(new Duration(milliseconds: 500), onTimeout: () => null);
   }
 }
 
