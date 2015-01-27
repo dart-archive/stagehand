@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.5+3
+
+- Updated the dependency on `usage`
+
 ## 0.1.5+2
 
 - Changed to using the `usage` library for Google Analytics
