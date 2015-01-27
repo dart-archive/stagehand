@@ -28,9 +28,9 @@ void main(List<String> args) {
       }
     }).whenComplete(() {
       // Always exit quickly after performing work. If the user has opted into
-      // analytics, the analytics I/O can cause the CLI to wait to terminate. This
-      // is annoying to the user, as the tool has already completed its work from
-      // their perspective.
+      // analytics, the analytics I/O can cause the CLI to wait to terminate.
+      // This is annoying to the user, as the tool has already completed its
+      // work from their perspective.
       io.exit(0);
     });
   } catch (e, st) {
