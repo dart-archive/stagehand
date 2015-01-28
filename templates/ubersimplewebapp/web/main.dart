@@ -4,5 +4,5 @@
 import 'dart:html';
 
 void main() {
-  querySelector('#output').text = 'Dart is running.';
+  querySelector('#output').text = 'Your Dart app is running.';
 }
