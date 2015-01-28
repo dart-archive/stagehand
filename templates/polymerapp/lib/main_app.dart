@@ -2,18 +2,19 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'package:polymer/polymer.dart';
+import 'dart:html';
+import 'package:paper_elements/paper_input.dart';
 
 /// A Polymer `<main-app>` element.
 @CustomTag('main-app')
 class MainApp extends PolymerElement {
-  @observable String input = '';
   @observable String reversed = '';
 
   /// Constructor used to create instance of MainApp.
   MainApp.created() : super.created();
 
-  void inputChanged(String oldValue, String newValue) {
-    reversed = input.split('').reversed.join('');
+  void reverseText(Event event, Object object, PaperInput target) {
+    reversed = target.value.split('').reversed.join('');
   }
 
   // Optional lifecycle methods - uncomment if needed.

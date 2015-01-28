@@ -16,7 +16,7 @@
       }
     </style>
 
-    <paper-input label="Type something..." inputValue="{{input}}"></paper-input>
+    <paper-input label="Type something..." on-keyup="{{reverseText}}"></paper-input>
 
     <p>
       Reversed: {{ reversed }}

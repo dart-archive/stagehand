@@ -8,8 +8,8 @@ environment:
   sdk: '>=1.0.0 <2.0.0'
 dependencies:
   browser: any
-  polymer: '>=0.15.0 <0.16.0'
-  paper_elements: '>=0.5.0 <0.6.0'
+  polymer: '>=0.15.5 <0.16.0'
+  paper_elements: '>=0.6.1 <0.6.5'
 transformers:
 - polymer:
     entry_points: web/index.html
