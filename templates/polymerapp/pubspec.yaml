@@ -9,7 +9,7 @@ environment:
 dependencies:
   browser: any
   polymer: '>=0.15.4 <0.16.0'
-  paper_elements: '>=0.6.0 <0.7.0'
+  paper_elements: '>=0.6.1 <0.7.0'
 transformers:
 - polymer:
     entry_points: web/index.html
