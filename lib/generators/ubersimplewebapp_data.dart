@@ -72,7 +72,7 @@ c2NyaXB0Pgo8L2JvZHk+CjwvaHRtbD4K""",
 ZC4gVXNlIG9mIHRoaXMgc291cmNlIGNvZGUKLy8gaXMgZ292ZXJuZWQgYnkgYSBCU0Qtc3R5bGUg
 bGljZW5zZSB0aGF0IGNhbiBiZSBmb3VuZCBpbiB0aGUgTElDRU5TRSBmaWxlLgoKaW1wb3J0ICdk
 YXJ0Omh0bWwnOwoKdm9pZCBtYWluKCkgewogIHF1ZXJ5U2VsZWN0b3IoJyNvdXRwdXQnKS50ZXh0
-ID0gJ0RhcnQgaXMgcnVubmluZy4nOwp9Cg==""",
+ID0gJ1lvdXIgRGFydCBhcHAgaXMgcnVubmluZy4nOwp9Cg==""",
   "web/styles/main.css",
   "text",
   """QGltcG9ydCB1cmwoaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PVJvYm90
