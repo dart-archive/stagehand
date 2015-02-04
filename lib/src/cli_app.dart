@@ -122,6 +122,59 @@ class CliApp {
       return analytics.waitForLastPing(timeout: _timeout);
     }
 
+    if (options['git']) {
+      if(options.rest.length == 0) {
+        logger.stderr("No URL specified.\n");
+        _usage(argParser);
+        return new Future.error(new ArgError('no URL specified'));
+      }
+
+      Map<String, String> envVars = io.Platform.environment;
+
+      String homeDir = envVars['HOME'];
+      String stagehandDataDir = homeDir + '/stagehandData/'; //For storing third party templates
+      String stagehandDir = homeDir + '/stagehand/'; //Stagehand Source dir
+      String repoUrl = options.rest[0];
+
+      //Get the repo name from URL
+      String expression = r'^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$';
+      RegExp regExp = new RegExp(expression);
+      var matches = regExp.allMatches(repoUrl);
+      var match = matches.elementAt(0);
+      var repoName = match.group(6).replaceFirst(".git", "") //remove trailing git if required
+                     .replaceAll("-", ""); //remove dashes from git repo name if required
+
+      String templateLocation = stagehandDataDir + repoName;
+
+      if(io.FileSystemEntity.isDirectorySync(templateLocation)) {
+        logger.stderr("Template already installed. If you want to update the template use the update command\n");
+        _usage(argParser);
+        return new Future.error(new ArgError('Template already installed. If you want to update the template use the update command'));
+      }
+
+      logger.stdout("Clonning " + repoName);
+      io.Process.runSync('git', ['clone', options.rest[0], templateLocation]);
+
+      //We assume that that core source file name of the template will be equal to the repo name
+      //Convention over configuration, we can always use config file, but this looked cleaner
+      String templateSource = templateLocation + '/lib/generators/' + repoName + '.dart';
+      
+      //Isolate loader file location
+      //We will be modifying this file to include the types for the newly installed template
+      String isloaderFile = stagehandDataDir + "isloader.dart";
+
+      //Fix the imports for the template files
+      //Here we assume that the extension follow the built-in templates
+      String isLoaderOrig = new io.File(isloaderFile).readAsStringSync();
+      String isLoaderMod = isLoaderOrig.replaceFirst("import '../stagehand/lib/stagehand.dart';", "import '../stagehand/lib/stagehand.dart';\nimport '" + templateSource + "';")
+                                  .replaceFirst("final List<Generator> newGenerators = [", "final List<Generator> newGenerators = [\n  new " + repoName + "(),");
+      new io.File(isloaderFile).writeAsStringSync(isLoaderMod);
+      
+      logger.stdout(repoName+ " Template Installed !");
+
+      return analytics.waitForLastPing(timeout: _timeout);
+    }
+
     if (options.rest.isEmpty) {
       logger.stderr("No generator specified.\n");
       _usage(argParser);
@@ -140,6 +193,7 @@ class CliApp {
     if (generator == null) {
       logger.stderr("'${generatorName}' is not a valid generator.\n");
       _usage(argParser);
+      //TODO: Search for third party generators installed locally.
       return new Future.error(new ArgError('invalid generator'));
     }
 
@@ -213,6 +267,9 @@ class CliApp {
 
     // Output the list of available projects as json to stdout.
     argParser.addFlag('machine', negatable: false, hide: true);
+
+    // Allows the download of a generator from git
+    argParser.addFlag('git', negatable: false, hide: true);
 
     // Mock out analytics - for use on our testing bots.
     argParser.addFlag('mock-analytics', negatable: false, hide: true);

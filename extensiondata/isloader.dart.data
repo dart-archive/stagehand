@@ -1,0 +1,14 @@
+import 'dart:isolate';
+
+import '../stagehand/lib/stagehand.dart';
+
+
+final List<Generator> newGenerators = [
+  
+];
+
+
+void main(List<String> args, SendPort replyTo) {
+  replyTo.send(newGenerators);
+}
+
