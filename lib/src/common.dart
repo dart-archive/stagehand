@@ -8,6 +8,7 @@
 library stagehand.utils;
 
 import 'dart:convert' show UTF8;
+import 'dart:io' as io;
 
 import 'package:crypto/crypto.dart';
 
@@ -114,6 +115,20 @@ List<String> wrap(String str, [int col = 80]) {
   }
 
   return lines;
+}
+
+/**
+ * Counts no of folders in a given folder
+ */
+int noOfDirectories(io.Directory dir) {
+  int noOfDirs = 0;
+  List<io.FileSystemEntity> dirList = dir.listSync(recursive: false, followLinks: false);
+  for (io.FileSystemEntity f in dirList) {
+    if (io.FileSystemEntity.isDirectorySync(f.path)) {
+      noOfDirs += 1;
+    }
+  }
+  return noOfDirs;
 }
 
 /**
