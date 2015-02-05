@@ -1,6 +1,6 @@
 import 'dart:isolate';
 
-import '../stagehand/lib/stagehand.dart';
+import 'package:stagehand/stagehand.dart';
 
 
 final List<Generator> newGenerators = [
