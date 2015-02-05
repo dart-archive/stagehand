@@ -166,11 +166,13 @@ class CliApp {
       //Fix the imports for the template files
       //Here we assume that the extension follow the built-in templates
       String isLoaderOrig = new io.File(isloaderFile).readAsStringSync();
-      String isLoaderMod = isLoaderOrig.replaceFirst("import '../stagehand/lib/stagehand.dart';", "import '../stagehand/lib/stagehand.dart';\nimport '" + templateSource + "';")
+      String isLoaderMod = isLoaderOrig.replaceFirst("import 'package:stagehand/stagehand.dart';", "import 'package:stagehand/stagehand.dart';\nimport '" + templateSource + "';")
                                   .replaceFirst("final List<Generator> newGenerators = [", "final List<Generator> newGenerators = [\n  new " + repoName + "(),");
       new io.File(isloaderFile).writeAsStringSync(isLoaderMod);
+      logger.stdout("Running pub in the template directory");
+      io.Process.runSync('pub', ['get'], workingDirectory:templateLocation);
       
-      logger.stdout(repoName+ " Template Installed !");
+      logger.stdout(repoName+ " template Installed !");
 
       return analytics.waitForLastPing(timeout: _timeout);
     }
