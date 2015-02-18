@@ -1,4 +1,0 @@
-name: stagehandData
-dependencies:
-  crypto: '>=0.9.0 <0.10.0'
-  stagehand: 'any'

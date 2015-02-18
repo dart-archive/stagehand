@@ -130,10 +130,9 @@ class CliApp {
       }
 
       Map<String, String> envVars = io.Platform.environment;
-
       String homeDir = envVars['HOME'];
-      String stagehandDataDir = homeDir + '/stagehandData/'; //For storing third party templates
-      String stagehandDir = homeDir + '/stagehand/'; //Stagehand Source dir
+      String stagehandDataDir = path.join(homeDir, 'stagehandData'); //For storing third party templates
+      
       String repoUrl = options.rest[0];
 
       //Get the repo name from URL
@@ -144,34 +143,19 @@ class CliApp {
       var repoName = match.group(6).replaceFirst(".git", "") //remove trailing git if required
                      .replaceAll("-", ""); //remove dashes from git repo name if required
 
-      String templateLocation = stagehandDataDir + repoName;
+      String templateLocation = path.join(stagehandDataDir, repoName, repoName);
 
       if(io.FileSystemEntity.isDirectorySync(templateLocation)) {
         logger.stderr("Template already installed. If you want to update the template use the update command\n");
         _usage(argParser);
-        return new Future.error(new ArgError('Template already installed. If you want to update the template use the update command'));
+        //TODO: Implement template update command
+        return new Future.error(new ArgError('Template already installed.'));
       }
 
       logger.stdout("Clonning " + repoName);
       io.Process.runSync('git', ['clone', options.rest[0], templateLocation]);
-
-      //We assume that that core source file name of the template will be equal to the repo name
-      //Convention over configuration, we can always use config file, but this looked cleaner
-      String templateSource = templateLocation + '/lib/generators/' + repoName + '.dart';
-      
-      //Isolate loader file location
-      //We will be modifying this file to include the types for the newly installed template
-      String isloaderFile = stagehandDataDir + "isloader.dart";
-
-      //Fix the imports for the template files
-      //Here we assume that the extension follow the built-in templates
-      String isLoaderOrig = new io.File(isloaderFile).readAsStringSync();
-      String isLoaderMod = isLoaderOrig.replaceFirst("import 'package:stagehand/stagehand.dart';", "import 'package:stagehand/stagehand.dart';\nimport '" + templateSource + "';")
-                                  .replaceFirst("final List<Generator> newGenerators = [", "final List<Generator> newGenerators = [\n  new " + repoName + "(),");
-      new io.File(isloaderFile).writeAsStringSync(isLoaderMod);
       logger.stdout("Running pub in the template directory");
       io.Process.runSync('pub', ['get'], workingDirectory:templateLocation);
-      
       logger.stdout(repoName+ " template Installed !");
 
       return analytics.waitForLastPing(timeout: _timeout);
