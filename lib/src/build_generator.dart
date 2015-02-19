@@ -4,11 +4,12 @@
 /**
  * Return a generator from plugin. This will read pluginData map to extract the information required to build the generator.
  */
-library stagehand.utils;
+library stagehand.build_generator;
 
 import 'package:stagehand/src/common.dart';
 import 'package:stagehand/stagehand.dart';
 class PluginGenerator extends DefaultGenerator {
+  String help = "";
   PluginGenerator(var name, Map pluginData) : super(
       name,
       pluginData['info'],
@@ -19,9 +20,10 @@ class PluginGenerator extends DefaultGenerator {
       addTemplateFile(file);
     }
     setEntrypoint(getFile(pluginData['entrypoint']));
+    help = pluginData['help'];
   }
 
   String getInstallInstructions() =>
   "${super.getInstallInstructions()}\n"
-  "to run your app, use 'pub serve'";
+  + help;
 }

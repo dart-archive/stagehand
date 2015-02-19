@@ -143,7 +143,7 @@ class CliApp {
       var repoName = match.group(6).replaceFirst(".git", "") //remove trailing git if required
                      .replaceAll("-", ""); //remove dashes from git repo name if required
 
-      String templateLocation = path.join(stagehandDataDir, repoName, repoName);
+      String templateLocation = path.join(stagehandDataDir, repoName);
 
       if(io.FileSystemEntity.isDirectorySync(templateLocation)) {
         logger.stderr("Template already installed. If you want to update the template use the update command\n");

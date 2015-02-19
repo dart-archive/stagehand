@@ -10,6 +10,7 @@ import 'dart:io' as io;
 import 'package:path/path.dart' as path;
 import 'package:plugins/loader.dart';
 import 'package:stagehand/src/build_generator.dart';
+import 'package:stagehand/src/common.dart';
 import 'package:stagehand/stagehand.dart';
 import 'package:stagehand/src/cli_app.dart';
 import 'package:usage/usage_io.dart';
@@ -18,39 +19,34 @@ void main(List<String> args) {
   // Determine the user home directory
   Map<String, String> envVars = io.Platform.environment;
   String homeDir = envVars['HOME'];
-  int noOfPluginDirs = 0;
-  int noOfTimesloadPluginCalled = 0;
   // stagehandData is the plugin directory
   io.Directory dirpath = new io.Directory(path.join(homeDir, 'stagehandData'));
+  int noOfTimesloadPluginCalled = 0;
+  int noOfPluginDirs = 0;
   if (dirpath.existsSync()) {
-    List<io.FileSystemEntity> dirList = dirpath.listSync(recursive: false, followLinks: false);
-    for (io.FileSystemEntity f in dirList) {
-      if (io.FileSystemEntity.isDirectorySync(f.path)) {
-        noOfPluginDirs += 1;
-        PluginManager pm = new PluginManager();
-        io.Directory extpath = new io.Directory(f.path);
-        pm.loadAll(extpath).then((_) {
-          pm.listenAll((name, data) {
-            noOfTimesloadPluginCalled += 1;
-            var newGenerator = new PluginGenerator(name, data);
-            generators.add(newGenerator);
-            pm.killAll();
-            // This means the last listen event got called
-            if (noOfTimesloadPluginCalled == noOfPluginDirs) {
-              mainRoutine(args);
-            }
-          });
-          // Activate the listeners
-          pm.sendAll(new Map());
-        });
-      }
+    int noOfPluginDirs = noOfDirectories(dirpath);
+    PluginManager pm = new PluginManager();
+    pm.loadAll(dirpath).then((_) {
+      pm.listenAll((name, data) {
+        noOfTimesloadPluginCalled += 1;
+        var newGenerator = new PluginGenerator(name, data);
+        generators.add(newGenerator);
+        // This means the last listen event got called
+        if(noOfTimesloadPluginCalled == noOfPluginDirs) {
+          pm.killAll();
+          mainRoutine(args);
+        }
+      });
+      // Activate the listeners
+      pm.sendAll({});
+    });
+    // No plugins found
+    if (noOfPluginDirs == 0) {
+      mainRoutine(args);
     }
-  }
-  // No plugins found
-  if (noOfPluginDirs == 0) {
+  } else {
     mainRoutine(args);
   }
-
 }
 
 void mainRoutine(List<String> args) {
