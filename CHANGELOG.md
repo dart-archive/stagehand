@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.5+5
+
+- Updated the dependency on `usage`
+
 ## 0.1.5+3
 
 - Updated the dependency on `usage`

@@ -4,7 +4,7 @@
 
 name: stagehand
 # When changing this version, change the lib/src/cli_app.dart version as well.
-version: 0.1.5+4
+version: 0.1.5+5
 description: >
   A scaffolding generator for your Dart projects. Stagehand helps you get set
   up!
@@ -22,7 +22,7 @@ dependencies:
   crypto: '>=0.9.0 <0.10.0'
   http: '>=0.11.0 <0.12.0'
   path: '>=1.3.0 <2.0.0'
-  usage: '>=0.0.6 <0.1.0'
+  usage: '>=1.0.0 <2.0.0'
 
 dev_dependencies:
   browser: any
