@@ -122,6 +122,45 @@ class CliApp {
       return analytics.waitForLastPing(timeout: _timeout);
     }
 
+    if (options['git']) {
+      if(options.rest.length == 0) {
+        logger.stderr("No URL specified.\n");
+        _usage(argParser);
+        return new Future.error(new ArgError('no URL specified'));
+      }
+
+      Map<String, String> envVars = io.Platform.environment;
+      String homeDir = envVars['HOME'];
+      String stagehandDataDir = path.join(homeDir, 'stagehandData'); //For storing third party templates
+      
+      String repoUrl = options.rest[0];
+
+      //Get the repo name from URL
+      String expression = r'^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$';
+      RegExp regExp = new RegExp(expression);
+      var matches = regExp.allMatches(repoUrl);
+      var match = matches.elementAt(0);
+      var repoName = match.group(6).replaceFirst(".git", "") //remove trailing git if required
+                     .replaceAll("-", ""); //remove dashes from git repo name if required
+
+      String templateLocation = path.join(stagehandDataDir, repoName);
+
+      if(io.FileSystemEntity.isDirectorySync(templateLocation)) {
+        logger.stderr("Template already installed. If you want to update the template use the update command\n");
+        _usage(argParser);
+        //TODO: Implement template update command
+        return new Future.error(new ArgError('Template already installed.'));
+      }
+
+      logger.stdout("Cloning " + repoName);
+      io.Process.runSync('git', ['clone', options.rest[0], templateLocation]);
+      logger.stdout("Running pub in the template directory");
+      io.Process.runSync('pub', ['get'], workingDirectory:templateLocation);
+      logger.stdout(repoName+ " template Installed !");
+
+      return analytics.waitForLastPing(timeout: _timeout);
+    }
+
     if (options.rest.isEmpty) {
       logger.stderr("No generator specified.\n");
       _usage(argParser);
@@ -140,6 +179,7 @@ class CliApp {
     if (generator == null) {
       logger.stderr("'${generatorName}' is not a valid generator.\n");
       _usage(argParser);
+      //TODO: Search for third party generators installed locally.
       return new Future.error(new ArgError('invalid generator'));
     }
 
@@ -213,6 +253,9 @@ class CliApp {
 
     // Output the list of available projects as json to stdout.
     argParser.addFlag('machine', negatable: false, hide: true);
+
+    // Allows the download of a generator from git
+    argParser.addFlag('git', negatable: false, hide: true);
 
     // Mock out analytics - for use on our testing bots.
     argParser.addFlag('mock-analytics', negatable: false, hide: true);
