@@ -62,6 +62,19 @@ With Dart 1.6:
 
     $> pub global run stagehand
 
+### How to install a third party template
+
+You can use the option git to install a third party template from a git repository:
+
+    $> stagehand --git <git repo url>
+
+Once installed, the generator will be listed while running the stagehand command.
+
+### How to build a third party template
+
+Clone the [emptyStagehandTemplate](https://github.com/kunaldeo/emptyStagehandTemplate) and add your project to template-dir folder. Detailed instructions are available in the README file.
+You can also checkout [polymerContacts](https://github.com/kunaldeo/polymerContacts), it is a complete build of a third party stagehand template.
+
 ## Goals
 
 * Opinionated and prescriptive; minimal to no options

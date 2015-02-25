@@ -152,7 +152,7 @@ class CliApp {
         return new Future.error(new ArgError('Template already installed.'));
       }
 
-      logger.stdout("Clonning " + repoName);
+      logger.stdout("Cloning " + repoName);
       io.Process.runSync('git', ['clone', options.rest[0], templateLocation]);
       logger.stdout("Running pub in the template directory");
       io.Process.runSync('pub', ['get'], workingDirectory:templateLocation);
