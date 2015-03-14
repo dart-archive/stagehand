@@ -41,27 +41,13 @@ Update:
 Stagehand will generate a project skeleton into the current directry. As an
 example, here is how you create a webapp with Stagehand:
 
-With Dart 1.7 or greater:
-
     $> mkdir fancy_project
     $> cd fancy_project
     $> stagehand webapp
 
-With Dart 1.6:
-
-    $> mkdir fancy_project
-    $> cd fancy_project
-    $> pub global run stagehand webapp
-
-Here is how you list all of the project templates:
-
-With Dart 1.7 or greater:
+And to list all of the project templates:
 
     $> stagehand
-
-With Dart 1.6:
-
-    $> pub global run stagehand
 
 ## Goals
 
@@ -71,7 +57,6 @@ With Dart 1.6:
 * Becomes the best way to create a new Dart project
 * Used by WebStorm, CDE, Sublime, and more
 * Distributed as a pub package
-* Non-goal: fostering an entire ecosystem of generators. This project is opinionated. It’s not a framework for generators.
 
 ## Issues and bugs
 
