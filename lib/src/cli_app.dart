@@ -158,12 +158,8 @@ class CliApp {
       return new Future.error(new ArgError('project directory not empty'));
     }
 
-    // Validate and normalize the project name.
+    // Normalize the project name.
     String projectName = path.basename(dir.path);
-    if (_validateName(projectName) != null) {
-      logger.stderr(_validateName(projectName));
-      return new Future.error(new ArgError(_validateName(projectName)));
-    }
     projectName = normalizeProjectName(projectName);
 
     if (target == null) {
@@ -235,19 +231,6 @@ class CliApp {
       return m;
     });
     return JSON.encode(itor.toList());
-  }
-
-  String _validateName(String projectName) {
-    if (projectName.contains(' ')) {
-      return "The project name cannot contain spaces.";
-    }
-
-    if (!projectName.startsWith(new RegExp(r'[A-Za-z]'))) {
-      return "The project name must start with a letter.";
-    }
-
-    // Project name is valid.
-    return null;
   }
 
   void _usage(ArgParser argParser) {

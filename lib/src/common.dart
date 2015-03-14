@@ -40,7 +40,7 @@ List<TemplateFile> decodeConcanenatedData(List<String> data) {
  * Convert a directory name into a reasonably legal pub package name.
  */
 String normalizeProjectName(String name) {
-  name = name.replaceAll('-', '_');
+  name = name.replaceAll('-', '_').replaceAll(' ', '_');
 
   // Strip any extension (like .dart).
   if (name.contains('.')) {
