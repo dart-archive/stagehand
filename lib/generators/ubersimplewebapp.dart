@@ -18,7 +18,7 @@ class UberSimpleWebAppGenerator extends DefaultGenerator {
       "An absolute bare-bones web app.",
       categories: const ['dart', 'web']) {
 
-    for (TemplateFile file in decodeConcanenatedData(data)) {
+    for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }
 

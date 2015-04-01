@@ -19,7 +19,7 @@ class WebAppGenerator extends DefaultGenerator {
       "(optional) Sass support.",
       categories: const ['dart', 'web']) {
 
-    for (TemplateFile file in decodeConcanenatedData(data)) {
+    for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }
 

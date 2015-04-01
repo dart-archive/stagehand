@@ -18,7 +18,7 @@ class PackageGenerator extends DefaultGenerator {
       'A starting point for Dart libraries or applications.',
       categories: const ['dart']) {
 
-    for (TemplateFile file in decodeConcanenatedData(data)) {
+    for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }
 
