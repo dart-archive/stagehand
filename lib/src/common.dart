@@ -15,7 +15,11 @@ import '../stagehand.dart';
 
 const int _RUNE_SPACE = 32;
 
-List<TemplateFile> decodeConcanenatedData(List<String> data) {
+@Deprecated('see decodeConcatenatedData')
+List<TemplateFile> decodeConcanenatedData(List<String> data) =>
+  decodeConcatenatedData(data);
+
+List<TemplateFile> decodeConcatenatedData(List<String> data) {
   List<TemplateFile> results = [];
 
   for (int i = 0; i < data.length; i += 3) {

@@ -18,7 +18,7 @@ class AppEngineAppGenerator extends DefaultGenerator {
       'A simple AppEngine application.',
       categories: const ['dart', 'appengine', 'server']) {
 
-    for (TemplateFile file in decodeConcanenatedData(data)) {
+    for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }
 
