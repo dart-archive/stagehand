@@ -51,7 +51,7 @@ Generator getGenerator(String id) {
 
 /**
  * An abstract class which both defines a template generator and can generate a
- * user project baed on this template.
+ * user project based on this template.
  */
 abstract class Generator implements Comparable<Generator> {
   final String id;

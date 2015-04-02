@@ -261,8 +261,8 @@ class CliApp {
   }
 
   /**
-   * Return true if there are any non-symlinked, non-hidden sub-directories in
-   * the given directory.
+   * Returns true if the given directory does not contain non-symlinked,
+   * non-hidden subdirectories.
    */
   bool _isDirEmpty(io.Directory dir) {
     var isHiddenDir = (dir) => path.basename(dir.path).startsWith('.');
