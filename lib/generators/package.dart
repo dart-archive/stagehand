@@ -12,12 +12,9 @@ import 'package_data.dart';
  * A generator for a pub library.
  */
 class PackageGenerator extends DefaultGenerator {
-  PackageGenerator() : super(
-      'package',
-      'Dart Package',
-      'A starting point for Dart libraries or applications.',
-      categories: const ['dart']) {
-
+  PackageGenerator() : super('package', 'Dart Package',
+          'A starting point for Dart libraries or applications.',
+          categories: const ['dart']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }

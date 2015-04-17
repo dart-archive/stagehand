@@ -33,16 +33,14 @@ void defineTests() {
     }
 
     Future _expectError(Future f, [bool hasStdout = true]) {
-      return f
-        .then((_) => fail('error expected'))
-        .catchError((e) {
-          expect(logger.getStderr(), isNot(isEmpty));
-          if (hasStdout) {
-            expect(logger.getStdout(), isNot(isEmpty));
-          } else {
-            expect(logger.getStdout(), isEmpty);
-          }
-        });
+      return f.then((_) => fail('error expected')).catchError((e) {
+        expect(logger.getStderr(), isNot(isEmpty));
+        if (hasStdout) {
+          expect(logger.getStdout(), isNot(isEmpty));
+        } else {
+          expect(logger.getStdout(), isEmpty);
+        }
+      });
     }
 
     test('no args', () {

@@ -28,8 +28,7 @@ void defineTests() {
     });
 
     test('convertToYamlMultiLine', () {
-      expect(
-          convertToYamlMultiLine(
+      expect(convertToYamlMultiLine(
               'one two three four five size seven eight nine '
               'ten eleven twelve thirteen fourteen fifteen'),
           '  one two three four five size seven eight nine ten eleven twelve '
