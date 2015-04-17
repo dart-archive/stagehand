@@ -96,15 +96,11 @@ void testGenerators(GrinderContext context) {
         Analyzer.analyzePath(context, filePath,
             fatalWarnings: true, packageRoot: new Directory('foo/packages'));
       }
-
-      fooDir.deleteSync(recursive: true);
     }
-  } catch (e) {
+  } finally {
     try {
       fooDir.deleteSync(recursive: true);
     } catch (_) {}
-
-    rethrow;
   }
 }
 
