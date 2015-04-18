@@ -25,7 +25,7 @@ dependencies:
   usage: '>=1.0.0 <2.0.0'
 
 dev_dependencies:
-  browser: any
-  ghpages_generator: any
+  browser: '>=0.10.0+2 <0.11.0'
+  ghpages_generator: '>=0.2.4 <0.3.0'
   grinder: '>=0.6.0 <0.7.0'
-  unittest: any
+  unittest: '>=0.11.5+4 <0.12.0'
