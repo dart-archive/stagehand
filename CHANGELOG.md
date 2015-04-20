@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.2.0
+- TODO:
+
 ## 0.1.5+5
 
 - Updated the dependency on `usage`
