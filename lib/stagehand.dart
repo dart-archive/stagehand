@@ -30,7 +30,7 @@ import 'generators/consoleapp.dart';
 import 'generators/webapp.dart';
 import 'generators/package.dart';
 import 'generators/polymerapp.dart';
-import 'generators/shelfserver.dart';
+import 'generators/server_shelf.dart';
 import 'generators/ubersimplewebapp.dart';
 import 'src/common.dart';
 
@@ -40,7 +40,7 @@ final List<Generator> generators = [
   new ConsoleAppGenerator(),
   new PackageGenerator(),
   new PolymerAppGenerator(),
-  new ShelfServerGenerator(),
+  new ShelfGenerator(),
   new WebAppGenerator(),
   new UberSimpleWebAppGenerator()
 ];

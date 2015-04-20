@@ -41,8 +41,9 @@ void init(GrinderContext context) {
  */
 void buildTemplates(GrinderContext context) {
   stagehand.generators.forEach((generator) {
-    _concatenateFiles(context, getDir('templates/${generator.id}'),
-        getFile('lib/generators/${generator.id}_data.dart'));
+    _concatenateFiles(context,
+        getDir('templates/${generator.id}'),
+        getFile('lib/generators/${generator.id.replaceAll('-', '_')}_data.dart'));
   });
 }
 

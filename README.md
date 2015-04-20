@@ -13,13 +13,13 @@ Kit and Yeoman.
 
 ## Things you can create with Stagehand
 
-* appengineapp - a simple AppEngine application
-* consoleapp - a simple command-line application
 * package - a starting point for Dart libraries or applications
+* consoleapp - a simple command-line application
 * polymerapp - a web app built using polymer.dart
-* shelfserver - a web server built using the shelf package
 * ubersimplewebapp - an absolute bare-bones web app
 * webapp - a mobile-friendly web app with routing, responsive CSS, and (optional) Sass support
+* appengineapp - a simple AppEngine application
+* server-shelf - a web server built using the shelf package
 
 ## Installation
 

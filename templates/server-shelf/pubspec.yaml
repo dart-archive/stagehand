@@ -6,5 +6,5 @@ description: A minimal web server using the shelf package.
 environment:
   sdk: '>=1.0.0 <2.0.0'
 dependencies:
-  args: '>=0.10.0 <0.13.0'
-  shelf: '>=0.5.5 <0.6.0'
+  args: '>=0.10.0 <0.14.0'
+  shelf: '>=0.6.0 <0.7.0'
