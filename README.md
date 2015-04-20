@@ -12,14 +12,15 @@ It is a Dart project scaffolding generator, inspired by tools like Web Starter
 Kit and Yeoman.
 
 ## Things you can create with Stagehand
-
-* package - a starting point for Dart libraries or applications
-* consoleapp - a simple command-line application
-* polymerapp - a web app built using polymer.dart
-* ubersimplewebapp - an absolute bare-bones web app
-* webapp - a mobile-friendly web app with routing, responsive CSS, and (optional) Sass support
-* appengineapp - a simple AppEngine application
-* server-shelf - a web server built using the shelf package
+<!-- template-list -->
+* `appengineapp` - A simple AppEngine application.
+* `consoleapp` - A simple command-line application.
+* `package` - A starting point for Dart libraries or applications.
+* `polymerapp` - A web app built using polymer.dart.
+* `server-shelf` - A web server built using the shelf package.
+* `ubersimplewebapp` - An absolute bare-bones web app.
+* `webapp` - A mobile-friendly web app with routing, responsive CSS, and (optional) Sass support.
+<!-- template-list -->
 
 ## Installation
 

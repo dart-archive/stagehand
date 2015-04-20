@@ -43,7 +43,7 @@ final List<Generator> generators = [
   new ShelfGenerator(),
   new WebAppGenerator(),
   new UberSimpleWebAppGenerator()
-];
+]..sort();
 
 Generator getGenerator(String id) {
   return generators.firstWhere((g) => g.id == id, orElse: () => null);

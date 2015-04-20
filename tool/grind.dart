@@ -45,6 +45,34 @@ void buildTemplates(GrinderContext context) {
         getDir('templates/${generator.id}'),
         getFile('lib/generators/${generator.id.replaceAll('-', '_')}_data.dart'));
   });
+
+  // Update the readme.md file.
+  File f = getFile('README.md');
+  String source = f.readAsStringSync();
+  String fragment = stagehand.generators.map((g) {
+    return '* `${g.id}` - ${g.description}';
+  }).join('\n');
+  String newSource = _replaceInString(
+      context,
+      source,
+      '<!-- template-list -->',
+      '<!-- template-list -->',
+      fragment);
+  f.writeAsStringSync(newSource);
+
+  // Update the site/index.html file.
+  f = getFile('site/index.html');
+  source = f.readAsStringSync();
+  fragment = stagehand.generators.map((g) {
+    return '  <li>${g.id} - <em>${g.description}</em></li>';
+  }).join('\n');
+  newSource = _replaceInString(
+      context,
+      source,
+      '<ul id="template-list">',
+      '</ul>',
+      fragment);
+  f.writeAsStringSync(newSource);
 }
 
 /**
@@ -189,4 +217,21 @@ List<FileSystemEntity> _listSync(Directory dir,
       dir.listSync(recursive: recursive, followLinks: followLinks);
   results.sort((entity1, entity2) => entity1.path.compareTo(entity2.path));
   return results;
+}
+
+/// Look for [start] and [end] in [source]; replace the current contents with
+/// [replacement], and return the result.
+String _replaceInString(GrinderContext context, String source, String start,
+    String end, String replacement) {
+  int startIndex = source.indexOf(start);
+  int endIndex = source.indexOf(end, startIndex + 1);
+
+  if (startIndex == -1 || endIndex == -1) {
+    context.fail('Could not find text to replace');
+  }
+
+  return source.substring(0, startIndex + start.length + 1) +
+      replacement +
+      '\n' +
+      source.substring(endIndex);
 }
