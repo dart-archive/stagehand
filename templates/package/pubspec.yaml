@@ -7,4 +7,4 @@ version: 0.0.1
 #dependencies:
 #  lib_name: any
 dev_dependencies:
-  unittest: '>=0.11.5+4 <0.12.0'
+  unittest: '>=0.11.0 <0.12.0'

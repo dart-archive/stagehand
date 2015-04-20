@@ -98,10 +98,8 @@ class CliApp {
     if (options['help'] || args.isEmpty) {
       // Prompt to opt into advanced analytics.
       if (!analytics.hasSetOptIn) {
-        _out(
-            "Welcome to Stagehand! We collect anonymous usage statistics and crash reports in");
-        _out(
-            "order to improve the tool (http://goo.gl/6wsncI). Would you like to opt-in to");
+        _out("Welcome to Stagehand! We collect anonymous usage statistics and crash reports in");
+        _out("order to improve the tool (http://goo.gl/6wsncI). Would you like to opt-in to");
         _out("additional analytics to help us improve Stagehand [y/yes/no]? ");
         io.stdout.flush();
         String response = io.stdin.readLineSync();
@@ -239,8 +237,7 @@ class CliApp {
   }
 
   void _usage(ArgParser argParser) {
-    _out(
-        'Stagehand will generate the given application type into the current directory.');
+    _out('Stagehand will generate the given application type into the current directory.');
     _out('');
     _out('usage: ${APP_NAME} <generator-name>');
     _out(argParser.usage);

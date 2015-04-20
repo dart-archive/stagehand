@@ -8,7 +8,7 @@ description: >
 environment:
   sdk: '>=1.0.0 <2.0.0'
 dependencies:
-  browser: '>=0.10.0+2 <0.11.0'
+  browser: '>=0.10.0 <0.11.0'
   sass: '>=0.4.0 <0.5.0'
   script_inliner: '>=1.0.0 <2.0.0'
   route_hierarchical: '>=0.5.0 <0.7.0'
