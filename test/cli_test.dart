@@ -69,6 +69,13 @@ void defineTests() {
         expect(results, isNot(isEmpty));
       });
     });
+
+    test('version', () {
+      return app.process(['--version']).then((_) {
+        _expectOk();
+        expect(logger.getStdout(), contains('stagehand version'));
+      });
+    });
   });
 }
 
