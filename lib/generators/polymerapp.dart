@@ -12,12 +12,9 @@ import 'polymerapp_data.dart';
  * A generator for a polymer.dart application.
  */
 class PolymerAppGenerator extends DefaultGenerator {
-  PolymerAppGenerator() : super(
-      'polymerapp',
-      'Polymer Web Application',
-      'A web app built using polymer.dart.',
-      categories: const ['dart', 'web']) {
-
+  PolymerAppGenerator() : super('polymerapp', 'Polymer Web Application',
+          'A web app built using polymer.dart.',
+          categories: const ['dart', 'web']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }
@@ -25,7 +22,6 @@ class PolymerAppGenerator extends DefaultGenerator {
     setEntrypoint(getFile('web/index.html'));
   }
 
-  String getInstallInstructions() =>
-      "${super.getInstallInstructions()}\n"
+  String getInstallInstructions() => "${super.getInstallInstructions()}\n"
       "to run your app, use 'pub serve'";
 }

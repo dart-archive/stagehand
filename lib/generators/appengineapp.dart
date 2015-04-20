@@ -12,12 +12,9 @@ import '../src/common.dart';
  * A generator for a hello world AppEngine application.
  */
 class AppEngineAppGenerator extends DefaultGenerator {
-  AppEngineAppGenerator() : super(
-      'appengineapp',
-      'AppEngine Application',
-      'A simple AppEngine application.',
-      categories: const ['dart', 'appengine', 'server']) {
-
+  AppEngineAppGenerator() : super('appengineapp', 'AppEngine Application',
+          'A simple AppEngine application.',
+          categories: const ['dart', 'appengine', 'server']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }
@@ -25,7 +22,6 @@ class AppEngineAppGenerator extends DefaultGenerator {
     setEntrypoint(getFile('bin/server.dart'));
   }
 
-  String getInstallInstructions() =>
-      "${super.getInstallInstructions()}\n"
+  String getInstallInstructions() => "${super.getInstallInstructions()}\n"
       "run your app using 'gcloud preview app run app.yaml'";
 }

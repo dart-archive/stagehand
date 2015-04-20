@@ -12,13 +12,9 @@ import 'webapp_data.dart';
  * A generator for a minimal web application.
  */
 class WebAppGenerator extends DefaultGenerator {
-  WebAppGenerator() : super(
-      'webapp',
-      'Web Application',
-      "A mobile-friendly web app with routing, responsive CSS, and "
-      "(optional) Sass support.",
-      categories: const ['dart', 'web']) {
-
+  WebAppGenerator() : super('webapp', 'Web Application',
+          "A mobile-friendly web app with routing, responsive CSS, and "
+          "(optional) Sass support.", categories: const ['dart', 'web']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }
@@ -26,8 +22,7 @@ class WebAppGenerator extends DefaultGenerator {
     setEntrypoint(getFile('web/index.html'));
   }
 
-  String getInstallInstructions() =>
-      "${super.getInstallInstructions()}\n"
+  String getInstallInstructions() => "${super.getInstallInstructions()}\n"
       "sass is required if you want to modify the sass styles (sass-lang.com/install)\n"
       "to run your app, use 'pub serve'\n";
 }

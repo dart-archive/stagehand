@@ -12,12 +12,9 @@ import 'consoleapp_data.dart';
  * A generator for a hello world command-line application.
  */
 class ConsoleAppGenerator extends DefaultGenerator {
-  ConsoleAppGenerator() : super(
-      'consoleapp',
-      'Console Application',
-      'A simple command-line application.',
-      categories: const ['dart', 'console', 'minimal']) {
-
+  ConsoleAppGenerator() : super('consoleapp', 'Console Application',
+          'A simple command-line application.',
+          categories: const ['dart', 'console', 'minimal']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }
@@ -25,7 +22,6 @@ class ConsoleAppGenerator extends DefaultGenerator {
     setEntrypoint(getFile('bin/main.dart'));
   }
 
-  String getInstallInstructions() =>
-      "${super.getInstallInstructions()}\n"
+  String getInstallInstructions() => "${super.getInstallInstructions()}\n"
       "run your app using 'dart ${entrypoint.path}'";
 }

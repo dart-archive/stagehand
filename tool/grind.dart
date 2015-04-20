@@ -41,9 +41,7 @@ void init(GrinderContext context) {
  */
 void buildTemplates(GrinderContext context) {
   stagehand.generators.forEach((generator) {
-    _concatenateFiles(
-        context,
-        getDir('templates/${generator.id}'),
+    _concatenateFiles(context, getDir('templates/${generator.id}'),
         getFile('lib/generators/${generator.id}_data.dart'));
   });
 }
@@ -54,8 +52,8 @@ void buildTemplates(GrinderContext context) {
 void updateGhPages(GrinderContext context) {
   context.log('Updating gh-pages branch of the project');
   new ghpages.Generator(rootDir: getDir('.').absolute.path)
-      ..templateDir = getDir('site').absolute.path
-      ..generate();
+    ..templateDir = getDir('site').absolute.path
+    ..generate();
 }
 
 /**
@@ -81,8 +79,8 @@ void testGenerators(GrinderContext context) {
       File file = joinFile(fooDir, [generator.entrypoint.path]);
 
       if (joinFile(fooDir, ['pubspec.yaml']).existsSync()) {
-        runProcess(context, 'pub', arguments: ['get'],
-            workingDirectory: fooDir.path);
+        runProcess(context, 'pub',
+            arguments: ['get'], workingDirectory: fooDir.path);
       }
 
       // TODO: This does not locate the polymer template Dart entrypoint.
@@ -95,17 +93,14 @@ void testGenerators(GrinderContext context) {
         filePath = filePath.replaceAll('projectName', 'foo');
 
         // TODO: We should be able to pass a cwd into `analyzePath`.
-        Analyzer.analyzePath(context, filePath, fatalWarnings: true,
-            packageRoot: new Directory('foo/packages'));
+        Analyzer.analyzePath(context, filePath,
+            fatalWarnings: true, packageRoot: new Directory('foo/packages'));
       }
-
-      fooDir.deleteSync(recursive: true);
     }
-  } catch (e) {
-    try { fooDir.deleteSync(recursive: true); }
-    catch (_) { }
-
-    rethrow;
+  } finally {
+    try {
+      fooDir.deleteSync(recursive: true);
+    } catch (_) {}
   }
 }
 
@@ -160,8 +155,8 @@ void _traverse(Directory dir, String root, List<String> results) {
     } else {
       File file = entity;
       String fileType = _isBinaryFile(name) ? 'binary' : 'text';
-      String data = CryptoUtils.bytesToBase64(
-          file.readAsBytesSync(), addLineSeparator: true);
+      String data = CryptoUtils.bytesToBase64(file.readAsBytesSync(),
+          addLineSeparator: true);
 
       results.add('${root}${name}');
       results.add(fileType);
@@ -178,8 +173,8 @@ bool _isBinaryFile(String filename) => _binaryFileTypes.hasMatch(filename);
 File _locateDartFile(File file) {
   if (file.path.endsWith('.dart')) return file;
 
-  return _listSync(file.parent).firstWhere(
-      (f) => f.path.endsWith('.dart'), orElse: () => null);
+  return _listSync(file.parent).firstWhere((f) => f.path.endsWith('.dart'),
+      orElse: () => null);
 }
 
 /**
@@ -189,8 +184,8 @@ File _locateDartFile(File file) {
  */
 List<FileSystemEntity> _listSync(Directory dir,
     {bool recursive: false, bool followLinks: true}) {
-  List<FileSystemEntity> results = dir.listSync(
-      recursive: recursive, followLinks: followLinks);
+  List<FileSystemEntity> results =
+      dir.listSync(recursive: recursive, followLinks: followLinks);
   results.sort((entity1, entity2) => entity1.path.compareTo(entity2.path));
   return results;
 }

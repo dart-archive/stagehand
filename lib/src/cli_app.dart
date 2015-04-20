@@ -21,7 +21,8 @@ const String APP_NAME = 'stagehand';
 // This version must be updated in tandem with the pubspec version.
 const String APP_VERSION = '0.1.5+5';
 
-const String APP_PUB_INFO = 'https://pub.dartlang.org/packages/${APP_NAME}.json';
+const String APP_PUB_INFO =
+    'https://pub.dartlang.org/packages/${APP_NAME}.json';
 
 // The Google Analytics tracking ID for stagehand.
 const String _GA_TRACKING_ID = 'UA-55033590-1';
@@ -89,7 +90,7 @@ class CliApp {
         List versions = JSON.decode(response.body)['versions'];
         if (APP_VERSION != versions.last) {
           _out("Version ${versions.last} is available! Run `pub global activate"
-               " ${APP_NAME}` to get the latest.");
+              " ${APP_NAME}` to get the latest.");
         }
       }).catchError((e) => null);
     }
@@ -97,8 +98,10 @@ class CliApp {
     if (options['help'] || args.isEmpty) {
       // Prompt to opt into advanced analytics.
       if (!analytics.hasSetOptIn) {
-        _out("Welcome to Stagehand! We collect anonymous usage statistics and crash reports in");
-        _out("order to improve the tool (http://goo.gl/6wsncI). Would you like to opt-in to");
+        _out(
+            "Welcome to Stagehand! We collect anonymous usage statistics and crash reports in");
+        _out(
+            "order to improve the tool (http://goo.gl/6wsncI). Would you like to opt-in to");
         _out("additional analytics to help us improve Stagehand [y/yes/no]? ");
         io.stdout.flush();
         String response = io.stdin.readLineSync();
@@ -153,8 +156,8 @@ class CliApp {
 
     if (!options['override'] && !_isDirEmpty(dir)) {
       logger.stderr(
-'The current directory is not empty. Please create a new project directory, or '
-'use --override to force generation into the current directory.');
+          'The current directory is not empty. Please create a new project directory, or '
+          'use --override to force generation into the current directory.');
       return new Future.error(new ArgError('project directory not empty'));
     }
 
@@ -193,12 +196,14 @@ class CliApp {
   ArgParser _createArgParser() {
     var argParser = new ArgParser();
 
-    argParser.addFlag('analytics', negatable: true,
+    argParser.addFlag('analytics',
+        negatable: true,
         help: 'Opt-out of anonymous usage and crash reporting.');
     argParser.addFlag('help', abbr: 'h', negatable: false, help: 'Help!');
-    argParser.addFlag('version', negatable: false,
-        help: 'Display the version for ${APP_NAME}.');
-    argParser.addOption('author', defaultsTo: '<your name>',
+    argParser.addFlag('version',
+        negatable: false, help: 'Display the version for ${APP_NAME}.');
+    argParser.addOption('author',
+        defaultsTo: '<your name>',
         help: 'The author name to use for file headers.');
 
     // This option is deprecated and will go away.
@@ -234,18 +239,17 @@ class CliApp {
   }
 
   void _usage(ArgParser argParser) {
-    _out('Stagehand will generate the given application type into the current directory.');
+    _out(
+        'Stagehand will generate the given application type into the current directory.');
     _out('');
     _out('usage: ${APP_NAME} <generator-name>');
     _out(argParser.usage);
     _out('');
     _out('Available generators:');
-    int len = generators
-      .map((g) => g.id.length)
-      .fold(0, (a, b) => max(a, b));
+    int len = generators.map((g) => g.id.length).fold(0, (a, b) => max(a, b));
     generators
-      .map((g) => "  ${_pad(g.id, len)} - ${g.description}")
-      .forEach(logger.stdout);
+        .map((g) => "  ${_pad(g.id, len)} - ${g.description}")
+        .forEach(logger.stdout);
   }
 
   Generator _getGenerator(String id) {
@@ -267,10 +271,10 @@ class CliApp {
   bool _isDirEmpty(io.Directory dir) {
     var isHiddenDir = (dir) => path.basename(dir.path).startsWith('.');
 
-    return dir.listSync(followLinks: false)
+    return dir
+        .listSync(followLinks: false)
         .where((entity) => entity is io.Directory)
-        .where((entity) => !isHiddenDir(entity))
-        .isEmpty;
+        .where((entity) => !isHiddenDir(entity)).isEmpty;
   }
 }
 
@@ -299,8 +303,8 @@ class _DirectoryGeneratorTarget extends GeneratorTarget {
     logger.stdout('  ${file.path}');
 
     return file
-      .create(recursive: true)
-      .then((_) => file.writeAsBytes(contents));
+        .create(recursive: true)
+        .then((_) => file.writeAsBytes(contents));
   }
 }
 
