@@ -19,4 +19,5 @@ void validate(Generator generator) {
   expect(generator.id, isNot(contains(' ')));
   expect(generator.description, endsWith('.'));
   expect(generator.entrypoint, isNotNull);
+  expect(generator.getInstallInstructions(), isNotNull);
 }
