@@ -6,13 +6,13 @@ library stagehand.package;
 
 import '../stagehand.dart';
 import '../src/common.dart';
-import 'package_data.dart';
+import 'package_simple_data.dart';
 
 /**
  * A generator for a pub library.
  */
-class PackageGenerator extends DefaultGenerator {
-  PackageGenerator() : super('package', 'Dart Package',
+class PackageSimpleGenerator extends DefaultGenerator {
+  PackageSimpleGenerator() : super('package-simple', 'Dart Package',
           'A starting point for Dart libraries or applications.',
           categories: const ['dart']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
