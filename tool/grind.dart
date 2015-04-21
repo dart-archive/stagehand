@@ -10,38 +10,15 @@ import 'package:grinder/grinder.dart';
 import 'package:path/path.dart' as path;
 import 'package:stagehand/stagehand.dart' as stagehand;
 
-final Directory BUILD_DIR = new Directory('build');
-
 final RegExp _binaryFileTypes = new RegExp(
     r'\.(jpe?g|png|gif|ico|svg|ttf|eot|woff|woff2)$', caseSensitive: false);
 
-void main([List<String> args]) {
-  task('init', init);
-  task('build', buildTemplates, ['init']);
-  task('update-gh-pages', updateGhPages, ['init']);
-  task('test', testGenerators, ['init']);
-  task('clean', clean);
+main([List<String> args]) => grind(args);
 
-  startGrinder(args);
-}
-
-/**
- * Do any necessary build set up.
- */
-void init(GrinderContext context) {
-  // Verify we're running in the project root.
-  if (!getDir('lib').existsSync() || !getFile('pubspec.yaml').existsSync()) {
-    context.fail('This script must be run from the project root.');
-  }
-}
-
-/**
- * Concatenate the template files into data files that the generators can
- * consume.
- */
-void buildTemplates(GrinderContext context) {
+@Task('Concatenate the template files into data files that the generators can consume')
+void build() {
   stagehand.generators.forEach((generator) {
-    _concatenateFiles(context,
+    _concatenateFiles(
         getDir('templates/${generator.id}'),
         getFile('lib/generators/${generator.id.replaceAll('-', '_')}_data.dart'));
   });
@@ -53,7 +30,6 @@ void buildTemplates(GrinderContext context) {
     return '* `${g.id}` - ${g.description}';
   }).join('\n');
   String newSource = _replaceInString(
-      context,
       source,
       '<!-- template-list -->',
       '<!-- template-list -->',
@@ -67,7 +43,6 @@ void buildTemplates(GrinderContext context) {
     return '  <li>${g.id} - <em>${g.description}</em></li>';
   }).join('\n');
   newSource = _replaceInString(
-      context,
       source,
       '<ul id="template-list">',
       '</ul>',
@@ -75,22 +50,16 @@ void buildTemplates(GrinderContext context) {
   f.writeAsStringSync(newSource);
 }
 
-/**
- * Generate a new version of gh-pages.
- */
-void updateGhPages(GrinderContext context) {
-  context.log('Updating gh-pages branch of the project');
+@Task('Generate a new version of gh-pages')
+void updateGhPages() {
+  log('Updating gh-pages branch of the project');
   new ghpages.Generator(rootDir: getDir('.').absolute.path)
     ..templateDir = getDir('site').absolute.path
     ..generate();
 }
 
-/**
- * Run each generator and analyze the output. This ensures that:
- * - each generator can run without errors
- * - we generate code that analyzes cleanly
- */
-void testGenerators(GrinderContext context) {
+@Task('Run each generator and analyze the output')
+void test() {
   Directory fooDir = new Directory('foo');
 
   try {
@@ -98,18 +67,17 @@ void testGenerators(GrinderContext context) {
       if (fooDir.existsSync()) fooDir.deleteSync(recursive: true);
       fooDir.createSync();
 
-      context.log('');
-      context.log('${generator.id} template:');
+      log('');
+      log('${generator.id} template:');
 
-      runDartScript(context, '../bin/stagehand.dart',
+      Dart.run('../bin/stagehand.dart',
           arguments: ['--mock-analytics', generator.id],
           workingDirectory: fooDir.path);
 
       File file = joinFile(fooDir, [generator.entrypoint.path]);
 
       if (joinFile(fooDir, ['pubspec.yaml']).existsSync()) {
-        runProcess(context, 'pub',
-            arguments: ['get'], workingDirectory: fooDir.path);
+        run('pub', arguments: ['get'], workingDirectory: fooDir.path);
       }
 
       // TODO: This does not locate the polymer template Dart entrypoint.
@@ -122,7 +90,7 @@ void testGenerators(GrinderContext context) {
         filePath = filePath.replaceAll('projectName', 'foo');
 
         // TODO: We should be able to pass a cwd into `analyzePath`.
-        Analyzer.analyzePath(context, filePath,
+        Analyzer.analyze(filePath,
             fatalWarnings: true, packageRoot: new Directory('foo/packages'));
       }
     }
@@ -133,16 +101,8 @@ void testGenerators(GrinderContext context) {
   }
 }
 
-/**
- * Delete all generated artifacts.
- */
-void clean(GrinderContext context) {
-  // Delete the build/ dir.
-  deleteEntity(BUILD_DIR, context);
-}
-
-void _concatenateFiles(GrinderContext context, Directory src, File target) {
-  context.log('Creating ${target.path}');
+void _concatenateFiles(Directory src, File target) {
+  log('Creating ${target.path}');
 
   List<String> results = [];
 
@@ -221,13 +181,13 @@ List<FileSystemEntity> _listSync(Directory dir,
 
 /// Look for [start] and [end] in [source]; replace the current contents with
 /// [replacement], and return the result.
-String _replaceInString(GrinderContext context, String source, String start,
+String _replaceInString(String source, String start,
     String end, String replacement) {
   int startIndex = source.indexOf(start);
   int endIndex = source.indexOf(end, startIndex + 1);
 
   if (startIndex == -1 || endIndex == -1) {
-    context.fail('Could not find text to replace');
+    fail('Could not find text to replace');
   }
 
   return source.substring(0, startIndex + start.length + 1) +
