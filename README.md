@@ -11,8 +11,7 @@ Stagehand helps you get your Dart projects set up and ready for the big show.
 It is a Dart project scaffolding generator, inspired by tools like Web Starter
 Kit and Yeoman.
 
-## Things you can create with Stagehand
-<!-- template-list -->
+## Stagehand templates
 * `appengineapp` - A simple AppEngine application.
 * `console-full` - A sample command-line application.
 * `package-simple` - A starting point for Dart libraries or applications.
@@ -20,19 +19,16 @@ Kit and Yeoman.
 * `ubersimplewebapp` - An absolute bare-bones web app.
 * `web-polymer` - A web app built using polymer.dart.
 * `webapp` - A mobile-friendly web app with routing, responsive CSS, and (optional) Sass support.
-<!-- template-list -->
 
 ## Installation
 
 Requirements:
 
-* Dart SDK 1.6 or greater on your path
-
-Install:
+To install:
 
     $> pub global activate stagehand
 
-Update:
+To update:
 
     # activate stagehand again
     $> pub global activate stagehand
@@ -44,7 +40,7 @@ example, here is how you create a webapp with Stagehand:
 
     $> mkdir fancy_project
     $> cd fancy_project
-    $> stagehand webapp
+    $> stagehand web-full
 
 And to list all of the project templates:
 
