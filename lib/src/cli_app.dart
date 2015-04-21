@@ -19,7 +19,7 @@ import 'package:usage/usage_io.dart';
 const String APP_NAME = 'stagehand';
 
 // This version must be updated in tandem with the pubspec version.
-const String APP_VERSION = '0.1.5+5';
+const String APP_VERSION = '0.2.0-dev1';
 
 const String APP_PUB_INFO =
     'https://pub.dartlang.org/packages/${APP_NAME}.json';
@@ -146,12 +146,6 @@ class CliApp {
 
     io.Directory dir = cwd;
 
-    // TOOD(devoncarew): Remove this deprecated option.
-    if (options['outdir'] != null) {
-      dir = new io.Directory(options['outdir']);
-      if (!dir.existsSync()) dir.createSync();
-    }
-
     if (!options['override'] && !_isDirEmpty(dir)) {
       logger.stderr(
           'The current directory is not empty. Please create a new project directory, or '
@@ -203,9 +197,6 @@ class CliApp {
     argParser.addOption('author',
         defaultsTo: '<your name>',
         help: 'The author name to use for file headers.');
-
-    // This option is deprecated and will go away.
-    argParser.addOption('outdir', abbr: 'o', valueHelp: 'path', hide: true);
 
     // Really, really generate into the current directory.
     argParser.addFlag('override', negatable: false, hide: true);
