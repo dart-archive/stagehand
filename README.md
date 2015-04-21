@@ -19,7 +19,7 @@ Kit and Yeoman.
 * `polymerapp` - A web app built using polymer.dart.
 * `server-shelf` - A web server built using the shelf package.
 * `ubersimplewebapp` - An absolute bare-bones web app.
-* `webapp` - A mobile-friendly web app with routing, responsive CSS, and (optional) Sass support.
+* `web-full` - A mobile-friendly web app with routing, responsive CSS, and (optional) Sass support.
 <!-- template-list -->
 
 ## Installation
