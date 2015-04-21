@@ -6,13 +6,13 @@ library stagehand.polymer;
 
 import '../stagehand.dart';
 import '../src/common.dart';
-import 'polymerapp_data.dart';
+import 'web_polymer_data.dart';
 
 /**
  * A generator for a polymer.dart application.
  */
-class PolymerAppGenerator extends DefaultGenerator {
-  PolymerAppGenerator() : super('polymerapp', 'Polymer Web Application',
+class WebPolymerAppGenerator extends DefaultGenerator {
+  WebPolymerAppGenerator() : super('web-polymer', 'Polymer Web Application',
           'A web app built using polymer.dart.',
           categories: const ['dart', 'web']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
