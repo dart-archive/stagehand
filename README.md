@@ -15,7 +15,7 @@ Kit and Yeoman.
 <!-- template-list -->
 * `appengineapp` - A simple AppEngine application.
 * `console-full` - A sample command-line application.
-* `package` - A starting point for Dart libraries or applications.
+* `package-simple` - A starting point for Dart libraries or applications.
 * `server-shelf` - A web server built using the shelf package.
 * `ubersimplewebapp` - An absolute bare-bones web app.
 * `web-polymer` - A web app built using polymer.dart.
