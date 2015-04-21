@@ -31,9 +31,9 @@ void build() {
   }).join('\n');
   String newSource = _replaceInString(
       source,
-      '<!-- template-list -->',
-      '<!-- template-list -->',
-      fragment);
+      '## Stagehand templates',
+      '## Installation',
+      fragment + '\n');
   f.writeAsStringSync(newSource);
 
   // Update the site/index.html file.
