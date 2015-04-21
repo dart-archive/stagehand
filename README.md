@@ -14,7 +14,7 @@ Kit and Yeoman.
 ## Things you can create with Stagehand
 <!-- template-list -->
 * `appengineapp` - A simple AppEngine application.
-* `consoleapp` - A simple command-line application.
+* `console-full` - A sample command-line application.
 * `package` - A starting point for Dart libraries or applications.
 * `polymerapp` - A web app built using polymer.dart.
 * `server-shelf` - A web server built using the shelf package.

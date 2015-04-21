@@ -16,9 +16,10 @@
  *
  * to see a list of all app types you can create, and:
  *
- *     `pub global run stagehand -o foobar webapp`
+ *     `mkdir foobar; cd foobar`
+ *     `pub global run stagehand webapp`
  *
- * to create a new instance of the `webapp` template in a `foobar` subdirectory.
+ * to create a new instance of the `webapp` template in a `foobar` directory.
  */
 library stagehand;
 
@@ -26,7 +27,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'generators/appengineapp.dart';
-import 'generators/consoleapp.dart';
+import 'generators/console_full.dart';
 import 'generators/webapp.dart';
 import 'generators/package.dart';
 import 'generators/polymerapp.dart';

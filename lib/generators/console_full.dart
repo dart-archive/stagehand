@@ -6,15 +6,15 @@ library stagehand.consoleapp;
 
 import '../stagehand.dart';
 import '../src/common.dart';
-import 'consoleapp_data.dart';
+import 'console_full_data.dart';
 
 /**
  * A generator for a hello world command-line application.
  */
 class ConsoleAppGenerator extends DefaultGenerator {
-  ConsoleAppGenerator() : super('consoleapp', 'Console Application',
-          'A simple command-line application.',
-          categories: const ['dart', 'console', 'minimal']) {
+  ConsoleAppGenerator() : super('console-full', 'Console Application',
+          'A sample command-line application.',
+          categories: const ['dart', 'console']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }
