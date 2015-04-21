@@ -13,7 +13,7 @@ import '../src/common.dart';
  */
 class ConsoleAppEngineGenerator extends DefaultGenerator {
   ConsoleAppEngineGenerator() : super('console-appengine',
-          'AppEngine Application', 'A simple AppEngine application.',
+          'AppEngine Application', 'A simple App Engine application.',
           categories: const ['dart', 'appengine', 'server']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
