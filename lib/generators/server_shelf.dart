@@ -11,8 +11,8 @@ import 'server_shelf_data.dart';
 /**
  * A generator for a hello world command-line application.
  */
-class ShelfGenerator extends DefaultGenerator {
-  ShelfGenerator() : super('server-shelf', 'Shelf Web Server',
+class ServerShelfAppGenerator extends DefaultGenerator {
+  ServerShelfAppGenerator() : super('server-shelf', 'Shelf Web Server',
           'A web server built using the shelf package.',
           categories: const ['dart', 'shelf', 'server']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {

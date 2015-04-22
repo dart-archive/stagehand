@@ -12,9 +12,9 @@ It is a Dart project scaffolding generator, inspired by tools like Web Starter
 Kit and Yeoman.
 
 ## Stagehand templates
-* `console-appengine` - A simple App Engine application.
 * `console-full` - A sample command-line application.
 * `package-simple` - A starting point for Dart libraries or applications.
+* `server-appengine` - A simple App Engine application.
 * `server-shelf` - A web server built using the shelf package.
 * `web-full` - A mobile-friendly web app with routing, responsive CSS, and (optional) Sass support.
 * `web-polymer` - A web app built using polymer.dart.

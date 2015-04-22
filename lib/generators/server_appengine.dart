@@ -4,16 +4,16 @@
 
 library stagehand.appengineapp;
 
-import 'console_appengine_data.dart';
+import 'server_appengine_data.dart';
 import '../stagehand.dart';
 import '../src/common.dart';
 
 /**
  * A generator for a hello world AppEngine application.
  */
-class ConsoleAppEngineGenerator extends DefaultGenerator {
-  ConsoleAppEngineGenerator() : super('console-appengine',
-          'AppEngine Application', 'A simple App Engine application.',
+class ServerAppEngineAppGenerator extends DefaultGenerator {
+  ServerAppEngineAppGenerator() : super('server-appengine',
+          'App Engine Application', 'A simple App Engine application.',
           categories: const ['dart', 'appengine', 'server']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);

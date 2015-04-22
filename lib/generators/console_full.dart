@@ -11,8 +11,8 @@ import 'console_full_data.dart';
 /**
  * A generator for a hello world command-line application.
  */
-class ConsoleAppGenerator extends DefaultGenerator {
-  ConsoleAppGenerator() : super('console-full', 'Console Application',
+class ConsoleFullAppGenerator extends DefaultGenerator {
+  ConsoleFullAppGenerator() : super('console-full', 'Console Application',
           'A sample command-line application.',
           categories: const ['dart', 'console']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
