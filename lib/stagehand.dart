@@ -28,7 +28,7 @@ import 'dart:convert';
 
 import 'generators/appengineapp.dart';
 import 'generators/console_full.dart';
-import 'generators/webapp.dart';
+import 'generators/web_full.dart';
 import 'generators/web_polymer.dart';
 import 'generators/package_simple.dart';
 import 'generators/server_shelf.dart';
@@ -42,7 +42,7 @@ final List<Generator> generators = [
   new WebPolymerAppGenerator(),
   new PackageSimpleGenerator(),
   new ShelfGenerator(),
-  new WebAppGenerator(),
+  new WebFullAppGenerator(),
   new WebSimpleAppGenerator()
 ]..sort();
 
