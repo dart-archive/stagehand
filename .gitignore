@@ -4,5 +4,6 @@ cache/
 packages
 pubspec.lock
 build
+.buildlog
 .pub
 .settings/

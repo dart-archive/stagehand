@@ -48,7 +48,7 @@ void defineTests() {
     });
 
     test('one arg', () {
-      return app.process(['consoleapp']).then((_) {
+      return app.process(['console-full']).then((_) {
         _expectOk();
         expect(target.createdCount, isPositive);
       });

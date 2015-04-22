@@ -6,13 +6,13 @@ library stagehand.ubersimplewebapp;
 
 import '../stagehand.dart';
 import '../src/common.dart';
-import 'ubersimplewebapp_data.dart';
+import 'web_simple_data.dart';
 
 /**
  * A generator for a uber-simple web application.
  */
-class UberSimpleWebAppGenerator extends DefaultGenerator {
-  UberSimpleWebAppGenerator() : super('ubersimplewebapp',
+class WebSimpleAppGenerator extends DefaultGenerator {
+  WebSimpleAppGenerator() : super('web-simple',
           'Uber Simple Web Application', "An absolute bare-bones web app.",
           categories: const ['dart', 'web']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
