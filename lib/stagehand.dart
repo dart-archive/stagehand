@@ -28,22 +28,22 @@ import 'dart:convert';
 
 import 'generators/console_appengine.dart';
 import 'generators/console_full.dart';
-import 'generators/webapp.dart';
-import 'generators/package.dart';
-import 'generators/polymerapp.dart';
+import 'generators/web_full.dart';
+import 'generators/web_polymer.dart';
+import 'generators/package_simple.dart';
 import 'generators/server_shelf.dart';
-import 'generators/ubersimplewebapp.dart';
+import 'generators/web_simple.dart';
 import 'src/common.dart';
 
 /// A curated, prescriptive list of Dart project generators.
 final List<Generator> generators = [
   new ConsoleAppEngineGenerator(),
   new ConsoleAppGenerator(),
-  new PackageGenerator(),
-  new PolymerAppGenerator(),
+  new WebPolymerAppGenerator(),
+  new PackageSimpleGenerator(),
   new ShelfGenerator(),
-  new WebAppGenerator(),
-  new UberSimpleWebAppGenerator()
+  new WebFullAppGenerator(),
+  new WebSimpleAppGenerator()
 ]..sort();
 
 Generator getGenerator(String id) {
