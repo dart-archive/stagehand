@@ -26,23 +26,23 @@ library stagehand;
 import 'dart:async';
 import 'dart:convert';
 
-import 'generators/appengineapp.dart';
 import 'generators/console_full.dart';
+import 'generators/package_simple.dart';
+import 'generators/server_appengine.dart';
+import 'generators/server_shelf.dart';
 import 'generators/web_full.dart';
 import 'generators/web_polymer.dart';
-import 'generators/package_simple.dart';
-import 'generators/server_shelf.dart';
 import 'generators/web_simple.dart';
 import 'src/common.dart';
 
 /// A curated, prescriptive list of Dart project generators.
 final List<Generator> generators = [
-  new AppEngineAppGenerator(),
-  new ConsoleAppGenerator(),
-  new WebPolymerAppGenerator(),
-  new PackageSimpleGenerator(),
-  new ShelfGenerator(),
+  new ConsoleFullAppGenerator(),
+  new PackageSimpleAppGenerator(),
+  new ServerAppEngineAppGenerator(),
+  new ServerShelfAppGenerator(),
   new WebFullAppGenerator(),
+  new WebPolymerAppGenerator(),
   new WebSimpleAppGenerator()
 ]..sort();
 

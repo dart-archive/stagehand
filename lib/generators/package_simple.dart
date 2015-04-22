@@ -11,8 +11,8 @@ import 'package_simple_data.dart';
 /**
  * A generator for a pub library.
  */
-class PackageSimpleGenerator extends DefaultGenerator {
-  PackageSimpleGenerator() : super('package-simple', 'Dart Package',
+class PackageSimpleAppGenerator extends DefaultGenerator {
+  PackageSimpleAppGenerator() : super('package-simple', 'Dart Package',
           'A starting point for Dart libraries or applications.',
           categories: const ['dart']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
