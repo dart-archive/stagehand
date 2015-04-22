@@ -16,8 +16,8 @@ Kit and Yeoman.
 * `console-full` - A sample command-line application.
 * `package-simple` - A starting point for Dart libraries or applications.
 * `server-shelf` - A web server built using the shelf package.
-* `ubersimplewebapp` - An absolute bare-bones web app.
 * `web-polymer` - A web app built using polymer.dart.
+* `web-simple` - An absolute bare-bones web app.
 * `webapp` - A mobile-friendly web app with routing, responsive CSS, and (optional) Sass support.
 
 ## Installation
