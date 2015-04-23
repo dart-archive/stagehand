@@ -62,7 +62,8 @@ Please file reports on the
 
 ## Contributing
 
-Contributions welcome! Please read this short [guide](https://github.com/google/stagehand/wiki/Contributing) first.
+Contributions welcome! Please read this short
+[guide](https://github.com/google/stagehand/wiki/Contributing) first.
 
 ## Analytics and crash reports
 
