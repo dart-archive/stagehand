@@ -1,7 +1,10 @@
 # CHANGELOG
 
 ## 0.2.0
-- TODO:
+- All templates updated to the latest package versions!
+- Template ids have now changed to help organize them into categories. So, all
+  the web related templates start with `web-`: `web-simple`, `web-full`, and
+  `web-polymer`.
 
 ## 0.1.5+5
 
