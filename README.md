@@ -2,6 +2,7 @@
 
 ![Stagehand banner](https://raw.githubusercontent.com/google/stagehand/master/site/banner_stagehand.jpg)
 
+[![pub package](https://img.shields.io/pub/v/stagehand.svg)](https://pub.dartlang.org/packages/stagehand)
 [![Build Status](https://travis-ci.org/google/stagehand.svg?branch=master)](https://travis-ci.org/google/stagehand)
 [![Coverage Status](https://coveralls.io/repos/google/stagehand/badge.svg?branch=master)](https://coveralls.io/r/google/stagehand?branch=master)
 
