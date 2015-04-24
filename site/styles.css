@@ -46,6 +46,10 @@ body {
   text-align: center;
 }
 
+#template-list li em {
+  color: #777;
+}
+
 @media screen and (min-width: 768px) {
   .jumbotron h1 {
     font-size: 83px;
