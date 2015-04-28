@@ -1,6 +1,6 @@
 name: {{projectName}}
 version: 0.0.1
-description: A minimal command-line application.
+description: A sample command-line application.
 #author: {{author}} <email@example.com>
 #homepage: https://www.example.com
 environment:

@@ -1,6 +1,5 @@
 name: {{projectName}}
-description: >
-  A library useful for applications or for sharing on pub.dartlang.org.
+description: A starting point for Dart libraries or applications.
 version: 0.0.1
 #author: {{author}} <email@example.com>
 #homepage: https://www.example.com

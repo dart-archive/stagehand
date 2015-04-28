@@ -1,8 +1,8 @@
 name: '{{projectName}}'
 version: 0.0.1
 description: >
-  A minimal web app for the developer that doesn’t want to be confused by too
-  much going on.
+  A mobile-friendly web app with routing, responsive CSS, and (optional) Sass
+  support.
 #author: {{author}} <email@example.com>
 #homepage: https://www.example.com
 environment:

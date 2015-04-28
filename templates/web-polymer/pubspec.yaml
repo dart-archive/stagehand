@@ -1,7 +1,6 @@
 name: '{{projectName}}'
 version: 0.0.1
-description: >
-  A starter template for a polymer.dart web app.
+description: A web app built using polymer.dart.
 #author: {{author}} <email@example.com>
 #homepage: https://www.example.com
 environment:
