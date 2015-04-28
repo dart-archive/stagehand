@@ -42,8 +42,8 @@ VEhFIFVTRSBPRiBUSElTClNPRlRXQVJFLCBFVkVOIElGIEFEVklTRUQgT0YgVEhFIFBPU1NJQklM
 SVRZIE9GIFNVQ0ggREFNQUdFLgo=""",
   "README.md",
   "text",
-  """IyB7e3Byb2plY3ROYW1lfX0KCkEgbWluaW1hbCB3ZWIgc2VydmVyIHVzaW5nIFtTaGVsZl0oaHR0
-cHM6Ly9wdWIuZGFydGxhbmcub3JnL3BhY2thZ2VzL3NoZWxmKS4K""",
+  """IyB7e3Byb2plY3ROYW1lfX0KCkEgd2ViIHNlcnZlciBidWlsdCB1c2luZyBbU2hlbGZdKGh0dHBz
+Oi8vcHViLmRhcnRsYW5nLm9yZy9wYWNrYWdlcy9zaGVsZikuCg==""",
   "bin/server.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSB7e3llYXJ9fSwge3thdXRob3J9fS4gQWxsIHJpZ2h0cyByZXNlcnZl
@@ -66,9 +66,9 @@ cmV0dXJuIG5ldyBzaGVsZi5SZXNwb25zZS5vaygnUmVxdWVzdCBmb3IgIiR7cmVxdWVzdC51cmx9
 IicpOwp9Cg==""",
   "pubspec.yaml",
   "text",
-  """bmFtZTogJ3t7cHJvamVjdE5hbWV9fScKdmVyc2lvbjogMC4wLjEKZGVzY3JpcHRpb246IEEgbWlu
-aW1hbCB3ZWIgc2VydmVyIHVzaW5nIHRoZSBzaGVsZiBwYWNrYWdlLgojYXV0aG9yOiB7e2F1dGhv
-cn19IDxlbWFpbEBleGFtcGxlLmNvbT4KI2hvbWVwYWdlOiBodHRwczovL3d3dy5leGFtcGxlLmNv
-bQplbnZpcm9ubWVudDoKICBzZGs6ICc+PTEuMC4wIDwyLjAuMCcKZGVwZW5kZW5jaWVzOgogIGFy
-Z3M6ICc+PTAuMTAuMCA8MC4xNC4wJwogIHNoZWxmOiAnPj0wLjYuMCA8MC43LjAnCg=="""
+  """bmFtZTogJ3t7cHJvamVjdE5hbWV9fScKdmVyc2lvbjogMC4wLjEKZGVzY3JpcHRpb246IEEgd2Vi
+IHNlcnZlciBidWlsdCB1c2luZyB0aGUgc2hlbGYgcGFja2FnZS4KI2F1dGhvcjoge3thdXRob3J9
+fSA8ZW1haWxAZXhhbXBsZS5jb20+CiNob21lcGFnZTogaHR0cHM6Ly93d3cuZXhhbXBsZS5jb20K
+ZW52aXJvbm1lbnQ6CiAgc2RrOiAnPj0xLjAuMCA8Mi4wLjAnCmRlcGVuZGVuY2llczoKICBhcmdz
+OiAnPj0wLjEwLjAgPDAuMTQuMCcKICBzaGVsZjogJz49MC42LjAgPDAuNy4wJwo="""
 ];

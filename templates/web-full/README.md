@@ -1,8 +1,7 @@
 # Minimal Dart Webapp
 
-A starting point for a webapp built with Dart. This template
-is recommended if you don't want to, or
-cannot, use Polymer or AngularDart.
+A mobile-friendly web app with routing, responsive CSS, and (optional) Sass
+support.
 
 This template features:
 

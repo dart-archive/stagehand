@@ -1,3 +1,3 @@
 # {{projectName}}
 
-A minimal command-line application.
+A sample command-line application.

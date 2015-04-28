@@ -1,6 +1,6 @@
 # {{ projectName }}
 
-A starter template for a polymer.dart web app.
+A web app built using polymer.dart.
 
 ## Creating new elements
 

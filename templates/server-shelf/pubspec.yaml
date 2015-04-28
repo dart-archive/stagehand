@@ -1,6 +1,6 @@
 name: '{{projectName}}'
 version: 0.0.1
-description: A minimal web server using the shelf package.
+description: A web server built using the shelf package.
 #author: {{author}} <email@example.com>
 #homepage: https://www.example.com
 environment:
