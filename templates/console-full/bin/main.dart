@@ -3,6 +3,6 @@
 
 import 'package:{{projectName}}/{{projectName}}.dart' as {{projectName}};
 
-main() {
+main(List<String> arguments) {
   print('Hello world: ${{{projectName}}.calculate()}!');
 }
