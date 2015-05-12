@@ -5,9 +5,9 @@
 library stagehand.common_test;
 
 import 'package:stagehand/src/common.dart';
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 
-void defineTests() {
+void main() {
   group('common', () {
     test('normalizeProjectName', () {
       expect(normalizeProjectName('foo.dart'), 'foo');

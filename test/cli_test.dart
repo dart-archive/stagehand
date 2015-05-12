@@ -1,7 +1,7 @@
 // Copyright (c) 2014, Google Inc. Please see the AUTHORS file for details.
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
-
+@TestOn('vm')
 library stagehand.cli_test;
 
 import 'dart:async';
@@ -10,10 +10,10 @@ import 'dart:io';
 
 import 'package:stagehand/stagehand.dart';
 import 'package:stagehand/src/cli_app.dart';
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 import 'package:usage/usage.dart';
 
-void defineTests() {
+void main() {
   group('cli', () {
     CliApp app;
     CliLoggerMock logger;

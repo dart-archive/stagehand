@@ -5,9 +5,9 @@
 library stagehand.generators_test;
 
 import 'package:stagehand/stagehand.dart';
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 
-void defineTests() {
+void main() {
   group('generators', () {
     generators.forEach((generator) {
       test(generator.id, () => validate(getGenerator(generator.id)));

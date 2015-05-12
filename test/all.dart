@@ -7,7 +7,7 @@ import 'common_test.dart' as common_test;
 import 'generators_test.dart' as generators_test;
 
 void main() {
-  cli_test.defineTests();
-  common_test.defineTests();
-  generators_test.defineTests();
+  cli_test.main();
+  common_test.main();
+  generators_test.main();
 }
