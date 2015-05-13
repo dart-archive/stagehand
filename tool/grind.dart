@@ -9,6 +9,7 @@ import 'package:ghpages_generator/ghpages_generator.dart' as ghpages;
 import 'package:grinder/grinder.dart';
 import 'package:path/path.dart' as path;
 import 'package:stagehand/stagehand.dart' as stagehand;
+import 'package:yaml/yaml.dart' as yaml;
 
 final RegExp _binaryFileTypes = new RegExp(
     r'\.(jpe?g|png|gif|ico|svg|ttf|eot|woff|woff2)$', caseSensitive: false);
@@ -78,9 +79,14 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
       arguments: ['--mock-analytics', generator.id],
       workingDirectory: tempDir.path);
 
-  if (FileSystemEntity.isFileSync(path.join(tempDir.path, 'pubspec.yaml'))) {
-    run('pub', arguments: ['get'], workingDirectory: tempDir.path);
+  var pubspecPath = path.join(tempDir.path, 'pubspec.yaml');
+  var pubspecFile = new File(pubspecPath);
+
+  if (!pubspecFile.existsSync()) {
+    throw 'A pubspec much be defined!';
   }
+
+  run('pub', arguments: ['get'], workingDirectory: tempDir.path);
 
   var filePath = path.join(tempDir.path, generator.entrypoint.path);
 
@@ -105,6 +111,17 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
     // TODO: We should be able to pass a cwd into `analyzePath`.
     Analyzer.analyze(filePath,
         fatalWarnings: true, packageRoot: new Directory(packagesDir));
+  }
+
+  //
+  // Run package tests, if test is included
+  //
+  var pubspecContent = yaml.loadYaml(pubspecFile.readAsStringSync());
+  var devDeps = pubspecContent['dev_dependencies'];
+  if (devDeps != null) {
+    if (devDeps.containsKey('test')) {
+      run('pub', arguments: ['run', 'test'], workingDirectory: tempDir.path);
+    }
   }
 }
 

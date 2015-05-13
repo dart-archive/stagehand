@@ -3,10 +3,11 @@
 
 library {{projectName}}.test;
 
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
+
 import 'package:{{projectName}}/{{projectName}}.dart';
 
-main() {
+void main() {
   group('A group of tests', () {
     Awesome awesome;
 
