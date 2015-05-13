@@ -9,7 +9,6 @@ import 'package:ghpages_generator/ghpages_generator.dart' as ghpages;
 import 'package:grinder/grinder.dart';
 import 'package:path/path.dart' as path;
 import 'package:stagehand/stagehand.dart' as stagehand;
-import 'package:yaml/yaml.dart' as yaml;
 
 final RegExp _binaryFileTypes = new RegExp(
     r'\.(jpe?g|png|gif|ico|svg|ttf|eot|woff|woff2)$', caseSensitive: false);
@@ -61,61 +60,7 @@ void updateGhPages() {
 
 @Task('Run each generator and analyze the output')
 void test() {
-  for (stagehand.Generator generator in stagehand.generators) {
-    Directory dir = Directory.systemTemp.createTempSync('stagehand.test.');
-    try {
-      _testGenerator(generator, dir);
-    } finally {
-      dir.deleteSync(recursive: true);
-    }
-  }
-}
-
-void _testGenerator(stagehand.Generator generator, Directory tempDir) {
-  log('');
-  log('${generator.id} template:');
-
-  Dart.run(path.join(path.current, 'bin/stagehand.dart'),
-      arguments: ['--mock-analytics', generator.id],
-      workingDirectory: tempDir.path);
-
-  var pubspecPath = path.join(tempDir.path, 'pubspec.yaml');
-  var pubspecFile = new File(pubspecPath);
-
-  if (!pubspecFile.existsSync()) {
-    throw 'A pubspec much be defined!';
-  }
-
-  run('pub', arguments: ['get'], workingDirectory: tempDir.path);
-
-  var filePath = path.join(tempDir.path, generator.entrypoint.path);
-
-  if (path.extension(filePath) != '.dart' ||
-      !FileSystemEntity.isFileSync(filePath)) {
-    var parent = new Directory(path.dirname(filePath));
-
-    var file = _listSync(parent).firstWhere((f) => f.path.endsWith('.dart'),
-        orElse: () => null);
-
-    if (file == null) {
-      filePath = null;
-    } else {
-      filePath = file.path;
-    }
-  }
-
-  // Run the analyzer.
-  if (filePath != null) {
-    Analyzer.analyze(filePath, fatalWarnings: true,
-        packageRoot: new Directory(path.join(tempDir.path, 'packages')));
-  }
-
-  // Run package tests, if `test` is included.
-  var pubspecContent = yaml.loadYaml(pubspecFile.readAsStringSync());
-  var devDeps = pubspecContent['dev_dependencies'];
-  if (devDeps != null && devDeps.containsKey('test')) {
-    new PubApp.local('test').run([], workingDirectory: tempDir.path);
-  }
+  new PubApp.local('test').run(['test/validate_templates.dart']);
 }
 
 void _concatenateFiles(Directory src, File target) {

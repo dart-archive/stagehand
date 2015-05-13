@@ -17,7 +17,7 @@ dartanalyzer --fatal-warnings \
 dart test/all.dart
 
 # Run all the generators and analyze the generated code.
-dart tool/grind.dart test
+pub run test test/validate_templates.dart
 
 # Install dart_coveralls; gather and send coverage data.
 if [ "$COVERALLS_TOKEN" ]; then
