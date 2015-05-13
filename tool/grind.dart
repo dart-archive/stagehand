@@ -86,7 +86,7 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
     throw 'A pubspec much be defined!';
   }
 
-  Pub.get(workingDirectory: tempDir.path);
+  run('pub', arguments: ['get'], workingDirectory: tempDir.path);
 
   var filePath = path.join(tempDir.path, generator.entrypoint.path);
 
