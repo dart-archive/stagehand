@@ -60,44 +60,51 @@ void updateGhPages() {
 
 @Task('Run each generator and analyze the output')
 void test() {
-  Directory fooDir = new Directory('foo');
-
-  try {
-    for (stagehand.Generator generator in stagehand.generators) {
-      if (fooDir.existsSync()) fooDir.deleteSync(recursive: true);
-      fooDir.createSync();
-
-      log('');
-      log('${generator.id} template:');
-
-      Dart.run('../bin/stagehand.dart',
-          arguments: ['--mock-analytics', generator.id],
-          workingDirectory: fooDir.path);
-
-      File file = joinFile(fooDir, [generator.entrypoint.path]);
-
-      if (joinFile(fooDir, ['pubspec.yaml']).existsSync()) {
-        run('pub', arguments: ['get'], workingDirectory: fooDir.path);
-      }
-
-      // TODO: This does not locate the polymer template Dart entrypoint.
-      File dartFile = _locateDartFile(file);
-
-      // Run the analyzer.
-      if (dartFile != null) {
-        // TODO(devoncarew): A horrible hack. See #28 for how to improve this.
-        String filePath = dartFile.path;
-        filePath = filePath.replaceAll('projectName', 'foo');
-
-        // TODO: We should be able to pass a cwd into `analyzePath`.
-        Analyzer.analyze(filePath,
-            fatalWarnings: true, packageRoot: new Directory('foo/packages'));
-      }
-    }
-  } finally {
+  for (stagehand.Generator generator in stagehand.generators) {
+    Directory dir = Directory.systemTemp.createTempSync('stagehand.test.');
     try {
-      fooDir.deleteSync(recursive: true);
-    } catch (_) {}
+      _testGenerator(generator, dir);
+    } finally {
+      dir.deleteSync(recursive: true);
+    }
+  }
+}
+
+void _testGenerator(stagehand.Generator generator, Directory tempDir) {
+  log('');
+  log('${generator.id} template:');
+
+  Dart.run(path.join(path.current, 'bin/stagehand.dart'),
+      arguments: ['--mock-analytics', generator.id],
+      workingDirectory: tempDir.path);
+
+  if (FileSystemEntity.isFileSync(path.join(tempDir.path, 'pubspec.yaml'))) {
+    run('pub', arguments: ['get'], workingDirectory: tempDir.path);
+  }
+
+  var filePath = path.join(tempDir.path, generator.entrypoint.path);
+
+  if (path.extension(filePath) != '.dart' ||
+      !FileSystemEntity.isFileSync(filePath)) {
+    var parent = new Directory(path.dirname(filePath));
+
+    var file = _listSync(parent).firstWhere((f) => f.path.endsWith('.dart'),
+        orElse: () => null);
+
+    if (file == null) {
+      filePath = null;
+    } else {
+      filePath = file.path;
+    }
+  }
+
+  // Run the analyzer.
+  if (filePath != null) {
+    String packagesDir = path.join(tempDir.path, 'packages');
+
+    // TODO: We should be able to pass a cwd into `analyzePath`.
+    Analyzer.analyze(filePath,
+        fatalWarnings: true, packageRoot: new Directory(packagesDir));
   }
 }
 
@@ -158,13 +165,6 @@ void _traverse(Directory dir, String root, List<String> results) {
  * Returns true if the given [filename] matches common image file name patterns.
  */
 bool _isBinaryFile(String filename) => _binaryFileTypes.hasMatch(filename);
-
-File _locateDartFile(File file) {
-  if (file.path.endsWith('.dart')) return file;
-
-  return _listSync(file.parent).firstWhere((f) => f.path.endsWith('.dart'),
-      orElse: () => null);
-}
 
 /**
  * Return the list of children for the given directory. This list is normalized
