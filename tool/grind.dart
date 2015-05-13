@@ -106,22 +106,15 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
 
   // Run the analyzer.
   if (filePath != null) {
-    String packagesDir = path.join(tempDir.path, 'packages');
-
-    // TODO: We should be able to pass a cwd into `analyzePath`.
-    Analyzer.analyze(filePath,
-        fatalWarnings: true, packageRoot: new Directory(packagesDir));
+    Analyzer.analyze(filePath, fatalWarnings: true,
+        packageRoot: new Directory(path.join(tempDir.path, 'packages')));
   }
 
-  //
-  // Run package tests, if test is included
-  //
+  // Run package tests, if `test` is included.
   var pubspecContent = yaml.loadYaml(pubspecFile.readAsStringSync());
   var devDeps = pubspecContent['dev_dependencies'];
-  if (devDeps != null) {
-    if (devDeps.containsKey('test')) {
-      run('pub', arguments: ['run', 'test'], workingDirectory: tempDir.path);
-    }
+  if (devDeps != null && devDeps.containsKey('test')) {
+    new PubApp.local('test').run([], workingDirectory: tempDir.path);
   }
 }
 

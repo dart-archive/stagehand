@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.2.1
+- All templates updated to use the latest `test` package
+
 ## 0.2.0+1
 - Update the template descriptions
 - The `web-full` sample now reverses the text on page load
