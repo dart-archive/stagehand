@@ -2,10 +2,9 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-@TestOn('vm')
-
 // This is explicitly not named with _test.dart extension so it is not run as
 // part of the normal test process
+@TestOn('vm')
 library stagehand.test.validate_templates;
 
 import 'dart:io';
@@ -39,7 +38,7 @@ void main() {
 void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   Dart.run(path.join(path.current, 'bin/stagehand.dart'),
       arguments: ['--mock-analytics', generator.id],
-      workingDirectory: tempDir.path);
+      runOptions: new RunOptions(workingDirectory: tempDir.path));
 
   var pubspecPath = path.join(tempDir.path, 'pubspec.yaml');
   var pubspecFile = new File(pubspecPath);
@@ -48,7 +47,7 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
     throw 'A pubspec much be defined!';
   }
 
-  run('pub', arguments: ['get'], workingDirectory: tempDir.path);
+  Pub.get(runOptions: new RunOptions(workingDirectory: tempDir.path));
 
   var filePath = path.join(tempDir.path, generator.entrypoint.path);
 
@@ -70,19 +69,16 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   if (filePath != null) {
     String packagesDir = path.join(tempDir.path, 'packages');
 
-    // TODO: We should be able to pass a cwd into `analyzePath`.
     Analyzer.analyze(filePath,
         fatalWarnings: true, packageRoot: new Directory(packagesDir));
   }
 
-  //
-  // Run package tests, if test is included
-  //
+  // Run package tests, if `test` is included.
   var pubspecContent = yaml.loadYaml(pubspecFile.readAsStringSync());
   var devDeps = pubspecContent['dev_dependencies'];
   if (devDeps != null) {
     if (devDeps.containsKey('test')) {
-      run('pub', arguments: ['run', 'test'], workingDirectory: tempDir.path);
+      Pub.run('test', runOptions: new RunOptions(workingDirectory: tempDir.path));
     }
   }
 }
