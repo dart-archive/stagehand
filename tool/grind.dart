@@ -13,7 +13,7 @@ import 'package:stagehand/stagehand.dart' as stagehand;
 final RegExp _binaryFileTypes = new RegExp(
     r'\.(jpe?g|png|gif|ico|svg|ttf|eot|woff|woff2)$', caseSensitive: false);
 
-main([List<String> args]) => grind(args);
+main(List<String> args) => grind(args);
 
 @Task('Concatenate the template files into data files that the generators can consume')
 void build() {
@@ -59,9 +59,7 @@ void updateGhPages() {
 }
 
 @Task('Run each generator and analyze the output')
-void test() {
-  new PubApp.local('test').run(['test/validate_templates.dart']);
-}
+test() => new TestRunner().testAsync(files: 'test/validate_templates.dart');
 
 void _concatenateFiles(Directory src, File target) {
   log('Creating ${target.path}');
