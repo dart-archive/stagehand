@@ -1,12 +1,9 @@
 library gnome_conscious;
 
-// Copyright (c) {{year}}, {{author}}. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
-
 import 'dart:async';
 import 'dart:html';
 import 'package:angular2/angular2.dart';
-import 'package:gnome_tutorial/gnome_pics/gnome_pics.dart';
+import 'package:{{projectName}}/gnome_pics/gnome_pics.dart';
 
 @Component(
     selector: 'gnome-conscious',

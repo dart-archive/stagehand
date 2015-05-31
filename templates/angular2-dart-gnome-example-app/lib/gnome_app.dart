@@ -1,11 +1,8 @@
 library gnome_app;
 
-// Copyright (c) {{year}}, {{author}}. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
-
 import 'package:angular2/angular2.dart';
-import 'package:gnome_tutorial/gnome_conscious/gnome_conscious.dart';
-import 'package:gnome_tutorial/math/math.dart';
+import 'package:{{projectName}}/gnome_conscious/gnome_conscious.dart';
+import 'package:{{projectName}}/math/math.dart';
 
 @Component(
     selector: 'gnome-app'

@@ -26,6 +26,7 @@ library stagehand;
 import 'dart:async';
 import 'dart:convert';
 
+import 'generators/angular2_dart_gnome_example_app.dart';
 import 'generators/console_full.dart';
 import 'generators/package_simple.dart';
 import 'generators/server_appengine.dart';
@@ -37,6 +38,7 @@ import 'src/common.dart';
 
 /// A curated, prescriptive list of Dart project generators.
 final List<Generator> generators = [
+  new Angular2DartGnomeExampleAppGenerator(),
   new ConsoleFullAppGenerator(),
   new PackageSimpleAppGenerator(),
   new ServerAppEngineAppGenerator(),

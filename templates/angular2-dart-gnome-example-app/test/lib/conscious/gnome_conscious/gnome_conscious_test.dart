@@ -1,12 +1,9 @@
 @TestOn("browser") // only run this test in a browser, otherwise ignore it
 @Timeout(const Duration(seconds: 2)) // timeout async tests after only two seconds rather than the 30sec default
 
-// Copyright (c) {{year}}, {{author}}. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
-
 import 'dart:async';
 import 'package:test/test.dart';
-import 'package:gnome_tutorial/gnome_conscious/gnome_conscious.dart';
+import 'package:{{projectName}}/gnome_conscious/gnome_conscious.dart';
 
 main() {
   var gnomeConscious;
