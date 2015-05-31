@@ -1,0 +1,12 @@
+name: '{{projectName}}'
+version: 0.0.1
+description: Angular2 Dart gnome example app
+#author: {{author}} <email@example.com>
+#homepage: https://www.example.com
+environment:
+  sdk: '^1.9.3'
+dependencies:
+  angular2: "2.0.0-alpha.25"
+  browser: "^0.10.0"
+dev_dependencies:
+  test: any
