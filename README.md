@@ -13,7 +13,7 @@ It is a Dart project scaffolding generator, inspired by tools like Web Starter
 Kit and Yeoman.
 
 ## Stagehand templates
-* `console-full` - A sample command-line application.
+* `console-full` - A larger command-line application sample.
 * `console-simple` - A simple command-line application.
 * `package-simple` - A starting point for Dart libraries or applications.
 * `server-appengine` - A simple App Engine application.

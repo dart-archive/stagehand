@@ -6,7 +6,7 @@ library stagehand.console.simple;
 
 import '../stagehand.dart';
 import '../src/common.dart';
-import 'console_full_data.dart';
+import 'console_simple_data.dart';
 
 /**
  * A generator for a hello world command-line application.
