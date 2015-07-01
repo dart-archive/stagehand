@@ -22,6 +22,5 @@ class ConsoleSimpleGenerator extends DefaultGenerator {
     setEntrypoint(getFile('bin/main.dart'));
   }
 
-  String getInstallInstructions() => "${super.getInstallInstructions()}\n"
-      "run your app using 'dart ${entrypoint.path}'";
+  String getInstallInstructions() => "run your app using 'dart ${entrypoint.path}'";
 }
