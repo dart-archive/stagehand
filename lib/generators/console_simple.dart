@@ -1,19 +1,19 @@
-// Copyright (c) 2014, Google Inc. Please see the AUTHORS file for details.
+// Copyright (c) 2015, Google Inc. Please see the AUTHORS file for details.
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-library stagehand.console.full;
+library stagehand.console.simple;
 
 import '../stagehand.dart';
 import '../src/common.dart';
-import 'console_full_data.dart';
+import 'console_simple_data.dart';
 
 /**
  * A generator for a hello world command-line application.
  */
-class ConsoleFullGenerator extends DefaultGenerator {
-  ConsoleFullGenerator() : super('console-full', 'Console Application',
-          'A larger command-line application sample.',
+class ConsoleSimpleGenerator extends DefaultGenerator {
+  ConsoleSimpleGenerator() : super('console-simple', 'Console Application',
+          'A simple command-line application.',
           categories: const ['dart', 'console']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
@@ -22,6 +22,5 @@ class ConsoleFullGenerator extends DefaultGenerator {
     setEntrypoint(getFile('bin/main.dart'));
   }
 
-  String getInstallInstructions() => "${super.getInstallInstructions()}\n"
-      "run your app using 'dart ${entrypoint.path}'";
+  String getInstallInstructions() => "run your app using 'dart ${entrypoint.path}'";
 }

@@ -2,7 +2,7 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-library stagehand.polymer;
+library stagehand.web.polymer;
 
 import '../stagehand.dart';
 import '../src/common.dart';
@@ -11,8 +11,8 @@ import 'web_polymer_data.dart';
 /**
  * A generator for a polymer.dart application.
  */
-class WebPolymerAppGenerator extends DefaultGenerator {
-  WebPolymerAppGenerator() : super('web-polymer', 'Polymer Web Application',
+class WebPolymerGenerator extends DefaultGenerator {
+  WebPolymerGenerator() : super('web-polymer', 'Polymer Web Application',
           'A web app built using polymer.dart.',
           categories: const ['dart', 'web']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {

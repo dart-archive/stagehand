@@ -2,7 +2,7 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-library stagehand.shelfserver;
+library stagehand.server.shelf;
 
 import '../stagehand.dart';
 import '../src/common.dart';
@@ -11,8 +11,8 @@ import 'server_shelf_data.dart';
 /**
  * A generator for a hello world command-line application.
  */
-class ServerShelfAppGenerator extends DefaultGenerator {
-  ServerShelfAppGenerator() : super('server-shelf', 'Shelf Web Server',
+class ServerShelfGenerator extends DefaultGenerator {
+  ServerShelfGenerator() : super('server-shelf', 'Shelf Web Server',
           'A web server built using the shelf package.',
           categories: const ['dart', 'shelf', 'server']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {

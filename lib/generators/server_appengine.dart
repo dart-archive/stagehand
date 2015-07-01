@@ -2,7 +2,7 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-library stagehand.appengineapp;
+library stagehand.server.appengine;
 
 import 'server_appengine_data.dart';
 import '../stagehand.dart';
@@ -11,8 +11,8 @@ import '../src/common.dart';
 /**
  * A generator for a hello world AppEngine application.
  */
-class ServerAppEngineAppGenerator extends DefaultGenerator {
-  ServerAppEngineAppGenerator() : super('server-appengine',
+class ServerAppEngineGenerator extends DefaultGenerator {
+  ServerAppEngineGenerator() : super('server-appengine',
           'App Engine Application', 'A simple App Engine application.',
           categories: const ['dart', 'appengine', 'server']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {

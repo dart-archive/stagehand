@@ -3,9 +3,8 @@
 
 library {{projectName}}.test;
 
-import 'package:test/test.dart';
-
 import 'package:{{projectName}}/{{projectName}}.dart';
+import 'package:test/test.dart';
 
 void main() {
   group('A group of tests', () {

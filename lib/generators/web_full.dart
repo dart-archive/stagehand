@@ -2,7 +2,7 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-library stagehand.webapp;
+library stagehand.web.full;
 
 import '../stagehand.dart';
 import '../src/common.dart';
@@ -11,8 +11,8 @@ import 'web_full_data.dart';
 /**
  * A generator for a minimal web application.
  */
-class WebFullAppGenerator extends DefaultGenerator {
-  WebFullAppGenerator() : super('web-full', 'Web Application',
+class WebFullGenerator extends DefaultGenerator {
+  WebFullGenerator() : super('web-full', 'Web Application',
           "A mobile-friendly web app with routing, responsive CSS, and "
           "(optional) Sass support.", categories: const ['dart', 'web']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
