@@ -5,8 +5,8 @@
 List<String> data = [
   ".gitignore",
   "text",
-  """LmJ1aWxkbG9nCi5EU19TdG9yZQouaWRlYQoucHViLwpidWlsZC8KcGFja2FnZXMKcHVic3BlYy5s
-b2NrCg==""",
+  """LmJ1aWxkbG9nCi5EU19TdG9yZQouaWRlYQoucGFja2FnZXMKLnB1Yi8KYnVpbGQvCnBhY2thZ2Vz
+CnB1YnNwZWMubG9jawo=""",
   "CHANGELOG.md",
   "text",
   """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgotIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
@@ -79,9 +79,9 @@ YXJlLgpjbGFzcyBBd2Vzb21lIHsKICBib29sIGdldCBpc0F3ZXNvbWUgPT4gdHJ1ZTsKfQo=""",
   """bmFtZToge3twcm9qZWN0TmFtZX19CmRlc2NyaXB0aW9uOiBBIHN0YXJ0aW5nIHBvaW50IGZvciBE
 YXJ0IGxpYnJhcmllcyBvciBhcHBsaWNhdGlvbnMuCnZlcnNpb246IDAuMC4xCiNhdXRob3I6IHt7
 YXV0aG9yfX0gPGVtYWlsQGV4YW1wbGUuY29tPgojaG9tZXBhZ2U6IGh0dHBzOi8vd3d3LmV4YW1w
-bGUuY29tCmVudmlyb25tZW50OgogIHNkazogJz49MS4wLjAgPDIuMC4wJwojZGVwZW5kZW5jaWVz
-OgojICBsaWJfbmFtZTogYW55CmRldl9kZXBlbmRlbmNpZXM6CiAgdGVzdDogJz49MC4xMi4wIDww
-LjEzLjAnCg==""",
+bGUuY29tCgplbnZpcm9ubWVudDoKICBzZGs6ICc+PTEuMC4wIDwyLjAuMCcKCiNkZXBlbmRlbmNp
+ZXM6CiMgIGxpYl9uYW1lOiBhbnkKCmRldl9kZXBlbmRlbmNpZXM6CiAgdGVzdDogJz49MC4xMi4w
+IDwwLjEzLjAnCg==""",
   "test/projectName_test.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSB7e3llYXJ9fSwge3thdXRob3J9fS4gQWxsIHJpZ2h0cyByZXNlcnZl

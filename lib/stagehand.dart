@@ -27,6 +27,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'generators/console_full.dart';
+import 'generators/console_simple.dart';
 import 'generators/package_simple.dart';
 import 'generators/server_appengine.dart';
 import 'generators/server_shelf.dart';
@@ -37,13 +38,14 @@ import 'src/common.dart';
 
 /// A curated, prescriptive list of Dart project generators.
 final List<Generator> generators = [
-  new ConsoleFullAppGenerator(),
-  new PackageSimpleAppGenerator(),
-  new ServerAppEngineAppGenerator(),
-  new ServerShelfAppGenerator(),
-  new WebFullAppGenerator(),
-  new WebPolymerAppGenerator(),
-  new WebSimpleAppGenerator()
+  new ConsoleFullGenerator(),
+  new ConsoleSimpleGenerator(),
+  new PackageSimpleGenerator(),
+  new ServerAppEngineGenerator(),
+  new ServerShelfGenerator(),
+  new WebFullGenerator(),
+  new WebPolymerGenerator(),
+  new WebSimpleGenerator()
 ]..sort();
 
 Generator getGenerator(String id) {

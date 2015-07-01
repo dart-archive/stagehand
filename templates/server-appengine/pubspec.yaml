@@ -3,7 +3,9 @@ version: 0.0.1
 description: A simple App Engine application.
 #author: {{author}} <email@example.com>
 #homepage: https://www.example.com
+
 environment:
   sdk: '>=1.5.0 <2.0.0'
+
 dependencies:
   appengine: '>=0.3.0 <0.4.0'

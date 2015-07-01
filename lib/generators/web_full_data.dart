@@ -5,8 +5,8 @@
 List<String> data = [
   ".gitignore",
   "text",
-  """LmJ1aWxkbG9nCi5EU19TdG9yZQouaWRlYQoucHViLwpidWlsZC8KcGFja2FnZXMKcHVic3BlYy5s
-b2NrCg==""",
+  """LmJ1aWxkbG9nCi5EU19TdG9yZQouaWRlYQoucGFja2FnZXMKLnB1Yi8KYnVpbGQvCnBhY2thZ2Vz
+CnB1YnNwZWMubG9jawo=""",
   "CHANGELOG.md",
   "text",
   """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgotIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
@@ -119,12 +119,12 @@ eHQgPSBfaW5wdXRFbGVtZW50LnZhbHVlLnNwbGl0KCcnKS5yZXZlcnNlZC5qb2luKCk7Cn0K""",
   """bmFtZTogJ3t7cHJvamVjdE5hbWV9fScKdmVyc2lvbjogMC4wLjEKZGVzY3JpcHRpb246ID4KICBB
 IG1vYmlsZS1mcmllbmRseSB3ZWIgYXBwIHdpdGggcm91dGluZywgcmVzcG9uc2l2ZSBDU1MsIGFu
 ZCAob3B0aW9uYWwpIFNhc3MKICBzdXBwb3J0LgojYXV0aG9yOiB7e2F1dGhvcn19IDxlbWFpbEBl
-eGFtcGxlLmNvbT4KI2hvbWVwYWdlOiBodHRwczovL3d3dy5leGFtcGxlLmNvbQplbnZpcm9ubWVu
-dDoKICBzZGs6ICc+PTEuMC4wIDwyLjAuMCcKZGVwZW5kZW5jaWVzOgogIGJyb3dzZXI6ICc+PTAu
-MTAuMCA8MC4xMS4wJwogIHNhc3M6ICc+PTAuNC4wIDwwLjUuMCcKICBzY3JpcHRfaW5saW5lcjog
-Jz49MS4wLjAgPDIuMC4wJwogIHJvdXRlX2hpZXJhcmNoaWNhbDogJz49MC41LjAgPDAuNy4wJwp0
-cmFuc2Zvcm1lcnM6Ci0gc2NyaXB0X2lubGluZXIKIy0gc2FzczoKIyAgICBzdHlsZTogY29tcHJl
-c3NlZAo=""",
+eGFtcGxlLmNvbT4KI2hvbWVwYWdlOiBodHRwczovL3d3dy5leGFtcGxlLmNvbQoKZW52aXJvbm1l
+bnQ6CiAgc2RrOiAnPj0xLjAuMCA8Mi4wLjAnCgpkZXBlbmRlbmNpZXM6CiAgYnJvd3NlcjogJz49
+MC4xMC4wIDwwLjExLjAnCiAgc2FzczogJz49MC40LjAgPDAuNS4wJwogIHNjcmlwdF9pbmxpbmVy
+OiAnPj0xLjAuMCA8Mi4wLjAnCiAgcm91dGVfaGllcmFyY2hpY2FsOiAnPj0wLjUuMCA8MC43LjAn
+Cgp0cmFuc2Zvcm1lcnM6Ci0gc2NyaXB0X2lubGluZXIKIy0gc2FzczoKIyAgICBzdHlsZTogY29t
+cHJlc3NlZAo=""",
   "web/apple-touch-icon-precomposed.png",
   "binary",
   """iVBORw0KGgoAAAANSUhEUgAAAJgAAACYCAMAAAAvHNATAAAAYFBMVEX///+0y/MaYdxik+crbd4g

@@ -5,8 +5,8 @@
 List<String> data = [
   ".gitignore",
   "text",
-  """LmJ1aWxkbG9nCi5EU19TdG9yZQouaWRlYQoucHViLwpidWlsZC8KcGFja2FnZXMKcHVic3BlYy5s
-b2NrCg==""",
+  """LmJ1aWxkbG9nCi5EU19TdG9yZQouaWRlYQoucGFja2FnZXMKLnB1Yi8KYnVpbGQvCnBhY2thZ2Vz
+CnB1YnNwZWMubG9jawo=""",
   "CHANGELOG.md",
   "text",
   """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgotIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
@@ -48,9 +48,9 @@ ZW5lcmF0ZWQgYnkgU3RhZ2VoYW5kLiBTZWUgTElDRU5TRS4K""",
   "text",
   """bmFtZTogJ3t7cHJvamVjdE5hbWV9fScKdmVyc2lvbjogMC4wLjEKZGVzY3JpcHRpb246IEFuIGFi
 c29sdXRlIGJhcmUtYm9uZXMgd2ViIGFwcC4KI2F1dGhvcjoge3thdXRob3J9fSA8ZW1haWxAZXhh
-bXBsZS5jb20+CiNob21lcGFnZTogaHR0cHM6Ly93d3cuZXhhbXBsZS5jb20KZW52aXJvbm1lbnQ6
-CiAgc2RrOiAnPj0xLjAuMCA8Mi4wLjAnCmRlcGVuZGVuY2llczoKICBicm93c2VyOiAnPj0wLjEw
-LjAgPDAuMTEuMCcK""",
+bXBsZS5jb20+CiNob21lcGFnZTogaHR0cHM6Ly93d3cuZXhhbXBsZS5jb20KCmVudmlyb25tZW50
+OgogIHNkazogJz49MS4wLjAgPDIuMC4wJwoKZGVwZW5kZW5jaWVzOgogIGJyb3dzZXI6ICc+PTAu
+MTAuMCA8MC4xMS4wJwo=""",
   "web/index.html",
   "text",
   """PCFET0NUWVBFIGh0bWw+Cgo8IS0tCiAgQ29weXJpZ2h0IChjKSB7e3llYXJ9fSwge3thdXRob3J9
