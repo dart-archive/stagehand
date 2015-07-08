@@ -9,3 +9,7 @@ environment:
 
 dependencies:
   browser: '>=0.10.0 <0.11.0'
+  script_inliner: "^1.0.0"
+
+transformers:
+- script_inliner
