@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.2
+- added a `console-simple` template
+- updated the `web-simple` and `web-full` templates
+
 ## 0.2.1
 - All templates updated to use the latest `test` package
 
