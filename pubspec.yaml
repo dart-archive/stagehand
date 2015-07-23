@@ -13,6 +13,9 @@ authors:
 - Seth Ladd <sethladd@google.com>
 - Devon Carew <devoncarew@google.com>
 
+environment:
+  sdk: '>=1.9.0 <2.0.0'
+
 # Add the bin/stagehand.dart script to the scripts pub installs.
 executables:
   stagehand:
