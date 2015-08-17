@@ -1,8 +1,11 @@
 # CHANGELOG
 
+## 0.2.2+1
+- Moved the script tags for the web templates into the head section
+
 ## 0.2.2
-- added a `console-simple` template
-- updated the `web-simple` and `web-full` templates
+- Added a `console-simple` template
+- Updated the `web-simple` and `web-full` templates
 
 ## 0.2.1
 - All templates updated to use the latest `test` package
