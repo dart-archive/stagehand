@@ -1,0 +1,49 @@
+# Generate by pub on 2015-08-17 09:16:14.046.
+# This file contains a map from Dart package names to Dart package locations.
+# Dart tools, including the Dart VM and Dart analyzer, rely on the content.
+# AUTO GENERATED - DO NOT EDIT
+analyzer:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/analyzer-0.26.0/lib/
+ansicolor:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/ansicolor-0.0.9/lib/
+args:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/args-0.13.2/lib/
+async:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/async-1.3.0/lib/
+barback:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/barback-0.15.2+6/lib/
+browser:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/browser-0.10.0+2/lib/
+charcode:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/charcode-1.1.0/lib/
+cli_util:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/cli_util-0.0.1+2/lib/
+collection:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/collection-1.1.1/lib/
+crypto:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/crypto-0.9.0/lib/
+csslib:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/csslib-0.12.1/lib/
+ghpages_generator:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/ghpages_generator-0.2.5/lib/
+glob:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/glob-1.0.5/lib/
+grinder:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/grinder-0.7.2/lib/
+html:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/html-0.12.1+2/lib/
+http:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/http-0.11.3/lib/
+http_multi_server:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/http_multi_server-1.3.2/lib/
+http_parser:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/http_parser-0.0.2+8/lib/
+logging:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/logging-0.11.1/lib/
+matcher:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.0+1/lib/
+mime:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/mime-0.9.3/lib/
+mockable_filesystem:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/mockable_filesystem-0.0.3/lib/
+package_config:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/package_config-0.1.1/lib/
+path:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/path-1.3.6/lib/
+plugin:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/plugin-0.1.0/lib/
+pool:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/pool-1.1.0/lib/
+pub_semver:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/pub_semver-1.2.1/lib/
+shelf:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/shelf-0.6.2/lib/
+shelf_static:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/shelf_static-0.2.3/lib/
+shelf_web_socket:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/shelf_web_socket-0.0.1+2/lib/
+source_map_stack_trace:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/source_map_stack_trace-1.0.4/lib/
+source_maps:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/source_maps-0.10.1/lib/
+source_span:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/source_span-1.1.2/lib/
+stack_trace:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.4.1/lib/
+stagehand:lib/
+string_scanner:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/string_scanner-0.1.3+1/lib/
+supports_color:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/supports_color-0.1.1/lib/
+test:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/test-0.12.4+3/lib/
+unscripted:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/unscripted-0.6.2/lib/
+usage:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/usage-1.0.0+1/lib/
+utf:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/utf-0.9.0+2/lib/
+watcher:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/watcher-0.9.7/lib/
+when:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/when-0.2.0/lib/
+which:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/which-0.1.3/lib/
+yaml:file:///Users/devoncarew/.pub-cache/hosted/pub.dartlang.org/yaml-2.1.3/lib/
