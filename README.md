@@ -6,7 +6,7 @@
 [![Build Status](https://travis-ci.org/google/stagehand.svg?branch=master)](https://travis-ci.org/google/stagehand)
 [![Coverage Status](https://coveralls.io/repos/google/stagehand/badge.svg?branch=master)](https://coveralls.io/r/google/stagehand?branch=master)
 
-## Helps you get setup!
+## Helps you get set up!
 
 Stagehand helps you get your Dart projects set up and ready for the big show.
 It is a Dart project scaffolding generator, inspired by tools like Web Starter
