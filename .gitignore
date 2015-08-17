@@ -1,6 +1,7 @@
 .idea
 .DS_Store
 cache/
+.packages
 packages
 pubspec.lock
 build
