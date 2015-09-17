@@ -3,24 +3,18 @@
   is governed by a BSD-style license that can be found in the LICENSE file.
 -->
 
-<!-- import polymer-element's definition -->
-<link rel="import" href="../../packages/polymer/polymer.html">
+<dom-module id="main-app">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
 
-<link rel="import" href="../../packages/paper_elements/paper_input.html">
-
-<polymer-element name="main-app">
   <template>
-    <style>
-      :host {
-        display: block;
-      }
-    </style>
-
-    <paper-input label="Type something..." on-keyup="{{reverseText}}"></paper-input>
-
+    <paper-input label="Type something..." value="{{text}}"></paper-input>
     <p>
-      Reversed: {{ reversed }}
+      Text: <span>{{text}}</span><br />
+      Reversed: <span>{{reverseText(text)}}</span>
     </p>
   </template>
-  <script type="application/dart" src="main_app.dart"></script>
-</polymer-element>
+</dom-module>
