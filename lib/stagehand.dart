@@ -31,7 +31,6 @@ import 'generators/console_simple.dart';
 import 'generators/package_simple.dart';
 import 'generators/server_appengine.dart';
 import 'generators/server_shelf.dart';
-import 'generators/web_full.dart';
 import 'generators/web_polymer.dart';
 import 'generators/web_simple.dart';
 import 'src/common.dart';
@@ -43,7 +42,6 @@ final List<Generator> generators = [
   new PackageSimpleGenerator(),
   new ServerAppEngineGenerator(),
   new ServerShelfGenerator(),
-  new WebFullGenerator(),
   new WebPolymerGenerator(),
   new WebSimpleGenerator()
 ]..sort();

@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## next
+- Remove the web-full example. Was not maintained.
+
 ## 0.2.2+1
 - Moved the script tags for the web templates into the head section
 

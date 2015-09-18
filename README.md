@@ -18,7 +18,6 @@ Kit and Yeoman.
 * `package-simple` - A starting point for Dart libraries or applications.
 * `server-appengine` - A simple App Engine application.
 * `server-shelf` - A web server built using the shelf package.
-* `web-full` - A mobile-friendly web app with routing, responsive CSS, and (optional) Sass support.
 * `web-polymer` - A web app built using polymer.dart.
 * `web-simple` - An absolute bare-bones web app.
 
@@ -37,12 +36,12 @@ To update:
 
 ## Usage
 
-Stagehand will generate a project skeleton into the current directry. As an
-example, here is how you create a webapp with Stagehand:
+Stagehand will generate a project skeleton into the current directory. As an
+example, here is how you create a package with Stagehand:
 
     $> mkdir fancy_project
     $> cd fancy_project
-    $> stagehand web-full
+    $> stagehand package-simple
 
 And to list all of the project templates:
 
@@ -54,7 +53,7 @@ And to list all of the project templates:
 * Mobile-first
 * Support server and client apps
 * Becomes the best way to create a new Dart project
-* Used by WebStorm, CDE, Sublime, and more
+* Used by Atom, WebStorm, Sublime, and more
 * Distributed as a pub package
 
 ## Issues and bugs
