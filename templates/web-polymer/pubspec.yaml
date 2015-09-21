@@ -5,7 +5,7 @@ description: A web app built using polymer.dart.
 #homepage: https://www.example.com
 
 environment:
-  sdk: '>=1.0.0 <2.0.0'
+  sdk: '>=1.9.0 <2.0.0'
 
 dependencies:
   browser: ^0.10.0
