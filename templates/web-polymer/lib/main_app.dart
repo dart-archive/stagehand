@@ -1,21 +1,26 @@
 // Copyright (c) {{year}}, {{author}}. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+@HtmlImport('main_app.html')
+library {{projectName}}.lib.main_app;
 
 import 'dart:html';
 
-import 'package:paper_elements/paper_input.dart';
+import 'package:polymer_elements/paper_input.dart';
 import 'package:polymer/polymer.dart';
+import 'package:web_components/web_components.dart';
 
-/// A Polymer `<main-app>` element.
-@CustomTag('main-app')
+/// Uses [PaperInput]
+@PolymerRegister('main-app')
 class MainApp extends PolymerElement {
-  @observable String reversed = '';
+  @property
+  String text;
 
   /// Constructor used to create instance of MainApp.
   MainApp.created() : super.created();
 
-  void reverseText(Event event, Object object, PaperInput target) {
-    reversed = target.value.split('').reversed.join('');
+  @reflectable
+  String reverseText(String text) {
+    return text.split('').reversed.join('');
   }
 
   // Optional lifecycle methods - uncomment if needed.
@@ -33,12 +38,11 @@ class MainApp extends PolymerElement {
 //  /// Called when an attribute (such as a class) of an instance of
 //  /// main-app is added, changed, or removed.
 //  attributeChanged(String name, String oldValue, String newValue) {
-//    super.attributeChanges(name, oldValue, newValue);
+//    super.attributeChanged(name, oldValue, newValue);
 //  }
 
 //  /// Called when main-app has been fully prepared (Shadow DOM created,
 //  /// property observers set up, event listeners attached).
 //  ready() {
-//    super.ready();
 //  }
 }

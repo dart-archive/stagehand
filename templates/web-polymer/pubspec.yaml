@@ -5,13 +5,23 @@ description: A web app built using polymer.dart.
 #homepage: https://www.example.com
 
 environment:
-  sdk: '>=1.0.0 <2.0.0'
+  sdk: '>=1.9.0 <2.0.0'
 
 dependencies:
-  browser: '>=0.10.0 <0.11.0'
-  paper_elements: '>=0.7.0 <0.8.0'
-  polymer: '>=0.16.0 <0.17.0'
+  browser: ^0.10.0
+  polymer_elements: ^1.0.0-rc.2
+  polymer: ^1.0.0-rc.1
+  reflectable: ^0.3.1
+  web_components: ^0.12.0
 
 transformers:
-- polymer:
+- web_components:
     entry_points: web/index.html
+- reflectable:
+    entry_points: web/index.dart
+- $dart2js:
+    $include: '**/*.bootstrap.initialize.dart'
+    minify: true
+    commandLineOptions:
+    - --trust-type-annotations
+    - --trust-primitives
