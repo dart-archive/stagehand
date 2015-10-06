@@ -18,7 +18,7 @@ class MainApp extends PolymerElement {
   /// Constructor used to create instance of MainApp.
   MainApp.created() : super.created();
 
-  @eventHandler
+  @reflectable
   String reverseText(String text) {
     return text.split('').reversed.join('');
   }
