@@ -1,7 +1,8 @@
 # CHANGELOG
 
-## next
-- Remove the web-full example. Was not maintained.
+## 0.2.3
+- Updated the Polymer sample to the latest version (`1.0.0-rc.1`)
+- Removed the web-full example. Was not maintained.
 
 ## 0.2.2+1
 - Moved the script tags for the web templates into the head section
