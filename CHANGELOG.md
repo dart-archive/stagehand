@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.2.3+1
+- fixed an issue with the Polymer template
+
 ## 0.2.3
 - Updated the Polymer sample to the latest version (`1.0.0-rc.1`)
 - Removed the web-full example. Was not maintained.
