@@ -12,9 +12,10 @@ import 'web_simple_data.dart';
  * A generator for a uber-simple web application.
  */
 class WebSimpleGenerator extends DefaultGenerator {
-  WebSimpleGenerator() : super('web-simple',
-          'Uber Simple Web Application', 'An absolute bare-bones web app.',
-          categories: const ['dart', 'web']) {
+  WebSimpleGenerator()
+      : super('web-simple', 'Uber Simple Web Application',
+            'An absolute bare-bones web app.',
+            categories: const ['dart', 'web']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }

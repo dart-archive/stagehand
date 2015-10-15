@@ -55,8 +55,8 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
       !FileSystemEntity.isFileSync(filePath)) {
     var parent = new Directory(path.dirname(filePath));
 
-    var file = _listSync(parent).firstWhere((f) => f.path.endsWith('.dart'),
-        orElse: () => null);
+    var file = _listSync(parent)
+        .firstWhere((f) => f.path.endsWith('.dart'), orElse: () => null);
 
     if (file == null) {
       filePath = null;
@@ -78,7 +78,8 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   var devDeps = pubspecContent['dev_dependencies'];
   if (devDeps != null) {
     if (devDeps.containsKey('test')) {
-      Pub.run('test', runOptions: new RunOptions(workingDirectory: tempDir.path));
+      Pub.run('test',
+          runOptions: new RunOptions(workingDirectory: tempDir.path));
     }
   }
 }

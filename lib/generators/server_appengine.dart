@@ -12,9 +12,10 @@ import '../src/common.dart';
  * A generator for a hello world AppEngine application.
  */
 class ServerAppEngineGenerator extends DefaultGenerator {
-  ServerAppEngineGenerator() : super('server-appengine',
-          'App Engine Application', 'A simple App Engine application.',
-          categories: const ['dart', 'appengine', 'server']) {
+  ServerAppEngineGenerator()
+      : super('server-appengine', 'App Engine Application',
+            'A simple App Engine application.',
+            categories: const ['dart', 'appengine', 'server']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }

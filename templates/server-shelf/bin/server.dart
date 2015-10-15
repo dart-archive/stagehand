@@ -9,7 +9,7 @@ import 'package:shelf/shelf_io.dart' as io;
 
 void main(List<String> args) {
   var parser = new ArgParser()
-      ..addOption('port', abbr: 'p', defaultsTo: '8080');
+    ..addOption('port', abbr: 'p', defaultsTo: '8080');
 
   var result = parser.parse(args);
 
