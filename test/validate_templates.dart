@@ -9,7 +9,7 @@ library stagehand.test.validate_templates;
 
 import 'dart:io';
 
-import 'package:grinder/grinder.dart';
+import 'package:grinder/grinder.dart' hide fail;
 import 'package:path/path.dart' as path;
 import 'package:stagehand/stagehand.dart' as stagehand;
 import 'package:test/test.dart';
@@ -44,7 +44,7 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   var pubspecFile = new File(pubspecPath);
 
   if (!pubspecFile.existsSync()) {
-    throw 'A pubspec much be defined!';
+    fail('A pubspec much be defined!');
   }
 
   Pub.get(runOptions: new RunOptions(workingDirectory: tempDir.path));
