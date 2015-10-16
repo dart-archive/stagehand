@@ -5,7 +5,7 @@
 List<String> data = [
   "bin/main.dart",
   "text",
-  "Cm1haW4oTGlzdDxTdHJpbmc+IGFyZ3MpIHsKICBwcmludCgnSGVsbG8gd29ybGQhJyk7Cn0K",
+  "bWFpbihMaXN0PFN0cmluZz4gYXJncykgewogIHByaW50KCdIZWxsbyB3b3JsZCEnKTsKfQo=",
   "pubspec.yaml",
   "text",
   """bmFtZToge3twcm9qZWN0TmFtZX19CnZlcnNpb246IDAuMC4xCmRlc2NyaXB0aW9uOiBBIHNpbXBs

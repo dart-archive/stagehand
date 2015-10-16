@@ -16,8 +16,7 @@ final RegExp _binaryFileTypes = new RegExp(
 
 main(List<String> args) => grind(args);
 
-@Task('Concatenate the template files into data files'
-    ' that the generators can consume')
+@Task('Concatenate the template files into runtime data files')
 void build() {
   stagehand.generators.forEach((generator) {
     _concatenateFiles(
