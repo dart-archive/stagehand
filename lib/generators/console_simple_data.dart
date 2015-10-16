@@ -2,7 +2,7 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-const List<String> data = const <String>[
+const List<String> data = const [
   "bin/main.dart",
   "text",
   "bWFpbihMaXN0PFN0cmluZz4gYXJncykgewogIHByaW50KCdIZWxsbyB3b3JsZCEnKTsKfQo=",

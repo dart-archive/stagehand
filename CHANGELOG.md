@@ -1,14 +1,14 @@
 # CHANGELOG
 
 ## 0.2.4
-- Improved layout of `server-appengine`.
+- Improved layout of `server-appengine`
 
 ## 0.2.3+1
-- fixed an issue with the Polymer template
+- Fixed an issue with the Polymer template
 
 ## 0.2.3
 - Updated the Polymer sample to the latest version (`1.0.0-rc.1`)
-- Removed the web-full example. Was not maintained.
+- Removed the web-full example (it had not been maintained)
 
 ## 0.2.2+1
 - Moved the script tags for the web templates into the head section
@@ -21,7 +21,7 @@
 - All templates updated to use the latest `test` package
 
 ## 0.2.0+1
-- Update the template descriptions
+- Updated the template descriptions
 - The `web-full` sample now reverses the text on page load
 
 ## 0.2.0
