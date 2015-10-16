@@ -60,18 +60,14 @@ test() => new TestRunner().testAsync(files: 'test/validate_templates.dart');
 void _concatenateFiles(Directory src, File target) {
   log('Creating ${target.path}');
 
-  List<String> results = [];
-
-  _traverse(src, '', results);
-
-  String str = results.map((s) => '  ${_toStr(s)}').join(',\n');
+  String str = _traverse(src, '').map((s) => '  ${_toStr(s)}').join(',\n');
 
   target.writeAsStringSync("""
 // Copyright (c) 2014, Google Inc. Please see the AUTHORS file for details.
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-List<String> data = [
+const List<String> data = const <String>[
 ${str}
 ];
 """);
@@ -85,27 +81,22 @@ String _toStr(String s) {
   }
 }
 
-void _traverse(Directory dir, String root, List<String> results) {
+Iterable<String> _traverse(Directory dir, String root) sync* {
   var files = _listSync(dir, recursive: false, followLinks: false);
   for (FileSystemEntity entity in files) {
-    String name = path.basename(entity.path);
-
     if (entity is Link) continue;
 
+    String name = path.basename(entity.path);
     if (name == 'pubspec.lock') continue;
     if (name.startsWith('.') && name != '.gitignore') continue;
 
     if (entity is Directory) {
-      _traverse(entity, '${root}${name}/', results);
+      yield* _traverse(entity, '${root}${name}/');
     } else {
-      File file = entity;
-      String fileType = _isBinaryFile(name) ? 'binary' : 'text';
-      String data = CryptoUtils.bytesToBase64(file.readAsBytesSync(),
+      yield '${root}${name}';
+      yield _isBinaryFile(name) ? 'binary' : 'text';
+      yield BASE64.encode((entity as File).readAsBytesSync(),
           addLineSeparator: true);
-
-      results.add('${root}${name}');
-      results.add(fileType);
-      results.add(data);
     }
   }
 }

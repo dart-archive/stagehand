@@ -27,25 +27,32 @@ Requirements:
 
 To install:
 
-    $> pub global activate stagehand
+```console
+> pub global activate stagehand
+```
 
-To update:
+To update, run activate again:
 
-    # activate stagehand again
-    $> pub global activate stagehand
+```console
+> pub global activate stagehand
+```
 
 ## Usage
 
 Stagehand will generate a project skeleton into the current directory. As an
 example, here is how you create a package with Stagehand:
 
-    $> mkdir fancy_project
-    $> cd fancy_project
-    $> stagehand package-simple
+```console
+> mkdir fancy_project
+> cd fancy_project
+> stagehand package-simple
+```
 
 And to list all of the project templates:
 
-    $> stagehand
+```console
+> stagehand
+```
 
 ## Goals
 
