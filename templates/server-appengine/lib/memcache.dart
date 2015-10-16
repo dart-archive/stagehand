@@ -46,13 +46,9 @@ void write(HttpResponse response, Map<String, String> valueMap) {
 /// Helper method to read a set of values from the memcache.
 void read(HttpResponse response, Iterable<String> keys) {
   var memcache = context.services.memcache;
-  Future
-      .forEach(
-          keys,
-          (key) => memcache
-              .get(key)
-              .then((value) => response.writeln('"${key}": "${value}"'))
-              .catchError(
-                  (_) => response.writeln('"${key}": value not found!')))
-      .whenComplete(response.close);
+  var handleKey = (key) => memcache
+      .get(key)
+      .then((value) => response.writeln('"${key}": "${value}"'))
+      .catchError((_) => response.writeln('"${key}": value not found!'));
+  Future.forEach(keys, handleKey).whenComplete(response.close);
 }

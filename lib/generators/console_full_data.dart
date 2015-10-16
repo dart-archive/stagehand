@@ -2,7 +2,7 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-const List<String> data = const <String>[
+const List<String> data = const [
   ".gitignore",
   "text",
   """LmJ1aWxkbG9nCi5EU19TdG9yZQouaWRlYQoucGFja2FnZXMKLnB1Yi8KYnVpbGQvCnBhY2thZ2Vz

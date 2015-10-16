@@ -2,7 +2,7 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-const List<String> data = const <String>[
+const List<String> data = const [
   ".gitignore",
   "text",
   """LmJ1aWxkbG9nCi5EU19TdG9yZQouaWRlYQoucGFja2FnZXMKLnB1Yi8KYnVpbGQvCnBhY2thZ2Vz
@@ -149,12 +149,11 @@ IHJlc3BvbnNlLndyaXRlbG4oJyIke2tleX0iOiAiJHt2YWx1ZX0iJykpOwogIH0pLndoZW5Db21w
 bGV0ZShyZXNwb25zZS5jbG9zZSk7Cn0KCi8vLyBIZWxwZXIgbWV0aG9kIHRvIHJlYWQgYSBzZXQg
 b2YgdmFsdWVzIGZyb20gdGhlIG1lbWNhY2hlLgp2b2lkIHJlYWQoSHR0cFJlc3BvbnNlIHJlc3Bv
 bnNlLCBJdGVyYWJsZTxTdHJpbmc+IGtleXMpIHsKICB2YXIgbWVtY2FjaGUgPSBjb250ZXh0LnNl
-cnZpY2VzLm1lbWNhY2hlOwogIEZ1dHVyZQogICAgICAuZm9yRWFjaCgKICAgICAgICAgIGtleXMs
-CiAgICAgICAgICAoa2V5KSA9PiBtZW1jYWNoZQogICAgICAgICAgICAgIC5nZXQoa2V5KQogICAg
-ICAgICAgICAgIC50aGVuKCh2YWx1ZSkgPT4gcmVzcG9uc2Uud3JpdGVsbignIiR7a2V5fSI6ICIk
-e3ZhbHVlfSInKSkKICAgICAgICAgICAgICAuY2F0Y2hFcnJvcigKICAgICAgICAgICAgICAgICAg
-KF8pID0+IHJlc3BvbnNlLndyaXRlbG4oJyIke2tleX0iOiB2YWx1ZSBub3QgZm91bmQhJykpKQog
-ICAgICAud2hlbkNvbXBsZXRlKHJlc3BvbnNlLmNsb3NlKTsKfQo=""",
+cnZpY2VzLm1lbWNhY2hlOwogIHZhciBoYW5kbGVLZXkgPSAoa2V5KSA9PiBtZW1jYWNoZQogICAg
+ICAuZ2V0KGtleSkKICAgICAgLnRoZW4oKHZhbHVlKSA9PiByZXNwb25zZS53cml0ZWxuKCciJHtr
+ZXl9IjogIiR7dmFsdWV9IicpKQogICAgICAuY2F0Y2hFcnJvcigoXykgPT4gcmVzcG9uc2Uud3Jp
+dGVsbignIiR7a2V5fSI6IHZhbHVlIG5vdCBmb3VuZCEnKSk7CiAgRnV0dXJlLmZvckVhY2goa2V5
+cywgaGFuZGxlS2V5KS53aGVuQ29tcGxldGUocmVzcG9uc2UuY2xvc2UpOwp9Cg==""",
   "pubspec.yaml",
   "text",
   """bmFtZToge3twcm9qZWN0TmFtZX19CnZlcnNpb246IDAuMC4xCmRlc2NyaXB0aW9uOiBBIHNpbXBs
