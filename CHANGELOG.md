@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.2.4
+- Improved layout of `server-appengine`.
+
 ## 0.2.3+1
 - fixed an issue with the Polymer template
 
