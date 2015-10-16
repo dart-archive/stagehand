@@ -31,8 +31,8 @@ void requestHandler(HttpRequest request) {
         ..close();
     }
   }).catchError((_) => request.response
-      ..write('Failed handling request: ${request.toString()}.')
-      ..close());
+    ..write('Failed handling request: ${request.toString()}.')
+    ..close());
 }
 
 /// GET request handler.
@@ -65,9 +65,10 @@ handleGetRequest(HttpRequest request) {
     cache.read(response, queryMap.keys);
   } else if (request.uri.path == '/clear_cache') {
     // Reintialize the cache. This clears all values and resets the default.
-    cache.clear()
-      .then((_) => response.writeln('Cleared cache!'))
-      .whenComplete(response.close);
+    cache
+        .clear()
+        .then((_) => response.writeln('Cleared cache!'))
+        .whenComplete(response.close);
   } else {
     // Serve some static content. This must be located in 'build/web' or some
     // subdirectory of 'build/web'.

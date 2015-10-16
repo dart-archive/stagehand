@@ -12,9 +12,10 @@ import 'console_simple_data.dart';
  * A generator for a hello world command-line application.
  */
 class ConsoleSimpleGenerator extends DefaultGenerator {
-  ConsoleSimpleGenerator() : super('console-simple', 'Console Application',
-          'A simple command-line application.',
-          categories: const ['dart', 'console']) {
+  ConsoleSimpleGenerator()
+      : super('console-simple', 'Console Application',
+            'A simple command-line application.',
+            categories: const ['dart', 'console']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }
@@ -22,5 +23,6 @@ class ConsoleSimpleGenerator extends DefaultGenerator {
     setEntrypoint(getFile('bin/main.dart'));
   }
 
-  String getInstallInstructions() => "run your app using 'dart ${entrypoint.path}'";
+  String getInstallInstructions() =>
+      "run your app using 'dart ${entrypoint.path}'";
 }

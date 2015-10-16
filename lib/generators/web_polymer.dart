@@ -12,9 +12,10 @@ import 'web_polymer_data.dart';
  * A generator for a polymer.dart application.
  */
 class WebPolymerGenerator extends DefaultGenerator {
-  WebPolymerGenerator() : super('web-polymer', 'Polymer Web Application',
-          'A web app built using polymer.dart.',
-          categories: const ['dart', 'web']) {
+  WebPolymerGenerator()
+      : super('web-polymer', 'Polymer Web Application',
+            'A web app built using polymer.dart.',
+            categories: const ['dart', 'web']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }

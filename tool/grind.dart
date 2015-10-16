@@ -11,16 +11,19 @@ import 'package:path/path.dart' as path;
 import 'package:stagehand/stagehand.dart' as stagehand;
 
 final RegExp _binaryFileTypes = new RegExp(
-    r'\.(jpe?g|png|gif|ico|svg|ttf|eot|woff|woff2)$', caseSensitive: false);
+    r'\.(jpe?g|png|gif|ico|svg|ttf|eot|woff|woff2)$',
+    caseSensitive: false);
 
 main(List<String> args) => grind(args);
 
-@Task('Concatenate the template files into data files that the generators can consume')
+@Task('Concatenate the template files into data files'
+    ' that the generators can consume')
 void build() {
   stagehand.generators.forEach((generator) {
     _concatenateFiles(
         getDir('templates/${generator.id}'),
-        getFile('lib/generators/${generator.id.replaceAll('-', '_')}_data.dart'));
+        getFile(
+            'lib/generators/${generator.id.replaceAll('-', '_')}_data.dart'));
   });
 
   // Update the readme.md file.
@@ -30,10 +33,7 @@ void build() {
     return '* `${g.id}` - ${g.description}';
   }).join('\n');
   String newSource = _replaceInString(
-      source,
-      '## Stagehand templates',
-      '## Installation',
-      fragment + '\n');
+      source, '## Stagehand templates', '## Installation', fragment + '\n');
   f.writeAsStringSync(newSource);
 
   // Update the site/index.html file.
@@ -42,11 +42,8 @@ void build() {
   fragment = stagehand.generators.map((g) {
     return '  <li>${g.id} - <em>${g.description}</em></li>';
   }).join('\n');
-  newSource = _replaceInString(
-      source,
-      '<ul id="template-list">',
-      '</ul>',
-      fragment);
+  newSource =
+      _replaceInString(source, '<ul id="template-list">', '</ul>', fragment);
   f.writeAsStringSync(newSource);
 }
 
@@ -134,8 +131,8 @@ List<FileSystemEntity> _listSync(Directory dir,
 
 /// Look for [start] and [end] in [source]; replace the current contents with
 /// [replacement], and return the result.
-String _replaceInString(String source, String start,
-    String end, String replacement) {
+String _replaceInString(
+    String source, String start, String end, String replacement) {
   int startIndex = source.indexOf(start);
   int endIndex = source.indexOf(end, startIndex + 1);
 
