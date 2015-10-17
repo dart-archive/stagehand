@@ -4,7 +4,6 @@
 library {{projectName}}.memcache;
 
 import 'dart:async';
-import 'dart:io';
 
 import 'package:appengine/appengine.dart';
 
@@ -33,22 +32,28 @@ Future clear() async {
 }
 
 /// Helper method to write a set of key/value pairs to the memcache.
-void write(HttpResponse response, Map<String, String> valueMap) {
+Future write(Map<String, String> valueMap, StringSink buffer) async {
   var memcache = context.services.memcache;
-  Future.forEach(valueMap.keys, (key) {
+
+  for (var key in valueMap.keys) {
     var value = valueMap[key];
-    return memcache
-        .set(key, value)
-        .then((_) => response.writeln('"${key}": "${value}"'));
-  }).whenComplete(response.close);
+
+    await memcache.set(key, value);
+
+    buffer.writeln('${key}: ${Error.safeToString(value)}');
+  }
 }
 
 /// Helper method to read a set of values from the memcache.
-void read(HttpResponse response, Iterable<String> keys) {
+Future read(Iterable<String> keys, StringSink buffer ) async {
   var memcache = context.services.memcache;
-  var handleKey = (key) => memcache
-      .get(key)
-      .then((value) => response.writeln('"${key}": "${value}"'))
-      .catchError((_) => response.writeln('"${key}": value not found!'));
-  Future.forEach(keys, handleKey).whenComplete(response.close);
+
+  for (var key in keys) {
+    try {
+      var value = await memcache.get(key);
+      buffer.writeln('${key}: ${Error.safeToString(value)}');
+    } catch (_) {
+      buffer.writeln('"${key}": error reading key!');
+    }
+  }
 }

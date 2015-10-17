@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ## 0.2.4
-- Improved layout of `server-appengine`
+- Migrated `server-appengine` to use `shelf`.
 
 ## 0.2.3+1
 - Fixed an issue with the Polymer template

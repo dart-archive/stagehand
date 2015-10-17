@@ -9,3 +9,5 @@ environment:
 
 dependencies:
   appengine: '>=0.3.0 <0.4.0'
+  shelf: ^0.6.0
+  shelf_appengine: ^0.2.3
