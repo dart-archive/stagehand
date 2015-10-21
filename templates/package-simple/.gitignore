@@ -1,8 +1,20 @@
+# Files and directories created by pub
 .buildlog
-.DS_Store
-.idea
 .packages
+.project
 .pub/
 build/
-packages
+**/packages/
+
+# Files created by dart2js
+*.js
+*.precompiled.js
+*.js.deps
+*.js.map
+*.info.json
+
+# Directory created by dartdoc
+doc/
+
+# This is a library package
 pubspec.lock
