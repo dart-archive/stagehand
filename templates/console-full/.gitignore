@@ -7,11 +7,17 @@ build/
 **/packages/
 
 # Files created by dart2js
-*.js
-*.precompiled.js
+*.dart.js
+*.part.js
 *.js.deps
 *.js.map
 *.info.json
 
 # Directory created by dartdoc
-doc/
+doc/api/
+
+# JetBrains IDEs (WebStorm and IDEA are the recomended Dart IDEs) 
+.idea/
+*.iml
+*.ipr
+*.iws

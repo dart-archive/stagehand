@@ -7,14 +7,20 @@ build/
 **/packages/
 
 # Files created by dart2js
-*.js
-*.precompiled.js
+*.dart.js
+*.part.js
 *.js.deps
 *.js.map
 *.info.json
 
 # Directory created by dartdoc
-doc/
+doc/api/
 
-# This is a library package
+# This is a library package, so ignore pub lock file
 pubspec.lock
+
+# JetBrains IDEs (WebStorm and IDEA are the recomended Dart IDEs) 
+.idea/
+*.iml
+*.ipr
+*.iws
