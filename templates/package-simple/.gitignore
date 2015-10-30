@@ -2,9 +2,10 @@
 .buildlog
 .packages
 .project
-.pub/
-build/
-**/packages/
+.pub
+build
+packages
+pubspec.lock
 
 # Files created by dart2js
 *.dart.js
@@ -15,9 +16,6 @@ build/
 
 # Directory created by dartdoc
 doc/api/
-
-# This is a library package, so ignore pub lock file
-pubspec.lock
 
 # JetBrains IDEs (WebStorm and IDEA are the recomended Dart IDEs) 
 .idea/
