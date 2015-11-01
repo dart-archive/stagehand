@@ -2,8 +2,8 @@
 .buildlog
 .packages
 .project
-.pub
-build
+.pub/
+build/
 packages
 pubspec.lock
 
