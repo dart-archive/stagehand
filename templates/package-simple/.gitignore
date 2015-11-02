@@ -1,8 +1,24 @@
+# Files and directories created by pub
 .buildlog
-.DS_Store
-.idea
 .packages
+.project
 .pub/
 build/
 packages
 pubspec.lock
+
+# Files created by dart2js
+*.dart.js
+*.part.js
+*.js.deps
+*.js.map
+*.info.json
+
+# Directory created by dartdoc
+doc/api/
+
+# JetBrains IDEs (WebStorm and IDEA are the recomended Dart IDEs) 
+.idea/
+*.iml
+*.ipr
+*.iws
