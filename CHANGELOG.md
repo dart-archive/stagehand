@@ -3,6 +3,7 @@
 ## 0.2.4
 - Migrated `server-appengine` to use `shelf`.
 - Updated the template `.gitignore` files
+- Updated reflectable entry point format for the polymer template
 
 ## 0.2.3+1
 - Fixed an issue with the Polymer template
