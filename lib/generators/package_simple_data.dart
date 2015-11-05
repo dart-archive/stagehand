@@ -5,8 +5,12 @@
 const List<String> data = const [
   ".gitignore",
   "text",
-  """LmJ1aWxkbG9nCi5EU19TdG9yZQouaWRlYQoucGFja2FnZXMKLnB1Yi8KYnVpbGQvCnBhY2thZ2Vz
-CnB1YnNwZWMubG9jawo=""",
+  """IyBGaWxlcyBhbmQgZGlyZWN0b3JpZXMgY3JlYXRlZCBieSBwdWIKLmJ1aWxkbG9nCi5wYWNrYWdl
+cwoucHJvamVjdAoucHViLwpidWlsZC8KcGFja2FnZXMKcHVic3BlYy5sb2NrCgojIEZpbGVzIGNy
+ZWF0ZWQgYnkgZGFydDJqcwoqLmRhcnQuanMKKi5wYXJ0LmpzCiouanMuZGVwcwoqLmpzLm1hcAoq
+LmluZm8uanNvbgoKIyBEaXJlY3RvcnkgY3JlYXRlZCBieSBkYXJ0ZG9jCmRvYy9hcGkvCgojIEpl
+dEJyYWlucyBJREVzIChXZWJTdG9ybSBhbmQgSURFQSBhcmUgdGhlIHJlY29tZW5kZWQgRGFydCBJ
+REVzKSAKLmlkZWEvCiouaW1sCiouaXByCiouaXdzCg==""",
   "CHANGELOG.md",
   "text",
   """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgotIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn

@@ -4,7 +4,7 @@
 
 name: stagehand
 # When changing this version, change the lib/src/cli_app.dart version as well.
-version: 0.2.4-dev
+version: 0.2.4
 description: >
   A scaffolding generator for your Dart projects. Stagehand helps you get set
   up!
@@ -30,6 +30,6 @@ dependencies:
 dev_dependencies:
   browser: ^0.10.0
   ghpages_generator: ^0.2.4
-  grinder: ^0.7.1
+  grinder: ^0.8.0
   test: ^0.12.0
   yaml: ^2.1.2
