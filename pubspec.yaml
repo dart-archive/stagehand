@@ -22,6 +22,7 @@ executables:
 
 dependencies:
   args: '>=0.12.0+1 <0.14.0'
+  collection: ^1.2.0
   crypto: ^0.9.0
   http: ^0.11.0
   path: ^1.3.0

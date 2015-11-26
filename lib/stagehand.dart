@@ -26,6 +26,8 @@ library stagehand;
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:collection/collection.dart';
+
 import 'generators/console_full.dart';
 import 'generators/console_simple.dart';
 import 'generators/package_simple.dart';
@@ -125,8 +127,7 @@ abstract class Generator implements Comparable<Generator> {
 
   int numFiles() => files.length;
 
-  int compareTo(Generator other) =>
-      this.id.toLowerCase().compareTo(other.id.toLowerCase());
+  int compareTo(Generator other) => compareAsciiLowerCase(this.id, other.id);
 
   /**
    * Return some user facing instructions about how to finish installation of
