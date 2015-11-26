@@ -1,0 +1,24 @@
+# Files and directories created by pub
+.buildlog
+.packages
+.project
+.pub/
+build/
+packages
+pubspec.lock # (Remove this pattern if you wish to check in your lock file)
+
+# Files created by dart2js
+*.dart.js
+*.part.js
+*.js.deps
+*.js.map
+*.info.json
+
+# Directory created by dartdoc
+doc/api/
+
+# JetBrains IDEs (WebStorm and IDEA are the recomended Dart IDEs) 
+.idea/
+*.iml
+*.ipr
+*.iws
