@@ -18,6 +18,7 @@ Kit and Yeoman.
 * `package-simple` - A starting point for Dart libraries or applications.
 * `server-appengine` - A simple App Engine application.
 * `server-shelf` - A web server built using the shelf package.
+* `web-angular` - A web app built using Angular 2.
 * `web-polymer` - A web app built using polymer.dart.
 * `web-simple` - An absolute bare-bones web app.
 

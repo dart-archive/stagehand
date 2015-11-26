@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.2.5
+- Added `web-angular` template for an Angular2 (alpha) app.
+
 ## 0.2.4
 - Migrated `server-appengine` to use `shelf`.
 - Updated the template `.gitignore` files
