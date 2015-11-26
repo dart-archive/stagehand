@@ -3,6 +3,11 @@
 // license that can be found in the LICENSE file.
 
 const List<String> data = const [
+  ".gitignore",
+  "text",
+  """IyBGaWxlcyBhbmQgZGlyZWN0b3JpZXMgY3JlYXRlZCBieSBwdWIKLnBhY2thZ2VzCi5wdWIvCnBh
+Y2thZ2VzCnB1YnNwZWMubG9jayAjIChSZW1vdmUgdGhpcyBwYXR0ZXJuIGlmIHlvdSB3aXNoIHRv
+IGNoZWNrIGluIHlvdXIgbG9jayBmaWxlKQo=""",
   "bin/main.dart",
   "text",
   "bWFpbihMaXN0PFN0cmluZz4gYXJncykgewogIHByaW50KCdIZWxsbyB3b3JsZCEnKTsKfQo=",
