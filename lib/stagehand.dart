@@ -159,9 +159,9 @@ class TemplateFile {
   final String path;
   final String content;
 
-  List<int> _binaryData;
+  final List<int> _binaryData;
 
-  TemplateFile(this.path, this.content);
+  TemplateFile(this.path, this.content) : this._binaryData = null;
 
   TemplateFile.fromBinary(this.path, this._binaryData) : this.content = null;
 
