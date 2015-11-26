@@ -152,7 +152,7 @@ abstract class GeneratorTarget {
 /**
  * This class represents a file in a generator template. The contents could
  * either be binary or text. If text, the contents may contain mustache
- * variables that can be substituted (`{{myVar}}`).
+ * variables that can be substituted (`__myVar__`).
  */
 class TemplateFile {
   final String path;

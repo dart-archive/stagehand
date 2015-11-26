@@ -15,11 +15,11 @@ void main() {
     });
 
     test('substituteVars simple', () {
-      _expect('foo {{bar}} baz', {'bar': 'baz'}, 'foo baz baz');
+      _expect('foo __bar__ baz', {'bar': 'baz'}, 'foo baz baz');
     });
 
     test('substituteVars nosub', () {
-      _expect('foo {{bar}} baz', {'aaa': 'bbb'}, 'foo {{bar}} baz');
+      _expect('foo __bar__ baz', {'aaa': 'bbb'}, 'foo __bar__ baz');
     });
 
     test('wrap', () {

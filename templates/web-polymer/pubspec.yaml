@@ -1,7 +1,7 @@
-name: '{{projectName}}'
+name: '__projectName__'
 version: 0.0.1
 description: A web app built using polymer.dart.
-#author: {{author}} <email@example.com>
+#author: __author__ <email@example.com>
 #homepage: https://www.example.com
 
 environment:

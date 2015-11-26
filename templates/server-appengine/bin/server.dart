@@ -1,11 +1,11 @@
-// Copyright (c) {{year}}, {{author}}. All rights reserved. Use of this source code
+// Copyright (c) __year__, __author__. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'dart:async';
 
 import 'package:shelf/shelf.dart';
 import 'package:shelf_appengine/shelf_appengine.dart' as shelf_ae;
-import 'package:{{projectName}}/memcache.dart' as cache;
+import 'package:__projectName__/memcache.dart' as cache;
 
 /// Application entry point called by AppEngine at startup.
 main(List<String> args) async {

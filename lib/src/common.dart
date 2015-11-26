@@ -52,9 +52,9 @@ String normalizeProjectName(String name) {
 
 /**
  * Given a String [str] with mustache templates, and a [Map] of String key /
- * value pairs, substitute all instances of `{{key}}` for `value`. I.e.,
+ * value pairs, substitute all instances of `__key__` for `value`. I.e.,
  *
- *     Foo {{projectName}} baz.
+ *     Foo __projectName__ baz.
  *
  * and
  *
@@ -66,7 +66,7 @@ String normalizeProjectName(String name) {
  */
 String substituteVars(String str, Map<String, String> vars) {
   vars.forEach((key, value) {
-    String sub = '{{${key}}}';
+    String sub = '__${key}__';
     str = str.replaceAll(sub, value);
   });
   return str;

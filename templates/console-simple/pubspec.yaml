@@ -1,4 +1,4 @@
-name: {{projectName}}
+name: __projectName__
 version: 0.0.1
 description: A simple console application.
 #dependencies:
