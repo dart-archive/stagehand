@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 /**
- * Some utilty methods for stagehand.
+ * Some utility methods for stagehand.
  */
 library stagehand.utils;
 
@@ -14,6 +14,9 @@ import 'package:crypto/crypto.dart';
 import '../stagehand.dart';
 
 const int _RUNE_SPACE = 32;
+
+final _substitueRegExp = new RegExp(r'__([a-zA-Z]+)__');
+final _nonValidSubstitueRegExp = new RegExp('[^a-zA-Z]');
 
 List<TemplateFile> decodeConcatenatedData(List<String> data) {
   List<TemplateFile> results = [];
@@ -51,10 +54,10 @@ String normalizeProjectName(String name) {
 }
 
 /**
- * Given a String [str] with mustache templates, and a [Map] of String key /
- * value pairs, substitute all instances of `{{key}}` for `value`. I.e.,
+ * Given a `String` [str] with mustache templates, and a [Map] of String key /
+ * value pairs, substitute all instances of `__key__` for `value`. I.e.,
  *
- *     Foo {{projectName}} baz.
+ *     Foo __projectName__ baz.
  *
  * and
  *
@@ -63,13 +66,26 @@ String normalizeProjectName(String name) {
  * becomes:
  *
  *     Foo bar baz.
+ *
+ * A key value can only be an ASCII string made up of letters: A-Z, a-z.
+ * No whitespace, numbers, or other characters are allowed.
  */
 String substituteVars(String str, Map<String, String> vars) {
-  vars.forEach((key, value) {
-    String sub = '{{${key}}}';
-    str = str.replaceAll(sub, value);
+  var nonValidKeys =
+      vars.keys.where((k) => k.contains(_nonValidSubstitueRegExp)).toList();
+  if (nonValidKeys.isNotEmpty) {
+    throw new ArgumentError('vars.keys can only contain letters.');
+  }
+
+  return str.replaceAllMapped(_substitueRegExp, (match) {
+    var item = vars[match[1]];
+
+    if (item == null) {
+      return match[0];
+    } else {
+      return item;
+    }
   });
-  return str;
 }
 
 /**

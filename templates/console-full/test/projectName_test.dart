@@ -1,9 +1,9 @@
-// Copyright (c) {{year}}, {{author}}. All rights reserved. Use of this source code
+// Copyright (c) __year__, __author__. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
-library {{projectName}}.test;
+library __projectName__.test;
 
-import 'package:{{projectName}}/{{projectName}}.dart';
+import 'package:__projectName__/__projectName__.dart';
 import 'package:test/test.dart';
 
 void main() {

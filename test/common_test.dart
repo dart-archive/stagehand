@@ -14,12 +14,26 @@ void main() {
       expect(normalizeProjectName('foo-bar'), 'foo_bar');
     });
 
-    test('substituteVars simple', () {
-      _expect('foo {{bar}} baz', {'bar': 'baz'}, 'foo baz baz');
-    });
+    group('substitueVars', () {
+      test('simple', () {
+        _expect('foo __bar__ baz', {'bar': 'baz'}, 'foo baz baz');
+      });
 
-    test('substituteVars nosub', () {
-      _expect('foo {{bar}} baz', {'aaa': 'bbb'}, 'foo {{bar}} baz');
+      test('nosub', () {
+        _expect('foo __bar__ baz', {'aaa': 'bbb'}, 'foo __bar__ baz');
+      });
+
+      test('matching input', () {
+        _expect('foo __bar__ baz', {'bar': '__baz__', 'baz': 'foo'},
+            'foo __baz__ baz');
+      });
+
+      test('vars must be alpha + numeric', () {
+        expect(() => substituteVars('str', {'with space': 'noop'}), throws);
+        expect(() => substituteVars('str', {'with!symbols': 'noop'}), throws);
+        expect(() => substituteVars('str', {'with1numbers': 'noop'}), throws);
+        expect(() => substituteVars('str', {'with_under': 'noop'}), throws);
+      });
     });
 
     test('wrap', () {
