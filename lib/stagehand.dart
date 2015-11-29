@@ -100,7 +100,7 @@ abstract class Generator implements Comparable<Generator> {
   }
 
   Future generate(String projectName, GeneratorTarget target,
-      {Map<String, String> additionalVars}) {
+      {Map<String, String> additionalVars}) async {
     Map vars = {
       'projectName': projectName,
       'description': description,
@@ -108,21 +108,17 @@ abstract class Generator implements Comparable<Generator> {
     };
 
     if (additionalVars != null) {
-      additionalVars.keys.forEach((key) {
-        vars[key] = additionalVars[key];
-      });
+      vars.addAll(additionalVars);
     }
 
-    if (!vars.containsKey('author')) {
-      vars['author'] = '<your name>';
-    }
+    vars.putIfAbsent('author', () => '<your name>');
 
-    return Future.forEach(files, (TemplateFile file) {
+    for (var file in files) {
       var resultFile = file.runSubstitution(vars);
       String filePath = resultFile.path;
       filePath = filePath.replaceAll('projectName', projectName);
-      return target.createFile(filePath, resultFile.content);
-    });
+      await target.createFile(filePath, resultFile.content);
+    }
   }
 
   int numFiles() => files.length;
