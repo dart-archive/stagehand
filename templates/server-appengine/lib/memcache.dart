@@ -45,7 +45,7 @@ Future write(Map<String, String> valueMap, StringSink buffer) async {
 }
 
 /// Helper method to read a set of values from the memcache.
-Future read(Iterable<String> keys, StringSink buffer ) async {
+Future read(Iterable<String> keys, StringSink buffer) async {
   var memcache = context.services.memcache;
 
   for (var key in keys) {
