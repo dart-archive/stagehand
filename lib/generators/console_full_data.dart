@@ -56,7 +56,7 @@ bGljZW5zZSB0aGF0IGNhbiBiZSBmb3VuZCBpbiB0aGUgTElDRU5TRSBmaWxlLgoKaW1wb3J0ICdw
 YWNrYWdlOl9fcHJvamVjdE5hbWVfXy9fX3Byb2plY3ROYW1lX18uZGFydCcgYXMgX19wcm9qZWN0
 TmFtZV9fOwoKbWFpbihMaXN0PFN0cmluZz4gYXJndW1lbnRzKSB7CiAgcHJpbnQoJ0hlbGxvIHdv
 cmxkOiAke19fcHJvamVjdE5hbWVfXy5jYWxjdWxhdGUoKX0hJyk7Cn0K""",
-  "lib/projectName.dart",
+  "lib/__projectName__.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSBfX3llYXJfXywgX19hdXRob3JfXy4gQWxsIHJpZ2h0cyByZXNlcnZl
 ZC4gVXNlIG9mIHRoaXMgc291cmNlIGNvZGUKLy8gaXMgZ292ZXJuZWQgYnkgYSBCU0Qtc3R5bGUg
