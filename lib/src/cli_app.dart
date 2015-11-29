@@ -55,21 +55,17 @@ class CliApp {
     _cwd = value;
   }
 
-  Future process(List<String> args) {
+  Future process(List<String> args) async {
     ArgParser argParser = _createArgParser();
 
     ArgResults options;
 
     try {
       options = argParser.parse(args);
-    } catch (e, st) {
+    } on FormatException catch (e) {
       // FormatException: Could not find an option named "foo".
-      if (e is FormatException) {
-        _out('Error: ${e.message}');
-        return new Future.error(new ArgError(e.message));
-      } else {
-        return new Future.error(e, st);
-      }
+      _out('Error: ${e.message}');
+      throw new ArgError(e.message);
     }
 
     if (options.wasParsed('analytics')) {
@@ -86,13 +82,18 @@ class CliApp {
 
     if (options['version']) {
       _out('${APP_NAME} version: ${APP_VERSION}');
-      return http.get(APP_PUB_INFO).then((response) {
+
+      try {
+        var response = await http.get(APP_PUB_INFO);
         List versions = JSON.decode(response.body)['versions'];
         if (APP_VERSION != versions.last) {
           _out("Version ${versions.last} is available! Run `pub global activate"
               " ${APP_NAME}` to get the latest.");
         }
-      }).catchError((e) => null);
+        return null;
+      } catch (_) {
+        // noop
+      }
     }
 
     if (options['help'] || args.isEmpty) {
@@ -127,13 +128,13 @@ additional analytics to help us improve Stagehand [y/yes/no]? """);
     if (options.rest.isEmpty) {
       logger.stderr("No generator specified.\n");
       _usage(argParser);
-      return new Future.error(new ArgError('no generator specified'));
+      throw new ArgError('no generator specified');
     }
 
     if (options.rest.length >= 2) {
       logger.stderr("Error: too many arguments given.\n");
       _usage(argParser);
-      return new Future.error(new ArgError('invalid generator'));
+      throw new ArgError('invalid generator');
     }
 
     String generatorName = options.rest.first;
@@ -142,7 +143,7 @@ additional analytics to help us improve Stagehand [y/yes/no]? """);
     if (generator == null) {
       logger.stderr("'${generatorName}' is not a valid generator.\n");
       _usage(argParser);
-      return new Future.error(new ArgError('invalid generator'));
+      throw new ArgError('invalid generator');
     }
 
     io.Directory dir = cwd;
@@ -151,7 +152,7 @@ additional analytics to help us improve Stagehand [y/yes/no]? """);
       logger.stderr(
           'The current directory is not empty. Please create a new project directory, or '
           'use --override to force generation into the current directory.');
-      return new Future.error(new ArgError('project directory not empty'));
+      throw new ArgError('project directory not empty');
     }
 
     // Normalize the project name.
@@ -171,19 +172,16 @@ additional analytics to help us improve Stagehand [y/yes/no]? """);
 
     Map vars = {'author': author};
 
-    Future f = generator.generate(projectName, target, additionalVars: vars);
-    return f.then((_) {
-      _out("${generator.numFiles()} files written.");
+    await generator.generate(projectName, target, additionalVars: vars);
+    _out("${generator.numFiles()} files written.");
 
-      String message = generator.getInstallInstructions();
-      if (message != null && message.isNotEmpty) {
-        message = message.trim();
-        message = message.split('\n').map((line) => "--> ${line}").join("\n");
-        _out("\n${message}");
-      }
-    }).then((_) {
-      return analytics.waitForLastPing(timeout: _timeout);
-    });
+    String message = generator.getInstallInstructions();
+    if (message != null && message.isNotEmpty) {
+      message = message.trim();
+      message = message.split('\n').map((line) => "--> ${line}").join("\n");
+      _out("\n${message}");
+    }
+    await analytics.waitForLastPing(timeout: _timeout);
   }
 
   ArgParser _createArgParser() {
@@ -238,7 +236,7 @@ additional analytics to help us improve Stagehand [y/yes/no]? """);
     _out('Available generators:');
     int len = generators.map((g) => g.id.length).fold(0, (a, b) => max(a, b));
     generators
-        .map((g) => "  ${_pad(g.id, len)} - ${g.description}")
+        .map((g) => "  ${g.id.padRight(len)} - ${g.description}")
         .forEach(logger.stdout);
   }
 
@@ -284,22 +282,14 @@ class _DirectoryGeneratorTarget extends GeneratorTarget {
   final CliLogger logger;
   final io.Directory dir;
 
-  _DirectoryGeneratorTarget(this.logger, this.dir) {
-    dir.createSync();
-  }
+  _DirectoryGeneratorTarget(this.logger, this.dir);
 
-  Future createFile(String filePath, List<int> contents) {
+  Future createFile(String filePath, List<int> contents) async {
     io.File file = new io.File(path.join(dir.path, filePath));
 
     logger.stdout('  ${file.path}');
 
-    return file
-        .create(recursive: true)
-        .then((_) => file.writeAsBytes(contents));
+    await file.create(recursive: true);
+    await file.writeAsBytes(contents);
   }
-}
-
-String _pad(String str, int len) {
-  while (str.length < len) str += ' ';
-  return str;
 }
