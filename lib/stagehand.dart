@@ -115,9 +115,7 @@ abstract class Generator implements Comparable<Generator> {
 
     for (var file in files) {
       var resultFile = file.runSubstitution(vars);
-      String filePath = resultFile.path;
-      filePath = filePath.replaceAll('projectName', projectName);
-      await target.createFile(filePath, resultFile.content);
+      await target.createFile(resultFile.path, resultFile.content);
     }
   }
 

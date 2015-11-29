@@ -52,7 +52,7 @@ IHsKICAgICAgdmFyIGF3ZXNvbWUgPSBuZXcgQXdlc29tZSgpOwogICAgfQoKIyMgRmVhdHVyZXMg
 YW5kIGJ1Z3MKClBsZWFzZSBmaWxlIGZlYXR1cmUgcmVxdWVzdHMgYW5kIGJ1Z3MgYXQgdGhlIFtp
 c3N1ZSB0cmFja2VyXVt0cmFja2VyXS4KClt0cmFja2VyXTogaHR0cDovL2V4YW1wbGUuY29tL2lz
 c3Vlcy9yZXBsYWNlbWUK""",
-  "example/projectName.dart",
+  "example/__projectName___example.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSBfX3llYXJfXywgX19hdXRob3JfXy4gQWxsIHJpZ2h0cyByZXNlcnZl
 ZC4gVXNlIG9mIHRoaXMgc291cmNlIGNvZGUKLy8gaXMgZ292ZXJuZWQgYnkgYSBCU0Qtc3R5bGUg
@@ -60,7 +60,7 @@ bGljZW5zZSB0aGF0IGNhbiBiZSBmb3VuZCBpbiB0aGUgTElDRU5TRSBmaWxlLgoKbGlicmFyeSBf
 X3Byb2plY3ROYW1lX18uZXhhbXBsZTsKCmltcG9ydCAncGFja2FnZTpfX3Byb2plY3ROYW1lX18v
 X19wcm9qZWN0TmFtZV9fLmRhcnQnOwoKbWFpbigpIHsKICB2YXIgYXdlc29tZSA9IG5ldyBBd2Vz
 b21lKCk7CiAgcHJpbnQoJ2F3ZXNvbWU6ICR7YXdlc29tZS5pc0F3ZXNvbWV9Jyk7Cn0K""",
-  "lib/projectName.dart",
+  "lib/__projectName__.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSBfX3llYXJfXywgX19hdXRob3JfXy4gQWxsIHJpZ2h0cyByZXNlcnZl
 ZC4gVXNlIG9mIHRoaXMgc291cmNlIGNvZGUKLy8gaXMgZ292ZXJuZWQgYnkgYSBCU0Qtc3R5bGUg
@@ -69,7 +69,7 @@ X3Byb2plY3ROYW1lX18gbGlicmFyeS4KLy8vCi8vLyBUaGlzIGlzIGFuIGF3ZXNvbWUgbGlicmFy
 eS4gTW9yZSBkYXJ0ZG9jcyBnbyBoZXJlLgpsaWJyYXJ5IF9fcHJvamVjdE5hbWVfXzsKCi8vIFRP
 RE86IEV4cG9ydCBhbnkgbGlicmFyaWVzIGludGVuZGVkIGZvciBjbGllbnRzIG9mIHRoaXMgcGFj
 a2FnZS4KCmV4cG9ydCAnc3JjL19fcHJvamVjdE5hbWVfX19iYXNlLmRhcnQnOwo=""",
-  "lib/src/projectName_base.dart",
+  "lib/src/__projectName___base.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSBfX3llYXJfXywgX19hdXRob3JfXy4gQWxsIHJpZ2h0cyByZXNlcnZl
 ZC4gVXNlIG9mIHRoaXMgc291cmNlIGNvZGUKLy8gaXMgZ292ZXJuZWQgYnkgYSBCU0Qtc3R5bGUg
@@ -85,7 +85,7 @@ YXV0aG9yX18gPGVtYWlsQGV4YW1wbGUuY29tPgojaG9tZXBhZ2U6IGh0dHBzOi8vd3d3LmV4YW1w
 bGUuY29tCgplbnZpcm9ubWVudDoKICBzZGs6ICc+PTEuMC4wIDwyLjAuMCcKCiNkZXBlbmRlbmNp
 ZXM6CiMgIGxpYl9uYW1lOiBhbnkKCmRldl9kZXBlbmRlbmNpZXM6CiAgdGVzdDogJz49MC4xMi4w
 IDwwLjEzLjAnCg==""",
-  "test/projectName_test.dart",
+  "test/__projectName___test.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSBfX3llYXJfXywgX19hdXRob3JfXy4gQWxsIHJpZ2h0cyByZXNlcnZl
 ZC4gVXNlIG9mIHRoaXMgc291cmNlIGNvZGUKLy8gaXMgZ292ZXJuZWQgYnkgYSBCU0Qtc3R5bGUg

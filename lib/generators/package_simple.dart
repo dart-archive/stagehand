@@ -20,6 +20,6 @@ class PackageSimpleGenerator extends DefaultGenerator {
       addTemplateFile(file);
     }
 
-    setEntrypoint(getFile('lib/projectName.dart'));
+    setEntrypoint(getFile('lib/__projectName__.dart'));
   }
 }
