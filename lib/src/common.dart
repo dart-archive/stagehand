@@ -83,9 +83,7 @@ String convertToYamlMultiLine(String str) {
 /**
  * Break the given String into lines wrapped on a [col] boundary.
  */
-List<String> wrap(String str, [int col = 80]) {
-  List<String> lines = [];
-
+Iterable<String> wrap(String str, [int col = 80]) sync* {
   while (str.length > col) {
     int index = col;
 
@@ -97,23 +95,21 @@ List<String> wrap(String str, [int col = 80]) {
       index = str.indexOf(' ');
 
       if (index == -1) {
-        lines.add(str);
+        yield str;
         str = '';
       } else {
-        lines.add(str.substring(0, index).trim());
+        yield str.substring(0, index).trim();
         str = str.substring(index).trim();
       }
     } else {
-      lines.add(str.substring(0, index).trim());
+      yield str.substring(0, index).trim();
       str = str.substring(index).trim();
     }
   }
 
   if (str.length > 0) {
-    lines.add(str);
+    yield str;
   }
-
-  return lines;
 }
 
 /**
