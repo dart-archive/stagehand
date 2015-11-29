@@ -18,9 +18,7 @@ const int _RUNE_SPACE = 32;
 final _substitueRegExp = new RegExp(r'__([a-zA-Z]+)__');
 final _nonValidSubstitueRegExp = new RegExp(r'\W');
 
-List<TemplateFile> decodeConcatenatedData(List<String> data) {
-  List<TemplateFile> results = [];
-
+Iterable<TemplateFile> decodeConcatenatedData(List<String> data) sync* {
   for (int i = 0; i < data.length; i += 3) {
     String path = data[i];
     String type = data[i + 1];
@@ -29,14 +27,12 @@ List<TemplateFile> decodeConcatenatedData(List<String> data) {
     List<int> decoded = CryptoUtils.base64StringToBytes(raw);
 
     if (type == 'binary') {
-      results.add(new TemplateFile.fromBinary(path, decoded));
+      yield new TemplateFile.fromBinary(path, decoded);
     } else {
       String source = UTF8.decode(decoded);
-      results.add(new TemplateFile(path, source));
+      yield new TemplateFile(path, source);
     }
   }
-
-  return results;
 }
 
 /**
