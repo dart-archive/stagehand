@@ -25,8 +25,10 @@ Future _testGenerator(Generator generator) async {
   await generator.generate('foo', target);
 
   // Run some basic validation on the generated results.
-  expect(target.getFileContentsAsString('.gitignore'), isNotNull);
-  expect(target.getFileContentsAsString('pubspec.yaml'), isNotNull);
+  expect(target.getFileContentsAsString('.gitignore'), isNotNull,
+      reason: '.gitignore should exist');
+  expect(target.getFileContentsAsString('pubspec.yaml'), isNotNull,
+      reason: 'pubspec.yaml should exist');
 }
 
 class MockTarget extends GeneratorTarget {
