@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 /**
- * Some utilty methods for stagehand.
+ * Some utility methods for stagehand.
  */
 library stagehand.utils;
 
@@ -15,9 +15,10 @@ import '../stagehand.dart';
 
 const int _RUNE_SPACE = 32;
 
-List<TemplateFile> decodeConcatenatedData(List<String> data) {
-  List<TemplateFile> results = [];
+final _substitueRegExp = new RegExp(r'__([a-zA-Z]+)__');
+final _nonValidSubstitueRegExp = new RegExp(r'\W');
 
+Iterable<TemplateFile> decodeConcatenatedData(List<String> data) sync* {
   for (int i = 0; i < data.length; i += 3) {
     String path = data[i];
     String type = data[i + 1];
@@ -26,14 +27,12 @@ List<TemplateFile> decodeConcatenatedData(List<String> data) {
     List<int> decoded = CryptoUtils.base64StringToBytes(raw);
 
     if (type == 'binary') {
-      results.add(new TemplateFile.fromBinary(path, decoded));
+      yield new TemplateFile.fromBinary(path, decoded);
     } else {
       String source = UTF8.decode(decoded);
-      results.add(new TemplateFile(path, source));
+      yield new TemplateFile(path, source);
     }
   }
-
-  return results;
 }
 
 /**
@@ -51,10 +50,10 @@ String normalizeProjectName(String name) {
 }
 
 /**
- * Given a String [str] with mustache templates, and a [Map] of String key /
- * value pairs, substitute all instances of `{{key}}` for `value`. I.e.,
+ * Given a `String` [str] with mustache templates, and a [Map] of String key /
+ * value pairs, substitute all instances of `__key__` for `value`. I.e.,
  *
- *     Foo {{projectName}} baz.
+ *     Foo __projectName__ baz.
  *
  * and
  *
@@ -63,13 +62,26 @@ String normalizeProjectName(String name) {
  * becomes:
  *
  *     Foo bar baz.
+ *
+ * A key value can only be an ASCII string made up of letters: A-Z, a-Z.
+ * No whitespace, numbers, or other characters are allowed.
  */
 String substituteVars(String str, Map<String, String> vars) {
-  vars.forEach((key, value) {
-    String sub = '{{${key}}}';
-    str = str.replaceAll(sub, value);
+  var nonValidKeys =
+      vars.keys.where((k) => k.contains(_nonValidSubstitueRegExp)).toList();
+  if (nonValidKeys.isNotEmpty) {
+    throw new ArgumentError('vars.keys can only contain letters.');
+  }
+
+  return str.replaceAllMapped(_substitueRegExp, (match) {
+    var item = vars[match[1]];
+
+    if (item == null) {
+      return match[0];
+    } else {
+      return item;
+    }
   });
-  return str;
 }
 
 /**
@@ -83,9 +95,7 @@ String convertToYamlMultiLine(String str) {
 /**
  * Break the given String into lines wrapped on a [col] boundary.
  */
-List<String> wrap(String str, [int col = 80]) {
-  List<String> lines = [];
-
+Iterable<String> wrap(String str, [int col = 80]) sync* {
   while (str.length > col) {
     int index = col;
 
@@ -97,23 +107,21 @@ List<String> wrap(String str, [int col = 80]) {
       index = str.indexOf(' ');
 
       if (index == -1) {
-        lines.add(str);
+        yield str;
         str = '';
       } else {
-        lines.add(str.substring(0, index).trim());
+        yield str.substring(0, index).trim();
         str = str.substring(index).trim();
       }
     } else {
-      lines.add(str.substring(0, index).trim());
+      yield str.substring(0, index).trim();
       str = str.substring(index).trim();
     }
   }
 
   if (str.length > 0) {
-    lines.add(str);
+    yield str;
   }
-
-  return lines;
 }
 
 /**

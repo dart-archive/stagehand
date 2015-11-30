@@ -1,4 +1,4 @@
-# {{projectName}}
+# __projectName__
 
 A library for Dart developers. It is awesome.
 
@@ -6,7 +6,7 @@ A library for Dart developers. It is awesome.
 
 A simple usage example:
 
-    import 'package:{{projectName}}/{{projectName}}.dart';
+    import 'package:__projectName__/__projectName__.dart';
 
     main() {
       var awesome = new Awesome();

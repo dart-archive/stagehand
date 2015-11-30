@@ -1,7 +1,7 @@
-// Copyright (c) {{year}}, {{author}}. All rights reserved. Use of this source code
+// Copyright (c) __year__, __author__. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
-library {{projectName}}.memcache;
+library __projectName__.memcache;
 
 import 'dart:async';
 
@@ -45,7 +45,7 @@ Future write(Map<String, String> valueMap, StringSink buffer) async {
 }
 
 /// Helper method to read a set of values from the memcache.
-Future read(Iterable<String> keys, StringSink buffer ) async {
+Future read(Iterable<String> keys, StringSink buffer) async {
   var memcache = context.services.memcache;
 
   for (var key in keys) {

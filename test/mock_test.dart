@@ -5,6 +5,7 @@
 library stagehand.mock_test;
 
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:stagehand/stagehand.dart';
 import 'package:test/test.dart';
@@ -24,22 +25,23 @@ Future _testGenerator(Generator generator) async {
   await generator.generate('foo', target);
 
   // Run some basic validation on the generated results.
-  expect(target.getFileContentsAsString('.gitignore'), isNotNull);
-  expect(target.getFileContentsAsString('pubspec.yaml'), isNotNull);
+  expect(target.getFileContentsAsString('.gitignore'), isNotNull,
+      reason: '.gitignore should exist');
+  expect(target.getFileContentsAsString('pubspec.yaml'), isNotNull,
+      reason: 'pubspec.yaml should exist');
 }
 
 class MockTarget extends GeneratorTarget {
-  Map<String, List<int>> files = {};
+  final Map<String, List<int>> _files = {};
 
-  Future createFile(String path, List<int> contents) {
-    files[path] = contents;
-    return new Future.value();
+  Future createFile(String path, List<int> contents) async {
+    _files[path] = contents;
   }
 
-  bool hasFile(String path) => files.containsKey(path);
+  bool hasFile(String path) => _files.containsKey(path);
 
   String getFileContentsAsString(String path) {
     if (!hasFile(path)) return null;
-    return new String.fromCharCodes(files[path]);
+    return UTF8.decode(_files[path]);
   }
 }

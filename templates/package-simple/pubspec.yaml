@@ -1,7 +1,7 @@
-name: {{projectName}}
+name: __projectName__
 description: A starting point for Dart libraries or applications.
 version: 0.0.1
-#author: {{author}} <email@example.com>
+#author: __author__ <email@example.com>
 #homepage: https://www.example.com
 
 environment:

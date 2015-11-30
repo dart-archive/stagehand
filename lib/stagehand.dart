@@ -26,6 +26,8 @@ library stagehand;
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:collection/collection.dart';
+
 import 'generators/console_full.dart';
 import 'generators/console_simple.dart';
 import 'generators/package_simple.dart';
@@ -98,7 +100,7 @@ abstract class Generator implements Comparable<Generator> {
   }
 
   Future generate(String projectName, GeneratorTarget target,
-      {Map<String, String> additionalVars}) {
+      {Map<String, String> additionalVars}) async {
     Map vars = {
       'projectName': projectName,
       'description': description,
@@ -106,27 +108,20 @@ abstract class Generator implements Comparable<Generator> {
     };
 
     if (additionalVars != null) {
-      additionalVars.keys.forEach((key) {
-        vars[key] = additionalVars[key];
-      });
+      vars.addAll(additionalVars);
     }
 
-    if (!vars.containsKey('author')) {
-      vars['author'] = '<your name>';
-    }
+    vars.putIfAbsent('author', () => '<your name>');
 
-    return Future.forEach(files, (TemplateFile file) {
+    for (var file in files) {
       var resultFile = file.runSubstitution(vars);
-      String filePath = resultFile.path;
-      filePath = filePath.replaceAll('projectName', projectName);
-      return target.createFile(filePath, resultFile.content);
-    });
+      await target.createFile(resultFile.path, resultFile.content);
+    }
   }
 
   int numFiles() => files.length;
 
-  int compareTo(Generator other) =>
-      this.id.toLowerCase().compareTo(other.id.toLowerCase());
+  int compareTo(Generator other) => compareAsciiLowerCase(this.id, other.id);
 
   /**
    * Return some user facing instructions about how to finish installation of
@@ -152,15 +147,15 @@ abstract class GeneratorTarget {
 /**
  * This class represents a file in a generator template. The contents could
  * either be binary or text. If text, the contents may contain mustache
- * variables that can be substituted (`{{myVar}}`).
+ * variables that can be substituted (`__myVar__`).
  */
 class TemplateFile {
   final String path;
   final String content;
 
-  List<int> _binaryData;
+  final List<int> _binaryData;
 
-  TemplateFile(this.path, this.content);
+  TemplateFile(this.path, this.content) : this._binaryData = null;
 
   TemplateFile.fromBinary(this.path, this._binaryData) : this.content = null;
 
