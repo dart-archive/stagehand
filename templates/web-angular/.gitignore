@@ -17,7 +17,7 @@ pubspec.lock # (Remove this pattern if you wish to check in your lock file)
 # Directory created by dartdoc
 doc/api/
 
-# JetBrains IDEs (WebStorm and IDEA are the recomended Dart IDEs) 
+# JetBrains IDEs
 .idea/
 *.iml
 *.ipr
