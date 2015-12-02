@@ -1,7 +1,5 @@
 # Files and directories created by pub
-.buildlog
 .packages
-.project
 .pub/
 build/
 packages
@@ -17,7 +15,7 @@ pubspec.lock
 # Directory created by dartdoc
 doc/api/
 
-# JetBrains IDEs (WebStorm and IDEA are the recomended Dart IDEs) 
+# JetBrains IDEs
 .idea/
 *.iml
 *.ipr
