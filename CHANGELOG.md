@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.5+1
+
+- Fixed the generated test file for `console-full`.
+
 ## 0.2.5
 - Added `web-angular` template for an Angular2 (alpha) app.
 
