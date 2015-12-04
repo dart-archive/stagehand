@@ -11,10 +11,10 @@
   </style>
 
   <template>
-    <paper-input label="Type something..." value="__text__"></paper-input>
+    <paper-input label="Type something..." value="{{text}}"></paper-input>
     <p>
-      Text: <span>__text__</span><br />
-      Reversed: <span>__reverseText(text)__</span>
+      Text: <span>{{text}}</span><br />
+      Reversed: <span>{{reverseText(text)}}</span>
     </p>
   </template>
 </dom-module>
