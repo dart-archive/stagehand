@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.5+2
+
+- Fixed `web-polymer` app bindings.
+
 ## 0.2.5+1
 
 - Fixed the generated test file for `console-full`.
