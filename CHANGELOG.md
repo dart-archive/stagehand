@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.5+3
+
+- Updated `web-angular` to `2.0.0-beta.0`.
+
 ## 0.2.5+2
 
 - Fixed `web-polymer` app bindings.

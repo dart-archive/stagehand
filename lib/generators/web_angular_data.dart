@@ -25,8 +25,8 @@ bDogJ2FwcF9jb21wb25lbnQuaHRtbCcpCmNsYXNzIEFwcENvbXBvbmVudCB7fQo=""",
   "pubspec.yaml",
   "text",
   """bmFtZTogX19wcm9qZWN0TmFtZV9fCnZlcnNpb246IDAuMC4xCmRlcGVuZGVuY2llczoKICBhbmd1
-bGFyMjogMi4wLjAtYWxwaGEuNDcKICBicm93c2VyOiBeMC4xMC4wCnRyYW5zZm9ybWVyczoKLSBh
-bmd1bGFyMjoKICAgIGVudHJ5X3BvaW50czogd2ViL21haW4uZGFydAo=""",
+bGFyMjogMi4wLjAtYmV0YS4wCiAgYnJvd3NlcjogXjAuMTAuMAp0cmFuc2Zvcm1lcnM6Ci0gYW5n
+dWxhcjI6CiAgICBlbnRyeV9wb2ludHM6IHdlYi9tYWluLmRhcnQK""",
   "web/index.html",
   "text",
   """PCFET0NUWVBFIGh0bWw+CjxodG1sPgogIDxoZWFkPgogICAgPHRpdGxlPl9fcHJvamVjdE5hbWVf
