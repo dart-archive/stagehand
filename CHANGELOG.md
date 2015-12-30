@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.2.5+4
+- Added a reference to the webcomponents-lite.js in the polymer template
+
 ## 0.2.5+3
 
 - Updated `web-angular` to `2.0.0-beta.0`.
