@@ -1,7 +1,10 @@
 # CHANGELOG
 
+## 0.2.6
+- Updated the Polymer and Angular templates to the latest packages
+
 ## 0.2.5+4
-- Added a reference to the webcomponents-lite.js in the polymer template
+- Added a reference to the webcomponents-lite.js in the Polymer template
 
 ## 0.2.5+3
 
