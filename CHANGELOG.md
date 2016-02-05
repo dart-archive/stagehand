@@ -3,6 +3,7 @@
 ## 1.0.0
 - This project is stable (as of 0.2), so we're belatedly declaring it 1.0.
 - Updated `web-angular` to `2.0.0-beta.3`.
+- Updated `web-simple` to use `<script defer...>` instead of `<script async...>`.
 
 ## 0.2.6
 - Updated the Polymer and Angular templates to the latest packages.
