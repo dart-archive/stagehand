@@ -1,21 +1,22 @@
 # CHANGELOG
 
+## 1.0.0
+- This project is stable (as of 0.2), so we're belatedly declaring it 1.0.
+- Updated `web-angular` to `2.0.0-beta.3`.
+
 ## 0.2.6
-- Updated the Polymer and Angular templates to the latest packages
+- Updated the Polymer and Angular templates to the latest packages.
 
 ## 0.2.5+4
-- Added a reference to the webcomponents-lite.js in the Polymer template
+- Added a reference to the webcomponents-lite.js in the Polymer template.
 
 ## 0.2.5+3
-
 - Updated `web-angular` to `2.0.0-beta.0`.
 
 ## 0.2.5+2
-
 - Fixed `web-polymer` app bindings.
 
 ## 0.2.5+1
-
 - Fixed the generated test file for `console-full`.
 
 ## 0.2.5
@@ -23,29 +24,29 @@
 
 ## 0.2.4
 - Migrated `server-appengine` to use `shelf`.
-- Updated the template `.gitignore` files
-- Updated reflectable entry point format for the polymer template
+- Updated the template `.gitignore` files.
+- Updated reflectable entry point format for the polymer template.
 
 ## 0.2.3+1
-- Fixed an issue with the Polymer template
+- Fixed an issue with the Polymer template.
 
 ## 0.2.3
-- Updated the Polymer sample to the latest version (`1.0.0-rc.1`)
-- Removed the web-full example (it had not been maintained)
+- Updated the Polymer sample to the latest version (`1.0.0-rc.1`).
+- Removed the web-full example (it had not been maintained).
 
 ## 0.2.2+1
-- Moved the script tags for the web templates into the head section
+- Moved the script tags for the web templates into the head section.
 
 ## 0.2.2
-- Added a `console-simple` template
-- Updated the `web-simple` and `web-full` templates
+- Added a `console-simple` template.
+- Updated the `web-simple` and `web-full` templates.
 
 ## 0.2.1
-- All templates updated to use the latest `test` package
+- All templates updated to use the latest `test` package.
 
 ## 0.2.0+1
-- Updated the template descriptions
-- The `web-full` sample now reverses the text on page load
+- Updated the template descriptions.
+- The `web-full` sample now reverses the text on page load.
 
 ## 0.2.0
 - All templates updated to the latest package versions!
@@ -54,74 +55,61 @@
   `web-polymer`.
 
 ## 0.1.5+5
-
-- Updated the dependency on `usage`
+- Updated the dependency on `usage`.
 
 ## 0.1.5+3
-
-- Updated the dependency on `usage`
+- Updated the dependency on `usage`.
 
 ## 0.1.5+2
-
-- Changed to using the `usage` library for Google Analytics
+- Changed to using the `usage` library for Google Analytics.
 
 ## 0.1.5+1
-
-- Update README to mention ubersimplewebapp
+- Update README to mention ubersimplewebapp.
 
 ## 0.1.5
-
 - Added a new `ubersimplewebapp` template.
 
 ## 0.1.4
-
-- Added a new `appengineapp` template (thanks @wibling!)
-- updates to the webapp, shelfapp, and polymerapp samples
+- Added a new `appengineapp` template (thanks @wibling!).
+- Updates to the webapp, shelfapp, and polymerapp samples.
 
 ## 0.1.3
-
-- Added a `label` attribute to the templates and to the `--machine` output
-- Renamed the `shelfapp` template to `shelfserver`
-- Added a `--version` command-line option
-- Clarified and simplified some template descriptions
+- Added a `label` attribute to the templates and to the `--machine` output.
+- Renamed the `shelfapp` template to `shelfserver`.
+- Added a `--version` command-line option.
+- Clarified and simplified some template descriptions.
 - Made useage of Sass in the `webapp` template optional; added instructions in
-  the template about how to enable it
+  the template about how to enable it.
 - Added instructions after project generation to tell the user how best to run
-  the project
+  the project.
 - Stagehand is now integrated into the Editor, the Eclipe plugins, Chrome Dev
-  Editor, and the Sublime plugin
+  Editor, and the Sublime plugin.
 
 ## 0.1.2
-
 - Removed the `-o` option; we now generate the selected template into the
-  current directory
-- Added pre-generated css to the `webapp` template
-- some changes to better support stagehand being driven by existing tooling
-  (IDEs)
-- The `polymer` template was renamed to `polymerapp`
+  current directory.
+- Added pre-generated css to the `webapp` template.
+- Some changes to better support stagehand being driven by existing tooling
+  (IDEs).
+- The `polymer` template was renamed to `polymerapp`.
 
 ## 0.1.1
-
-- Changed to allow stagehand to generate a project into an existing directory
+- Changed to allow stagehand to generate a project into an existing directory.
 
 ## 0.1.0
-
-- Removed Web Starter Kit, waiting for at least WSK 0.6.0
-- Renamed `helloworld` to `consoleapp`
-- Added `polymer` template
-- Added `shelfapp` template
-- Added default BSD license to projects
+- Removed Web Starter Kit, waiting for at least WSK 0.6.0.
+- Renamed `helloworld` to `consoleapp`.
+- Added `polymer` template.
+- Added `shelfapp` template.
+- Added default BSD license to projects.
 - Analytics are opt-in. Version update ping is still automatic.
 
 ## 0.0.5
-
 - Added [Web Starter Kit](https://developers.google.com/web/starter-kit/)!
-- Added anonymous user metrics via Google Analytics
+- Added anonymous user metrics via Google Analytics.
 
 ## 0.0.4
-
-- Fix bug in publib generator
+- Fix bug in publib generator.
 
 ## 0.0.3
-
-- Add first version of a publib generator
+- Add first version of a publib generator.
