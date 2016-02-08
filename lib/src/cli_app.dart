@@ -167,6 +167,14 @@ additional analytics to help us improve Stagehand [y/yes/no]? """);
 
     String author = options['author'];
 
+    if (!options.wasParsed('author')) {
+      try {
+        io.ProcessResult result =
+            io.Process.runSync('git', ['config', 'user.name']);
+        if (result.exitCode == 0) author = result.stdout.trim();
+      } catch (exception) {}
+    }
+
     Map vars = {'author': author};
 
     Future f = generator.generate(projectName, target, additionalVars: vars);
