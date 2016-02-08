@@ -167,6 +167,10 @@ additional analytics to help us improve Stagehand [y/yes/no]? """);
 
     String author = options['author'];
 
+    if (author == '<your name>'  && io.FileSystemEntity.isDirectorySync(dir.path + "/.git")) {
+      author = io.Process.runSync('git', ['config', 'user.name']).stdout.trim();
+    }
+
     Map vars = {'author': author};
 
     Future f = generator.generate(projectName, target, additionalVars: vars);
