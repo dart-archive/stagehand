@@ -2,8 +2,6 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 @TestOn('vm')
-library stagehand.cli_test;
-
 import 'dart:async';
 import 'dart:convert' show JSON;
 import 'dart:io';

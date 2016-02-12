@@ -21,7 +21,6 @@
  *
  * to create a new instance of the `webapp` template in a `foobar` directory.
  */
-library stagehand;
 
 import 'dart:async';
 import 'dart:convert';

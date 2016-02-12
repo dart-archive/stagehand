@@ -2,8 +2,6 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-library stagehand.generators_test;
-
 import 'package:stagehand/stagehand.dart';
 import 'package:test/test.dart';
 
