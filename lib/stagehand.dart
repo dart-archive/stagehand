@@ -104,17 +104,14 @@ abstract class Generator implements Comparable<Generator> {
     Map vars = {
       'projectName': projectName,
       'description': description,
-      'year': new DateTime.now().year.toString()
+      'year': new DateTime.now().year.toString(),
+      'author': '<your name>'
     };
 
     if (additionalVars != null) {
       additionalVars.keys.forEach((key) {
         vars[key] = additionalVars[key];
       });
-    }
-
-    if (!vars.containsKey('author')) {
-      vars['author'] = '<your name>';
     }
 
     return Future.forEach(files, (TemplateFile file) {
