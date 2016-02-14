@@ -4,7 +4,8 @@
 /// The __projectName__ library.
 ///
 /// This is an awesome library. More dartdocs go here.
-
-// TODO: Export any libraries intended for clients of this package.
+library __projectName__;
 
 export 'src/__projectName___base.dart';
+
+// TODO: Export any libraries intended for clients of this package.
