@@ -1,8 +1,9 @@
 # CHANGELOG
 
-## unreleased
+## 1.0.1
 - Updated `web-angular` to `2.0.0-beta.6`. Also added a description
   and dart_to_js_script_rewriter to the pubspec.
+- Made generator initialization code more consistent.
 
 ## 1.0.0
 - This project is stable (as of 0.2), so we're belatedly declaring it 1.0.
