@@ -4,7 +4,7 @@
 
 name: stagehand
 # When changing this version, change the lib/src/cli_app.dart version as well.
-version: 1.0.0
+version: 1.0.1
 description: >
   A scaffolding generator for your Dart projects. Stagehand helps you get set
   up!
@@ -12,6 +12,7 @@ homepage: http://stagehand.pub
 authors:
 - Seth Ladd <sethladd@google.com>
 - Devon Carew <devoncarew@google.com>
+- Kathy Walrath <kathyw@google.com>
 
 environment:
   sdk: '>=1.9.0 <2.0.0'
