@@ -177,11 +177,11 @@ additional analytics to help us improve Stagehand [y/yes/no]? """);
           author = stdout.trim();
           _out('Use Git user name for author name.');
         } else {
-          _out('Error: git user.name is not set.');
+          _out('Error: git user name is not set.');
         }
       } catch (e, st) {
         if (e is io.ProcessException) {
-          _out('Error: ${e.executable} is not on your path.');
+          _out('Error: git is not on your path or fail to run.');
         } else {
           return new Future.error(e, st);
         }
