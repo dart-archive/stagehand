@@ -168,22 +168,24 @@ additional analytics to help us improve Stagehand [y/yes/no]? """);
     String author = options['author'];
 
     if (author == '<your name>' &&
-        io.FileSystemEntity.isDirectorySync(dir.path + "/.git")) {
+    io.FileSystemEntity.isDirectorySync(dir.path + "/.git")) {
       _out(
-          "This directory is git repository.  Try to use git user name for author name ...");
+          "This directory is git repository.  Try to use git user.name for author name ...");
       try {
         var stdout = io.Process.runSync('git', ['config', 'user.name']).stdout;
         if (stdout != null) {
           author = stdout.trim();
           _out('Use Git user name for author name.');
         } else {
-          _out('Error: git user name is not set.');
+          _out('git user.name is not set.');
         }
-      } catch (e, st) {
-        if (e is io.ProcessException) {
-          _out('Error: git is not on your path or fail to run.');
+      } catch (error, stackTrace) {
+        if (error is io.ProcessException) {
+          _out('Error: git is not on your path or failed to run.');
+          _out(error);
+          _out(stackTrace);
         } else {
-          return new Future.error(e, st);
+          return new Future.error(error, stackTrace);
         }
       }
     }
