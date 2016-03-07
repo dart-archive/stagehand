@@ -5,7 +5,6 @@
 /**
  * Some utility methods for stagehand.
  */
-library stagehand.utils;
 
 import 'dart:convert' show UTF8;
 

@@ -2,8 +2,6 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-library stagehand.web.simple;
-
 import '../stagehand.dart';
 import '../src/common.dart';
 import 'web_simple_data.dart';

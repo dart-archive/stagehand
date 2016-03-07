@@ -5,8 +5,6 @@
 // This is explicitly not named with _test.dart extension so it is not run as
 // part of the normal test process
 @TestOn('vm')
-library stagehand.test.validate_templates;
-
 import 'dart:io';
 
 import 'package:grinder/grinder.dart' hide fail;
