@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Unreleased
+- Removed `library` directives almost everywhere.
+
 ## 1.0.1
 - Updated `web-angular` to `2.0.0-beta.6`. Also added a description
   and dart_to_js_script_rewriter to the pubspec.
