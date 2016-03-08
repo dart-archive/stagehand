@@ -170,8 +170,9 @@ additional analytics to help us improve Stagehand [y/yes/no]? """);
     if (!options.wasParsed('author') &&
         io.FileSystemEntity.isDirectorySync(dir.path + "/.git")) {
       try {
-        var stdout = io.Process.runSync('git', ['config', 'user.name']).stdout;
-        author = stdout.trim();
+        io.ProcessResult result =
+            io.Process.runSync('git', ['config', 'user.name']);
+        if (result.exitCode == 0) author = result.stdout.trim();
       } catch (exception) {}
     }
 
