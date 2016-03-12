@@ -1,7 +1,9 @@
 # CHANGELOG
 
-## Unreleased
+## 1.0.2
 - Removed `library` directives almost everywhere.
+- Updated LICENSE.
+- Updated `web-angular` to `2.0.0-beta.9`.
 
 ## 1.0.1
 - Updated `web-angular` to `2.0.0-beta.6`. Also added a description
