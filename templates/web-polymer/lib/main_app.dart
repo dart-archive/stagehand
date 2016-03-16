@@ -1,6 +1,8 @@
 // Copyright (c) __year__, __author__. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 @HtmlImport('main_app.html')
+library __projectName__.lib.main_app;		
+
 import 'dart:html';
 
 import 'package:polymer_elements/paper_input.dart';
