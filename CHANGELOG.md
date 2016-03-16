@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.0.3
+- Fixed the `web-polymer` template, which was broken in 1.0.2.
+
 ## 1.0.2
 - Removed `library` directives almost everywhere.
 - Updated LICENSE.
