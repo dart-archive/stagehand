@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## unreleased
+## 1.0.4
 - Updated `web-angular` to `2.0.0-beta.12`. Also changed imports:
   - `angular2.dart` -> `core.dart`
   - `bootstrap.dart` -> `platform/browser.dart`
