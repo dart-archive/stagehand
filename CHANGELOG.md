@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## unreleased
+- Updated `web-angular` to `2.0.0-beta.12`. Also changed imports:
+  - `angular2.dart` -> `core.dart`
+  - `bootstrap.dart` -> `platform/browser.dart`
+- Updated dart_to_js_script_rewriter dependencies to ^1.0.1.
+
 ## 1.0.3
 - Fixed the `web-polymer` template, which was broken in 1.0.2.
 
