@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.0.6
+- Updated `web-angular` to `2.0.0-beta.15`.
+
 ## 1.0.5
 - Updated `web-angular` to `2.0.0-beta.13.1`.
 
