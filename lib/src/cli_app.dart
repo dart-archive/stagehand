@@ -167,8 +167,7 @@ additional analytics to help us improve Stagehand [y/yes/no]? """);
 
     String author = options['author'];
 
-    if (!options.wasParsed('author') &&
-        io.FileSystemEntity.isDirectorySync(dir.path + "/.git")) {
+    if (!options.wasParsed('author')) {
       try {
         io.ProcessResult result =
             io.Process.runSync('git', ['config', 'user.name']);
