@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.9
+- Use git user name for author name.
+- Change shelf listener address.
+
 ## 1.0.8
 - Updated `web-angular` to `2.0.0-beta.17`.
 
