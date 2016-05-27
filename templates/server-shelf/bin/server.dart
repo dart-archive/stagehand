@@ -22,7 +22,7 @@ void main(List<String> args) {
       .addMiddleware(shelf.logRequests())
       .addHandler(_echoRequest);
 
-  io.serve(handler, 'localhost', port).then((server) {
+  io.serve(handler, '0.0.0.0', port).then((server) {
     print('Serving at http://${server.address.host}:${server.port}');
   });
 }
