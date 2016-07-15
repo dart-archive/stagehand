@@ -6,9 +6,7 @@
  * Some utility methods for stagehand.
  */
 
-import 'dart:convert' show UTF8;
-
-import 'package:crypto/crypto.dart';
+import 'dart:convert' show BASE64, UTF8;
 
 import '../stagehand.dart';
 
@@ -17,15 +15,17 @@ const int _RUNE_SPACE = 32;
 final _substitueRegExp = new RegExp(r'__([a-zA-Z]+)__');
 final _nonValidSubstitueRegExp = new RegExp('[^a-zA-Z]');
 
+final _whiteSpace = new RegExp(r'\s+');
+
 List<TemplateFile> decodeConcatenatedData(List<String> data) {
   List<TemplateFile> results = [];
 
   for (int i = 0; i < data.length; i += 3) {
     String path = data[i];
     String type = data[i + 1];
-    String raw = data[i + 2];
+    String raw = data[i + 2].replaceAll(_whiteSpace, '');
 
-    List<int> decoded = CryptoUtils.base64StringToBytes(raw);
+    List<int> decoded = BASE64.decode(raw);
 
     if (type == 'binary') {
       results.add(new TemplateFile.fromBinary(path, decoded));

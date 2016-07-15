@@ -3,8 +3,9 @@
 // license that can be found in the LICENSE file.
 
 import 'dart:io';
+import 'dart:convert';
+import 'dart:math' as math;
 
-import 'package:crypto/crypto.dart';
 import 'package:ghpages_generator/ghpages_generator.dart' as ghpages;
 import 'package:grinder/grinder.dart';
 import 'package:path/path.dart' as path;
@@ -95,8 +96,24 @@ Iterable<String> _traverse(Directory dir, String root) sync* {
     } else {
       yield '${root}${name}';
       yield _isBinaryFile(name) ? 'binary' : 'text';
-      yield BASE64.encode((entity as File).readAsBytesSync(),
-          addLineSeparator: true);
+
+      var encoded = BASE64.encode((entity as File).readAsBytesSync());
+
+      //
+      // Logic to cut lines into 76-character chunks
+      // – makes for prettier source code
+      //
+      var lines = <String>[];
+      var index = 0;
+
+      while (index < encoded.length) {
+        var line =
+            encoded.substring(index, math.min(index + 76, encoded.length));
+        lines.add(line);
+        index += line.length;
+      }
+
+      yield lines.join('\r\n');
     }
   }
 }
