@@ -4,7 +4,7 @@
 
 name: stagehand
 # When changing this version, change the lib/src/cli_app.dart version as well.
-version: 1.0.9
+version: 1.0.10-dev
 description: >
   A scaffolding generator for your Dart projects. Stagehand helps you get set
   up!
@@ -15,7 +15,7 @@ authors:
 - Kathy Walrath <kathyw@google.com>
 
 environment:
-  sdk: '>=1.9.0 <2.0.0'
+  sdk: '>=1.13.0 <2.0.0'
 
 # Add the bin/stagehand.dart script to the scripts pub installs.
 executables:
@@ -23,14 +23,13 @@ executables:
 
 dependencies:
   args: '>=0.12.0+1 <0.14.0'
-  crypto: ^0.9.0
   http: ^0.11.0
   path: ^1.3.0
   usage: ^1.0.0
 
 dev_dependencies:
   browser: ^0.10.0
-  ghpages_generator: ^0.2.4
+  ghpages_generator: ^0.3.0
   grinder: ^0.8.0
   test: ^0.12.0
   yaml: ^2.1.2
