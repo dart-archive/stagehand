@@ -100,7 +100,7 @@ abstract class Generator implements Comparable<Generator> {
 
   Future generate(String projectName, GeneratorTarget target,
       {Map<String, String> additionalVars}) {
-    Map vars = {
+    var vars = {
       'projectName': projectName,
       'description': description,
       'year': new DateTime.now().year.toString(),
@@ -161,7 +161,7 @@ class TemplateFile {
 
   TemplateFile.fromBinary(this.path, this._binaryData) : this.content = null;
 
-  FileContents runSubstitution(Map parameters) {
+  FileContents runSubstitution(Map<String, String> parameters) {
     if (path == 'pubspec.yaml' && parameters['author'] == '<your name>') {
       parameters = new Map.from(parameters);
       parameters['author'] = 'Your Name';
@@ -175,7 +175,7 @@ class TemplateFile {
 
   bool get isBinary => _binaryData != null;
 
-  List<int> _createContent(Map vars) {
+  List<int> _createContent(Map<String, String> vars) {
     if (isBinary) {
       return _binaryData;
     } else {

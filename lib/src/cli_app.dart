@@ -175,7 +175,7 @@ additional analytics to help us improve Stagehand [y/yes/no]? """);
       } catch (exception) {}
     }
 
-    Map vars = {'author': author};
+    var vars = {'author': author};
 
     Future f = generator.generate(projectName, target, additionalVars: vars);
     return f.then((_) {
