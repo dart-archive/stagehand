@@ -50,6 +50,6 @@ void main() {
   });
 }
 
-void _expect(String original, Map vars, String result) {
+void _expect(String original, Map<String, String> vars, String result) {
   expect(substituteVars(original, vars), result);
 }
