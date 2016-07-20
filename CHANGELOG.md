@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.10
+- Updated `web-angular` to `2.0.0-beta.18`.
+- Made stagehand strong-mode clean, and cleaned up dependencies.
+
 ## 1.0.9
 - Use git user name for author name.
 - Change shelf listener address.
