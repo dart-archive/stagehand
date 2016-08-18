@@ -3,7 +3,8 @@
 .pub/
 build/
 packages
-pubspec.lock # (Remove this pattern if you wish to check in your lock file)
+# Remove the following pattern if you wish to check in your lock file
+pubspec.lock
 
 # Files created by dart2js
 *.dart.js

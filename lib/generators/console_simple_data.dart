@@ -6,8 +6,8 @@ const List<String> data = const [
   ".gitignore",
   "text",
   """IyBGaWxlcyBhbmQgZGlyZWN0b3JpZXMgY3JlYXRlZCBieSBwdWIKLnBhY2thZ2VzCi5wdWIvCnBh
-Y2thZ2VzCnB1YnNwZWMubG9jayAjIChSZW1vdmUgdGhpcyBwYXR0ZXJuIGlmIHlvdSB3aXNoIHRv
-IGNoZWNrIGluIHlvdXIgbG9jayBmaWxlKQo=""",
+Y2thZ2VzCiMgUmVtb3ZlIHRoZSBmb2xsb3dpbmcgcGF0dGVybiBpZiB5b3Ugd2lzaCB0byBjaGVj
+ayBpbiB5b3VyIGxvY2sgZmlsZQpwdWJzcGVjLmxvY2sK""",
   "bin/main.dart",
   "text",
   "bWFpbihMaXN0PFN0cmluZz4gYXJncykgewogIHByaW50KCdIZWxsbyB3b3JsZCEnKTsKfQo=",
