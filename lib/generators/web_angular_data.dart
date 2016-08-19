@@ -11,14 +11,18 @@ dG8gY2hlY2sgaW4geW91ciBsb2NrIGZpbGUKcHVic3BlYy5sb2NrCgojIEZpbGVzIGNyZWF0ZWQg
 YnkgZGFydDJqcwoqLmRhcnQuanMKKi5wYXJ0LmpzCiouanMuZGVwcwoqLmpzLm1hcAoqLmluZm8u
 anNvbgoKIyBEaXJlY3RvcnkgY3JlYXRlZCBieSBkYXJ0ZG9jCmRvYy9hcGkvCgojIEpldEJyYWlu
 cyBJREVzCi5pZGVhLwoqLmltbAoqLmlwcgoqLml3cwo=""",
+  "lib/app_component.css",
+  "text",
+  """Omhvc3QgewogICAgZm9udC1mYW1pbHk6IFJvYm90bywgSGVsdmV0aWNhLCBBcmlhbCwgc2Fucy1z
+ZXJpZjsKfQ==""",
   "lib/app_component.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSBfX3llYXJfXywgX19hdXRob3JfXy4gQWxsIHJpZ2h0cyByZXNlcnZl
 ZC4gVXNlIG9mIHRoaXMgc291cmNlIGNvZGUKLy8gaXMgZ292ZXJuZWQgYnkgYSBCU0Qtc3R5bGUg
 bGljZW5zZSB0aGF0IGNhbiBiZSBmb3VuZCBpbiB0aGUgTElDRU5TRSBmaWxlLgoKaW1wb3J0ICdw
-YWNrYWdlOmFuZ3VsYXIyL2NvcmUuZGFydCc7CgpAQ29tcG9uZW50KHNlbGVjdG9yOiAnbXktYXBw
-JywgdGVtcGxhdGVVcmw6ICdhcHBfY29tcG9uZW50Lmh0bWwnKQpjbGFzcyBBcHBDb21wb25lbnQg
-e30K""",
+YWNrYWdlOmFuZ3VsYXIyL2NvcmUuZGFydCc7CgpAQ29tcG9uZW50KAogICAgc2VsZWN0b3I6ICdt
+eS1hcHAnLAogICAgc3R5bGVVcmxzOiBjb25zdCBbJ2FwcF9jb21wb25lbnQuY3NzJ10sCiAgICB0
+ZW1wbGF0ZVVybDogJ2FwcF9jb21wb25lbnQuaHRtbCcpCmNsYXNzIEFwcENvbXBvbmVudCB7fQo=""",
   "lib/app_component.html",
   "text",
   "PGgxPk15IEZpcnN0IEFuZ3VsYXIgMiBBcHA8L2gxPgo=",
