@@ -11,6 +11,11 @@ import 'package:grinder/grinder.dart';
 import 'package:path/path.dart' as path;
 import 'package:stagehand/stagehand.dart' as stagehand;
 
+const List<String> _allowedDotFiles = const <String>[
+  ".gitignore",
+  ".analysis_options"
+];
+
 final RegExp _binaryFileTypes = new RegExp(
     r'\.(jpe?g|png|gif|ico|svg|ttf|eot|woff|woff2)$',
     caseSensitive: false);
@@ -89,7 +94,7 @@ Iterable<String> _traverse(Directory dir, String root) sync* {
 
     String name = path.basename(entity.path);
     if (name == 'pubspec.lock') continue;
-    if (name.startsWith('.') && name != '.gitignore') continue;
+    if (name.startsWith('.') && !_allowedDotFiles.contains(name)) continue;
 
     if (entity is Directory) {
       yield* _traverse(entity, '${root}${name}/');

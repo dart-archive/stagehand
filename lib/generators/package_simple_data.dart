@@ -3,6 +3,16 @@
 // license that can be found in the LICENSE file.
 
 const List<String> data = const [
+  ".analysis_options",
+  "text",
+  """IyBUaGlzIGZpbGUgYWxsb3dzIHlvdSB0byBjb25maWd1cmUgdGhlIERhcnQgYW5hbHl6ZXIuCiMK
+IyBUaGUgY29tbWVudGVkIHBhcnQgYmVsb3cgaXMganVzdCBmb3IgaW5zcGlyYXRpb24uIFJlYWQg
+dGhlIGd1aWRlIGhlcmU6CiMgaHR0cHM6Ly9naXRodWIuY29tL2RhcnQtbGFuZy9zZGsvdHJlZS9t
+YXN0ZXIvcGtnL2FuYWx5emVyI2NvbmZpZ3VyaW5nLXRoZS1hbmFseXplcgoKIyBhbmFseXplcjoK
+IyAgIHN0cm9uZy1tb2RlOiB0cnVlCiMgICBleGNsdWRlczoKIyAgICAgLSBwYXRoL3RvL2V4Y2x1
+ZGVkL2ZpbGVzLyoqCiMgbGludGVyOgojICAgcnVsZXM6CiMgICAgICMgc2VlIGNhdGFsb2d1ZSBo
+ZXJlOiBodHRwOi8vZGFydC1sYW5nLmdpdGh1Yi5pby9saW50ZXIvbGludHMvCiMgICAgIC0gaGFz
+aF9hbmRfZXF1YWxz""",
   ".gitignore",
   "text",
   """IyBGaWxlcyBhbmQgZGlyZWN0b3JpZXMgY3JlYXRlZCBieSBwdWIKLnBhY2thZ2VzCi5wdWIvCmJ1
