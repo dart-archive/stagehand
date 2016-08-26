@@ -1,6 +1,6 @@
-## unreleased
+## 1.0.12
 
-- Add commented out `.analysis_options` file to all templates.
+- Add commented-out `.analysis_options` file to all templates.
 - Add a component CSS file to `web-angular`.
 
 ## 1.0.11
