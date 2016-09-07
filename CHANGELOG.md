@@ -1,3 +1,7 @@
+## 1.0.13
+
+- Updated `web-angular` to `2.0.0-beta.21`
+
 ## 1.0.12
 
 - Add commented-out `.analysis_options` file to all templates.
