@@ -1,5 +1,0 @@
-# Information on configuring app.yaml
-# https://cloud.google.com/appengine/docs/managed-vms/config
-runtime: custom
-vm: true
-api_version: 1

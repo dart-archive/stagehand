@@ -16,7 +16,6 @@ Kit and Yeoman.
 * `console-full` - A larger command-line application sample.
 * `console-simple` - A simple command-line application.
 * `package-simple` - A starting point for Dart libraries or applications.
-* `server-appengine` - A simple App Engine application.
 * `server-shelf` - A web server built using the shelf package.
 * `web-angular` - A web app built using Angular 2.
 * `web-polymer` - A web app built using polymer.dart.
