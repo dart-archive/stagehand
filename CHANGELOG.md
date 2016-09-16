@@ -1,14 +1,15 @@
-## 1.0.13
+## unreleased
+- Renamed `Console Application` to `Simple Console Application`
+- Renamed `Uber Simple Web Application` to `Simple Web Application`
 
+## 1.0.13
 - Updated `web-angular` to `2.0.0-beta.21`
 
 ## 1.0.12
-
 - Add commented-out `.analysis_options` file to all templates.
 - Add a component CSS file to `web-angular`.
 
 ## 1.0.11
-
 - Updated `web-angular` to `2.0.0-beta.20`.
 
 ## 1.0.10
