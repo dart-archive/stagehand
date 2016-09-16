@@ -7,11 +7,11 @@ import '../src/common.dart';
 import 'console_simple_data.dart';
 
 /**
- * A generator for a hello world command-line application.
+ * A generator for a simple hello world command-line application.
  */
 class ConsoleSimpleGenerator extends DefaultGenerator {
   ConsoleSimpleGenerator()
-      : super('console-simple', 'Console Application',
+      : super('console-simple', 'Simple Console Application',
             'A simple command-line application.',
             categories: const ['dart', 'console']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
