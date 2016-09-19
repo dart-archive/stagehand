@@ -1,4 +1,4 @@
-## unreleased
+## 1.0.14
 - Renamed `Console Application` to `Simple Console Application`
 - Renamed `Uber Simple Web Application` to `Simple Web Application`
 - Removed the `App Engine Application` sample
