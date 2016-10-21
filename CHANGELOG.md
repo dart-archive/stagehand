@@ -1,7 +1,10 @@
+## 1.0.15
+- Updated the `.analysis_options` files for all templates.
+
 ## 1.0.14
-- Renamed `Console Application` to `Simple Console Application`
-- Renamed `Uber Simple Web Application` to `Simple Web Application`
-- Removed the `App Engine Application` sample
+- Renamed `Console Application` to `Simple Console Application`.
+- Renamed `Uber Simple Web Application` to `Simple Web Application`.
+- Removed the `App Engine Application` sample.
 
 ## 1.0.13
 - Updated `web-angular` to `2.0.0-beta.21`
