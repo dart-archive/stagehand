@@ -1,3 +1,6 @@
+## 1.0.16
+- Moved the `dart_to_js_script_rewriter` dependency to a dev_dependency.
+
 ## 1.0.15
 - Updated the `.analysis_options` files for all templates.
 
@@ -7,7 +10,7 @@
 - Removed the `App Engine Application` sample.
 
 ## 1.0.13
-- Updated `web-angular` to `2.0.0-beta.21`
+- Updated `web-angular` to `2.0.0-beta.21`.
 
 ## 1.0.12
 - Add commented-out `.analysis_options` file to all templates.
