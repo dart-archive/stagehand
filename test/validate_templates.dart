@@ -65,10 +65,14 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
 
   // Run the analyzer.
   if (filePath != null) {
-    String packagesDir = path.join(tempDir.path, 'packages');
-
-    Analyzer.analyze(filePath,
-        fatalWarnings: true, packageRoot: new Directory(packagesDir));
+    Directory cwd = Directory.current;
+    try {
+      // TODO: Extend Analyzer.analyze to support .packages files.
+      Directory.current = tempDir.path;
+      Analyzer.analyze(filePath, fatalWarnings: true);
+    } finally {
+      Directory.current = cwd;
+    }
   }
 
   // Run package tests, if `test` is included.
