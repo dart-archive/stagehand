@@ -1,3 +1,6 @@
+## 1.0.17
+- Updated `web-angular` to `^2.0.0`.
+
 ## 1.0.16
 - Moved the `dart_to_js_script_rewriter` dependency to a dev_dependency.
 
