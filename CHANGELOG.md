@@ -1,3 +1,6 @@
+## 1.0.18
+- Added platform_directives & platform_pipes back to the `web-angular` pubspec.
+
 ## 1.0.17
 - Updated `web-angular` to `^2.0.0`.
 
