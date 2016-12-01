@@ -1,3 +1,8 @@
+## 1.0.19
+- Added `web-angular-quickstart`, a copy of the Angular docs' first example.
+- Removed `web-polymer`.
+- Updated `web-angular` to `^2.2.0`.
+
 ## 1.0.18
 - Added platform_directives & platform_pipes back to the `web-angular` pubspec.
 
