@@ -1,18 +1,18 @@
-// Copyright (c) 2015, Google Inc. Please see the AUTHORS file for details.
+// Copyright (c) 2016, Google Inc. Please see the AUTHORS file for details.
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
 import '../stagehand.dart';
 import '../src/common.dart';
-import 'web_angular_data.dart';
+import 'web_angular_quickstart_data.dart';
 
 /**
- * A generator for an Angular 2 application.
+ * The QuickStart example used in AngularDart docs.
  */
-class WebAngularGenerator extends DefaultGenerator {
-  WebAngularGenerator()
-      : super('web-angular', 'Angular Web Application',
-            'A web app built using the latest version of Angular.',
+class WebAngularQuickstartGenerator extends DefaultGenerator {
+  WebAngularQuickstartGenerator()
+      : super('web-angular-quickstart', 'Angular QuickStart Example',
+            'A minimalist example app used in docs.',
             categories: const ['dart', 'web']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
