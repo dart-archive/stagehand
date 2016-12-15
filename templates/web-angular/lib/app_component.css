@@ -1,3 +1,8 @@
 :host {
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    /* add styles for the whole component here */
+}
+
+.blue {
+  background-color: #2196F3;
+  color: white;
 }
