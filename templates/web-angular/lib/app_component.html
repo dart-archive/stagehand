@@ -1,36 +1,17 @@
 <h1>My First AngularDart App</h1>
 
-<material-input label="Your Name"
-                [(ngModel)]="name"
+<material-input #myInput
+                label="Your name"
                 floatingLabel
                 autoFocus>
 </material-input>
 
 <material-button raised 
-                 (trigger)="helloVisible = true"
+                 (trigger)="myDialog.open()"
                  class="blue">
     Say Hello
 </material-button>
 
-<modal [visible]="helloVisible">
-  <material-dialog class="basic-dialog">
-
-    <h3 header>
-        Hello, {{ name == "" ? "mysterious stranger" : name }}!
-    </h3>
-
-    <p>
-      Continue your journey on
-      <a href="https://webdev.dartlang.org/angular">webdev.dartlang.org/angular</a>.
-    </p>
-
-    <div footer>
-      <material-button autoFocus
-                       clear-size
-                       (trigger)="helloVisible = false"
-                       class="white">
-        Close
-      </material-button>
-    </div>
-  </material-dialog>
-</modal>
+<hello-dialog #myDialog
+             [name]="myInput.inputText">
+</hello-dialog>

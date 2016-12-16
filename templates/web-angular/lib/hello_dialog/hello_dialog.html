@@ -1,0 +1,22 @@
+<modal #wrappingModal>
+  <material-dialog class="basic-dialog">
+
+    <h3 header>
+        Hello, {{ name == "" ? "mysterious stranger" : name }}!
+    </h3>
+
+    <p>
+      Continue your journey on
+      <a href="https://webdev.dartlang.org/angular">webdev.dartlang.org/angular</a>.
+    </p>
+
+    <div footer>
+      <material-button autoFocus
+                       clear-size
+                       (trigger)="wrappingModal.close()"
+                       class="white">
+        Close
+      </material-button>
+    </div>
+  </material-dialog>
+</modal>
