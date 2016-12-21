@@ -12,7 +12,7 @@ import 'package:angular2_components/angular2_components.dart';
   providers: const [materialProviders],
 )
 class HelloDialog {
-  /// Modal component that hoists the inner MaterialDialog in a centered overlay.
+  /// Modal component that hosts the inner MaterialDialog in a centered overlay.
   @ViewChild('wrappingModal')
   ModalComponent wrappingModal;
 
