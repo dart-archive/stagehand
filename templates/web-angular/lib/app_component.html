@@ -1,1 +1,17 @@
-<h1>My First Angular 2 App</h1>
+<h1>My First AngularDart App</h1>
+
+<material-input #myInput
+                label="Your name"
+                floatingLabel
+                autoFocus>
+</material-input>
+
+<material-button raised 
+                 (trigger)="myDialog.open()"
+                 class="blue">
+    Say Hello
+</material-button>
+
+<hello-dialog #myDialog
+             [name]="myInput.inputText">
+</hello-dialog>
