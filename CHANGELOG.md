@@ -1,3 +1,8 @@
+## 1.0.20
+- Updated `web-angular` to use `angular2_components` and to follow
+  best practices.
+- Made generated code use the current calendar year.
+
 ## 1.0.19
 - Added `web-angular-quickstart`, a copy of the Angular docs' first example.
 - Removed `web-polymer`.
