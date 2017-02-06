@@ -71,9 +71,9 @@ class CliApp {
     }
 
     if (options.wasParsed('analytics')) {
-      analytics.optIn = options['analytics'];
-      _out("Analytics ${analytics.optIn ? 'enabled' : 'disabled'}.");
-      if (analytics.optIn) analytics.sendScreenView('analytics');
+      analytics.enabled = options['analytics'];
+      _out("Analytics ${analytics.enabled ? 'enabled' : 'disabled'}.");
+      if (analytics.enabled) analytics.sendScreenView('analytics');
       return analytics.waitForLastPing(timeout: _timeout);
     }
 
@@ -95,15 +95,15 @@ class CliApp {
 
     if (options['help'] || args.isEmpty) {
       // Prompt to opt into advanced analytics.
-      if (!analytics.hasSetOptIn) {
+      if (analytics.firstRun) {
         _out("""
 Welcome to Stagehand! We collect anonymous usage statistics and crash reports in
 order to improve the tool (http://goo.gl/6wsncI). Would you like to opt-in to
-additional analytics to help us improve Stagehand [y/yes/no]? """);
+additional analytics to help us improve Stagehand [y/yes/no]?""");
         io.stdout.flush();
         String response = io.stdin.readLineSync();
         response = response.toLowerCase().trim();
-        analytics.optIn = (response == 'y' || response == 'yes');
+        analytics.enabled = (response == 'y' || response == 'yes');
         _out('');
       }
 
@@ -256,7 +256,7 @@ additional analytics to help us improve Stagehand [y/yes/no]? """);
 
   void _screenView(String view) {
     // If the user hasn't opted in, only send a version check - no page data.
-    if (!analytics.optIn) view = 'main';
+    if (!analytics.enabled) view = 'main';
     analytics.sendScreenView(view);
   }
 
