@@ -4,8 +4,7 @@ cache/
 .packages
 packages
 pubspec.lock
-build
+build/
 .buildlog
 .pub
 .settings/
-*.iml
