@@ -17,7 +17,7 @@ import 'package:usage/usage_io.dart';
 const String APP_NAME = 'stagehand';
 
 // This version must be updated in tandem with the pubspec version.
-const String APP_VERSION = '1.0.20';
+const String APP_VERSION = '1.0.21';
 
 const String APP_PUB_INFO =
     'https://pub.dartlang.org/packages/${APP_NAME}.json';
