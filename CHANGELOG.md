@@ -1,5 +1,6 @@
 ## 1.0.21
 - Prefer using `analysis_options.yaml` files over `.analysis_options`.
+- Added <base href="/"> to index.html in `web-angular` 
 
 ## 1.0.20
 - Updated `web-angular` to use `angular2_components` and to follow
