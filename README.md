@@ -17,7 +17,7 @@ Kit and Yeoman.
 * `console-simple` - A simple command-line application.
 * `package-simple` - A starting point for Dart libraries or applications.
 * `server-shelf` - A web server built using the shelf package.
-* `web-angular` - A web app built using the latest version of Angular.
+* `web-angular` - A web app built using the latest stable version of Angular.
 * `web-angular-simple` - A minimalist example app used in docs.
 * `web-simple` - An absolute bare-bones web app.
 
