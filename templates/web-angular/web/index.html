@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <base href="/">
-    <!-- For testing in WebStorm use: -->
-    <!-- base href="/dart/web/" -->
+    <!-- Set the base href dynamically so that routing works with most servers.
+         Don't do this in production!
+         Details: https://webdev.dartlang.org/angular/guide/router -->
+    <script>document.write('<base href="' + document.location + '"/>');</script>
+
     <title>__projectName__</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
