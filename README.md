@@ -18,7 +18,7 @@ Kit and Yeoman.
 * `package-simple` - A starting point for Dart libraries or applications.
 * `server-shelf` - A web server built using the shelf package.
 * `web-angular` - A web app built using the latest version of Angular.
-* `web-angular-quickstart` - A minimalist example app used in docs.
+* `web-angular-simple` - A minimalist example app used in docs.
 * `web-simple` - An absolute bare-bones web app.
 
 ## Installation

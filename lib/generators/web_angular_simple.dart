@@ -4,14 +4,14 @@
 
 import '../stagehand.dart';
 import '../src/common.dart';
-import 'web_angular_quickstart_data.dart';
+import 'web_angular_simple_data.dart';
 
 /**
- * The QuickStart example used in AngularDart docs.
+ * The simple starter example used in AngularDart docs.
  */
-class WebAngularQuickstartGenerator extends DefaultGenerator {
-  WebAngularQuickstartGenerator()
-      : super('web-angular-quickstart', 'Angular QuickStart Example',
+class WebAngularSimpleGenerator extends DefaultGenerator {
+  WebAngularSimpleGenerator()
+      : super('web-angular-simple', 'Simple Angular Example',
             'A minimalist example app used in docs.',
             categories: const ['dart', 'web']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
