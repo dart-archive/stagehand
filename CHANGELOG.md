@@ -1,6 +1,8 @@
 ## 1.0.21
-- Prefer using `analysis_options.yaml` files over `.analysis_options`.
-- Added <base href="/"> to index.html in `web-angular` 
+- Changed the names of all `.analysis_options` files to `analysis_options.yaml`.
+- In an effort to forestall routing issues during development, added code in
+  `web-angular*/web/index.html` to generate a base href.
+- Renamed `web-angular-quickstart` to `web-angular-simple`.
 
 ## 1.0.20
 - Updated `web-angular` to use `angular2_components` and to follow
