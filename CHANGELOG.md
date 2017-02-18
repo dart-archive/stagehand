@@ -1,3 +1,6 @@
+## Unreleased
+- Tweaked pubspec descriptions for web-angular-* templates.
+
 ## 1.0.21
 - Changed the names of all `.analysis_options` files to `analysis_options.yaml`.
 - In an effort to forestall routing issues during development, added code in
