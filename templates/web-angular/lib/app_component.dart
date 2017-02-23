@@ -4,7 +4,7 @@
 import 'package:angular2/core.dart';
 import 'package:angular2_components/angular2_components.dart';
 
-import 'package:__projectName__/hello_dialog/hello_dialog.dart';
+import 'hello_dialog/hello_dialog.dart';
 
 @Component(
   selector: 'my-app',

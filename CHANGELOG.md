@@ -1,5 +1,9 @@
 ## Unreleased
 - Tweaked pubspec descriptions for web-angular-* templates.
+- Updated `web-angular-simple` to have copyrights and various project
+  support files such as `LICENSE`.
+- Updated `web-angular` to use global `styles.css`. Also tweaked `hello_dialog.dart`,
+  and added project support files like `LICENSE`.
 
 ## 1.0.21
 - Changed the names of all `.analysis_options` files to `analysis_options.yaml`.
