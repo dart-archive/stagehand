@@ -5,6 +5,6 @@ import 'package:angular2/platform/browser.dart';
 
 import 'package:__projectName__/app_component.dart';
 
-main() {
+void main() {
   bootstrap(AppComponent);
 }
