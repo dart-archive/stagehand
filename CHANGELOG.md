@@ -1,5 +1,6 @@
 ## Unreleased
-- Updated `web-angular` to use global `styles.css`. Also tweaked `hello_dialog.dart`.
+- Updated `web-angular` to use global `styles.css`. Also tweaked `hello_dialog.dart`,
+  and added project support files like `LICENSE`.
 
 ## 1.0.21
 - Changed the names of all `.analysis_options` files to `analysis_options.yaml`.
