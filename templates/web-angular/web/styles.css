@@ -1,0 +1,15 @@
+/* Copyright (c) __year__, __author__. All rights reserved. Use of this source code
+   is governed by a BSD-style license that can be found in the LICENSE file. */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Material+Icons);
+
+body {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 5vw;
+}
+
+* {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}

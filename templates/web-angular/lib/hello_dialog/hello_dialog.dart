@@ -21,7 +21,8 @@ class HelloDialog {
   String name = "";
 
   /// Opens the dialog.
-  void open() {
+  void open([String name]) {
+    if (name != null) this.name = name;
     wrappingModal.open();
   }
 }
