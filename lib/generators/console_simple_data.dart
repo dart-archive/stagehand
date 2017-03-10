@@ -5,9 +5,10 @@
 const List<String> data = const [
   ".gitignore",
   "text",
-  """IyBGaWxlcyBhbmQgZGlyZWN0b3JpZXMgY3JlYXRlZCBieSBwdWIKLnBhY2thZ2VzCi5wdWIvCnBh
-Y2thZ2VzCiMgUmVtb3ZlIHRoZSBmb2xsb3dpbmcgcGF0dGVybiBpZiB5b3Ugd2lzaCB0byBjaGVj
-ayBpbiB5b3VyIGxvY2sgZmlsZQpwdWJzcGVjLmxvY2sK""",
+  """IyBGaWxlcyBhbmQgZGlyZWN0b3JpZXMgY3JlYXRlZCBieSBwdWIKLnBhY2thZ2VzCi5wdWIvCmJ1
+aWxkLwojIFJlbW92ZSB0aGUgZm9sbG93aW5nIHBhdHRlcm4gaWYgeW91IHdpc2ggdG8gY2hlY2sg
+aW4geW91ciBsb2NrIGZpbGUKcHVic3BlYy5sb2NrCgojIERpcmVjdG9yeSBjcmVhdGVkIGJ5IGRh
+cnRkb2MKZG9jL2FwaS8K""",
   "analysis_options.yaml",
   "text",
   """IyBUaGlzIGZpbGUgYWxsb3dzIHlvdSB0byBjb25maWd1cmUgdGhlIERhcnQgYW5hbHl6ZXIuCiMK
@@ -22,7 +23,9 @@ dWIuaW8vbGludGVyL2xpbnRzLwojICAgICAtIGhhc2hfYW5kX2VxdWFscwo=""",
   "bWFpbihMaXN0PFN0cmluZz4gYXJncykgewogIHByaW50KCdIZWxsbyB3b3JsZCEnKTsKfQo=",
   "pubspec.yaml",
   "text",
-  """bmFtZTogX19wcm9qZWN0TmFtZV9fCnZlcnNpb246IDAuMC4xCmRlc2NyaXB0aW9uOiBBIHNpbXBs
-ZSBjb25zb2xlIGFwcGxpY2F0aW9uLgojZGVwZW5kZW5jaWVzOgojICBmb29fYmFyOiAnPj0xLjAu
-MCA8Mi4wLjAnCg=="""
+  """bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBIHNpbXBsZSBjb25zb2xlIGFwcGxp
+Y2F0aW9uLgp2ZXJzaW9uOiAwLjAuMQojaG9tZXBhZ2U6IGh0dHBzOi8vd3d3LmV4YW1wbGUuY29t
+CiNhdXRob3I6IF9fYXV0aG9yX18gPGVtYWlsQGV4YW1wbGUuY29tPgoKZW52aXJvbm1lbnQ6CiAg
+c2RrOiAnPj0xLjIwLjEgPDIuMC4wJwoKI2RlcGVuZGVuY2llczoKIyAgcGF0aDogXjEuNC4xCgoj
+ZGV2X2RlcGVuZGVuY2llczoKIyAgdGVzdDogXjAuMTIuMAo="""
 ];

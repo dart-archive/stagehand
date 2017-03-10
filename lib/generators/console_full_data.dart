@@ -6,11 +6,9 @@ const List<String> data = const [
   ".gitignore",
   "text",
   """IyBGaWxlcyBhbmQgZGlyZWN0b3JpZXMgY3JlYXRlZCBieSBwdWIKLnBhY2thZ2VzCi5wdWIvCmJ1
-aWxkLwpwYWNrYWdlcwojIFJlbW92ZSB0aGUgZm9sbG93aW5nIHBhdHRlcm4gaWYgeW91IHdpc2gg
-dG8gY2hlY2sgaW4geW91ciBsb2NrIGZpbGUKcHVic3BlYy5sb2NrCgojIEZpbGVzIGNyZWF0ZWQg
-YnkgZGFydDJqcwoqLmRhcnQuanMKKi5wYXJ0LmpzCiouanMuZGVwcwoqLmpzLm1hcAoqLmluZm8u
-anNvbgoKIyBEaXJlY3RvcnkgY3JlYXRlZCBieSBkYXJ0ZG9jCmRvYy9hcGkvCgojIEpldEJyYWlu
-cyBJREVzCi5pZGVhLwoqLmltbAoqLmlwcgoqLml3cwo=""",
+aWxkLwojIFJlbW92ZSB0aGUgZm9sbG93aW5nIHBhdHRlcm4gaWYgeW91IHdpc2ggdG8gY2hlY2sg
+aW4geW91ciBsb2NrIGZpbGUKcHVic3BlYy5sb2NrCgojIERpcmVjdG9yeSBjcmVhdGVkIGJ5IGRh
+cnRkb2MKZG9jL2FwaS8K""",
   "CHANGELOG.md",
   "text",
   """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgotIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
@@ -72,12 +70,11 @@ bGljZW5zZSB0aGF0IGNhbiBiZSBmb3VuZCBpbiB0aGUgTElDRU5TRSBmaWxlLgoKaW50IGNhbGN1
 bGF0ZSgpIHsKICByZXR1cm4gNiAqIDc7Cn0K""",
   "pubspec.yaml",
   "text",
-  """bmFtZTogX19wcm9qZWN0TmFtZV9fCnZlcnNpb246IDAuMC4xCmRlc2NyaXB0aW9uOiBBIHNhbXBs
-ZSBjb21tYW5kLWxpbmUgYXBwbGljYXRpb24uCiNhdXRob3I6IF9fYXV0aG9yX18gPGVtYWlsQGV4
-YW1wbGUuY29tPgojaG9tZXBhZ2U6IGh0dHBzOi8vd3d3LmV4YW1wbGUuY29tCgplbnZpcm9ubWVu
-dDoKICBzZGs6ICc+PTEuMC4wIDwyLjAuMCcKCiNkZXBlbmRlbmNpZXM6CiMgIGZvb19iYXI6ICc+
-PTEuMC4wIDwyLjAuMCcKCmRldl9kZXBlbmRlbmNpZXM6CiAgdGVzdDogJz49MC4xMi4wIDwwLjEz
-LjAnCg==""",
+  """bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBIHNhbXBsZSBjb21tYW5kLWxpbmUg
+YXBwbGljYXRpb24uCnZlcnNpb246IDAuMC4xCiNob21lcGFnZTogaHR0cHM6Ly93d3cuZXhhbXBs
+ZS5jb20KI2F1dGhvcjogX19hdXRob3JfXyA8ZW1haWxAZXhhbXBsZS5jb20+CgplbnZpcm9ubWVu
+dDoKICBzZGs6ICc+PTEuMjAuMSA8Mi4wLjAnCgojZGVwZW5kZW5jaWVzOgojICBwYXRoOiBeMS40
+LjEKCmRldl9kZXBlbmRlbmNpZXM6CiAgdGVzdDogXjAuMTIuMAo=""",
   "test/__projectName___test.dart",
   "text",
   """Ly8gQ29weXJpZ2h0IChjKSBfX3llYXJfXywgX19hdXRob3JfXy4gQWxsIHJpZ2h0cyByZXNlcnZl

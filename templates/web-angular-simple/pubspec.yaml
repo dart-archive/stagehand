@@ -1,13 +1,19 @@
 name: __projectName__
 description: A simple AngularDart app
 version: 0.0.1
+#homepage: https://www.example.com
+#author: __author__ <email@example.com>
+
 environment:
-  sdk: '>=1.19.0 <2.0.0'
+  sdk: '>=1.20.1 <2.0.0'
+
 dependencies:
   angular2: ^2.2.0
+
 dev_dependencies:
   browser: ^0.10.0
   dart_to_js_script_rewriter: ^1.0.1
+
 transformers:
 - angular2:
     platform_directives:

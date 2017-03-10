@@ -1,3 +1,16 @@
+## 1.0.23
+
+- Standardized the layout of `pubspec.yaml` for all templates.
+  - Use `^` notation for versions.
+  - Define the minimum SDK to be `1.20.1`.
+- Simplified `.gitginore` for all templates.
+  - No longer need to ignore `packages` directory. They are not not generated
+    with SDK 1.20.1+.
+  - No longer ignoring compiled outputs by extension. These will all be in the
+    `build` directory, which is already ignored.
+  - No longer ignoring JetBrains IDE files. These should be ignored in a users
+    global `.gitignore`.
+
 ## 1.0.22
 - Tweaked pubspec descriptions for web-angular-* templates.
 - Updated `web-angular-simple` to have copyrights and various project
