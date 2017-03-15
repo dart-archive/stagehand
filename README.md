@@ -20,6 +20,7 @@ Kit and Yeoman.
 * `web-angular` - A web app built using the latest stable version of Angular.
 * `web-angular-simple` - A minimalist example app used in docs.
 * `web-simple` - An absolute bare-bones web app.
+* `web-stagexl` - A basic 2D canvas app with StageXL
 
 ## Installation
 
