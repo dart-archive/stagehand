@@ -73,7 +73,7 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   var pubspecFile = new File(pubspecPath);
 
   if (!pubspecFile.existsSync()) {
-    fail('A pubspec much be defined!');
+    fail('A pubspec must be defined!');
   }
 
   Pub.get(runOptions: new RunOptions(workingDirectory: tempDir.path));
