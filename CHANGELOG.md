@@ -1,3 +1,7 @@
+## 1.0.24
+
+- Improve web-angular* routing regex.
+
 ## 1.0.23
 
 - Standardized the layout of `pubspec.yaml` for all templates.
