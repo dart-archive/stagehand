@@ -1,3 +1,9 @@
+## unpublished
+
+- Updated `analysis_options.yaml` for all templates.
+  - Strong mode is on by default.
+  - A basic set of lint rules is now included.
+
 ## 1.0.24
 
 - Improve web-angular* routing regex.

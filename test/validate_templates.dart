@@ -27,13 +27,12 @@ final _pubspecOrder = const [
 final List<RegExp> _pubspecOrderRegexps =
     _pubspecOrder.map((s) => new RegExp('^#?$s:', multiLine: true)).toList();
 
-String _expectedGitIgnore;
+final String _expectedGitIgnore = _getMetaTemplateFile('.gitignore');
+final String _expectedAnalysisOptions =
+    _getMetaTemplateFile('analysis_options.yaml');
 
 void main() {
   Directory dir;
-
-  _expectedGitIgnore =
-      new File(path.join(path.current, '.gitignore')).readAsStringSync();
 
   setUp(() async {
     dir = await Directory.systemTemp.createTemp('stagehand.test.');
@@ -44,6 +43,12 @@ void main() {
       await dir.delete(recursive: true);
     }
   });
+
+  test('Meta-template .gitignore exists',
+      () => expect(_expectedGitIgnore, isNotEmpty));
+
+  test('Meta-template analysis_options.yaml exists',
+      () => expect(_expectedAnalysisOptions, isNotEmpty));
 
   test('Validate pkg/stagehand pubspec', () {
     var pubspecContent =
@@ -68,6 +73,11 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
 
   expect(gitIgnoreFile.readAsStringSync(), _expectedGitIgnore,
       reason: "Expected all of the .gitignore files to be identical.");
+
+  var analysisOptionsPath = path.join(tempDir.path, 'analysis_options.yaml');
+  var analysisOptionsFile = new File(analysisOptionsPath);
+  expect(analysisOptionsFile.readAsStringSync(), _expectedAnalysisOptions,
+      reason: "All analysis_options.yaml files should be identical.");
 
   var pubspecPath = path.join(tempDir.path, 'pubspec.yaml');
   var pubspecFile = new File(pubspecPath);
@@ -153,4 +163,13 @@ List<FileSystemEntity> _listSync(Directory dir,
       dir.listSync(recursive: recursive, followLinks: followLinks);
   results.sort((entity1, entity2) => entity1.path.compareTo(entity2.path));
   return results;
+}
+
+// Gets the named meta-template file if available, returns '' otherwise.
+String _getMetaTemplateFile(String fileName) {
+  try {
+    return new File(path.join(path.current, fileName)).readAsStringSync();
+  } on FileSystemException catch (_) {
+    return '';
+  }
 }
