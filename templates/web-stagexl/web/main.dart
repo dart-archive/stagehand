@@ -28,17 +28,17 @@ Future<Null> main() async {
   logo.pivotX = logoData.width / 2;
   logo.pivotY = logoData.height / 2;
 
-  // place it on top-center
+  // Place it at top center.
   logo.x = 1280 / 2;
   logo.y = 0;
 
   stage.addChild(logo);
 
-  // ... and let it fall
+  // And let it fall.
   var tween = stage.juggler.addTween(logo, 3, Transition.easeOutBounce);
   tween.animate.y.to(800 / 2);
 
-  // see more examples:
+  // See more examples:
   // https://github.com/bp74/StageXL_Samples
 
 }
