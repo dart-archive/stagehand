@@ -27,13 +27,14 @@ final _pubspecOrder = const [
 final List<RegExp> _pubspecOrderRegexps =
     _pubspecOrder.map((s) => new RegExp('^#?$s:', multiLine: true)).toList();
 
-String _expectedGitIgnore;
+final String _expectedGitIgnore =
+    new File(path.join(path.current, '.gitignore')).readAsStringSync();
+final String _expectedAnalysisOptions =
+    new File(path.join(path.current, 'analysis_options.yaml'))
+        .readAsStringSync();
 
 void main() {
   Directory dir;
-
-  _expectedGitIgnore =
-      new File(path.join(path.current, '.gitignore')).readAsStringSync();
 
   setUp(() async {
     dir = await Directory.systemTemp.createTemp('stagehand.test.');
@@ -68,6 +69,11 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
 
   expect(gitIgnoreFile.readAsStringSync(), _expectedGitIgnore,
       reason: "Expected all of the .gitignore files to be identical.");
+
+  var analysisOptionsPath = path.join(tempDir.path, 'analysis_options.yaml');
+  var analysisOptionsFile = new File(analysisOptionsPath);
+  expect(analysisOptionsFile.readAsStringSync(), _expectedAnalysisOptions,
+      reason: "All analysis_options.yaml files should be identical.");
 
   var pubspecPath = path.join(tempDir.path, 'pubspec.yaml');
   var pubspecFile = new File(pubspecPath);

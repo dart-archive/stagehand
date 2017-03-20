@@ -27,10 +27,10 @@ void main() {
       });
 
       test('vars must be alpha + numeric', () {
-        expect(() => substituteVars('str', {'with space': 'noop'}), throws);
-        expect(() => substituteVars('str', {'with!symbols': 'noop'}), throws);
-        expect(() => substituteVars('str', {'with1numbers': 'noop'}), throws);
-        expect(() => substituteVars('str', {'with_under': 'noop'}), throws);
+        expect(() => substituteVars('str', {'with space': 'noop'}), throwsA(anything));
+        expect(() => substituteVars('str', {'with!symbols': 'noop'}), throwsA(anything));
+        expect(() => substituteVars('str', {'with1numbers': 'noop'}), throwsA(anything));
+        expect(() => substituteVars('str', {'with_under': 'noop'}), throwsA(anything));
       });
     });
 

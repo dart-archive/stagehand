@@ -1,17 +1,14 @@
-# This file allows you to configure the Dart analyzer.
-
 analyzer:
   strong-mode: true
 #   exclude:
 #     - path/to/excluded/files/**
 
-# Supported lint rules and documentation: http://dart-lang.github.io/linter/lints
+# Lint rules and documentation, see http://dart-lang.github.io/linter/lints
 linter:
   rules:
     - cancel_subscriptions
     - close_sinks
     - hash_and_equals
-    # - invariant_booleans
     - iterable_contains_unrelated_type
     - list_remove_unrelated_type
     - test_types_in_equals
