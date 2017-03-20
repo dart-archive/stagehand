@@ -27,11 +27,9 @@ final _pubspecOrder = const [
 final List<RegExp> _pubspecOrderRegexps =
     _pubspecOrder.map((s) => new RegExp('^#?$s:', multiLine: true)).toList();
 
-final String _expectedGitIgnore =
-    new File(path.join(path.current, '.gitignore')).readAsStringSync();
+final String _expectedGitIgnore = _getMetaTemplateFile('.gitignore');
 final String _expectedAnalysisOptions =
-    new File(path.join(path.current, 'analysis_options.yaml'))
-        .readAsStringSync();
+    _getMetaTemplateFile('analysis_options.yaml');
 
 void main() {
   Directory dir;
@@ -45,6 +43,12 @@ void main() {
       await dir.delete(recursive: true);
     }
   });
+
+  test('Meta-template .gitignore exists',
+      () => expect(_expectedGitIgnore, isNotEmpty));
+
+  test('Meta-template analysis_options.yaml exists',
+      () => expect(_expectedAnalysisOptions, isNotEmpty));
 
   test('Validate pkg/stagehand pubspec', () {
     var pubspecContent =
@@ -159,4 +163,13 @@ List<FileSystemEntity> _listSync(Directory dir,
       dir.listSync(recursive: recursive, followLinks: followLinks);
   results.sort((entity1, entity2) => entity1.path.compareTo(entity2.path));
   return results;
+}
+
+// Gets the named meta-template file if available, returns '' otherwise.
+String _getMetaTemplateFile(String fileName) {
+  try {
+    return new File(path.join(path.current, fileName)).readAsStringSync();
+  } on FileSystemException catch (_) {
+    return '';
+  }
 }

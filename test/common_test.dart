@@ -26,11 +26,12 @@ void main() {
             'foo __baz__ baz');
       });
 
+      const _argError = const isInstanceOf<ArgumentError>();
       test('vars must be alpha + numeric', () {
-        expect(() => substituteVars('str', {'with space': 'noop'}), throwsA(anything));
-        expect(() => substituteVars('str', {'with!symbols': 'noop'}), throwsA(anything));
-        expect(() => substituteVars('str', {'with1numbers': 'noop'}), throwsA(anything));
-        expect(() => substituteVars('str', {'with_under': 'noop'}), throwsA(anything));
+        expect(() => substituteVars('str', {'with space': 'noop'}), throwsA(_argError));
+        expect(() => substituteVars('str', {'with!symbols': 'noop'}), throwsA(_argError));
+        expect(() => substituteVars('str', {'with1numbers': 'noop'}), throwsA(_argError));
+        expect(() => substituteVars('str', {'with_under': 'noop'}), throwsA(_argError));
       });
     });
 
