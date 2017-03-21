@@ -32,6 +32,7 @@ import 'generators/server_shelf.dart';
 import 'generators/web_angular.dart';
 import 'generators/web_angular_simple.dart';
 import 'generators/web_simple.dart';
+import 'generators/web_stagexl.dart';
 import 'src/common.dart';
 
 /// A curated, prescriptive list of Dart project generators.
@@ -42,7 +43,8 @@ final List<Generator> generators = [
   new ServerShelfGenerator(),
   new WebAngularGenerator(),
   new WebAngularSimpleGenerator(),
-  new WebSimpleGenerator()
+  new WebSimpleGenerator(),
+  new WebStageXlGenerator()
 ]..sort();
 
 Generator getGenerator(String id) {

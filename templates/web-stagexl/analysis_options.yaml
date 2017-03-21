@@ -1,0 +1,13 @@
+# This file allows you to configure the Dart analyzer.
+#
+# The commented part below is just for inspiration. Read the guide here:
+#   https://www.dartlang.org/guides/language/analysis-options
+
+# analyzer:
+#   strong-mode: true
+#   exclude:
+#     - path/to/excluded/files/**
+# linter:
+#   rules:
+#     # see catalog here: http://dart-lang.github.io/linter/lints/
+#     - hash_and_equals
