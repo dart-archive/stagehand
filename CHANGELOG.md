@@ -1,5 +1,6 @@
-## unpublished
+## 1.1.0
 
+- Added `web-stagexl` template.
 - Updated `analysis_options.yaml` for all templates.
   - Strong mode is on by default.
   - A basic set of lint rules is now included.
