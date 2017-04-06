@@ -1,3 +1,7 @@
+## unpublished
+
+- Added `angular_test` based tests to web-angular-simple.
+
 ## 1.1.0
 
 - Added `web-stagexl` template.
