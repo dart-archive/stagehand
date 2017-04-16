@@ -1,0 +1,44 @@
+<!--
+  Copyright (c) 2015, <your name>. All rights reserved. Use of this source code
+  is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../packages/polymer/polymer.html">
+
+<link rel="import" href="../../packages/paper_elements/paper_input.html">
+
+<polymer-element name="main-app">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+
+            h1, p {
+                color: #333;
+            }
+
+            #container_id {
+                height: 400px;
+                position: relative;
+                border: 1px solid #ccc;
+                background-color: #fff;
+            }
+
+            #text_id {
+                font-size: 24pt;
+                text-align: center;
+                margin-top: 140px;
+            }
+        </style>
+        <h1>Test</h1>
+
+        <p>Hello world from PolymerDart!</p>
+
+        <div id='container_id'>
+            <p id='text_id' on-tap="{{resizeWindow}}">Click me!</p>
+        </div>
+    </template>
+    <script type="application/dart" src="main_app.dart"></script>
+</polymer-element>

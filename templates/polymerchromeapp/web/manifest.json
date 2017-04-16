@@ -1,0 +1,15 @@
+{
+  "name": "PolymerDart in Chrome apps",
+  "version": "1",
+
+  "manifest_version": 2,
+
+  "icons": {
+  },
+
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  }
+}
