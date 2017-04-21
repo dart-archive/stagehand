@@ -8,7 +8,7 @@ environment:
   sdk: '>=1.20.1 <2.0.0'
 
 dependencies:
-  angular2: ^3.0.0-beta+1
+  angular2: ^3.0.0-beta
 
 dev_dependencies:
   angular_test: ^1.0.0-beta
