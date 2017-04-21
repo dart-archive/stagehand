@@ -126,9 +126,12 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   expect(pubspecContent, containsPair('name', 'stagehand'));
   expect(pubspecContent, containsPair('description', isNotEmpty));
   expect(pubspecContent, containsPair('version', '0.0.1'));
-  // SDK version should be at least 1.20
-  final re = new RegExp(r'^>=1\.2\d\.\d+ <2\.0\.0$');
-  expect(pubspecContent['sdk'], matches(re));
+
+  final usesAngular =
+      pubspecContent['dependencies']?.containsKey('angular2') ?? false;
+  final minSDK = usesAngular ? '1.23.0' : '1.20.1';
+  final env = {'sdk': '>=${minSDK} <2.0.0'};
+  expect(pubspecContent, containsPair('environment', env));
 
   // Run package tests, if `test` is included.
   var devDeps = pubspecContent['dev_dependencies'];
