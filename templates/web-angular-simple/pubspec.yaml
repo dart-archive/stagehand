@@ -5,14 +5,16 @@ version: 0.0.1
 #author: __author__ <email@example.com>
 
 environment:
-  sdk: '>=1.20.1 <2.0.0'
+  sdk: '>=1.23.0 <2.0.0'
 
 dependencies:
-  angular2: ^2.2.0
+  angular2: ^3.0.0-beta+1
 
 dev_dependencies:
+  angular_test: ^1.0.0-beta
   browser: ^0.10.0
   dart_to_js_script_rewriter: ^1.0.1
+  test: ^0.12.0
 
 transformers:
 - angular2:
@@ -21,4 +23,8 @@ transformers:
     platform_pipes:
     - 'package:angular2/common.dart#COMMON_PIPES'
     entry_points: web/main.dart
+- angular2/transform/reflection_remover:
+    $include: test/**_test.dart
+- test/pub_serve:
+    $include: test/**_test.dart
 - dart_to_js_script_rewriter
