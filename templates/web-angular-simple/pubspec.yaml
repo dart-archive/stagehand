@@ -5,10 +5,10 @@ version: 0.0.1
 #author: __author__ <email@example.com>
 
 environment:
-  sdk: '>=1.20.1 <2.0.0'
+  sdk: '>=1.23.0 <2.0.0'
 
 dependencies:
-  angular2: ^3.0.0-beta
+  angular2: ^3.0.0-beta+1
 
 dev_dependencies:
   angular_test: ^1.0.0-beta

@@ -126,8 +126,9 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   expect(pubspecContent, containsPair('name', 'stagehand'));
   expect(pubspecContent, containsPair('description', isNotEmpty));
   expect(pubspecContent, containsPair('version', '0.0.1'));
-  expect(
-      pubspecContent, containsPair('environment', {'sdk': '>=1.20.1 <2.0.0'}));
+  // SDK version should be at least 1.20
+  final re = new RegExp(r'^>=1\.2\d\.\d+ <2\.0\.0$');
+  expect(pubspecContent['sdk'], matches(re));
 
   // Run package tests, if `test` is included.
   var devDeps = pubspecContent['dev_dependencies'];
