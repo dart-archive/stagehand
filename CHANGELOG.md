@@ -1,4 +1,4 @@
-## unpublished
+## 1.1.1
 
 - Added `angular_test` based tests to web-angular-simple.
 - Updated angular, angular components and SDK version constraints in the
