@@ -8,8 +8,8 @@ environment:
   sdk: '>=1.23.0 <2.0.0'
 
 dependencies:
-  angular2: ^3.0.0-beta+1
-  angular2_components: ^0.4.1-beta
+  angular2: ^3.0.0
+  angular_components: ^0.5.0
 
 dev_dependencies:
   browser: ^0.10.0
