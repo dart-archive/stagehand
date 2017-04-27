@@ -1,8 +1,12 @@
 ## 1.1.1
 
 - Added `angular_test` based tests to web-angular-simple.
-- Updated angular, angular components and SDK version constraints in the
-  web-angular-* templates.
+- Updated `web-angular-*` templates:
+  - Renamed `angular2_components` to `angular_components`.
+  - Pubspec version constraint updates:
+    - `angular` to 3.0.0
+    - `angular_components` to 0.5.0
+    - Minimal SDK to 1.23
 
 ## 1.1.0
 
