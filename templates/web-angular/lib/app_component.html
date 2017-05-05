@@ -1,17 +1,28 @@
 <h1>My First AngularDart App</h1>
 
-<material-input #myInput
-                label="Your name"
-                floatingLabel
-                autoFocus>
-</material-input>
+<div class="name-input">
+  <material-input #nameInput label="Your name" floatingLabel autoFocus>
+  </material-input>
 
-<material-button raised 
-                 (trigger)="myDialog.open()"
-                 class="blue">
+  <material-button raised (trigger)="greet(nameInput.inputText)" class="blue">
     Say Hello
-</material-button>
+  </material-button>
+</div>
 
-<hello-dialog #myDialog
-             [name]="myInput.inputText">
-</hello-dialog>
+<material-tab-panel>
+  <material-tab label="Greeting">
+    <div *ngIf="name.isEmpty">
+      <p>Enter your name above.</p>
+    </div>
+    <div *ngIf="name.isNotEmpty">
+      <h2>Hello, {{name}}!</h2>
+      <p>
+        Continue your journey at
+        <a href="https://webdev.dartlang.org/angular" target="_blank">webdev.dartlang.org/angular</a>.
+      </p>
+    </div>
+  </material-tab>
+  <material-tab label="Hall of Fame">
+    <hall-of-fame [heroes]="heroes"></hall-of-fame>
+  </material-tab>
+</material-tab-panel>

@@ -1,0 +1,30 @@
+<div [ngSwitch]="heroes.length">
+
+  <div *ngSwitchCase="0">
+    <p>
+      An empty Hall of Fame?
+      <glyph icon="sentiment_very_dissatisfied"></glyph>
+      <br> See the AngularDart
+      <a href="https://webdev.dartlang.org/guides/get-started" target="_blank">
+        Get Started
+      </a> page for how to populate it!
+    </p>
+  </div>
+
+  <div *ngSwitchDefault>
+    <h2>Hero Hall of Fame</h2>
+
+    <material-list>
+      <material-list-item *ngFor="let hero of heroes" (click)="dialog.open(hero)">
+        {{hero}}
+      </material-list-item>
+    </material-list>
+
+    <p>
+      Continue your journey at the AngularDart's
+      <a href="https://webdev.dartlang.org/angular/tutorial">Tour of Heroes tutorial</a>.
+    </p>
+
+    <cheer-dialog #dialog></cheer-dialog>
+  </div>
+</div>
