@@ -1,3 +1,11 @@
+## Unreleased
+
+- Per issue #390, removed the `web-angular-simple` and `web-stagexl` templates.
+  Documentation (such as the
+  [Angular guide](https://webdev.dartlang.org/angular/guide/setup)
+  that used to rely on `web-angular-simple` now uses
+  https://github.com/angular-examples/quickstart.
+
 ## 1.1.1
 
 - Added `angular_test` based tests to web-angular-simple.
