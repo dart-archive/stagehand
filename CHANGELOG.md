@@ -1,3 +1,10 @@
+## 1.1.2
+
+ - `web-angular`:
+   - Added component tests.
+   - Enhanced demo to make use of more 
+   `angular_components` features (such as tabs).
+
 ## 1.1.1
 
 - Added `angular_test` based tests to web-angular-simple.

@@ -2,6 +2,13 @@
     /* This is equivalent of the 'body' selector of a page. */
 }
 
+.name-input {
+  margin: auto;
+  width: 20em;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
 .blue {
   background-color: #2196F3;
   color: white;
