@@ -15,15 +15,5 @@ import 'todo_list_service.dart';
   providers: const [materialProviders, TodoListService],
 )
 class AppComponent {
-  String todoItemDescription = '';
-
-  @ViewChild('todoList')
-  TodoListComponent todoList;
-
-  bool get disableAdd => todoItemDescription.isEmpty;
-
-  void addItem() {
-    todoList.add(todoItemDescription);
-    todoItemDescription = '';
-  }
+  String newTodo = '';
 }

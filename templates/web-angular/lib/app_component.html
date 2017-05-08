@@ -2,14 +2,14 @@
 
 <div>
   <material-input label="Todo item description"
-                  class="todo-input"
-                  floatingLabel autoFocus
-                  [(ngModel)]="todoItemDescription">
+    class="todo-input"
+    floatingLabel autoFocus
+    [(ngModel)]="newTodo">
   </material-input>
 
   <material-fab mini raised
-                (trigger)="addItem()"
-                [disabled]="disableAdd">
+    (trigger)="todoList.add(newTodo); newTodo = '';"
+    [disabled]="newTodo.isEmpty">
     <glyph icon="add"></glyph>
   </material-fab>
 </div>
