@@ -12,7 +12,7 @@ import 'web_angular_data.dart';
 class WebAngularGenerator extends DefaultGenerator {
   WebAngularGenerator()
       : super('web-angular', 'AngularDart Web Application',
-            'A web app that uses the AngularDart framework.',
+            'A web app with material design components.',
             categories: const ['dart', 'web']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
