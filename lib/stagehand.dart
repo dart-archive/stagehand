@@ -30,7 +30,6 @@ import 'generators/console_simple.dart';
 import 'generators/package_simple.dart';
 import 'generators/server_shelf.dart';
 import 'generators/web_angular.dart';
-import 'generators/web_angular_simple.dart';
 import 'generators/web_simple.dart';
 import 'generators/web_stagexl.dart';
 import 'src/common.dart';
@@ -42,7 +41,6 @@ final List<Generator> generators = [
   new PackageSimpleGenerator(),
   new ServerShelfGenerator(),
   new WebAngularGenerator(),
-  new WebAngularSimpleGenerator(),
   new WebSimpleGenerator(),
   new WebStageXlGenerator()
 ]..sort();
