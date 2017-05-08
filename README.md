@@ -14,7 +14,6 @@ Kit and Yeoman.
 
 ## Stagehand templates
 * `console-full` - A larger command-line application sample.
-* `console-simple` - A simple command-line application.
 * `package-simple` - A starting point for Dart libraries or applications.
 * `server-shelf` - A web server built using the shelf package.
 * `web-angular` - A web app built using the latest stable version of Angular.

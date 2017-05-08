@@ -26,7 +26,6 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'generators/console_full.dart';
-import 'generators/console_simple.dart';
 import 'generators/package_simple.dart';
 import 'generators/server_shelf.dart';
 import 'generators/web_angular.dart';
@@ -37,7 +36,6 @@ import 'src/common.dart';
 /// A curated, prescriptive list of Dart project generators.
 final List<Generator> generators = [
   new ConsoleFullGenerator(),
-  new ConsoleSimpleGenerator(),
   new PackageSimpleGenerator(),
   new ServerShelfGenerator(),
   new WebAngularGenerator(),
