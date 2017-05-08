@@ -1,0 +1,26 @@
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  line-height: 3em;
+}
+
+li:hover {
+  background-color: #EEEEEE;
+}
+
+li material-checkbox {
+  vertical-align: middle;
+}
+
+li material-fab {
+  font-size: smaller;
+  vertical-align: middle;
+  float: right;
+}
+
+.done {
+  text-decoration: line-through;
+}

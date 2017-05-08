@@ -1,17 +1,17 @@
-<h1>My First AngularDart App</h1>
+<h1>AngularDart Todo List</h1>
 
-<material-input #myInput
-                label="Your name"
-                floatingLabel
-                autoFocus>
-</material-input>
+<div>
+  <material-input label="Todo item description"
+                  class="todo-input"
+                  floatingLabel autoFocus
+                  [(ngModel)]="todoItemDescription">
+  </material-input>
 
-<material-button raised 
-                 (trigger)="myDialog.open()"
-                 class="blue">
-    Say Hello
-</material-button>
+  <material-fab mini raised
+                (trigger)="addItem()"
+                [disabled]="disableAdd">
+    <glyph icon="add"></glyph>
+  </material-fab>
+</div>
 
-<hello-dialog #myDialog
-             [name]="myInput.inputText">
-</hello-dialog>
+<todo-list #todoList></todo-list>

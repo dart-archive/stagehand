@@ -2,7 +2,6 @@
     /* This is equivalent of the 'body' selector of a page. */
 }
 
-.blue {
-  background-color: #2196F3;
-  color: white;
+.todo-input {
+  width: 80%;
 }

@@ -1,3 +1,9 @@
+## 1.1.2
+
+ - `web-angular`:
+   - Changed template to be a simple todo-list app.
+   - Added component tests.
+
 ## 1.1.1
 
 - Added `angular_test` based tests to web-angular-simple.

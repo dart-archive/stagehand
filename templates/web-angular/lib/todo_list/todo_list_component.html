@@ -1,0 +1,20 @@
+<p *ngIf="items.isEmpty">
+  Nothing to do! Add items above.
+</p>
+
+<div *ngIf="items.isNotEmpty">
+  <p>Drag-and-drop items to reorder them.</p>
+  <ul>
+    <reorder-list (reorder)="onItemReorder($event)">
+      <li *ngFor="let item of items; let i=index" reorderItem>
+        <material-checkbox #cb
+                           materialTooltip="Mark item as done">
+        </material-checkbox>
+        <span [class.done]="cb.checked">{{item}}</span>
+        <material-fab mini (trigger)="remove(i)">
+          <glyph icon="delete"></glyph>
+        </material-fab>
+      </li>
+    </reorder-list>
+  </ul>
+</div>
