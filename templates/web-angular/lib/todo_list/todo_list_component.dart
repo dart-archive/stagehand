@@ -20,20 +20,10 @@ class TodoListComponent implements OnInit {
 
   TodoListComponent(this.todoListService);
 
-  @override
-  Future<Null> ngOnInit() async {
-    items = await todoListService.getTodoList();
-  }
+  ngOnInit() async => items = await todoListService.getTodoList();
 
-  void add(String description) {
-    items.add(description);
-  }
-
-  void remove(int index) {
-    items.removeAt(index);
-  }
-
-  void onItemReorder(ReorderEvent event) {
-    items.insert(event.destIndex, items.removeAt(event.sourceIndex));
-  }
+  add(String description) => items.add(description);
+  remove(int index) => items.removeAt(index);
+  onReorder(ReorderEvent e) =>
+      items.insert(e.destIndex, items.removeAt(e.sourceIndex));
 }

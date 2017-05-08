@@ -5,11 +5,11 @@
 <div *ngIf="items.isNotEmpty">
   <p>Drag-and-drop items to reorder them.</p>
   <ul>
-    <reorder-list (reorder)="onItemReorder($event)">
+    <reorder-list (reorder)="onReorder($event)">
       <li *ngFor="let item of items; let i=index" reorderItem>
-        <material-checkbox #cb materialTooltip="Mark item as done">
+        <material-checkbox #done materialTooltip="Mark item as done">
         </material-checkbox>
-        <span [class.done]="cb.checked">{{item}}</span>
+        <span [class.done]="done.checked">{{item}}</span>
         <material-fab mini (trigger)="remove(i)">
           <glyph icon="delete"></glyph>
         </material-fab>
