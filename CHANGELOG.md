@@ -1,3 +1,13 @@
+## Unreleased
+
+- Removed `web-angular-simple` and `console-simple` templates.
+  - The list of templates had become too long.
+  - Documentation (such as the
+    [Angular guide](https://webdev.dartlang.org/angular/guide/setup))
+    that used to rely on `web-angular-simple` now uses
+    https://github.com/angular-examples/quickstart.
+- Tweaked the text of some template descriptions.
+
 ## 1.1.1
 
 - Added `angular_test` based tests to web-angular-simple.
