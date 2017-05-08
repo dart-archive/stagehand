@@ -17,10 +17,8 @@ Kit and Yeoman.
 * `console-simple` - A simple command-line application.
 * `package-simple` - A starting point for Dart libraries or applications.
 * `server-shelf` - A web server built using the shelf package.
-* `web-angular` - A web app built using the latest stable version of Angular.
-* `web-angular-simple` - A minimalist example app used in docs.
-* `web-simple` - An absolute bare-bones web app.
-* `web-stagexl` - A basic 2D canvas app with StageXL.
+* `web-angular` - A web app with material design components.
+* `web-simple` - A bare-bones web app.
 
 ## Installation
 
@@ -58,10 +56,10 @@ And to list all of the project templates:
 ## Goals
 
 * Opinionated and prescriptive; minimal to no options
-* Mobile-first
-* Support server and client apps
-* Becomes the best way to create a new Dart project
-* Used by Atom, WebStorm, Sublime, and more
+* Mobile first
+* Support for both server and client apps
+* The best way to create a new Dart project
+* Used by IntelliJ, WebStorm, Atom, Sublime, and more
 * Distributed as a pub package
 
 ## Issues and bugs
@@ -77,7 +75,7 @@ Contributions welcome! Please read this short
 ## Analytics and crash reports
 
 Learn more about how [Stagehand uses Google Analytics][analytics] for measuring
-usage and error reporting, and how you can opt-out.
+usage and error reporting, and how you can opt out.
 
 ## Disclaimer
 
