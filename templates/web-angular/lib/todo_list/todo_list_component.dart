@@ -33,8 +33,7 @@ class TodoListComponent implements OnInit {
     items.removeAt(index);
   }
 
-  void onItemReorder(ReorderEvent reorderEvent) {
-    items.insert(
-        reorderEvent.destIndex, items.removeAt(reorderEvent.sourceIndex));
+  void onItemReorder(ReorderEvent event) {
+    items.insert(event.destIndex, items.removeAt(event.sourceIndex));
   }
 }

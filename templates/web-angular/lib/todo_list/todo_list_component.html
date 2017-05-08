@@ -7,8 +7,7 @@
   <ul>
     <reorder-list (reorder)="onItemReorder($event)">
       <li *ngFor="let item of items; let i=index" reorderItem>
-        <material-checkbox #cb
-                           materialTooltip="Mark item as done">
+        <material-checkbox #cb materialTooltip="Mark item as done">
         </material-checkbox>
         <span [class.done]="cb.checked">{{item}}</span>
         <material-fab mini (trigger)="remove(i)">
