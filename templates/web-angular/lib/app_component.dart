@@ -6,6 +6,9 @@ import 'package:angular_components/angular_components.dart';
 
 import 'todo_list/todo_list_component.dart';
 
+// AngularDart info: https://webdev.dartlang.org/angular
+// Components info: https://webdev.dartlang.org/components
+
 @Component(
   selector: 'my-app',
   styleUrls: const ['app_component.css'],

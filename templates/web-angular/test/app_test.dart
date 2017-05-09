@@ -27,6 +27,7 @@ void main() {
     expect(await appPO.title, 'My First AngularDart App');
   });
 
+  // Testing info: https://webdev.dartlang.org/angular/guide/testing
 }
 
 class AppPO {
