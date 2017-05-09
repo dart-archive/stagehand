@@ -1,8 +1,15 @@
 ## 1.1.2
 
- - `web-angular`:
-   - Changed template to be a simple todo-list app.
+- Removed `web-angular-simple` and `console-simple` templates:
+  - The list of templates had become too long.
+  - Documentation (such as the
+    [Angular guide](https://webdev.dartlang.org/angular/guide/setup))
+    that used to rely on `web-angular-simple` now uses
+    https://github.com/angular-examples/quickstart.
+- Changed `web-angular`template:
+   - The template is now a simple todo-list app.
    - Added component tests.
+- Tweaked the text of some template descriptions.
 
 ## 1.1.1
 
