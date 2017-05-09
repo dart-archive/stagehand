@@ -1,10 +1,12 @@
 // Copyright (c) __year__, __author__. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
+import 'dart:async';
+
 import 'package:angular2/core.dart';
 import 'package:angular_components/angular_components.dart';
 
-import 'package:__projectName__/todo_list/todo_list_service.dart';
+import 'todo_list_service.dart';
 
 @Component(
   selector: 'todo-list',
@@ -15,15 +17,19 @@ import 'package:__projectName__/todo_list/todo_list_service.dart';
 )
 class TodoListComponent implements OnInit {
   final TodoListService todoListService;
+
   List<String> items = [];
   String newTodo = '';
 
   TodoListComponent(this.todoListService);
 
-  ngOnInit() async => items = await todoListService.getTodoList();
+  @override
+  Future<Null> ngOnInit() async {
+    items = await todoListService.getTodoList();
+  }
 
-  add(String description) => items.add(description);
-  remove(int index) => items.removeAt(index);
-  onReorder(ReorderEvent e) =>
+  void add(String description) => items.add(description);
+  String remove(int index) => items.removeAt(index);
+  void onReorder(ReorderEvent e) =>
       items.insert(e.destIndex, items.removeAt(e.sourceIndex));
 }
