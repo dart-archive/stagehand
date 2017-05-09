@@ -94,6 +94,7 @@ Iterable<String> _traverse(Directory dir, String root) sync* {
 
     String name = path.basename(entity.path);
     if (name == 'pubspec.lock') continue;
+    if (name == 'build' && entity is Directory) continue;
     if (name.startsWith('.') && !_allowedDotFiles.contains(name)) continue;
 
     if (entity is Directory) {

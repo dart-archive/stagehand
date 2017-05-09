@@ -1,0 +1,30 @@
+<!-- Components info: https://webdev.dartlang.org/components -->
+<div>
+  <material-input label="What do you need to do?"
+                  autoFocus floatingLabel style="width:80%"
+                  [(ngModel)]="newTodo">
+  </material-input>
+
+  <material-fab mini raised
+                (trigger)="add(newTodo); newTodo = '';"
+                [disabled]="newTodo.isEmpty">
+    <glyph icon="add"></glyph>
+  </material-fab>
+</div>
+
+<p *ngIf="items.isEmpty">
+  Nothing to do! Add items above.
+</p>
+
+<div *ngIf="items.isNotEmpty">
+  <ul>
+      <li *ngFor="let item of items; let i=index">
+        <material-checkbox #done materialTooltip="Mark item as done">
+        </material-checkbox>
+        <span [class.done]="done.checked">{{item}}</span>
+        <material-fab mini (trigger)="remove(i)">
+          <glyph icon="delete"></glyph>
+        </material-fab>
+      </li>
+  </ul>
+</div>
