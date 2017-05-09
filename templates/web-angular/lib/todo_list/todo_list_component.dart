@@ -1,8 +1,6 @@
 // Copyright (c) __year__, __author__. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
-import 'dart:async';
-
 import 'package:angular2/core.dart';
 import 'package:angular_components/angular_components.dart';
 
@@ -18,6 +16,7 @@ import 'package:__projectName__/todo_list/todo_list_service.dart';
 class TodoListComponent implements OnInit {
   final TodoListService todoListService;
   List<String> items = [];
+  String newTodo = '';
 
   TodoListComponent(this.todoListService);
 

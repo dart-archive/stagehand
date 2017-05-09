@@ -14,5 +14,5 @@ import 'todo_list/todo_list_component.dart';
   providers: const [materialProviders],
 )
 class AppComponent {
-  String newTodo = '';
+  // Nothing here yet. All logic is in TodoListComponent.
 }

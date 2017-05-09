@@ -1,3 +1,16 @@
+<div>
+  <material-input label="Todo item description"
+                  autoFocus floatingLabel style="width:80%"
+                  [(ngModel)]="newTodo">
+  </material-input>
+
+  <material-fab mini raised
+                (trigger)="add(newTodo); newTodo = '';"
+                [disabled]="newTodo.isEmpty">
+    <glyph icon="add"></glyph>
+  </material-fab>
+</div>
+
 <p *ngIf="items.isEmpty">
   Nothing to do! Add items above.
 </p>
