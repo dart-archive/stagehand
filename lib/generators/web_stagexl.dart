@@ -11,8 +11,8 @@ import 'web_stagexl_data.dart';
  */
 class WebStageXlGenerator extends DefaultGenerator {
   WebStageXlGenerator()
-      : super('web-stagexl', 'Simple StageXL Application',
-            'A basic 2D canvas app with StageXL.',
+      : super('web-stagexl', 'StageXL Web App',
+            'A starting point for 2D animation and games.',
             categories: const ['dart', 'web']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);

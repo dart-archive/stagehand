@@ -11,8 +11,8 @@ import 'web_simple_data.dart';
  */
 class WebSimpleGenerator extends DefaultGenerator {
   WebSimpleGenerator()
-      : super('web-simple', 'Simple Web Application',
-            'An absolute bare-bones web app.',
+      : super('web-simple', 'Bare-bones Web App',
+            'A web app that uses only core Dart libraries.',
             categories: const ['dart', 'web']) {
     for (TemplateFile file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
