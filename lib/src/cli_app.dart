@@ -197,7 +197,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?""");
 
     argParser.addFlag('analytics',
         negatable: true,
-        help: 'Opt-out of anonymous usage and crash reporting.');
+        help: 'Opt out of anonymous usage and crash reporting.');
     argParser.addFlag('help', abbr: 'h', negatable: false, help: 'Help!');
     argParser.addFlag('version',
         negatable: false, help: 'Display the version for ${APP_NAME}.');

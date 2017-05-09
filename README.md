@@ -13,12 +13,12 @@ It is a Dart project scaffolding generator, inspired by tools like Web Starter
 Kit and Yeoman.
 
 ## Stagehand templates
-* `console-full` - A larger command-line application sample.
+* `console-full` - A command-line application sample.
 * `package-simple` - A starting point for Dart libraries or applications.
 * `server-shelf` - A web server built using the shelf package.
 * `web-angular` - A web app with material design components.
-* `web-simple` - A bare-bones web app.
-* `web-stagexl` - A basic 2D canvas app with StageXL.
+* `web-simple` - A web app that uses no framework.
+* `web-stagexl` - A starting point for 2D animation and games.
 
 ## Installation
 
@@ -56,8 +56,7 @@ And to list all of the project templates:
 ## Goals
 
 * Opinionated and prescriptive; minimal to no options
-* Mobile first
-* Support server and client apps
+* Support for server and client apps
 * The best way to create a new Dart project
 * Used by IntelliJ, WebStorm, Atom, Sublime, and more
 * Distributed as a pub package
