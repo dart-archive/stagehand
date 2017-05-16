@@ -1,3 +1,7 @@
+## 1.1.3
+
+- Removed `platform_*` options from `web-angular`.
+
 ## 1.1.2
 
 - Removed `web-angular-simple` and `console-simple` templates:
