@@ -3,7 +3,7 @@
 
 import 'dart:async';
 
-import 'package:angular2/core.dart';
+import 'package:angular2/angular2.dart';
 import 'package:angular_components/angular_components.dart';
 
 import 'todo_list_service.dart';
@@ -12,7 +12,10 @@ import 'todo_list_service.dart';
   selector: 'todo-list',
   styleUrls: const ['todo_list_component.css'],
   templateUrl: 'todo_list_component.html',
-  directives: const [materialDirectives],
+  directives: const [
+    CORE_DIRECTIVES,
+    materialDirectives,
+  ],
   providers: const [TodoListService],
 )
 class TodoListComponent implements OnInit {
