@@ -19,10 +19,6 @@ dev_dependencies:
 
 transformers:
 - angular2:
-    platform_directives:
-    - 'package:angular2/common.dart#COMMON_DIRECTIVES'
-    platform_pipes:
-    - 'package:angular2/common.dart#COMMON_PIPES'
     entry_points: web/main.dart
 - angular2/transform/reflection_remover:
     $include: test/**_test.dart
