@@ -9,6 +9,12 @@ const List<String> data = const [
 aWxkLwojIFJlbW92ZSB0aGUgZm9sbG93aW5nIHBhdHRlcm4gaWYgeW91IHdpc2ggdG8gY2hlY2sg
 aW4geW91ciBsb2NrIGZpbGUKcHVic3BlYy5sb2NrCgojIERpcmVjdG9yeSBjcmVhdGVkIGJ5IGRh
 cnRkb2MKZG9jL2FwaS8K""",
+  ".idea/runConfigurations/angular_dart.xml",
+  "text",
+  """PGNvbXBvbmVudCBuYW1lPSJQcm9qZWN0UnVuQ29uZmlndXJhdGlvbk1hbmFnZXIiPgogICAgPGNv
+bmZpZ3VyYXRpb24gbmFtZT0ibG9jYWxob3N0OjgwODAiIHR5cGU9IkphdmFzY3JpcHREZWJ1Z1R5
+cGUiIGZhY3RvcnlOYW1lPSJKYXZhU2NyaXB0IERlYnVnIiB1cmk9Imh0dHA6Ly9sb2NhbGhvc3Q6
+ODA4MCIgLz4KPC9jb21wb25lbnQ+""",
   "CHANGELOG.md",
   "text",
   """IyBDaGFuZ2Vsb2cKCiMjIDAuMC4xCgotIEluaXRpYWwgdmVyc2lvbiwgY3JlYXRlZCBieSBTdGFn
