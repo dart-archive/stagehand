@@ -25,3 +25,8 @@ transformers:
 - test/pub_serve:
     $include: test/**_test.dart
 - dart_to_js_script_rewriter
+
+# Enable these settings to have pub serve use DDC.
+#web:
+#  compiler:
+#    debug: dartdevc

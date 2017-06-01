@@ -16,3 +16,8 @@ dev_dependencies:
 
 transformers:
 - dart_to_js_script_rewriter
+
+# Enable these settings to have pub serve use DDC.
+#web:
+#  compiler:
+#    debug: dartdevc
