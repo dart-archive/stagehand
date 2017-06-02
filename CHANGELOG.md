@@ -1,3 +1,8 @@
+## 1.1.4
+
+- Update `web-angular` to use `lib/src` for everything but the main app
+  component.
+
 ## 1.1.3
 
 - Removed `platform_*` options from `web-angular`.
