@@ -2,11 +2,12 @@
 <div>
   <material-input label="What do you need to do?"
                   autoFocus floatingLabel style="width:80%"
-                  [(ngModel)]="newTodo">
+                  [(ngModel)]="newTodo"
+                  (keyup.enter)="add()">
   </material-input>
 
   <material-fab mini raised
-                (trigger)="add(newTodo); newTodo = '';"
+                (trigger)="add()"
                 [disabled]="newTodo.isEmpty">
     <glyph icon="add"></glyph>
   </material-fab>
