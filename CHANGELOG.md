@@ -1,3 +1,7 @@
+## 1.1.4
+
+- Updated `web-angular` example to handle key event.
+
 ## 1.1.3
 
 - Removed `platform_*` options from `web-angular`.

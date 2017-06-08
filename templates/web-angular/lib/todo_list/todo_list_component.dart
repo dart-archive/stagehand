@@ -31,7 +31,10 @@ class TodoListComponent implements OnInit {
     items = await todoListService.getTodoList();
   }
 
-  void add(String description) => items.add(description);
+  void add() {
+    items.add(newTodo);
+    newTodo = '';
+  }
   String remove(int index) => items.removeAt(index);
   void onReorder(ReorderEvent e) =>
       items.insert(e.destIndex, items.removeAt(e.sourceIndex));
