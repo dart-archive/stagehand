@@ -12,8 +12,7 @@ import 'package:path/path.dart' as path;
 import 'package:stagehand/stagehand.dart' as stagehand;
 
 const List<String> _allowedDotFiles = const <String>[
-  ".gitignore",
-  ".analysis_options"
+  ".gitignore"
 ];
 
 final RegExp _binaryFileTypes = new RegExp(

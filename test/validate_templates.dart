@@ -29,7 +29,7 @@ final List<RegExp> _pubspecOrderRegexps =
 
 final String _expectedGitIgnore = _getMetaTemplateFile('.gitignore');
 final String _expectedAnalysisOptions =
-    _getMetaTemplateFile('analysis_options.yaml');
+    _getMetaTemplateFile('templates/analysis_options.yaml');
 
 void main() {
   Directory dir;
