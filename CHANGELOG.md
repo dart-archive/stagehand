@@ -1,6 +1,9 @@
 ## 1.1.4
 
 - Updated `web-angular` example to handle key event.
+- Updated pubspecs of `web-simple` and `web-angular` to have
+  commented-out configuration to make `pub serve` use dartdevc.
+  More info: https://webdev.dartlang.org/tools/dartdevc
 
 ## 1.1.3
 

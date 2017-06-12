@@ -26,7 +26,8 @@ transformers:
     $include: test/**_test.dart
 - dart_to_js_script_rewriter
 
-# Enable these settings to have pub serve use dartdevc.
+# Uncomment the following to make pub serve use
+# dartdevc (webdev.dartlang.org/tools/dartdevc).
 #web:
 #  compiler:
 #    debug: dartdevc
