@@ -4,7 +4,7 @@
 import 'package:angular2/angular2.dart';
 import 'package:angular_components/angular_components.dart';
 
-import 'todo_list/todo_list_component.dart';
+import 'src/todo_list/todo_list_component.dart';
 
 // AngularDart info: https://webdev.dartlang.org/angular
 // Components info: https://webdev.dartlang.org/components
