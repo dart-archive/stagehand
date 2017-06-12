@@ -2,6 +2,15 @@
 
 - Update `web-angular` to use `lib/src` for everything but the main app
   component.
+- Added Enter key support to the `web-angular` template.
+- Added commented-out pubspec settings to the `web-angular` and
+ `web-simple` templates, demonstrating how to make `pub serve`
+  use [dartdevc](https://webdev.dartlang.org/tools/dartdevc).
+- Added favicons to the `web-angular` and `web-simple` templates.
+- Improved the CSS for the `web-simple` template.
+- Updated analysis options for the stagehand package.
+- Changed the name of `server-shelf` from "Shelf Web Server" to
+  "Web Server".
 
 ## 1.1.3
 
