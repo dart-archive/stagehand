@@ -3,10 +3,11 @@ sudo: false
 dart:
   - stable
   - dev
-env: # important: w/o this top-level env, no job will be allowed to fail.
-matrix:
-  allow_failures:
-  - dart: dev
+## The dev channel is stable enough, report failures now.
+# env: # important: w/o this top-level env, no job will be allowed to fail.
+# matrix:
+#   allow_failures:
+#   - dart: dev
 with_content_shell: true
 before_script:
   - export DISPLAY=:99.0
