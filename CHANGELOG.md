@@ -1,5 +1,7 @@
 ## 1.1.4
 
+- Update `web-angular` to use `lib/src` for everything but the main app
+  component.
 - Added Enter key support to the `web-angular` template.
 - Added commented-out pubspec settings to the `web-angular` and
  `web-simple` templates, demonstrating how to make `pub serve`
