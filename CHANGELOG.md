@@ -1,3 +1,8 @@
+## 1.1.5
+
+- Updated the `sdk` dependency so that Stagehand can work with
+  2.0.0-dev.* releases.
+
 ## 1.1.4
 
 - Made changes related to

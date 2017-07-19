@@ -7,7 +7,7 @@ name: stagehand
 description: >
   A scaffolding generator for your Dart projects. Stagehand helps you get set
   up!
-version: 1.1.4+1
+version: 1.1.5
 homepage: http://stagehand.pub
 authors:
 - Seth Ladd <sethladd@google.com>
@@ -15,7 +15,7 @@ authors:
 - Kathy Walrath <kathyw@google.com>
 
 environment:
-  sdk: '>=1.13.0 <2.0.0'
+  sdk: '>=1.13.0 <2.0.0-dev.infinity'
 
 # Add the bin/stagehand.dart script to the scripts pub installs.
 executables:
