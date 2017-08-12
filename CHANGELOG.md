@@ -1,3 +1,7 @@
+## Unreleased
+
+- Added a missing copyright to a web-angular template file.
+
 ## 1.1.5
 
 - Updated the `sdk` dependency so that Stagehand can work with
