@@ -7,7 +7,6 @@ analyzer:
 linter:
   rules:
     - cancel_subscriptions
-    - close_sinks
     - hash_and_equals
     - iterable_contains_unrelated_type
     - list_remove_unrelated_type

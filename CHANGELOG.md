@@ -1,6 +1,7 @@
 ## Unreleased
 
 - Added a missing copyright to a web-angular template file.
+- Removed the `close_sinks` lint from all analysis options files.
 
 ## 1.1.5
 
