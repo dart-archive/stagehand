@@ -11,9 +11,7 @@ import 'package:grinder/grinder.dart';
 import 'package:path/path.dart' as path;
 import 'package:stagehand/stagehand.dart' as stagehand;
 
-const List<String> _allowedDotFiles = const <String>[
-  ".gitignore"
-];
+const List<String> _allowedDotFiles = const <String>[".gitignore"];
 
 final RegExp _binaryFileTypes = new RegExp(
     r'\.(jpe?g|png|gif|ico|svg|ttf|eot|woff|woff2)$',
