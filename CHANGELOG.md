@@ -3,6 +3,7 @@
 - Added a missing copyright to a web-angular template file.
 - Removed the `close_sinks` lint from all analysis options files.
 - Moved to `dart-lang` GitHub org.
+- Update `web-angular` to `angular` v4 and `angular_components` v0.6.0
 
 ## 1.1.5
 

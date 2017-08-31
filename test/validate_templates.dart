@@ -128,8 +128,8 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   expect(pubspecContent, containsPair('version', '0.0.1'));
 
   final usesAngular =
-      pubspecContent['dependencies']?.containsKey('angular2') ?? false;
-  final minSDK = usesAngular ? '1.23.0' : '1.20.1';
+      pubspecContent['dependencies']?.containsKey('angular') ?? false;
+  final minSDK = usesAngular ? '1.24.0' : '1.20.1';
   final env = {'sdk': '>=${minSDK} <2.0.0'};
   expect(pubspecContent, containsPair('environment', env));
 
