@@ -29,12 +29,12 @@ void build() {
   });
 
   // Update the readme.md file.
-  File f = getFile('README.md');
-  String source = f.readAsStringSync();
-  String fragment = stagehand.generators.map((g) {
+  var f = getFile('README.md');
+  var source = f.readAsStringSync();
+  var fragment = stagehand.generators.map((g) {
     return '* `${g.id}` - ${g.description}';
   }).join('\n');
-  String newSource = _replaceInString(
+  var newSource = _replaceInString(
       source, '## Stagehand templates', '## Installation', fragment + '\n');
   f.writeAsStringSync(newSource);
 
@@ -63,7 +63,7 @@ test() => new TestRunner().testAsync(files: 'test/validate_templates.dart');
 void _concatenateFiles(Directory src, File target) {
   log('Creating ${target.path}');
 
-  String str = _traverse(src, '').map((s) => '  ${_toStr(s)}').join(',\n');
+  var str = _traverse(src, '').map((s) => '  ${_toStr(s)}').join(',\n');
 
   target.writeAsStringSync('''
 // Copyright (c) ${_currentYear()}, Google Inc. Please see the AUTHORS file for details.
@@ -86,10 +86,10 @@ String _toStr(String s) {
 
 Iterable<String> _traverse(Directory dir, String root) sync* {
   var files = _listSync(dir, recursive: false, followLinks: false);
-  for (FileSystemEntity entity in files) {
+  for (var entity in files) {
     if (entity is Link) continue;
 
-    String name = path.basename(entity.path);
+    var name = path.basename(entity.path);
     if (name == 'pubspec.lock') continue;
     if (name == 'build' && entity is Directory) continue;
     if (name.startsWith('.') && !_allowedDotFiles.contains(name)) continue;
@@ -131,8 +131,7 @@ bool _isBinaryFile(String filename) => _binaryFileTypes.hasMatch(filename);
 /// large merge diffs in the generated template data files.
 List<FileSystemEntity> _listSync(Directory dir,
     {bool recursive: false, bool followLinks: true}) {
-  List<FileSystemEntity> results =
-      dir.listSync(recursive: recursive, followLinks: followLinks);
+  var results = dir.listSync(recursive: recursive, followLinks: followLinks);
   results.sort((entity1, entity2) => entity1.path.compareTo(entity2.path));
   return results;
 }
@@ -141,8 +140,8 @@ List<FileSystemEntity> _listSync(Directory dir,
 /// [replacement], and return the result.
 String _replaceInString(
     String source, String start, String end, String replacement) {
-  int startIndex = source.indexOf(start);
-  int endIndex = source.indexOf(end, startIndex + 1);
+  var startIndex = source.indexOf(start);
+  var endIndex = source.indexOf(end, startIndex + 1);
 
   if (startIndex == -1 || endIndex == -1) {
     fail('Could not find text to replace');

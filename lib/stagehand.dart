@@ -105,7 +105,7 @@ abstract class Generator implements Comparable<Generator> {
 
     return Future.forEach(files, (TemplateFile file) {
       var resultFile = file.runSubstitution(vars);
-      String filePath = resultFile.path;
+      var filePath = resultFile.path;
       return target.createFile(filePath, resultFile.content);
     });
   }

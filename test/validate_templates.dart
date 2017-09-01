@@ -56,7 +56,7 @@ void main() {
     _validatePubspec(pubspecContent);
   });
 
-  for (stagehand.Generator generator in stagehand.generators) {
+  for (var generator in stagehand.generators) {
     test(generator.id, () {
       _testGenerator(generator, dir);
     });
@@ -106,7 +106,7 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
 
   // Run the analyzer.
   if (filePath != null) {
-    Directory cwd = Directory.current;
+    var cwd = Directory.current;
     try {
       // TODO: Extend Analyzer.analyze to support .packages files.
       Directory.current = tempDir.path;
@@ -161,8 +161,7 @@ void _validatePubspec(String pubspecContentString) {
 /// generated template data files.
 List<FileSystemEntity> _listSync(Directory dir,
     {bool recursive: false, bool followLinks: true}) {
-  List<FileSystemEntity> results =
-      dir.listSync(recursive: recursive, followLinks: followLinks);
+  var results = dir.listSync(recursive: recursive, followLinks: followLinks);
   results.sort((entity1, entity2) => entity1.path.compareTo(entity2.path));
   return results;
 }

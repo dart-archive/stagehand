@@ -51,7 +51,7 @@ class CliApp {
   }
 
   Future process(List<String> args) {
-    ArgParser argParser = _createArgParser();
+    var argParser = _createArgParser();
 
     ArgResults options;
 
@@ -98,7 +98,7 @@ Welcome to Stagehand! We collect anonymous usage statistics and crash reports in
 order to improve the tool (http://goo.gl/6wsncI). Would you like to opt-in to
 additional analytics to help us improve Stagehand [y/yes/no]?''');
         io.stdout.flush();
-        String response = io.stdin.readLineSync();
+        var response = io.stdin.readLineSync();
         response = response.toLowerCase().trim();
         analytics.enabled = (response == 'y' || response == 'yes');
         _out('');
@@ -131,8 +131,8 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
       return new Future.error(new ArgError('invalid generator'));
     }
 
-    String generatorName = options.rest.first;
-    Generator generator = _getGenerator(generatorName);
+    var generatorName = options.rest.first;
+    var generator = _getGenerator(generatorName);
 
     if (generator == null) {
       logger.stderr("'$generatorName' is not a valid generator.\n");
@@ -140,7 +140,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
       return new Future.error(new ArgError('invalid generator'));
     }
 
-    io.Directory dir = cwd;
+    var dir = cwd;
 
     if (!options['override'] && !_isDirEmpty(dir)) {
       logger.stderr(
@@ -150,7 +150,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
     }
 
     // Normalize the project name.
-    String projectName = path.basename(dir.path);
+    var projectName = path.basename(dir.path);
     projectName = normalizeProjectName(projectName);
 
     if (target == null) {
@@ -166,8 +166,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
 
     if (!options.wasParsed('author')) {
       try {
-        io.ProcessResult result =
-            io.Process.runSync('git', ['config', 'user.name']);
+        var result = io.Process.runSync('git', ['config', 'user.name']);
         if (result.exitCode == 0) author = result.stdout.trim();
       } catch (exception) {
         // NOOP
@@ -176,11 +175,11 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
 
     var vars = {'author': author};
 
-    Future f = generator.generate(projectName, target, additionalVars: vars);
+    var f = generator.generate(projectName, target, additionalVars: vars);
     return f.then((_) {
       _out('${generator.numFiles()} files written.');
 
-      String message = generator.getInstallInstructions();
+      var message = generator.getInstallInstructions();
       if (message != null && message.isNotEmpty) {
         message = message.trim();
         message = message.split('\n').map((line) => '--> $line').join('\n');
@@ -217,8 +216,8 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
   }
 
   String _createMachineInfo(List<Generator> generators) {
-    Iterable itor = generators.map((Generator generator) {
-      Map m = {
+    var itor = generators.map((Generator generator) {
+      var m = {
         'name': generator.id,
         'label': generator.label,
         'description': generator.description
@@ -241,7 +240,8 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
     _out(argParser.usage);
     _out('');
     _out('Available generators:');
-    int len = generators.map((g) => g.id.length).fold(0, (a, b) => max(a, b));
+    var len =
+        generators.map((g) => g.id.length).fold(0, (int a, b) => max(a, b));
     generators
         .map((g) => '  ${_pad(g.id, len)} - ${g.description}')
         .forEach(logger.stdout);
@@ -295,7 +295,7 @@ class _DirectoryGeneratorTarget extends GeneratorTarget {
 
   @override
   Future createFile(String filePath, List<int> contents) {
-    io.File file = new io.File(path.join(dir.path, filePath));
+    var file = new io.File(path.join(dir.path, filePath));
 
     logger.stdout('  ${file.path}');
 

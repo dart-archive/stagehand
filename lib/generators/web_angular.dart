@@ -3,7 +3,6 @@
 // license that can be found in the LICENSE file.
 
 import '../src/common.dart';
-import '../stagehand.dart';
 import 'web_angular_data.dart';
 
 /// A generator for an Angular 2 application.
@@ -12,7 +11,7 @@ class WebAngularGenerator extends DefaultGenerator {
       : super('web-angular', 'AngularDart Web App',
             'A web app with material design components.',
             categories: const ['dart', 'web']) {
-    for (TemplateFile file in decodeConcatenatedData(data)) {
+    for (var file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }
 

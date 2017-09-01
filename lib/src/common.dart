@@ -16,19 +16,19 @@ final _nonValidSubstitueRegExp = new RegExp('[^a-zA-Z]');
 final _whiteSpace = new RegExp(r'\s+');
 
 List<TemplateFile> decodeConcatenatedData(List<String> data) {
-  List<TemplateFile> results = [];
+  var results = <TemplateFile>[];
 
-  for (int i = 0; i < data.length; i += 3) {
-    String path = data[i];
-    String type = data[i + 1];
-    String raw = data[i + 2].replaceAll(_whiteSpace, '');
+  for (var i = 0; i < data.length; i += 3) {
+    var path = data[i];
+    var type = data[i + 1];
+    var raw = data[i + 2].replaceAll(_whiteSpace, '');
 
-    List<int> decoded = BASE64.decode(raw);
+    var decoded = BASE64.decode(raw);
 
     if (type == 'binary') {
       results.add(new TemplateFile.fromBinary(path, decoded));
     } else {
-      String source = UTF8.decode(decoded);
+      var source = UTF8.decode(decoded);
       results.add(new TemplateFile(path, source));
     }
   }
@@ -95,10 +95,10 @@ String convertToYamlMultiLine(String str) {
 
 /// Break the given String into lines wrapped on a [col] boundary.
 List<String> wrap(String str, [int col = 80]) {
-  List<String> lines = [];
+  var lines = <String>[];
 
   while (str.length > col) {
-    int index = col;
+    var index = col;
 
     while (index > 0 && str.codeUnitAt(index) != _runeSpace) {
       index--;

@@ -3,7 +3,6 @@
 // license that can be found in the LICENSE file.
 
 import '../src/common.dart';
-import '../stagehand.dart';
 import 'server_shelf_data.dart';
 
 /// A generator for a server app built on `package:shelf`.
@@ -12,7 +11,7 @@ class ServerShelfGenerator extends DefaultGenerator {
       : super('server-shelf', 'Web Server',
             'A web server built using the shelf package.',
             categories: const ['dart', 'shelf', 'server']) {
-    for (TemplateFile file in decodeConcatenatedData(data)) {
+    for (var file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }
 

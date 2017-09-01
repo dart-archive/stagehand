@@ -3,7 +3,6 @@
 // license that can be found in the LICENSE file.
 
 import '../src/common.dart';
-import '../stagehand.dart';
 import 'web_stagexl_data.dart';
 
 /// A generator for a StageXL web application.
@@ -12,7 +11,7 @@ class WebStageXlGenerator extends DefaultGenerator {
       : super('web-stagexl', 'StageXL Web App',
             'A starting point for 2D animation and games.',
             categories: const ['dart', 'web']) {
-    for (TemplateFile file in decodeConcatenatedData(data)) {
+    for (var file in decodeConcatenatedData(data)) {
       addTemplateFile(file);
     }
 
