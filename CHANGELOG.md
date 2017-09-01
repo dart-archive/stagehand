@@ -2,6 +2,7 @@
 
 - Added a missing copyright to a web-angular template file.
 - Removed the `close_sinks` lint from all analysis options files.
+- Moved to `dart-lang` GitHub org.
 
 ## 1.1.5
 

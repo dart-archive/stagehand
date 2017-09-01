@@ -1,10 +1,10 @@
 # Stagehand - A Dart project generator
 
-![Stagehand banner](https://raw.githubusercontent.com/google/stagehand/master/site/banner_stagehand.jpg)
+![Stagehand banner](https://raw.githubusercontent.com/dart-lang/stagehand/master/site/banner_stagehand.jpg)
 
 [![pub package](https://img.shields.io/pub/v/stagehand.svg)](https://pub.dartlang.org/packages/stagehand)
-[![Build Status](https://travis-ci.org/google/stagehand.svg?branch=master)](https://travis-ci.org/google/stagehand)
-[![Coverage Status](https://coveralls.io/repos/google/stagehand/badge.svg?branch=master)](https://coveralls.io/r/google/stagehand?branch=master)
+[![Build Status](https://travis-ci.org/dart-lang/stagehand.svg?branch=master)](https://travis-ci.org/dart-lang/stagehand)
+[![Coverage Status](https://coveralls.io/repos/dart-lang/stagehand/badge.svg?branch=master)](https://coveralls.io/r/dart-lang/stagehand?branch=master)
 
 ## Helps you get set up!
 
@@ -64,12 +64,12 @@ And to list all of the project templates:
 ## Issues and bugs
 
 Please file reports on the
-[GitHub Issue Tracker](https://github.com/google/stagehand/issues).
+[GitHub Issue Tracker](https://github.com/dart-lang/stagehand/issues).
 
 ## Contributing
 
 Contributions welcome! Please read this short
-[guide](https://github.com/google/stagehand/wiki/Contributing) first.
+[guide](https://github.com/dart-lang/stagehand/wiki/Contributing) first.
 
 ## Analytics and crash reports
 
@@ -80,4 +80,4 @@ usage and error reporting, and how you can opt out.
 
 This is not an official Google product.
 
-[analytics]: https://github.com/google/stagehand/wiki/Anonymous-analytics-and-crash-reports
+[analytics]: https://github.com/dart-lang/stagehand/wiki/Anonymous-analytics-and-crash-reports
