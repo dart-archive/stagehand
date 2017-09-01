@@ -172,7 +172,9 @@ additional analytics to help us improve Stagehand [y/yes/no]?""");
         io.ProcessResult result =
             io.Process.runSync('git', ['config', 'user.name']);
         if (result.exitCode == 0) author = result.stdout.trim();
-      } catch (exception) {}
+      } catch (exception) {
+        // NOOP
+      }
     }
 
     var vars = {'author': author};

@@ -78,8 +78,8 @@ void main() {
 }
 
 class CliLoggerMock implements CliLogger {
-  StringBuffer _stdout = new StringBuffer();
-  StringBuffer _stderr = new StringBuffer();
+  final StringBuffer _stdout = new StringBuffer();
+  final StringBuffer _stderr = new StringBuffer();
 
   void stderr(String message) => _stderr.write(message);
   void stdout(String message) => _stdout.write(message);
