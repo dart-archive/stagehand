@@ -19,8 +19,7 @@ const String APP_NAME = 'stagehand';
 // This version must be updated in tandem with the pubspec version.
 const String APP_VERSION = '1.1.6';
 
-const String APP_PUB_INFO =
-    'https://pub.dartlang.org/packages/${APP_NAME}.json';
+const String APP_PUB_INFO = 'https://pub.dartlang.org/packages/$APP_NAME.json';
 
 // The Google Analytics tracking ID for stagehand.
 const String _GA_TRACKING_ID = 'UA-55033590-1';
@@ -81,12 +80,12 @@ class CliApp {
     }
 
     if (options['version']) {
-      _out('${APP_NAME} version: ${APP_VERSION}');
+      _out('$APP_NAME version: $APP_VERSION');
       return http.get(APP_PUB_INFO).then((response) {
         List versions = JSON.decode(response.body)['versions'];
         if (APP_VERSION != versions.last) {
           _out('Version ${versions.last} is available! Run `pub global activate'
-              ' ${APP_NAME}` to get the latest.');
+              ' $APP_NAME` to get the latest.');
         }
       }).catchError((e) => null);
     }
@@ -136,7 +135,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
     Generator generator = _getGenerator(generatorName);
 
     if (generator == null) {
-      logger.stderr("'${generatorName}' is not a valid generator.\n");
+      logger.stderr("'$generatorName' is not a valid generator.\n");
       _usage(argParser);
       return new Future.error(new ArgError('invalid generator'));
     }
@@ -158,7 +157,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
       target = new _DirectoryGeneratorTarget(logger, dir);
     }
 
-    _out("Creating ${generatorName} application '${projectName}':");
+    _out('Creating $generatorName application `$projectName`:');
 
     _screenView('create');
     analytics.sendEvent('create', generatorName, label: generator.description);
@@ -184,8 +183,8 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
       String message = generator.getInstallInstructions();
       if (message != null && message.isNotEmpty) {
         message = message.trim();
-        message = message.split('\n').map((line) => '--> ${line}').join('\n');
-        _out('\n${message}');
+        message = message.split('\n').map((line) => '--> $line').join('\n');
+        _out('\n$message');
       }
     }).then((_) {
       return analytics.waitForLastPing(timeout: _timeout);
@@ -200,7 +199,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
         help: 'Opt out of anonymous usage and crash reporting.');
     argParser.addFlag('help', abbr: 'h', negatable: false, help: 'Help!');
     argParser.addFlag('version',
-        negatable: false, help: 'Display the version for ${APP_NAME}.');
+        negatable: false, help: 'Display the version for $APP_NAME.');
     argParser.addOption('author',
         defaultsTo: '<your name>',
         help: 'The author name to use for file headers.');
@@ -238,7 +237,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
     _out(
         'Stagehand will generate the given application type into the current directory.');
     _out('');
-    _out('usage: ${APP_NAME} <generator-name>');
+    _out('usage: $APP_NAME <generator-name>');
     _out(argParser.usage);
     _out('');
     _out('Available generators:');

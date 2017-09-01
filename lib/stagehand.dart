@@ -121,7 +121,7 @@ abstract class Generator implements Comparable<Generator> {
   String getInstallInstructions() => '';
 
   @override
-  String toString() => '[${id}: ${description}]';
+  String toString() => '[$id: $description]';
 }
 
 /// A target for a [Generator]. This class knows how to create files given a path

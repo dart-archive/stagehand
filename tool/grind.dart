@@ -71,16 +71,16 @@ void _concatenateFiles(Directory src, File target) {
 // license that can be found in the LICENSE file.
 
 const List<String> data = const [
-${str}
+$str
 ];
 ''');
 }
 
 String _toStr(String s) {
   if (s.contains('\n')) {
-    return "'''${s}'''";
+    return "'''$s'''";
   } else {
-    return "'${s}'";
+    return "'$s'";
   }
 }
 
@@ -95,9 +95,9 @@ Iterable<String> _traverse(Directory dir, String root) sync* {
     if (name.startsWith('.') && !_allowedDotFiles.contains(name)) continue;
 
     if (entity is Directory) {
-      yield* _traverse(entity, '${root}${name}/');
+      yield* _traverse(entity, '$root$name/');
     } else {
-      yield '${root}${name}';
+      yield '$root$name';
       yield _isBinaryFile(name) ? 'binary' : 'text';
 
       var encoded = BASE64.encode((entity as File).readAsBytesSync());
