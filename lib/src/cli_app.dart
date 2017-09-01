@@ -14,15 +14,15 @@ import 'package:stagehand/src/common.dart';
 import 'package:stagehand/stagehand.dart';
 import 'package:usage/usage_io.dart';
 
-const String APP_NAME = 'stagehand';
+const String appName = 'stagehand';
 
 // This version must be updated in tandem with the pubspec version.
-const String APP_VERSION = '1.1.6';
+const String appVersion = '1.1.6';
 
-const String APP_PUB_INFO = 'https://pub.dartlang.org/packages/$APP_NAME.json';
+const String appPubInfo = 'https://pub.dartlang.org/packages/$appName.json';
 
 // The Google Analytics tracking ID for stagehand.
-const String _GA_TRACKING_ID = 'UA-55033590-1';
+const String _gaTrackingId = 'UA-55033590-1';
 
 class CliApp {
   static final Duration _timeout = const Duration(milliseconds: 500);
@@ -38,7 +38,7 @@ class CliApp {
     assert(generators != null);
     assert(logger != null);
 
-    analytics = new AnalyticsIO(_GA_TRACKING_ID, APP_NAME, APP_VERSION);
+    analytics = new AnalyticsIO(_gaTrackingId, appName, appVersion);
 
     generators.sort();
   }
@@ -80,12 +80,12 @@ class CliApp {
     }
 
     if (options['version']) {
-      _out('$APP_NAME version: $APP_VERSION');
-      return http.get(APP_PUB_INFO).then((response) {
+      _out('$appName version: $appVersion');
+      return http.get(appPubInfo).then((response) {
         List versions = JSON.decode(response.body)['versions'];
-        if (APP_VERSION != versions.last) {
+        if (appVersion != versions.last) {
           _out('Version ${versions.last} is available! Run `pub global activate'
-              ' $APP_NAME` to get the latest.');
+              ' $appName` to get the latest.');
         }
       }).catchError((e) => null);
     }
@@ -199,7 +199,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
         help: 'Opt out of anonymous usage and crash reporting.');
     argParser.addFlag('help', abbr: 'h', negatable: false, help: 'Help!');
     argParser.addFlag('version',
-        negatable: false, help: 'Display the version for $APP_NAME.');
+        negatable: false, help: 'Display the version for $appName.');
     argParser.addOption('author',
         defaultsTo: '<your name>',
         help: 'The author name to use for file headers.');
@@ -237,7 +237,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
     _out(
         'Stagehand will generate the given application type into the current directory.');
     _out('');
-    _out('usage: $APP_NAME <generator-name>');
+    _out('usage: $appName <generator-name>');
     _out(argParser.usage);
     _out('');
     _out('Available generators:');

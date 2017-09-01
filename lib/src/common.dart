@@ -8,7 +8,7 @@ import 'dart:convert' show BASE64, UTF8;
 
 import '../stagehand.dart';
 
-const int _RUNE_SPACE = 32;
+const int _runeSpace = 32;
 
 final _substitueRegExp = new RegExp(r'__([a-zA-Z]+)__');
 final _nonValidSubstitueRegExp = new RegExp('[^a-zA-Z]');
@@ -100,7 +100,7 @@ List<String> wrap(String str, [int col = 80]) {
   while (str.length > col) {
     int index = col;
 
-    while (index > 0 && str.codeUnitAt(index) != _RUNE_SPACE) {
+    while (index > 0 && str.codeUnitAt(index) != _runeSpace) {
       index--;
     }
 

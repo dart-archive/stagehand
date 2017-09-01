@@ -32,6 +32,7 @@ linter:
     - avoid_return_types_on_setters
     - await_only_futures
     - camel_case_types
+    - constant_identifier_names
     - directives_ordering
     - empty_catches
     - empty_constructor_bodies
