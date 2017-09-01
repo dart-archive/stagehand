@@ -136,6 +136,7 @@ abstract class DefaultGenerator extends Generator {
   TemplateFile addFile(String path, String contents) =>
       addTemplateFile(new TemplateFile(path, contents));
 
+  @override
   String getInstallInstructions() {
     if (getFile('pubspec.yaml') != null) {
       return "to provision required packages, run 'pub get'";

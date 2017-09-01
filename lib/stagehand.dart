@@ -112,6 +112,7 @@ abstract class Generator implements Comparable<Generator> {
 
   int numFiles() => files.length;
 
+  @override
   int compareTo(Generator other) =>
       this.id.toLowerCase().compareTo(other.id.toLowerCase());
 
@@ -119,6 +120,7 @@ abstract class Generator implements Comparable<Generator> {
   /// the template.
   String getInstallInstructions() => '';
 
+  @override
   String toString() => '[${id}: ${description}]';
 }
 

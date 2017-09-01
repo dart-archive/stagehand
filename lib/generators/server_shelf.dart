@@ -19,6 +19,7 @@ class ServerShelfGenerator extends DefaultGenerator {
     setEntrypoint(getFile('bin/server.dart'));
   }
 
+  @override
   String getInstallInstructions() => "${super.getInstallInstructions()}\n"
       "run your app via 'dart ${entrypoint.path}'";
 }

@@ -276,6 +276,8 @@ additional analytics to help us improve Stagehand [y/yes/no]?""");
 class ArgError implements Exception {
   final String message;
   ArgError(this.message);
+
+  @override
   String toString() => message;
 }
 
@@ -292,6 +294,7 @@ class _DirectoryGeneratorTarget extends GeneratorTarget {
     dir.createSync();
   }
 
+  @override
   Future createFile(String filePath, List<int> contents) {
     io.File file = new io.File(path.join(dir.path, filePath));
 

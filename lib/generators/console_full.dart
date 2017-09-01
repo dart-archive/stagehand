@@ -19,6 +19,7 @@ class ConsoleFullGenerator extends DefaultGenerator {
     setEntrypoint(getFile('bin/main.dart'));
   }
 
+  @override
   String getInstallInstructions() => "${super.getInstallInstructions()}\n"
       "run your app using 'dart ${entrypoint.path}'";
 }
