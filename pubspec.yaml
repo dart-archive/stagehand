@@ -7,7 +7,7 @@ name: stagehand
 description: >
   A scaffolding generator for your Dart projects. Stagehand helps you get set
   up!
-version: 1.1.5
+version: 1.1.6
 homepage: http://stagehand.pub
 authors:
 - Seth Ladd <sethladd@google.com>
