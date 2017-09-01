@@ -20,6 +20,6 @@ class WebAngularGenerator extends DefaultGenerator {
   }
 
   @override
-  String getInstallInstructions() => "${super.getInstallInstructions()}\n"
-      "to run your app, use 'pub serve'";
+  String getInstallInstructions() => '${super.getInstallInstructions()}\n'
+      'to run your app, use `pub serve`.';
 }

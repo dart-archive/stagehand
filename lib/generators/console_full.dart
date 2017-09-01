@@ -20,6 +20,6 @@ class ConsoleFullGenerator extends DefaultGenerator {
   }
 
   @override
-  String getInstallInstructions() => "${super.getInstallInstructions()}\n"
-      "run your app using 'dart ${entrypoint.path}'";
+  String getInstallInstructions() => '${super.getInstallInstructions()}\n'
+      'run your app using `dart ${entrypoint.path}`.';
 }

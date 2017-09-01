@@ -72,12 +72,12 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   var gitIgnoreFile = new File(gitIgnorePath);
 
   expect(gitIgnoreFile.readAsStringSync(), _expectedGitIgnore,
-      reason: "Expected all of the .gitignore files to be identical.");
+      reason: 'Expected all of the .gitignore files to be identical.');
 
   var analysisOptionsPath = path.join(tempDir.path, 'analysis_options.yaml');
   var analysisOptionsFile = new File(analysisOptionsPath);
   expect(analysisOptionsFile.readAsStringSync(), _expectedAnalysisOptions,
-      reason: "All analysis_options.yaml files should be identical.");
+      reason: 'All analysis_options.yaml files should be identical.');
 
   var pubspecPath = path.join(tempDir.path, 'pubspec.yaml');
   var pubspecFile = new File(pubspecPath);

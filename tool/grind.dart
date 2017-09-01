@@ -11,7 +11,7 @@ import 'package:grinder/grinder.dart';
 import 'package:path/path.dart' as path;
 import 'package:stagehand/stagehand.dart' as stagehand;
 
-const List<String> _allowedDotFiles = const <String>[".gitignore"];
+const List<String> _allowedDotFiles = const <String>['.gitignore'];
 
 final RegExp _binaryFileTypes = new RegExp(
     r'\.(jpe?g|png|gif|ico|svg|ttf|eot|woff|woff2)$',
@@ -65,7 +65,7 @@ void _concatenateFiles(Directory src, File target) {
 
   String str = _traverse(src, '').map((s) => '  ${_toStr(s)}').join(',\n');
 
-  target.writeAsStringSync("""
+  target.writeAsStringSync('''
 // Copyright (c) ${_currentYear()}, Google Inc. Please see the AUTHORS file for details.
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -73,7 +73,7 @@ void _concatenateFiles(Directory src, File target) {
 const List<String> data = const [
 ${str}
 ];
-""");
+''');
 }
 
 String _toStr(String s) {

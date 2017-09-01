@@ -85,8 +85,8 @@ class CliApp {
       return http.get(APP_PUB_INFO).then((response) {
         List versions = JSON.decode(response.body)['versions'];
         if (APP_VERSION != versions.last) {
-          _out("Version ${versions.last} is available! Run `pub global activate"
-              " ${APP_NAME}` to get the latest.");
+          _out('Version ${versions.last} is available! Run `pub global activate'
+              ' ${APP_NAME}` to get the latest.');
         }
       }).catchError((e) => null);
     }
@@ -94,10 +94,10 @@ class CliApp {
     if (options['help'] || args.isEmpty) {
       // Prompt to opt into advanced analytics.
       if (analytics.firstRun) {
-        _out("""
+        _out('''
 Welcome to Stagehand! We collect anonymous usage statistics and crash reports in
 order to improve the tool (http://goo.gl/6wsncI). Would you like to opt-in to
-additional analytics to help us improve Stagehand [y/yes/no]?""");
+additional analytics to help us improve Stagehand [y/yes/no]?''');
         io.stdout.flush();
         String response = io.stdin.readLineSync();
         response = response.toLowerCase().trim();
@@ -121,13 +121,13 @@ additional analytics to help us improve Stagehand [y/yes/no]?""");
     }
 
     if (options.rest.isEmpty) {
-      logger.stderr("No generator specified.\n");
+      logger.stderr('No generator specified.\n');
       _usage(argParser);
       return new Future.error(new ArgError('no generator specified'));
     }
 
     if (options.rest.length >= 2) {
-      logger.stderr("Error: too many arguments given.\n");
+      logger.stderr('Error: too many arguments given.\n');
       _usage(argParser);
       return new Future.error(new ArgError('invalid generator'));
     }
@@ -179,13 +179,13 @@ additional analytics to help us improve Stagehand [y/yes/no]?""");
 
     Future f = generator.generate(projectName, target, additionalVars: vars);
     return f.then((_) {
-      _out("${generator.numFiles()} files written.");
+      _out('${generator.numFiles()} files written.');
 
       String message = generator.getInstallInstructions();
       if (message != null && message.isNotEmpty) {
         message = message.trim();
-        message = message.split('\n').map((line) => "--> ${line}").join("\n");
-        _out("\n${message}");
+        message = message.split('\n').map((line) => '--> ${line}').join('\n');
+        _out('\n${message}');
       }
     }).then((_) {
       return analytics.waitForLastPing(timeout: _timeout);
@@ -244,7 +244,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?""");
     _out('Available generators:');
     int len = generators.map((g) => g.id.length).fold(0, (a, b) => max(a, b));
     generators
-        .map((g) => "  ${_pad(g.id, len)} - ${g.description}")
+        .map((g) => '  ${_pad(g.id, len)} - ${g.description}')
         .forEach(logger.stdout);
   }
 
