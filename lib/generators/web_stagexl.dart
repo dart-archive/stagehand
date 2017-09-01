@@ -6,9 +6,7 @@ import '../src/common.dart';
 import '../stagehand.dart';
 import 'web_stagexl_data.dart';
 
-/**
- * A generator for a StageXL web application.
- */
+/// A generator for a StageXL web application.
 class WebStageXlGenerator extends DefaultGenerator {
   WebStageXlGenerator()
       : super('web-stagexl', 'StageXL Web App',

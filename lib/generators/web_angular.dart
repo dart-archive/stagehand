@@ -6,9 +6,7 @@ import '../src/common.dart';
 import '../stagehand.dart';
 import 'web_angular_data.dart';
 
-/**
- * A generator for an Angular 2 application.
- */
+/// A generator for an Angular 2 application.
 class WebAngularGenerator extends DefaultGenerator {
   WebAngularGenerator()
       : super('web-angular', 'AngularDart Web App',

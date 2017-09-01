@@ -6,9 +6,7 @@ import '../src/common.dart';
 import '../stagehand.dart';
 import 'console_full_data.dart';
 
-/**
- * A generator for a hello world command-line application.
- */
+/// A generator for a hello world command-line application.
 class ConsoleFullGenerator extends DefaultGenerator {
   ConsoleFullGenerator()
       : super('console-full', 'Console Application',

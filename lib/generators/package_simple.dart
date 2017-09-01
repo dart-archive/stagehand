@@ -6,9 +6,7 @@ import '../src/common.dart';
 import '../stagehand.dart';
 import 'package_simple_data.dart';
 
-/**
- * A generator for a pub library.
- */
+/// A generator for a pub library.
 class PackageSimpleGenerator extends DefaultGenerator {
   PackageSimpleGenerator()
       : super('package-simple', 'Dart Package',

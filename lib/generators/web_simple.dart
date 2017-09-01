@@ -6,9 +6,7 @@ import '../src/common.dart';
 import '../stagehand.dart';
 import 'web_simple_data.dart';
 
-/**
- * A generator for a uber-simple web application.
- */
+/// A generator for a uber-simple web application.
 class WebSimpleGenerator extends DefaultGenerator {
   WebSimpleGenerator()
       : super('web-simple', 'Bare-bones Web App',

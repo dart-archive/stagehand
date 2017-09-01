@@ -2,25 +2,29 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-/**
- * Stagehand is a Dart project generator.
- *
- * Stagehand helps you get your Dart projects set up and ready for the big show.
- * It is a Dart project scaffolding generator, inspired by tools like Web
- * Starter Kit and Yeoman.
- *
- * It can be used as a command-line application, or as a regular Dart library
- * composed it a larger development tool. To use as a command-line app, run:
- *
- *     `pub global run stagehand`
- *
- * to see a list of all app types you can create, and:
- *
- *     `mkdir foobar; cd foobar`
- *     `pub global run stagehand webapp`
- *
- * to create a new instance of the `webapp` template in a `foobar` directory.
- */
+/// Stagehand is a Dart project generator.
+///
+/// Stagehand helps you get your Dart projects set up and ready for the big
+/// show.
+/// It is a Dart project scaffolding generator, inspired by tools like Web
+/// Starter Kit and Yeoman.
+///
+/// It can be used as a command-line application, or as a regular Dart library
+/// composed it a larger development tool. To use as a command-line app, run:
+///
+/// ```console
+/// > pub global run stagehand
+/// ```
+///
+/// to see a list of all app types you can create, and:
+///
+/// ```console
+/// > mkdir foobar
+/// > cd foobar
+/// > pub global run stagehand webapp
+/// ```
+///
+/// to create a new instance of the `webapp` template in a `foobar` directory.
 
 import 'dart:async';
 import 'dart:convert';
@@ -47,10 +51,8 @@ Generator getGenerator(String id) {
   return generators.firstWhere((g) => g.id == id, orElse: () => null);
 }
 
-/**
- * An abstract class which both defines a template generator and can generate a
- * user project based on this template.
- */
+/// An abstract class which both defines a template generator and can generate a
+/// user project based on this template.
 abstract class Generator implements Comparable<Generator> {
   final String id;
   final String label;
@@ -62,32 +64,24 @@ abstract class Generator implements Comparable<Generator> {
 
   Generator(this.id, this.label, this.description, {this.categories: const []});
 
-  /**
-   * The entrypoint of the application; the main file for the project, which an
-   * IDE might open after creating the project.
-   */
+  /// The entrypoint of the application; the main file for the project, which an
+  /// IDE might open after creating the project.
   TemplateFile get entrypoint => _entrypoint;
 
-  /**
-   * Add a new template file.
-   */
+  /// Add a new template file.
   TemplateFile addTemplateFile(TemplateFile file) {
     files.add(file);
     return file;
   }
 
-  /**
-   * Return the template file wih the given [path].
-   */
+  /// Return the template file wih the given [path].
   TemplateFile getFile(String path) {
     return files.firstWhere((file) => file.path == path, orElse: () => null);
   }
 
-  /**
-   * Set the main entrypoint of this template. This is the 'most important' file
-   * of this template. An IDE might use this information to open this file after
-   * the user's project is generated.
-   */
+  /// Set the main entrypoint of this template. This is the 'most important' file
+  /// of this template. An IDE might use this information to open this file after
+  /// the user's project is generated.
   void setEntrypoint(TemplateFile entrypoint) {
     if (_entrypoint != null) throw new StateError('entrypoint already set');
     if (entrypoint == null) throw new StateError('entrypoint is null');
@@ -121,32 +115,24 @@ abstract class Generator implements Comparable<Generator> {
   int compareTo(Generator other) =>
       this.id.toLowerCase().compareTo(other.id.toLowerCase());
 
-  /**
-   * Return some user facing instructions about how to finish installation of
-   * the template.
-   */
+  /// Return some user facing instructions about how to finish installation of
+  /// the template.
   String getInstallInstructions() => '';
 
   String toString() => '[${id}: ${description}]';
 }
 
-/**
- * A target for a [Generator]. This class knows how to create files given a path
- * for the file (relavtive to the particular [GeneratorTarget] instance), and
- * the binary content for the file.
- */
+/// A target for a [Generator]. This class knows how to create files given a path
+/// for the file (relavtive to the particular [GeneratorTarget] instance), and
+/// the binary content for the file.
 abstract class GeneratorTarget {
-  /**
-   * Create a file at the given path with the given contents.
-   */
+  /// Create a file at the given path with the given contents.
   Future createFile(String path, List<int> contents);
 }
 
-/**
- * This class represents a file in a generator template. The contents could
- * either be binary or text. If text, the contents may contain mustache
- * variables that can be substituted (`__myVar__`).
- */
+/// This class represents a file in a generator template. The contents could
+/// either be binary or text. If text, the contents may contain mustache
+/// variables that can be substituted (`__myVar__`).
 class TemplateFile {
   final String path;
   final String content;

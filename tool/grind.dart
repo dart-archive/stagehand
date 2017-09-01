@@ -121,16 +121,14 @@ Iterable<String> _traverse(Directory dir, String root) sync* {
   }
 }
 
-/**
- * Returns true if the given [filename] matches common image file name patterns.
- */
+/// Returns `true` if the given [filename] matches common image file name
+/// patterns.
 bool _isBinaryFile(String filename) => _binaryFileTypes.hasMatch(filename);
 
-/**
- * Return the list of children for the given directory. This list is normalized
- * (by sorting on the file path) in order to prevent large merge diffs in the
- * generated template data files.
- */
+/// Return the list of children for the given directory.
+///
+/// This list is normalized (by sorting on the file path) in order to prevent
+/// large merge diffs in the generated template data files.
 List<FileSystemEntity> _listSync(Directory dir,
     {bool recursive: false, bool followLinks: true}) {
   List<FileSystemEntity> results =

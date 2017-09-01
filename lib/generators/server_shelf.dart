@@ -6,9 +6,7 @@ import '../src/common.dart';
 import '../stagehand.dart';
 import 'server_shelf_data.dart';
 
-/**
- * A generator for a server app built on `package:shelf`.
- */
+/// A generator for a server app built on `package:shelf`.
 class ServerShelfGenerator extends DefaultGenerator {
   ServerShelfGenerator()
       : super('server-shelf', 'Web Server',

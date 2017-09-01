@@ -156,11 +156,9 @@ void _validatePubspec(String pubspecContentString) {
           "Top-level keys in the pubspec were not in the expected order: ${_pubspecOrder.join(',')}");
 }
 
-/**
- * Return the list of children for the given directory. This list is normalized
- * (by sorting on the file path) in order to prevent large merge diffs in the
- * generated template data files.
- */
+/// Return the list of children for the given directory. This list is normalized
+/// (by sorting on the file path) in order to prevent large merge diffs in the
+/// generated template data files.
 List<FileSystemEntity> _listSync(Directory dir,
     {bool recursive: false, bool followLinks: true}) {
   List<FileSystemEntity> results =

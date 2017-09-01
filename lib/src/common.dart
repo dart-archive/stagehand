@@ -2,9 +2,7 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-/**
- * Some utility methods for stagehand.
- */
+/// Some utility methods for stagehand.
 
 import 'dart:convert' show BASE64, UTF8;
 
@@ -38,9 +36,7 @@ List<TemplateFile> decodeConcatenatedData(List<String> data) {
   return results;
 }
 
-/**
- * Convert a directory name into a reasonably legal pub package name.
- */
+/// Convert a directory name into a reasonably legal pub package name.
 String normalizeProjectName(String name) {
   name = name.replaceAll('-', '_').replaceAll(' ', '_');
 
@@ -52,23 +48,27 @@ String normalizeProjectName(String name) {
   return name;
 }
 
-/**
- * Given a `String` [str] with mustache templates, and a [Map] of String key /
- * value pairs, substitute all instances of `__key__` for `value`. I.e.,
- *
- *     Foo __projectName__ baz.
- *
- * and
- *
- *     {'projectName': 'bar'}
- *
- * becomes:
- *
- *     Foo bar baz.
- *
- * A key value can only be an ASCII string made up of letters: A-Z, a-z.
- * No whitespace, numbers, or other characters are allowed.
- */
+/// Given a `String` [str] with mustache templates, and a [Map] of String key /
+/// value pairs, substitute all instances of `__key__` for `value`. I.e.,
+///
+/// ```
+/// Foo __projectName__ baz.
+/// ```
+///
+/// and
+///
+/// ```
+/// {'projectName': 'bar'}
+/// ```
+///
+/// becomes:
+///
+/// ```
+/// Foo bar baz.
+/// ```
+///
+/// A key value can only be an ASCII string made up of letters: A-Z, a-z.
+/// No whitespace, numbers, or other characters are allowed.
 String substituteVars(String str, Map<String, String> vars) {
   var nonValidKeys =
       vars.keys.where((k) => k.contains(_nonValidSubstitueRegExp)).toList();
@@ -87,17 +87,13 @@ String substituteVars(String str, Map<String, String> vars) {
   });
 }
 
-/**
- * Convert the given String into a String with newlines wrapped at an 80 column
- * boundary, with 2 leading spaces for each line.
- */
+/// Convert the given String into a String with newlines wrapped at an 80 column
+/// boundary, with 2 leading spaces for each line.
 String convertToYamlMultiLine(String str) {
   return wrap(str, 78).map((line) => '  ${line}').join('\n');
 }
 
-/**
- * Break the given String into lines wrapped on a [col] boundary.
- */
+/// Break the given String into lines wrapped on a [col] boundary.
 List<String> wrap(String str, [int col = 80]) {
   List<String> lines = [];
 
@@ -131,9 +127,7 @@ List<String> wrap(String str, [int col = 80]) {
   return lines;
 }
 
-/**
- * An abstract implementation of a [Generator].
- */
+/// An abstract implementation of a [Generator].
 abstract class DefaultGenerator extends Generator {
   DefaultGenerator(String id, String label, String description,
       {List<String> categories: const []})

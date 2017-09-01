@@ -46,9 +46,7 @@ class CliApp {
 
   io.Directory get cwd => _cwd != null ? _cwd : io.Directory.current;
 
-  /**
-   * An override for the directory to generate into; public for testing.
-   */
+  /// An override for the directory to generate into; public for testing.
   set cwd(io.Directory value) {
     _cwd = value;
   }
@@ -262,10 +260,8 @@ additional analytics to help us improve Stagehand [y/yes/no]?""");
     analytics.sendScreenView(view);
   }
 
-  /**
-   * Returns true if the given directory does not contain non-symlinked,
-   * non-hidden subdirectories.
-   */
+  /// Returns true if the given directory does not contain non-symlinked,
+  /// non-hidden subdirectories.
   bool _isDirEmpty(io.Directory dir) {
     var isHiddenDir = (dir) => path.basename(dir.path).startsWith('.');
 
