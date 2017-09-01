@@ -78,9 +78,9 @@ ${str}
 
 String _toStr(String s) {
   if (s.contains('\n')) {
-    return '"""${s}"""';
+    return "'''${s}'''";
   } else {
-    return '"${s}"';
+    return "'${s}'";
   }
 }
 
