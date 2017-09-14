@@ -7,12 +7,7 @@
 # Fast fail the script on failures.
 set -e
 
-if [ ! $(type -t travis_fold) ]; then
-    travis_fold () { echo "travis_fold:${1}:${2}"; }
-    # In case this is being run locally. Turn travis_fold into a noop.
-    # travis_fold () { true; }
-fi
-export -f travis_fold
+source ./tool/env-set.sh
 
 # Verify that the libraries are error free.
 dartanalyzer --fatal-warnings \
@@ -41,13 +36,3 @@ if [ "$COVERALLS_TOKEN" ]; then
     test/all.dart
   travis_fold end dart_coveralls
 fi
-
-# Run component tests for web-angular.
-pushd templates/web-angular
-travis_fold start web_angular.pub
-  (set -x; pub get)
-travis_fold end web_angular.pub
-travis_fold start web_angular.test
-  (set -x; pub run angular_test)
-travis_fold end web_angular.test
-popd

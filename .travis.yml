@@ -3,16 +3,31 @@ sudo: false
 dart:
   - stable
   - dev
-## The dev channel is stable enough, report failures now.
-# env: # important: w/o this top-level env, no job will be allowed to fail.
-# matrix:
+
+env: # important: w/o this top-level env, no job will be allowed to fail.
+  global:
+    - DISPLAY=:99.0
+  matrix:
+    - CI_JOB=tool/travis.sh
+    - CI_JOB=tool/version-check-and-update.sh
+    - CI_JOB=tool/build-check.sh
+    - CI_JOB=tool/web-angular-test.sh
+
+matrix:
+  exclude:
+  - dart: dev
+    env: CI_JOB=tool/version-check-and-update.sh
+  - dart: dev
+    env: CI_JOB=tool/build-check.sh
 #   allow_failures:
+#   ## The dev channel is stable enough, report failures now.
 #   - dart: dev
+
 with_content_shell: true
-before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-script: ./tool/travis.sh
+
+before_script: sh -e /etc/init.d/xvfb start
+
+script: $CI_JOB
 
 # Only building master means that we don't run two builds for each pull request.
 branches:
