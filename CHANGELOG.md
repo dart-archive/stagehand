@@ -1,3 +1,7 @@
+## 1.1.7
+
+- Improve the format of the code by enabling several lints.
+
 ## 1.1.6
 
 - Added a missing copyright to a web-angular template file.
