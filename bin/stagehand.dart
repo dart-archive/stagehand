@@ -10,15 +10,15 @@ import 'package:stagehand/src/cli_app.dart';
 import 'package:usage/usage_io.dart';
 
 void main(List<String> args) {
-  CliApp app = new CliApp(generators, new CliLogger());
+  var app = new CliApp(generators, new CliLogger());
 
   try {
-    app.process(args).catchError((e, st) {
+    app.process(args).catchError((Object e, StackTrace st) {
       if (e is ArgError) {
         // These errors are expected.
         io.exit(1);
       } else {
-        print('Unexpected error: ${e}\n${st}');
+        print('Unexpected error: $e\n$st');
 
         _sendException(app.analytics, e, st).then((_) {
           io.exit(1);
@@ -32,14 +32,14 @@ void main(List<String> args) {
       io.exit(0);
     });
   } catch (e, st) {
-    print('Unexpected error: ${e}\n${st}');
+    print('Unexpected error: $e\n$st');
     _sendException(app.analytics, e, st);
   }
 }
 
-Future _sendException(Analytics analytics, var e, var st) {
+Future _sendException(Analytics analytics, Object e, StackTrace st) {
   // Sanitize (file:///Users/user/tmp/error.dart:3:13) to (error.dart:3:13).
-  String str = sanitizeStacktrace(st);
-  if (e != null) str = '${e.runtimeType}: ${str}';
+  var str = sanitizeStacktrace(st);
+  if (e != null) str = '${e.runtimeType}: $str';
   return analytics.sendException(str, fatal: true);
 }
