@@ -15,7 +15,7 @@ authors:
 - Kathy Walrath <kathyw@google.com>
 
 environment:
-  sdk: '>=1.13.0 <2.0.0-dev.infinity'
+  sdk: '>=1.13.0 <2.0.0'
 
 # Add the bin/stagehand.dart script to the scripts pub installs.
 executables:
