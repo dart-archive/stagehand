@@ -1,6 +1,7 @@
 ## 1.1.7
 
-- Improve the format of the code by enabling several lints.
+- Improved the format of the code by enabling several lints.
+- `angular_components` updated to 0.7.0 in `web-angular`.
 
 ## 1.1.6
 

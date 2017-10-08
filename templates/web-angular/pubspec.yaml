@@ -9,7 +9,7 @@ environment:
 
 dependencies:
   angular: ^4.0.0
-  angular_components: ^0.6.0
+  angular_components: ^0.7.0
 
 dev_dependencies:
   angular_test: ^1.0.0
