@@ -1,6 +1,7 @@
 ## 1.1.7
 
-- Improve the format of the code by enabling several lints.
+- Improved the format of the code by enabling several lints.
+- Updated `web-angular` template pubspec: using `angular_components` 0.7.0.
 
 ## 1.1.6
 
