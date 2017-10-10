@@ -76,8 +76,4 @@ Contributions welcome! Please read this short
 Learn more about how [Stagehand uses Google Analytics][analytics] for measuring
 usage and error reporting, and how you can opt out.
 
-## Disclaimer
-
-This is not an official Google product.
-
 [analytics]: https://github.com/dart-lang/stagehand/wiki/Anonymous-analytics-and-crash-reports
