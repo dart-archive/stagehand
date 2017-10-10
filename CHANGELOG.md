@@ -1,7 +1,7 @@
 ## 1.1.7
 
-- Improved the format of the code by enabling several lints.
 - Updated `web-angular` template pubspec: using `angular_components` 0.7.0.
+- Improved the format of Stagehand's own code by enabling several lints.
 
 ## 1.1.6
 
