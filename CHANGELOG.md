@@ -1,6 +1,8 @@
-## 1.1.8-dev
+## 1.1.8
 
 - Deleted most license/copyright text and made READMEs more consistent.
+- Added `test/app_test.html` to the `web-angular` template in support of
+  in-browser test monitoring.
 
 ## 1.1.7
 
