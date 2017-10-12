@@ -1,3 +1,7 @@
+## 1.1.8-dev
+
+- Deleted most license/copyright text and made READMEs more consistent.
+
 ## 1.1.7
 
 - Updated `web-angular` template pubspec: using `angular_components` 0.7.0.
