@@ -1,6 +1,9 @@
 # __projectName__
 
-A library for Dart developers. It is awesome.
+A library for Dart developers.
+
+Created from templates made available by Stagehand under a BSD-style
+[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
 
 ## Usage
 
