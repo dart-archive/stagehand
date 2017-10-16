@@ -16,9 +16,10 @@ ZWhhbmQK''',
   'README.md',
   'text',
   '''IyBfX3Byb2plY3ROYW1lX18KCkEgd2ViIHNlcnZlciBidWlsdCB1c2luZyBbU2hlbGZdKGh0dHBz
-Oi8vcHViLmRhcnRsYW5nLm9yZy9wYWNrYWdlcy9zaGVsZikuCgpHZW5lcmF0ZWQgYnkgU3RhZ2Vo
-YW5kLgpTZWUgdGhlIFtMSUNFTlNFXShodHRwczovL2dpdGh1Yi5jb20vZGFydC1sYW5nL3N0YWdl
-aGFuZC9ibG9iL21hc3Rlci9MSUNFTlNFKS4K''',
+Oi8vcHViLmRhcnRsYW5nLm9yZy9wYWNrYWdlcy9zaGVsZikuCgpDcmVhdGVkIGZyb20gdGVtcGxh
+dGVzIG1hZGUgYXZhaWxhYmxlIGJ5IFN0YWdlaGFuZCB1bmRlciBhIEJTRC1zdHlsZQpbbGljZW5z
+ZV0oaHR0cHM6Ly9naXRodWIuY29tL2RhcnQtbGFuZy9zdGFnZWhhbmQvYmxvYi9tYXN0ZXIvTElD
+RU5TRSkuCg==''',
   'analysis_options.yaml',
   'text',
   '''YW5hbHl6ZXI6CiAgc3Ryb25nLW1vZGU6IHRydWUKIyAgIGV4Y2x1ZGU6CiMgICAgIC0gcGF0aC90
