@@ -1,6 +1,7 @@
-## 1.1.8-dev
+## 1.1.8
 
 - Deleted most license/copyright text and made READMEs more consistent.
+- Updated `web-angular` to `angular_components` 0.8.0.
 
 ## 1.1.7
 
@@ -12,7 +13,7 @@
 - Added a missing copyright to a web-angular template file.
 - Removed the `close_sinks` lint from all analysis options files.
 - Moved to `dart-lang` GitHub org.
-- Updated `web-angular` to `angular` v4 and `angular_components` v0.6.0.
+- Updated `web-angular` to `angular` 4 and `angular_components` 0.6.0.
 
 ## 1.1.5
 
