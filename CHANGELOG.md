@@ -1,3 +1,7 @@
+## 1.1.9
+
+- Added `.dart_tool` to `.gitignore` files.
+
 ## 1.1.8
 
 - Deleted most license/copyright text and made READMEs more consistent.
