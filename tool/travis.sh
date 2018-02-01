@@ -15,6 +15,15 @@ dartanalyzer --fatal-warnings \
   lib/stagehand.dart \
   test/all.dart
 
+echo
+echo Running dartfmt over templates.
+REFORMATTED_FILES=$(dartfmt -n templates)
+if [[ -n $REFORMATTED_FILES ]]; then
+  echo "Aborting. Format these files and try again:"
+  echo "$REFORMATTED_FILES"
+  exit 1;
+fi
+
 # Run the tests.
 travis_fold start test_all
 dart test/all.dart
