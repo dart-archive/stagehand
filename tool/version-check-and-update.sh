@@ -20,7 +20,8 @@ if grep -qe "appVersion = '$VERS_FROM_PUB';" $CLIFILE; then
   echo "✔ $CLIFILE has same version as pubspec."
 else
   EXIT_CODE=2
-  perl -i -pe "s/(appVersion = ')[^']*(';)/APP_VERSION = '$VERS_FROM_PUB';/" $CLIFILE
+  grep "appVersion = " $CLIFILE
+  perl -i -pe "s/(appVersion = ')[^']*(';)/$1 = '$VERS_FROM_PUB';/" $CLIFILE
   echo "⚠️ $CLIFILE: HAS BEEN MODIFIED to use pubspec app version."
 fi
 
