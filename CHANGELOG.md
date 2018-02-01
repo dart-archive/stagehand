@@ -1,3 +1,46 @@
+## 2.0.0-alpha-dev
+
+Changed all template `pubspec.yaml` files:
+  - Set minimal SDK to 2.0.0-dev.3.0
+  - Dropped the <del>`browser`</del> package dependency
+  - Upgraded to `test` 0.12.30, which supports running tests under headless chrome
+
+Web-angular template changes:
+
+- Added `uri_has_not_been_generated: ignore` to `analysis_options.yaml`
+- Added `build.yaml`
+- Additional `pubspec.yaml` changes:
+  - Upgraded Angular package versions
+  - Added builder `dev_dependencies` for `build_runner`,
+    `build_test`, and `build_web_compilers`
+  - Removed all transformers
+  - Removed comment concerning web compiler settings.
+  - Temporarily added the `dependency_overrides`: `analyzer: ^0.31.0-alpha.1`
+- Updated `web/index.html`:
+  - Dropped <del>`<script defer src="packages/browser/dart.js"></script>`</del>
+  - Replaced <del>`<script defer src="main.dart" type="application/dart"></script>`</del> by<br>
+    `<script defer src="main.dart.js"></script>`
+- Updated bootstrapping in `web/main.dart`:
+  - Added `import 'main.template.dart' as ng;`
+  - Replaced call to <del>`bootstrap(AppComponent)`</del> by
+    `bootstrapStatic(bootstrapStatic(AppComponent, [], ng.initReflector))`
+- Updated `test/app_test.dart`:
+  - Dropped <del>`@Tags(const ['aot'])`</del>
+  - Dropped <del>`@AngularEntrypoint()`</del>
+  - Dropped <del>`import 'package:angular/angular.dart'`<del>
+  - Added `import 'app_test.template.dart' as ng;`
+  - Added a call to `ng.initReflector();` at the start of `main()`
+
+Web-simple template changes:
+
+- Additional `pubspec.yaml` changes:
+  - Removed all transformers
+  - Removed comment concerning web compiler settings.
+- Updated `web/index.html`:
+  - Dropped <del>`<script defer src="packages/browser/dart.js"></script>`</del>
+  - Replaced `<script defer src="main.dart" type="application/dart"></script>` by<br>
+    `<script defer src="main.dart.js"></script>`
+
 ## 1.1.9
 
 - Added `.dart_tool` to `.gitignore` files.
