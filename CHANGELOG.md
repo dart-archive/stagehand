@@ -1,6 +1,7 @@
 ## 1.1.9
 
 - Added `.dart_tool` to `.gitignore` files.
+- Cleaned template changelogs.
 
 ## 1.1.8
 
