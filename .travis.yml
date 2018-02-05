@@ -1,7 +1,6 @@
 language: dart
 sudo: false
 dart:
-  # - stable
   - dev
 
 env: # important: w/o this top-level env, no job will be allowed to fail.
@@ -14,19 +13,9 @@ env: # important: w/o this top-level env, no job will be allowed to fail.
     # https://github.com/dart-lang/angular/issues/783, skip Angular tests because of pageloader issue
     # - CI_JOB=tool/web-angular-test.sh
 
-# matrix:
-#   exclude:
-#   - dart: dev
-#     env: CI_JOB=tool/version-check-and-update.sh
-#   - dart: dev
-#     env: CI_JOB=tool/build-check.sh
-#   allow_failures:
-#   ## The dev channel is stable enough, report failures now.
-#   - dart: dev
-
 script: $CI_JOB
 
-# Only building master means that we don't run two builds for each pull request.
+# Only building on selected branches means that we don't run two builds for each pull request.
 branches:
   only: [master, 2-dev]
 
