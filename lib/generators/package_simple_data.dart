@@ -53,8 +53,9 @@ IGJvb2wgZ2V0IGlzQXdlc29tZSA9PiB0cnVlOwp9Cg==''',
   '''bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBIHN0YXJ0aW5nIHBvaW50IGZvciBE
 YXJ0IGxpYnJhcmllcyBvciBhcHBsaWNhdGlvbnMuCnZlcnNpb246IDAuMC4xCiNob21lcGFnZTog
 aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20KI2F1dGhvcjogX19hdXRob3JfXyA8ZW1haWxAZXhhbXBs
-ZS5jb20+CgplbnZpcm9ubWVudDoKICBzZGs6ICc+PTEuMjAuMSA8Mi4wLjAnCgojZGVwZW5kZW5j
-aWVzOgojICBwYXRoOiBeMS40LjEKCmRldl9kZXBlbmRlbmNpZXM6CiAgdGVzdDogXjAuMTIuMAo=''',
+ZS5jb20+CgplbnZpcm9ubWVudDoKICBzZGs6ICc+PTIuMC4wLWRldi4zLjAgPDIuMC4wJwoKI2Rl
+cGVuZGVuY2llczoKIyAgcGF0aDogXjEuNC4xCgpkZXZfZGVwZW5kZW5jaWVzOgogIHRlc3Q6IF4w
+LjEyLjMwCg==''',
   'test/__projectName___test.dart',
   'text',
   '''aW1wb3J0ICdwYWNrYWdlOl9fcHJvamVjdE5hbWVfXy9fX3Byb2plY3ROYW1lX18uZGFydCc7Cmlt
