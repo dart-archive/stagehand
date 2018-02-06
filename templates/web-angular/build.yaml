@@ -1,0 +1,9 @@
+targets:
+  __projectName__:
+    builders:
+      angular:
+        options:
+          use_new_template_parser: true
+      # build_web_compilers|entrypoint:
+      #   options:
+      #     compiler: dart2js # default is dartdevc

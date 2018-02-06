@@ -1,7 +1,7 @@
 analyzer:
   strong-mode: true
-#   exclude:
-#     - path/to/excluded/files/**
+  errors:
+    uri_has_not_been_generated: ignore
 
 # Lint rules and documentation, see http://dart-lang.github.io/linter/lints
 linter:

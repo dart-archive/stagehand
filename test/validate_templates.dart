@@ -30,6 +30,12 @@ final List<RegExp> _pubspecOrderRegexps =
 final String _expectedGitIgnore = _getMetaTemplateFile('.gitignore');
 final String _expectedAnalysisOptions =
     _getMetaTemplateFile('templates/analysis_options.yaml');
+final String _expectedAngularAnalysisOptions = [
+  _expectedAnalysisOptions.split('\n').take(2),
+  '  errors:',
+  '    uri_has_not_been_generated: ignore',
+  _expectedAnalysisOptions.split('\n').skip(4),
+].expand((e) => e is Iterable ? e : [e]).join('\n');
 
 void main() {
   Directory dir;
@@ -74,13 +80,18 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   expect(gitIgnoreFile.readAsStringSync(), _expectedGitIgnore,
       reason: 'Expected all of the .gitignore files to be identical.');
 
-  var analysisOptionsPath = path.join(tempDir.path, 'analysis_options.yaml');
-  var analysisOptionsFile = new File(analysisOptionsPath);
-  expect(analysisOptionsFile.readAsStringSync(), _expectedAnalysisOptions,
-      reason: 'All analysis_options.yaml files should be identical.');
-
   var pubspecPath = path.join(tempDir.path, 'pubspec.yaml');
   var pubspecFile = new File(pubspecPath);
+  var pubspecContentString = pubspecFile.readAsStringSync();
+  var pubspecContent = yaml.loadYaml(pubspecContentString) as yaml.YamlMap;
+  final usesAngular =
+      pubspecContent['dependencies']?.containsKey('angular') ?? false;
+
+  var analysisOptionsPath = path.join(tempDir.path, 'analysis_options.yaml');
+  var analysisOptionsFile = new File(analysisOptionsPath);
+  expect(analysisOptionsFile.readAsStringSync(),
+      usesAngular ? _expectedAngularAnalysisOptions : _expectedAnalysisOptions,
+      reason: 'All analysis_options.yaml files should be identical.');
 
   if (!pubspecFile.existsSync()) {
     fail('A pubspec must be defined!');
@@ -116,20 +127,16 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
     }
   }
 
-  var pubspecContentString = pubspecFile.readAsStringSync();
   //
   // validate pubspec values
   //
   _validatePubspec(pubspecContentString);
 
-  var pubspecContent = yaml.loadYaml(pubspecContentString) as yaml.YamlMap;
   expect(pubspecContent, containsPair('name', 'stagehand'));
   expect(pubspecContent, containsPair('description', isNotEmpty));
   expect(pubspecContent, containsPair('version', '0.0.1'));
 
-  final usesAngular =
-      pubspecContent['dependencies']?.containsKey('angular') ?? false;
-  final minSDK = usesAngular ? '1.24.0' : '1.20.1';
+  final minSDK = '2.0.0-dev.3.0';
   final env = {'sdk': '>=$minSDK <2.0.0'};
   expect(pubspecContent, containsPair('environment', env));
 
