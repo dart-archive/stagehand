@@ -19,6 +19,7 @@ dev_dependencies:
   test: ^0.12.30
 
 dependency_overrides:
+  build_runner: 0.8.0
   # TODO: awaiting for pageloader v3. https://github.com/dart-lang/site-webdev/issues/1351
   pageloader:
      git:
