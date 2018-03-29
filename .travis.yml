@@ -1,19 +1,22 @@
 language: dart
 sudo: false
-dart:
-  - dev
+dart: dev
+
+cache:
+  directories:
+  - $HOME/.pub-cache
+  - templates/web-angular/.dart_tool
 
 env: # important: w/o this top-level env, no job will be allowed to fail.
   global:
     - DISPLAY=:99.0
   matrix:
-    - CI_JOB=tool/travis.sh
-    - CI_JOB=tool/version-check-and-update.sh
-    - CI_JOB=tool/build-check.sh
-    # https://github.com/dart-lang/angular/issues/783, skip Angular tests because of pageloader issue
-    # - CI_JOB=tool/web-angular-test.sh
+    - CI_TASK=tool/travis.sh
+    - CI_TASK=tool/version-check-and-update.sh
+    - CI_TASK=tool/build-check.sh
+    - CI_TASK=tool/web-angular-test.sh
 
-script: $CI_JOB
+script: $CI_TASK
 
 # Only building on selected branches means that we don't run two builds for each pull request.
 branches:

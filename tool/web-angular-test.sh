@@ -15,6 +15,6 @@ travis_fold start web_angular.pub
   (set -x; pub get)
 travis_fold end web_angular.pub
 travis_fold start web_angular.test
-  (set -x; pub run angular_test)
+  (set -x; pub run build_runner test --fail-on-severe -- -p chrome --reporter=expanded)
 travis_fold end web_angular.test
 popd
