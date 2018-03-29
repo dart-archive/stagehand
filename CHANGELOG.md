@@ -1,21 +1,23 @@
 ## 2.0.0-alpha-dev
 
 Changed all template `pubspec.yaml` files:
-  - Set minimal SDK to 2.0.0-dev.3.0
+  - Set minimal SDK to 2.0.0-dev.28.0
   - Dropped the <del>`browser`</del> package dependency
   - Upgraded to `test` 0.12.30, which supports running tests under headless chrome
 
 Web-angular template changes:
 
-- Added `uri_has_not_been_generated: ignore` to `analysis_options.yaml`
-- Added `build.yaml`
+- In `analysis_options.yaml`:
+  - Added `uri_has_not_been_generated: ignore`
+  - Enabled Angular analyzer plugin
+- Added `build.debug.yaml` and  `build.release.yaml` files
 - Additional `pubspec.yaml` changes:
   - Upgraded Angular package versions
   - Added builder `dev_dependencies` for `build_runner`,
     `build_test`, and `build_web_compilers`
   - Removed all transformers
-  - Removed comment concerning web compiler settings.
-  - Temporarily added the `dependency_overrides`: `analyzer: ^0.31.0-alpha.1`
+  - Removed comment concerning web compiler settings
+  - Temporarily added an override for `pageloader`
 - Updated `web/index.html`:
   - Dropped <del>`<script defer src="packages/browser/dart.js"></script>`</del>
   - Replaced <del>`<script defer src="main.dart" type="application/dart"></script>`</del> by<br>
@@ -30,6 +32,10 @@ Web-angular template changes:
   - Dropped <del>`import 'package:angular/angular.dart'`<del>
   - Added `import 'app_test.template.dart' as ng;`
   - Added a call to `ng.initReflector();` at the start of `main()`
+- Other Dart file changes:
+  -  `CORE_DIRECTIVES` &rarr; `coreDirectives`
+  - Dropped <del>`const`</del> qualifier from literals used used in metadata annotations
+  - Switched to using new provider classes like `ClassProvider`
 
 Web-simple template changes:
 

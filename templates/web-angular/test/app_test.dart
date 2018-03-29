@@ -17,7 +17,9 @@ void main() {
 
   setUp(() async {
     fixture = await testBed.create();
-    appPO = await fixture.resolvePageObject(AppPO);
+    // TODO: temporary. https://github.com/dart-lang/site-webdev/issues/1351
+    appPO = await new AppPO().resolve(fixture);
+    // appPO = await fixture.resolvePageObject(AppPO);
   });
 
   tearDown(disposeAnyRunningTest);
@@ -29,9 +31,12 @@ void main() {
   // Testing info: https://webdev.dartlang.org/angular/guide/testing
 }
 
-class AppPO {
+class AppPO
+    // TODO: temporary. https://github.com/dart-lang/site-webdev/issues/1351
+    extends PageObjectBase //
+{
   @ByTagName('h1')
-  PageLoaderElement _title;
+  PageLoaderElement get _title => q('h1');
 
   Future<String> get title => _title.visibleText;
 }
