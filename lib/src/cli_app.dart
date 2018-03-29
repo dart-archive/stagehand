@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import 'dart:async';
-import 'dart:convert' show json;
+import 'dart:convert';
 import 'dart:io' as io;
 import 'dart:math';
 
@@ -82,7 +82,7 @@ class CliApp {
     if (options['version']) {
       _out('$appName version: $appVersion');
       return http.get(appPubInfo).then((response) {
-        List versions = json.decode(response.body)['versions'];
+        List versions = jsonDecode(response.body)['versions'];
         if (appVersion != versions.last) {
           _out('Version ${versions.last} is available! Run `pub global activate'
               ' $appName` to get the latest.');
