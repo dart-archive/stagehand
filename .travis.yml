@@ -1,11 +1,19 @@
 language: dart
-sudo: false
+
+# Gives more resources on Travis (8GB Ram, 2CPUs).
+# Do not remove without verifying w/ Travis.
+sudo: required
+
 dart: dev
 
 cache:
   directories:
   - $HOME/.pub-cache
+  - templates/console-full/.dart_tool
+  - templates/package-simple/.dart_tool
   - templates/web-angular/.dart_tool
+  - templates/web-simple/.dart_tool
+  - templates/web-stagexl/.dart_tool
 
 addons:
   chrome: stable
@@ -24,8 +32,3 @@ script: $CI_TASK
 # Only building on selected branches means that we don't run two builds for each pull request.
 branches:
   only: [master, 2-dev]
-
-cache:
-  directories:
-    - $HOME/.pub-cache
-    - templates/**/.dart_tool
