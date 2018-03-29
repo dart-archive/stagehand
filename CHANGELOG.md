@@ -1,9 +1,12 @@
 ## 2.0.0-alpha-dev
 
-Changed all template `pubspec.yaml` files:
+Project and template file changes:
+- In `pubspec.yaml` files:
   - Set minimal SDK to 2.0.0-dev.28.0
   - Dropped the <del>`browser`</del> package dependency
   - Upgraded to `test` 0.12.30, which supports running tests under headless chrome
+- Dart 2 changes:
+  - Renamed variables like, `JSON`, `PI`, etc. to `json`, `pi`, etc.
 
 Web-angular template changes:
 

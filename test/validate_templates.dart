@@ -34,6 +34,9 @@ final String _expectedAngularAnalysisOptions = [
   _expectedAnalysisOptions.split('\n').take(2),
   '  errors:',
   '    uri_has_not_been_generated: ignore',
+  '  plugins:',
+  '    angular:',
+  '      enabled: true',
   _expectedAnalysisOptions.split('\n').skip(4),
 ].expand((e) => e is Iterable ? e : [e]).join('\n');
 

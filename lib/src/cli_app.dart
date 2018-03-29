@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import 'dart:async';
-import 'dart:convert' show JSON;
+import 'dart:convert' show json;
 import 'dart:io' as io;
 import 'dart:math';
 
@@ -82,7 +82,7 @@ class CliApp {
     if (options['version']) {
       _out('$appName version: $appVersion');
       return http.get(appPubInfo).then((response) {
-        List versions = JSON.decode(response.body)['versions'];
+        List versions = json.decode(response.body)['versions'];
         if (appVersion != versions.last) {
           _out('Version ${versions.last} is available! Run `pub global activate'
               ' $appName` to get the latest.');
@@ -110,7 +110,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
     }
 
     // The `--machine` option emits the list of available generators to stdout
-    // as Json. This is useful for tools that don't want to have to parse the
+    // as JSON. This is useful for tools that don't want to have to parse the
     // output of `--help`. It's an undocumented command line flag, and may go
     // away or change.
     if (options['machine']) {
@@ -206,7 +206,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
     // Really, really generate into the current directory.
     argParser.addFlag('override', negatable: false, hide: true);
 
-    // Output the list of available projects as json to stdout.
+    // Output the list of available projects as JSON to stdout.
     argParser.addFlag('machine', negatable: false, hide: true);
 
     // Mock out analytics - for use on our testing bots.
@@ -229,7 +229,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
 
       return m;
     });
-    return JSON.encode(itor.toList());
+    return json.encode(itor.toList());
   }
 
   void _usage(ArgParser argParser) {

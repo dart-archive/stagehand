@@ -163,7 +163,7 @@ class TemplateFile {
     if (isBinary) {
       return _binaryData;
     } else {
-      return UTF8.encode(substituteVars(content, vars));
+      return utf8.encode(substituteVars(content, vars));
     }
   }
 }

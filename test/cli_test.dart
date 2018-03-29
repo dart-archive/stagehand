@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 @TestOn('vm')
 import 'dart:async';
-import 'dart:convert' show JSON;
+import 'dart:convert' show json;
 import 'dart:io';
 
 import 'package:stagehand/stagehand.dart';
@@ -63,7 +63,7 @@ void main() {
     test('machine format', () {
       return app.process(['--machine']).then((_) {
         _expectOk();
-        List results = JSON.decode(logger.getStdout());
+        List results = json.decode(logger.getStdout());
         expect(results, isNot(isEmpty));
       });
     });
