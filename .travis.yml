@@ -7,6 +7,9 @@ cache:
   - $HOME/.pub-cache
   - templates/web-angular/.dart_tool
 
+addons:
+  chrome: stable
+
 env: # important: w/o this top-level env, no job will be allowed to fail.
   global:
     - DISPLAY=:99.0
