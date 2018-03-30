@@ -42,7 +42,7 @@ Future<Null> main() async {
     // Don't run more rotations at the same time.
     if (rotation != null) return;
     rotation = stage.juggler.addTween(logo, 0.5, Transition.easeInOutCubic);
-    rotation.animate.rotation.by(2 * PI);
+    rotation.animate.rotation.by(2 * pi);
     rotation.onComplete = () => rotation = null;
   });
   logo.mouseCursor = MouseCursor.POINTER;

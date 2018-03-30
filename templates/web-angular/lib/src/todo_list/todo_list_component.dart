@@ -7,13 +7,13 @@ import 'todo_list_service.dart';
 
 @Component(
   selector: 'todo-list',
-  styleUrls: const ['todo_list_component.css'],
+  styleUrls: ['todo_list_component.css'],
   templateUrl: 'todo_list_component.html',
-  directives: const [
-    CORE_DIRECTIVES,
+  directives: [
+    coreDirectives,
     materialDirectives,
   ],
-  providers: const [TodoListService],
+  providers: [const ClassProvider(TodoListService)],
 )
 class TodoListComponent implements OnInit {
   final TodoListService todoListService;

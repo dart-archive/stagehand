@@ -1,25 +1,34 @@
 language: dart
-sudo: false
-dart:
-  - dev
+
+# Gives more resources on Travis (8GB Ram, 2CPUs).
+# Do not remove without verifying w/ Travis.
+sudo: required
+
+dart: dev
+
+cache:
+  directories:
+  - $HOME/.pub-cache
+  - templates/console-full/.dart_tool
+  - templates/package-simple/.dart_tool
+  - templates/web-angular/.dart_tool
+  - templates/web-simple/.dart_tool
+  - templates/web-stagexl/.dart_tool
+
+addons:
+  chrome: stable
 
 env: # important: w/o this top-level env, no job will be allowed to fail.
   global:
     - DISPLAY=:99.0
   matrix:
-    - CI_JOB=tool/travis.sh
-    - CI_JOB=tool/version-check-and-update.sh
-    - CI_JOB=tool/build-check.sh
-    # https://github.com/dart-lang/angular/issues/783, skip Angular tests because of pageloader issue
-    # - CI_JOB=tool/web-angular-test.sh
+    - CI_TASK=tool/travis.sh
+    - CI_TASK=tool/version-check-and-update.sh
+    - CI_TASK=tool/build-check.sh
+    - CI_TASK=tool/web-angular-test.sh
 
-script: $CI_JOB
+script: $CI_TASK
 
 # Only building on selected branches means that we don't run two builds for each pull request.
 branches:
   only: [master, 2-dev]
-
-cache:
-  directories:
-    - $HOME/.pub-cache
-    - templates/**/.dart_tool
