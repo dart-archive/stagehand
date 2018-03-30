@@ -5,18 +5,23 @@ version: 0.0.1
 #author: __author__ <email@example.com>
 
 environment:
-  sdk: '>=2.0.0-dev.3.0 <2.0.0'
+  sdk: '>=2.0.0-dev.28.0 <2.0.0'
 
 dependencies:
-  angular: ^5.0.0-alpha+3
+  angular: ^5.0.0-alpha
   angular_components: ^0.9.0-alpha
 
 dev_dependencies:
   angular_test: ^2.0.0-alpha
-  build_runner: ^0.7.8
+  build_runner: ^0.8.0
   build_test: ^0.10.0
-  build_web_compilers: ^0.2.1
+  build_web_compilers: ^0.3.0
   test: ^0.12.30
 
 dependency_overrides:
-  analyzer: ^0.31.0-alpha.1
+  # TODO: awaiting for pageloader v3. https://github.com/dart-lang/site-webdev/issues/1351
+  pageloader:
+     git:
+       url: https://github.com/dart-lang/site-webdev.git
+       ref: 5-dev
+       path: examples/util/pageloader

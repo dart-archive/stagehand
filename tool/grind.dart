@@ -100,7 +100,7 @@ Iterable<String> _traverse(Directory dir, String root) sync* {
       yield '$root$name';
       yield _isBinaryFile(name) ? 'binary' : 'text';
 
-      var encoded = BASE64.encode((entity as File).readAsBytesSync());
+      var encoded = base64.encode((entity as File).readAsBytesSync());
 
       //
       // Logic to cut lines into 76-character chunks

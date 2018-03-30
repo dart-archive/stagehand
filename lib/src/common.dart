@@ -4,7 +4,7 @@
 
 /// Some utility methods for stagehand.
 
-import 'dart:convert' show BASE64, UTF8;
+import 'dart:convert' show base64, utf8;
 
 import '../stagehand.dart';
 
@@ -23,12 +23,12 @@ List<TemplateFile> decodeConcatenatedData(List<String> data) {
     var type = data[i + 1];
     var raw = data[i + 2].replaceAll(_whiteSpace, '');
 
-    var decoded = BASE64.decode(raw);
+    var decoded = base64.decode(raw);
 
     if (type == 'binary') {
       results.add(new TemplateFile.fromBinary(path, decoded));
     } else {
-      var source = UTF8.decode(decoded);
+      var source = utf8.decode(decoded);
       results.add(new TemplateFile(path, source));
     }
   }

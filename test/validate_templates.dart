@@ -34,6 +34,9 @@ final String _expectedAngularAnalysisOptions = [
   _expectedAnalysisOptions.split('\n').take(2),
   '  errors:',
   '    uri_has_not_been_generated: ignore',
+  '  plugins:',
+  '    angular:',
+  '      enabled: true',
   _expectedAnalysisOptions.split('\n').skip(4),
 ].expand((e) => e is Iterable ? e : [e]).join('\n');
 
@@ -136,7 +139,7 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   expect(pubspecContent, containsPair('description', isNotEmpty));
   expect(pubspecContent, containsPair('version', '0.0.1'));
 
-  final minSDK = '2.0.0-dev.3.0';
+  final minSDK = '2.0.0-dev.28.0';
   final env = {'sdk': '>=$minSDK <2.0.0'};
   expect(pubspecContent, containsPair('environment', env));
 

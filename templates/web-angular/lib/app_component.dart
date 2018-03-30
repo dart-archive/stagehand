@@ -8,10 +8,10 @@ import 'src/todo_list/todo_list_component.dart';
 
 @Component(
   selector: 'my-app',
-  styleUrls: const ['app_component.css'],
+  styleUrls: ['app_component.css'],
   templateUrl: 'app_component.html',
-  directives: const [materialDirectives, TodoListComponent],
-  providers: const [materialProviders],
+  directives: [materialDirectives, TodoListComponent],
+  providers: [materialProviders],
 )
 class AppComponent {
   // Nothing here yet. All logic is in TodoListComponent.
