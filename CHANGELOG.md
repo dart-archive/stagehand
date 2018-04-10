@@ -50,6 +50,12 @@ Web-simple template changes:
   - Replaced `<script defer src="main.dart" type="application/dart"></script>` by<br>
     `<script defer src="main.dart.js"></script>`
 
+Web-stagexl template changes:
+
+- Additional `pubspec.yaml` changes:
+  - Removed all transformers
+  - Removed dependency on `browser` and `dart_to_js_script_rewriter` packages.
+
 ## 1.1.9
 
 - Added `.dart_tool` to `.gitignore` files.

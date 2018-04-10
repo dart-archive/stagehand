@@ -9,10 +9,7 @@ description: >
   up!
 version: 2.0.0-alpha-dev
 homepage: http://stagehand.pub
-authors:
-- Seth Ladd <sethladd@google.com>
-- Devon Carew <devoncarew@google.com>
-- Kathy Walrath <kathyw@google.com>
+author: Dart Team <misc@dartlang.org>
 
 environment:
   sdk: '>=2.0.0-dev.28.0 <2.0.0'
