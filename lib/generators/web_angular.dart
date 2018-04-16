@@ -17,8 +17,4 @@ class WebAngularGenerator extends DefaultGenerator {
 
     setEntrypoint(getFile('web/index.html'));
   }
-
-  @override
-  String getInstallInstructions() => '${super.getInstallInstructions()}\n'
-      'to run your app, use `pub serve`.';
 }
