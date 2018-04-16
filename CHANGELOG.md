@@ -2,6 +2,7 @@
 
 - Added `.dart_tool` to `.gitignore` files.
 - Cleaned template changelogs.
+- Updated stagehand's version of the args package.
 
 ## 1.1.8
 
