@@ -22,7 +22,7 @@ const String appVersion = '2.0.0-alpha-dev';
 const String appPubInfo = 'https://pub.dartlang.org/packages/$appName.json';
 
 // The Google Analytics tracking ID for stagehand.
-const String _gaTrackingId = 'UA-55033590-1';
+const String _gaTrackingId = 'UA-26406144-31';
 
 class CliApp {
   static final Duration _timeout = const Duration(milliseconds: 500);
