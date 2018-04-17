@@ -240,10 +240,9 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
     _out(argParser.usage);
     _out('');
     _out('Available generators:');
-    var len =
-        generators.map((g) => g.id.length).fold(0, (int a, b) => max(a, b));
+    var len = generators.fold(0, (int length, g) => max(length, g.id.length));
     generators
-        .map((g) => '  ${_pad(g.id, len)} - ${g.description}')
+        .map((g) => '  ${g.id.padRight(len)} - ${g.description}')
         .forEach(logger.stdout);
   }
 
@@ -303,9 +302,4 @@ class _DirectoryGeneratorTarget extends GeneratorTarget {
         .create(recursive: true)
         .then((_) => file.writeAsBytes(contents));
   }
-}
-
-String _pad(String str, int len) {
-  while (str.length < len) str += ' ';
-  return str;
 }
