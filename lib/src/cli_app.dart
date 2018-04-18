@@ -33,12 +33,18 @@ class CliApp {
   GeneratorTarget target;
   Analytics analytics;
   io.Directory _cwd;
+  bool _firstScreen = true;
 
   CliApp(this.generators, this.logger, [this.target]) {
     assert(generators != null);
     assert(logger != null);
 
-    analytics = new AnalyticsIO(_gaTrackingId, appName, appVersion);
+    analytics = new AnalyticsIO(_gaTrackingId, appName, appVersion)
+      // These `cdX` values MUST be tightly coordinated with Analytics config
+      // DO NOT modify unless you're certain what you're doing.
+      // Contact kevmoo@ if you have questions
+      ..setSessionValue('cd1', io.Platform.operatingSystem)
+      ..setSessionValue('cd3', io.Platform.version.split(' ').first);
 
     generators.sort();
   }
@@ -255,12 +261,18 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
   void _screenView(String view) {
     // If the user hasn't opted in, only send a version check - no page data.
     if (!analytics.enabled) view = 'main';
-    analytics.sendScreenView(view);
+
+    Map<String, String> params;
+    if (_firstScreen) {
+      params = {'sc': 'start'};
+      _firstScreen = false;
+    }
+    analytics.sendScreenView(view, parameters: params);
   }
 
   /// Returns true if the given directory does not contain non-symlinked,
   /// non-hidden subdirectories.
-  bool _isDirEmpty(io.Directory dir) {
+  static bool _isDirEmpty(io.Directory dir) {
     var isHiddenDir = (dir) => path.basename(dir.path).startsWith('.');
 
     return dir
