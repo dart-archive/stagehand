@@ -51,6 +51,8 @@ Web-simple template changes:
 - Additional `pubspec.yaml` changes:
   - Removed all transformers
   - Removed comment concerning web compiler settings.
+  - Added builder `dev_dependencies` for `build_runner` and
+    `build_web_compilers`
 - Updated `web/index.html`:
   - Dropped <del>`<script defer src="packages/browser/dart.js"></script>`</del>
   - Replaced `<script defer src="main.dart" type="application/dart"></script>` by<br>
@@ -61,6 +63,8 @@ Web-stagexl template changes:
 - Additional `pubspec.yaml` changes:
   - Removed all transformers
   - Removed dependency on `browser` and `dart_to_js_script_rewriter` packages.
+  - Added builder `dev_dependencies` for `build_runner` and
+    `build_web_compilers`
 
 ## 1.1.9
 
