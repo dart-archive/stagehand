@@ -2,7 +2,7 @@
 
 Project and template file changes:
 - In `pubspec.yaml` files:
-  - Set minimal SDK to 2.0.0-dev.28.0
+  - Set minimal SDK to 2.0.0-dev.48.0
   - Dropped the <del>`browser`</del> package dependency
   - Upgraded to `test` 0.12.30, which supports running tests under headless chrome
 - Dart 2 changes:
@@ -11,7 +11,7 @@ Project and template file changes:
 Server-shelf template changes:
 
 - Updated to latest dependencies.
-- Using `int.tryParse` introduced in Dart `2.0.0-dev.48`.
+- Use `int.tryParse()`.
 - Use `async`/`await` and proper pattern from exiting a binary on error.
 
 Web-angular template changes:
