@@ -32,9 +32,9 @@ Web-angular template changes:
   - Replaced <del>`<script defer src="main.dart" type="application/dart"></script>`</del> by<br>
     `<script defer src="main.dart.js"></script>`
 - Updated bootstrapping in `web/main.dart`:
-  - Added `import 'main.template.dart' as ng;`
+  - Added `import 'package:__projectName__/app_component.template.dart' as ng;`
   - Replaced call to <del>`bootstrap(AppComponent)`</del> by
-    `bootstrapStatic(bootstrapStatic(AppComponent, [], ng.initReflector))`
+    `runApp(ng.AppComponentNgFactory);`
 - Updated `test/app_test.dart`:
   - Dropped <del>`@Tags(const ['aot'])`</del>
   - Dropped <del>`@AngularEntrypoint()`</del>
