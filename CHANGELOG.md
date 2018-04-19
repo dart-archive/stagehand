@@ -8,6 +8,12 @@ Project and template file changes:
 - Dart 2 changes:
   - Renamed variables like, `JSON`, `PI`, etc. to `json`, `pi`, etc.
 
+Server-shelf template changes:
+
+- Updated to latest dependencies.
+- Using `int.tryParse` introduced in Dart `2.0.0-dev.48`.
+- Use `async`/`await` and proper pattern from exiting a binary on error.
+
 Web-angular template changes:
 
 - In `analysis_options.yaml`:
