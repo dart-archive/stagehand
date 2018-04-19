@@ -2,11 +2,17 @@
 
 Project and template file changes:
 - In `pubspec.yaml` files:
-  - Set minimal SDK to 2.0.0-dev.28.0
+  - Set minimal SDK to 2.0.0-dev.48.0
   - Dropped the <del>`browser`</del> package dependency
   - Upgraded to `test` 0.12.30, which supports running tests under headless chrome
 - Dart 2 changes:
   - Renamed variables like, `JSON`, `PI`, etc. to `json`, `pi`, etc.
+
+Server-shelf template changes:
+
+- Updated to latest dependencies.
+- Use `int.tryParse()`.
+- Use `async`/`await` and proper pattern from exiting a binary on error.
 
 Web-angular template changes:
 
@@ -45,6 +51,8 @@ Web-simple template changes:
 - Additional `pubspec.yaml` changes:
   - Removed all transformers
   - Removed comment concerning web compiler settings.
+  - Added builder `dev_dependencies` for `build_runner` and
+    `build_web_compilers`
 - Updated `web/index.html`:
   - Dropped <del>`<script defer src="packages/browser/dart.js"></script>`</del>
   - Replaced `<script defer src="main.dart" type="application/dart"></script>` by<br>
@@ -55,6 +63,8 @@ Web-stagexl template changes:
 - Additional `pubspec.yaml` changes:
   - Removed all transformers
   - Removed dependency on `browser` and `dart_to_js_script_rewriter` packages.
+  - Added builder `dev_dependencies` for `build_runner` and
+    `build_web_compilers`
 
 ## 1.1.9
 

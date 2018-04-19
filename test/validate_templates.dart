@@ -140,7 +140,7 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   expect(pubspecContent, containsPair('description', isNotEmpty));
   expect(pubspecContent, containsPair('version', '0.0.1'));
 
-  final minSDK = '2.0.0-dev.28.0';
+  final minSDK = '2.0.0-dev.48.0';
   final env = {'sdk': '>=$minSDK <2.0.0'};
   expect(pubspecContent, containsPair('environment', env));
 
