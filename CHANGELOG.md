@@ -2,69 +2,69 @@
 
 Project and template file changes:
 - In `pubspec.yaml` files:
-  - Set minimal SDK to 2.0.0-dev.48.0
-  - Dropped the <del>`browser`</del> package dependency
-  - Upgraded to `test` 0.12.30, which supports running tests under headless chrome
+  - Set minimal SDK to 2.0.0-dev.48.0.
+  - Dropped the <del>`browser`</del> package dependency.
+  - Upgraded to `test` 0.12.30, which supports running tests under headless chrome.
 - Dart 2 changes:
   - Renamed variables like, `JSON`, `PI`, etc. to `json`, `pi`, etc.
 
 Server-shelf template changes:
 
 - Updated to latest dependencies.
-- Use `int.tryParse()`.
-- Use `async`/`await` and proper pattern from exiting a binary on error.
+- Switched from `int.parse()` to `int.tryParse()`.
+- Changed code to use `async`/`await` and proper pattern from exiting a binary on error.
 
 Web-angular template changes:
 
 - In `analysis_options.yaml`:
-  - Added `uri_has_not_been_generated: ignore`
-  - Enabled Angular analyzer plugin
-- Added `build.debug.yaml` and  `build.release.yaml` files
+  - Added `uri_has_not_been_generated: ignore`.
+  - Enabled Angular analyzer plugin.
+- Added `build.debug.yaml` and  `build.release.yaml` files.
 - Additional `pubspec.yaml` changes:
-  - Upgraded Angular package versions
+  - Upgraded Angular package versions.
   - Added builder `dev_dependencies` for `build_runner`,
-    `build_test`, and `build_web_compilers`
-  - Removed all transformers
-  - Removed comment concerning web compiler settings
-  - Temporarily added an override for `pageloader`
+    `build_test`, and `build_web_compilers`.
+  - Removed all transformers.
+  - Removed comment concerning web compiler settings.
+  - Temporarily added an override for `pageloader`.
 - Updated `web/index.html`:
-  - Dropped <del>`<script defer src="packages/browser/dart.js"></script>`</del>
+  - Dropped <del>`<script defer src="packages/browser/dart.js"></script>`</del>.
   - Replaced <del>`<script defer src="main.dart" type="application/dart"></script>`</del> by<br>
-    `<script defer src="main.dart.js"></script>`
+    `<script defer src="main.dart.js"></script>`.
 - Updated bootstrapping in `web/main.dart`:
-  - Added `import 'package:__projectName__/app_component.template.dart' as ng;`
+  - Added `import 'package:__projectName__/app_component.template.dart' as ng;`.
   - Replaced call to <del>`bootstrap(AppComponent)`</del> by
-    `runApp(ng.AppComponentNgFactory);`
+    `runApp(ng.AppComponentNgFactory);`.
 - Updated `test/app_test.dart`:
-  - Dropped <del>`@Tags(const ['aot'])`</del>
-  - Dropped <del>`@AngularEntrypoint()`</del>
-  - Dropped <del>`import 'package:angular/angular.dart'`<del>
-  - Added `import 'app_test.template.dart' as ng;`
-  - Added a call to `ng.initReflector();` at the start of `main()`
+  - Dropped <del>`@Tags(const ['aot'])`</del>.
+  - Dropped <del>`@AngularEntrypoint()`</del>.
+  - Dropped <del>`import 'package:angular/angular.dart'`<del>.
+  - Added `import 'app_test.template.dart' as ng;`.
+  - Added a call to `ng.initReflector();` at the start of `main()`.
 - Other Dart file changes:
-  -  `CORE_DIRECTIVES` &rarr; `coreDirectives`
-  - Dropped <del>`const`</del> qualifier from literals used used in metadata annotations
-  - Switched to using new provider classes like `ClassProvider`
+  -  `CORE_DIRECTIVES` &rarr; `coreDirectives`.
+  - Dropped <del>`const`</del> qualifier from literals used used in metadata annotations.
+  - Switched to using new provider classes like `ClassProvider`.
 
 Web-simple template changes:
 
 - Additional `pubspec.yaml` changes:
-  - Removed all transformers
+  - Removed all transformers.
   - Removed comment concerning web compiler settings.
   - Added builder `dev_dependencies` for `build_runner` and
-    `build_web_compilers`
+    `build_web_compilers`.
 - Updated `web/index.html`:
-  - Dropped <del>`<script defer src="packages/browser/dart.js"></script>`</del>
+  - Dropped <del>`<script defer src="packages/browser/dart.js"></script>`</del>.
   - Replaced `<script defer src="main.dart" type="application/dart"></script>` by<br>
-    `<script defer src="main.dart.js"></script>`
+    `<script defer src="main.dart.js"></script>`.
 
 Web-stagexl template changes:
 
 - Additional `pubspec.yaml` changes:
-  - Removed all transformers
+  - Removed all transformers.
   - Removed dependency on `browser` and `dart_to_js_script_rewriter` packages.
   - Added builder `dev_dependencies` for `build_runner` and
-    `build_web_compilers`
+    `build_web_compilers`.
 
 ## 1.1.9
 
