@@ -11,7 +11,7 @@ c2ggdG8gY2hlY2sgaW4geW91ciBsb2NrIGZpbGUKcHVic3BlYy5sb2NrCgojIERpcmVjdG9yeSBj
 cmVhdGVkIGJ5IGRhcnRkb2MKZG9jL2FwaS8K''',
   'CHANGELOG.md',
   'text',
-  'IyMgMC4wLjEKCi0gSW5pdGlhbCB2ZXJzaW9uLCBjcmVhdGVkIGJ5IFN0YWdlaGFuZAo=',
+  'IyMgMS4wLjAKCi0gSW5pdGlhbCB2ZXJzaW9uLCBjcmVhdGVkIGJ5IFN0YWdlaGFuZAo=',
   'README.md',
   'text',
   '''IyBfX3Byb2plY3ROYW1lX18KCkEgc2ltcGxlIFtTdGFnZVhMXShodHRwOi8vd3d3LnN0YWdleGwu
