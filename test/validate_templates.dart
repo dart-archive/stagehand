@@ -16,7 +16,6 @@ import 'package:yaml/yaml.dart' as yaml;
 final _pubspecOrder = const [
   'name',
   'description',
-  'version',
   'homepage',
   'author(s)?',
   'environment',
@@ -138,7 +137,7 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
 
   expect(pubspecContent, containsPair('name', 'stagehand'));
   expect(pubspecContent, containsPair('description', isNotEmpty));
-  expect(pubspecContent, containsPair('version', '0.0.1'));
+  expect(pubspecContentString, contains('# version: 1.0.'));
 
   final minSDK = '2.0.0-dev.48.0';
   final env = {'sdk': '>=$minSDK <2.0.0'};
