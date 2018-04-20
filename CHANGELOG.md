@@ -19,7 +19,6 @@ Web-angular template changes:
 - In `analysis_options.yaml`:
   - Added `uri_has_not_been_generated: ignore`.
   - Enabled Angular analyzer plugin.
-- Added `build.debug.yaml` and  `build.release.yaml` files.
 - Additional `pubspec.yaml` changes:
   - Upgraded Angular package versions.
   - Added builder `dev_dependencies` for `build_runner`,
