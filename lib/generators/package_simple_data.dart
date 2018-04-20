@@ -11,7 +11,7 @@ c2ggdG8gY2hlY2sgaW4geW91ciBsb2NrIGZpbGUKcHVic3BlYy5sb2NrCgojIERpcmVjdG9yeSBj
 cmVhdGVkIGJ5IGRhcnRkb2MKZG9jL2FwaS8K''',
   'CHANGELOG.md',
   'text',
-  'IyMgMC4wLjEKCi0gSW5pdGlhbCB2ZXJzaW9uLCBjcmVhdGVkIGJ5IFN0YWdlaGFuZAo=',
+  'IyMgMS4wLjAKCi0gSW5pdGlhbCB2ZXJzaW9uLCBjcmVhdGVkIGJ5IFN0YWdlaGFuZAo=',
   'README.md',
   'text',
   '''IyBfX3Byb2plY3ROYW1lX18KCkEgbGlicmFyeSBmb3IgRGFydCBkZXZlbG9wZXJzLgoKQ3JlYXRl
@@ -51,11 +51,11 @@ IGJvb2wgZ2V0IGlzQXdlc29tZSA9PiB0cnVlOwp9Cg==''',
   'pubspec.yaml',
   'text',
   '''bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBIHN0YXJ0aW5nIHBvaW50IGZvciBE
-YXJ0IGxpYnJhcmllcyBvciBhcHBsaWNhdGlvbnMuCnZlcnNpb246IDAuMC4xCiNob21lcGFnZTog
-aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20KI2F1dGhvcjogX19hdXRob3JfXyA8ZW1haWxAZXhhbXBs
-ZS5jb20+CgplbnZpcm9ubWVudDoKICBzZGs6ICc+PTIuMC4wLWRldi40OC4wIDwyLjAuMCcKCiNk
-ZXBlbmRlbmNpZXM6CiMgIHBhdGg6IF4xLjQuMQoKZGV2X2RlcGVuZGVuY2llczoKICB0ZXN0OiBe
-MC4xMi4zMAo=''',
+YXJ0IGxpYnJhcmllcyBvciBhcHBsaWNhdGlvbnMuCiMgdmVyc2lvbjogMS4wLjAKI2hvbWVwYWdl
+OiBodHRwczovL3d3dy5leGFtcGxlLmNvbQojYXV0aG9yOiBfX2F1dGhvcl9fIDxlbWFpbEBleGFt
+cGxlLmNvbT4KCmVudmlyb25tZW50OgogIHNkazogJz49Mi4wLjAtZGV2LjQ4LjAgPDIuMC4wJwoK
+I2RlcGVuZGVuY2llczoKIyAgcGF0aDogXjEuNC4xCgpkZXZfZGVwZW5kZW5jaWVzOgogIHRlc3Q6
+IF4wLjEyLjMwCg==''',
   'test/__projectName___test.dart',
   'text',
   '''aW1wb3J0ICdwYWNrYWdlOl9fcHJvamVjdE5hbWVfXy9fX3Byb2plY3ROYW1lX18uZGFydCc7Cmlt

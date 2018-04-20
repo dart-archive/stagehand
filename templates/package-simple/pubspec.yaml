@@ -1,6 +1,6 @@
 name: __projectName__
 description: A starting point for Dart libraries or applications.
-version: 0.0.1
+# version: 1.0.0
 #homepage: https://www.example.com
 #author: __author__ <email@example.com>
 
