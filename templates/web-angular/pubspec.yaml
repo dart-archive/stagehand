@@ -1,6 +1,6 @@
 name: __projectName__
 description: A web app that uses AngularDart Components
-version: 1.0.0
+# version: 1.0.0
 #homepage: https://www.example.com
 #author: __author__ <email@example.com>
 

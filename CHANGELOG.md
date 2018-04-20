@@ -5,7 +5,7 @@ Project and template file changes:
   - Set minimal SDK to 2.0.0-dev.48.0.
   - Dropped the <del>`browser`</del> package dependency.
   - Upgraded to `test` 0.12.30, which supports running tests under headless chrome.
-  - Set initial `version` to 1.0.0 for all templates.
+  - Set initial `version` to 1.0.0 for all templates, and commented it out.
 - Dart 2 changes:
   - Renamed variables like, `JSON`, `PI`, etc. to `json`, `pi`, etc.
 
