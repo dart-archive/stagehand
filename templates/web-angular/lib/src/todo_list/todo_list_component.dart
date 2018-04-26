@@ -34,6 +34,4 @@ class TodoListComponent implements OnInit {
   }
 
   String remove(int index) => items.removeAt(index);
-  void onReorder(ReorderEvent e) =>
-      items.insert(e.destIndex, items.removeAt(e.sourceIndex));
 }

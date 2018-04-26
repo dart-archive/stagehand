@@ -10,7 +10,7 @@ import 'src/todo_list/todo_list_component.dart';
   selector: 'my-app',
   styleUrls: ['app_component.css'],
   templateUrl: 'app_component.html',
-  directives: [materialDirectives, TodoListComponent],
+  directives: [TodoListComponent],
   providers: [materialProviders],
 )
 class AppComponent {
