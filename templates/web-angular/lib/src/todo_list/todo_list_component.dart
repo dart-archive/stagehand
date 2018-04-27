@@ -1,6 +1,11 @@
 import 'dart:async';
 
 import 'package:angular/angular.dart';
+import 'package:angular_components/material_icon/material_icon.dart';
+import 'package:angular_components/material_input/material_input.dart';
+import 'package:angular_components/material_button/material_fab.dart';
+import 'package:angular_components/material_checkbox/material_checkbox.dart';
+
 import 'package:angular_components/angular_components.dart';
 
 import 'todo_list_service.dart';
@@ -10,8 +15,12 @@ import 'todo_list_service.dart';
   styleUrls: ['todo_list_component.css'],
   templateUrl: 'todo_list_component.html',
   directives: [
-    coreDirectives,
-    materialDirectives,
+    MaterialCheckboxComponent,
+    MaterialFabComponent,
+    MaterialIconComponent,
+    materialInputDirectives,
+    NgFor,
+    NgIf,
   ],
   providers: [const ClassProvider(TodoListService)],
 )
