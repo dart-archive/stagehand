@@ -3,8 +3,7 @@ analyzer:
   errors:
     uri_has_not_been_generated: ignore
   plugins:
-    angular:
-      enabled: true
+    - angular
 
 # Lint rules and documentation, see http://dart-lang.github.io/linter/lints
 linter:
