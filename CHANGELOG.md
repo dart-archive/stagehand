@@ -1,4 +1,4 @@
-## 2.0.0-alpha-dev
+## 2.0.0
 
 Project and template file changes:
 - In `pubspec.yaml` files:
