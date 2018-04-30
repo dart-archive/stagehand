@@ -1,8 +1,8 @@
-## 2.0.0-alpha-dev
+## 2.0.0
 
 Project and template file changes:
 - In `pubspec.yaml` files:
-  - Set minimal SDK to 2.0.0-dev.48.0.
+  - Set minimal SDK to 2.0.0-dev.51.0.
   - Dropped the <del>`browser`</del> package dependency.
   - Upgraded to `test` 0.12.30, which supports running tests under headless chrome.
   - Set initial `version` to 1.0.0 for all templates, and commented it out.

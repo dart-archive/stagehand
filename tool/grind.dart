@@ -6,7 +6,6 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:math' as math;
 
-import 'package:ghpages_generator/ghpages_generator.dart' as ghpages;
 import 'package:grinder/grinder.dart';
 import 'package:path/path.dart' as path;
 import 'package:stagehand/stagehand.dart' as stagehand;
@@ -47,14 +46,6 @@ void build() {
   newSource =
       _replaceInString(source, '<ul id="template-list">', '</ul>', fragment);
   f.writeAsStringSync(newSource);
-}
-
-@Task('Generate a new version of gh-pages')
-void updateGhPages() {
-  log('Updating gh-pages branch of the project');
-  new ghpages.Generator(rootDir: getDir('.').absolute.path)
-    ..templateDir = getDir('site').absolute.path
-    ..generate();
 }
 
 @Task('Run each generator and analyze the output')
