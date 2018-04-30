@@ -24,8 +24,9 @@ final _pubspecOrder = const [
   'dev_dependencies'
 ];
 
-final List<RegExp> _pubspecOrderRegexps =
-    _pubspecOrder.map((s) => new RegExp('^(# *)?$s:', multiLine: true)).toList();
+final List<RegExp> _pubspecOrderRegexps = _pubspecOrder
+    .map((s) => new RegExp('^(# *)?$s:', multiLine: true))
+    .toList();
 
 final String _expectedGitIgnore = _getMetaTemplateFile('.gitignore');
 final String _expectedAnalysisOptions =
@@ -35,8 +36,7 @@ final String _expectedAngularAnalysisOptions = [
   '  errors:',
   '    uri_has_not_been_generated: ignore',
   '  plugins:',
-  '    angular:',
-  '      enabled: true',
+  '    - angular',
   _expectedAnalysisOptions.split('\n').skip(4),
 ].expand((e) => e is Iterable ? e : [e]).join('\n');
 
