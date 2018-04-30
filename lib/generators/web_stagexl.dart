@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import '../src/common.dart';
-import 'web_stagexl_data.dart';
+part 'web_stagexl.g.dart';
 
 /// A generator for a StageXL web application.
 class WebStageXlGenerator extends DefaultGenerator {

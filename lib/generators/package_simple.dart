@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import '../src/common.dart';
-import 'package_simple_data.dart';
+part 'package_simple.g.dart';
 
 /// A generator for a pub library.
 class PackageSimpleGenerator extends DefaultGenerator {

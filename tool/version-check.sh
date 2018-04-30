@@ -15,14 +15,12 @@ VERS_FROM_PUB=$(grep '^version:' pubspec.yaml | awk '{ print $2 }')
 
 echo "Version of stagehand from pubspec.yaml: $VERS_FROM_PUB"
 
-CLIFILE=lib/src/cli_app.dart
-if grep -qe "appVersion = '$VERS_FROM_PUB';" $CLIFILE; then
-  echo "✔ $CLIFILE has same version as pubspec."
+VERSION_FILE=lib/src/cli_app.g.dart
+if grep -qe "appVersion = '$VERS_FROM_PUB';" $VERSION_FILE; then
+  echo "✔ $VERSION_FILE has same version as pubspec."
 else
   EXIT_CODE=2
-  grep "appVersion = " $CLIFILE
-  perl -i -pe "s/(appVersion = ')[^']*(';)/appVersion = '$VERS_FROM_PUB';/" $CLIFILE
-  echo "⚠️ $CLIFILE: HAS BEEN MODIFIED to use pubspec app version."
+  echo "⚠️ $VERSION_FILE: is outdated. Run 'pub run build_runner build'"
 fi
 
 CHANGELOG=CHANGELOG.md

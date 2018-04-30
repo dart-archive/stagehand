@@ -14,10 +14,9 @@ import 'package:stagehand/src/common.dart';
 import 'package:stagehand/stagehand.dart';
 import 'package:usage/usage_io.dart';
 
-const String appName = 'stagehand';
+part 'cli_app.g.dart';
 
-// This version must be updated in tandem with the pubspec version.
-const String appVersion = '2.0.1';
+const String appName = 'stagehand';
 
 const String appPubInfo = 'https://pub.dartlang.org/packages/$appName.json';
 

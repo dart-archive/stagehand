@@ -7,7 +7,7 @@ name: stagehand
 description: >
   A scaffolding generator for your Dart projects. Stagehand helps you get set
   up!
-version: 2.0.1
+version: 2.0.2-dev
 homepage: https://github.com/dart-lang/stagehand
 author: Dart Team <misc@dartlang.org>
 
@@ -25,7 +25,10 @@ dependencies:
   usage: ^3.0.0
 
 dev_dependencies:
-  ghpages_generator: ^0.3.0
+  build: ^0.12.6
+  build_config: ^0.2.1
+  build_runner: ^0.8.9
   grinder: ^0.8.0
+  source_gen: ^0.8.1+1
   test: ^0.12.30
   yaml: ^2.1.2

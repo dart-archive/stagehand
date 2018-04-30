@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import '../src/common.dart';
-import 'server_shelf_data.dart';
+part 'server_shelf.g.dart';
 
 /// A generator for a server app built on `package:shelf`.
 class ServerShelfGenerator extends DefaultGenerator {

@@ -1,0 +1,23 @@
+# Read about `build.yaml` at https://pub.dartlang.org/packages/build_config
+targets:
+  $default:
+    sources:
+      include:
+        - tool/**
+        - pubspec.yaml
+        - lib/**
+        - 'templates/**'
+    builders:
+      stagehand:
+        generate_for:
+          - lib/src/cli_app.dart
+          - lib/generators/*.dart
+        enabled: true
+
+builders:
+  stagehand:
+    # See https://github.com/dart-lang/build/issues/1423
+    import: "../../../tool/builder.dart"
+    builder_factories: ["stagehandBuilder"]
+    build_extensions: {".dart": [".g.dart"]}
+    build_to: source

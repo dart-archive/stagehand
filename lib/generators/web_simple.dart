@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import '../src/common.dart';
-import 'web_simple_data.dart';
+part 'web_simple.g.dart';
 
 /// A generator for a uber-simple web application.
 class WebSimpleGenerator extends DefaultGenerator {

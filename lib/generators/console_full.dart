@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import '../src/common.dart';
-import 'console_full_data.dart';
+part 'console_full.g.dart';
 
 /// A generator for a hello world command-line application.
 class ConsoleFullGenerator extends DefaultGenerator {

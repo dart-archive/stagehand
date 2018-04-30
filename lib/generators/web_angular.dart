@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import '../src/common.dart';
-import 'web_angular_data.dart';
+part 'web_angular.g.dart';
 
 /// A generator for an Angular 2 application.
 class WebAngularGenerator extends DefaultGenerator {
