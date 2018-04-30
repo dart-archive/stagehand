@@ -28,11 +28,11 @@ fi
 CHANGELOG=CHANGELOG.md
 VERS_WO_DEV=${VERS_FROM_PUB/%-dev/}
 
-if grep -qe "^##\s*${VERS_WO_DEV//./\\.}\s*" $CHANGELOG; then
-  echo "✔ $CHANGELOG has entry for $VERS_WO_DEV"
+if grep -Eqe "^##\s*${VERS_WO_DEV//./\\.}(-dev)?(\s+|$)" $CHANGELOG; then
+  echo "✔ $CHANGELOG has entry for $VERS_WO_DEV (or $VERS_WO_DEV-dev)"
 else
   EXIT_CODE=1
-  echo "❌ $CHANGELOG: Can't find entry for $VERS_WO_DEV"
+  echo "❌ $CHANGELOG: Can't find entry for $VERS_WO_DEV (or $VERS_WO_DEV-dev)"
 fi
 
 exit $EXIT_CODE
