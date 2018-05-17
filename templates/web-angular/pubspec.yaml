@@ -20,5 +20,5 @@ dev_dependencies:
 
 dependency_overrides:
   # Needed to ensure 0.4.0-alpha+12 (or greater) is not accessed
-  # Tracking here: https://github.com/dart-lang/angular/issues/1325
+  # https://github.com/dart-lang/stagehand/issues/506
   angular_compiler: 0.4.0-alpha+11
