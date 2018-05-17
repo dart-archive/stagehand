@@ -7,7 +7,7 @@ name: stagehand
 description: >
   A scaffolding generator for your Dart projects. Stagehand helps you get set
   up!
-version: 2.0.0
+version: 2.0.1
 homepage: https://github.com/dart-lang/stagehand
 author: Dart Team <misc@dartlang.org>
 

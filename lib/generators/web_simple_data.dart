@@ -34,7 +34,7 @@ IHdlYiBhcHAuCiMgdmVyc2lvbjogMS4wLjAKI2hvbWVwYWdlOiBodHRwczovL3d3dy5leGFtcGxl
 LmNvbQojYXV0aG9yOiBfX2F1dGhvcl9fIDxlbWFpbEBleGFtcGxlLmNvbT4KCmVudmlyb25tZW50
 OgogIHNkazogJz49Mi4wLjAtZGV2LjUxLjAgPDIuMC4wJwoKI2RlcGVuZGVuY2llczoKIyAgcGF0
 aDogXjEuNC4xCgpkZXZfZGVwZW5kZW5jaWVzOgogIGJ1aWxkX3J1bm5lcjogXjAuOC43CiAgYnVp
-bGRfd2ViX2NvbXBpbGVyczogXjAuMy43Cg==''',
+bGRfd2ViX2NvbXBpbGVyczogXjAuNC4wCg==''',
   'web/favicon.ico',
   'binary',
   '''iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAN
