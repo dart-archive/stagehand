@@ -3,7 +3,7 @@
 - All `web-` templates:
   - Updated the dependency on `package:build_web_compilers`.
 - `web-angular` template:
-  - Add dependency override on `angular_compiler` to ensure compatibility.
+  - Added dependency override on `angular_compiler` to ensure compatibility.
 
 ## 2.0.0
 
