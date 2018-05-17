@@ -1,3 +1,8 @@
+## 2.0.1
+
+- Updated the dependency on `package:build_web_compilers` in all `web-`
+  templates.
+
 ## 2.0.0
 
 Project and template file changes:
