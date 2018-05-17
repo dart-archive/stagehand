@@ -1,7 +1,9 @@
 ## 2.0.1
 
-- Updated the dependency on `package:build_web_compilers` in all `web-`
-  templates.
+- All `web-` templates:
+  - Updated the dependency on `package:build_web_compilers`.
+- `web-angular` template:
+  - Update all dependencies on `anuglar` packages to ensure compatibility.
 
 ## 2.0.0
 
