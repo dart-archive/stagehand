@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Ensure that grind build was run.
+# Ensure that "pub run build_runner build" was run and committed.
 #
 # Copyright (c) 2017, Google Inc. Please see the AUTHORS file for details.
 # All rights reserved. Use of this source code is governed by a BSD-style
@@ -9,7 +9,7 @@
 # Fast fail the script on failures.
 set -x -e -o pipefail
 
-dart tool/grind.dart build
+pub run build_runner build --delete-conflicting-outputs
 git status
 git add .
 git diff-index --quiet HEAD

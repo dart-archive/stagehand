@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import '../src/common.dart';
-import 'package_simple_data.dart';
+part 'package_simple.g.dart';
 
 /// A generator for a pub library.
 class PackageSimpleGenerator extends DefaultGenerator {
@@ -11,7 +11,7 @@ class PackageSimpleGenerator extends DefaultGenerator {
       : super('package-simple', 'Dart Package',
             'A starting point for Dart libraries or applications.',
             categories: const ['dart']) {
-    for (var file in decodeConcatenatedData(data)) {
+    for (var file in decodeConcatenatedData(_data)) {
       addTemplateFile(file);
     }
 

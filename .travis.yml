@@ -23,7 +23,7 @@ env: # important: w/o this top-level env, no job will be allowed to fail.
     - DISPLAY=:99.0
   matrix:
     - CI_TASK=tool/travis.sh
-    - CI_TASK=tool/version-check-and-update.sh
+    - CI_TASK=tool/version-check.sh
     - CI_TASK=tool/build-check.sh
     - CI_TASK=tool/web-angular-test.sh
 
