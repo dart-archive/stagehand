@@ -5,11 +5,11 @@ description: A web app that uses AngularDart Components
 # author: __author__ <email@example.com>
 
 environment:
-  sdk: '>=2.0.0-dev.51.0 <2.0.0'
+  sdk: '>=2.0.0-dev.52.0 <2.0.0'
 
 dependencies:
-  angular: ^5.0.0-alpha+11
-  angular_components: ^0.9.0-alpha+11
+  angular: 5.0.0-alpha+12
+  angular_components: 0.9.0-alpha+12
 
 dev_dependencies:
   angular_test: ^2.0.0-alpha+9
@@ -19,6 +19,5 @@ dev_dependencies:
   test: ^0.12.30
 
 dependency_overrides:
-  # Needed to ensure 0.4.0-alpha+12 (or greater) is not accessed
   # https://github.com/dart-lang/stagehand/issues/506
-  angular_compiler: 0.4.0-alpha+11
+  angular_compiler: 0.4.0-alpha+12

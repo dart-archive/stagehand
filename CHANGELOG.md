@@ -1,6 +1,12 @@
 ## 2.0.2
 
-- Internal cleanup.
+Project and template file changes:
+- In `pubspec.yaml` files:
+  - Set minimal SDK to 2.0.0-dev.52.0.
+
+- `web-angular` template:
+  - Updated dependencies to include `-alpha+12` versions of `angular` and
+    `angular_components` packages.
 
 ## 2.0.1
 
