@@ -11,7 +11,7 @@ class ServerShelfGenerator extends DefaultGenerator {
       : super('server-shelf', 'Web Server',
             'A web server built using the shelf package.',
             categories: const ['dart', 'shelf', 'server']) {
-    for (var file in decodeConcatenatedData(data)) {
+    for (var file in decodeConcatenatedData(_data)) {
       addTemplateFile(file);
     }
 

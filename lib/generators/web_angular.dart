@@ -11,7 +11,7 @@ class WebAngularGenerator extends DefaultGenerator {
       : super('web-angular', 'AngularDart Web App',
             'A web app with material design components.',
             categories: const ['dart', 'web']) {
-    for (var file in decodeConcatenatedData(data)) {
+    for (var file in decodeConcatenatedData(_data)) {
       addTemplateFile(file);
     }
 

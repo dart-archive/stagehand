@@ -11,7 +11,7 @@ class WebStageXlGenerator extends DefaultGenerator {
       : super('web-stagexl', 'StageXL Web App',
             'A starting point for 2D animation and games.',
             categories: const ['dart', 'web']) {
-    for (var file in decodeConcatenatedData(data)) {
+    for (var file in decodeConcatenatedData(_data)) {
       addTemplateFile(file);
     }
 

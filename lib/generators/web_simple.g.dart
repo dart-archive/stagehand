@@ -10,10 +10,11 @@ part of 'web_simple.dart';
 // Generator: DataGenerator
 // **************************************************************************
 
-const List<String> data = const [
+const _data = const <String>[
   '.gitignore',
   'text',
-  '''IyBGaWxlcyBhbmQgZGlyZWN0b3JpZXMgY3JlYXRlZCBieSBwdWIKLmRhcnRfdG9vbC8KLnBhY2th
+  '''
+IyBGaWxlcyBhbmQgZGlyZWN0b3JpZXMgY3JlYXRlZCBieSBwdWIKLmRhcnRfdG9vbC8KLnBhY2th
 Z2VzCi5wdWIvCmJ1aWxkLwojIFJlbW92ZSB0aGUgZm9sbG93aW5nIHBhdHRlcm4gaWYgeW91IHdp
 c2ggdG8gY2hlY2sgaW4geW91ciBsb2NrIGZpbGUKcHVic3BlYy5sb2NrCgojIERpcmVjdG9yeSBj
 cmVhdGVkIGJ5IGRhcnRkb2MKZG9jL2FwaS8K''',
@@ -22,13 +23,15 @@ cmVhdGVkIGJ5IGRhcnRkb2MKZG9jL2FwaS8K''',
   'IyMgMS4wLjAKCi0gSW5pdGlhbCB2ZXJzaW9uLCBjcmVhdGVkIGJ5IFN0YWdlaGFuZAo=',
   'README.md',
   'text',
-  '''IyBfX3Byb2plY3ROYW1lX18KCkFuIGFic29sdXRlIGJhcmUtYm9uZXMgd2ViIGFwcC4KCkNyZWF0
+  '''
+IyBfX3Byb2plY3ROYW1lX18KCkFuIGFic29sdXRlIGJhcmUtYm9uZXMgd2ViIGFwcC4KCkNyZWF0
 ZWQgZnJvbSB0ZW1wbGF0ZXMgbWFkZSBhdmFpbGFibGUgYnkgU3RhZ2VoYW5kIHVuZGVyIGEgQlNE
 LXN0eWxlCltsaWNlbnNlXShodHRwczovL2dpdGh1Yi5jb20vZGFydC1sYW5nL3N0YWdlaGFuZC9i
 bG9iL21hc3Rlci9MSUNFTlNFKS4K''',
   'analysis_options.yaml',
   'text',
-  '''YW5hbHl6ZXI6CiAgc3Ryb25nLW1vZGU6IHRydWUKIyAgIGV4Y2x1ZGU6CiMgICAgIC0gcGF0aC90
+  '''
+YW5hbHl6ZXI6CiAgc3Ryb25nLW1vZGU6IHRydWUKIyAgIGV4Y2x1ZGU6CiMgICAgIC0gcGF0aC90
 by9leGNsdWRlZC9maWxlcy8qKgoKIyBMaW50IHJ1bGVzIGFuZCBkb2N1bWVudGF0aW9uLCBzZWUg
 aHR0cDovL2RhcnQtbGFuZy5naXRodWIuaW8vbGludGVyL2xpbnRzCmxpbnRlcjoKICBydWxlczoK
 ICAgIC0gY2FuY2VsX3N1YnNjcmlwdGlvbnMKICAgIC0gaGFzaF9hbmRfZXF1YWxzCiAgICAtIGl0
@@ -37,7 +40,8 @@ ZF90eXBlCiAgICAtIHRlc3RfdHlwZXNfaW5fZXF1YWxzCiAgICAtIHVucmVsYXRlZF90eXBlX2Vx
 dWFsaXR5X2NoZWNrcwogICAgLSB2YWxpZF9yZWdleHBzCg==''',
   'pubspec.yaml',
   'text',
-  '''bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBbiBhYnNvbHV0ZSBiYXJlLWJvbmVz
+  '''
+bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBbiBhYnNvbHV0ZSBiYXJlLWJvbmVz
 IHdlYiBhcHAuCiMgdmVyc2lvbjogMS4wLjAKI2hvbWVwYWdlOiBodHRwczovL3d3dy5leGFtcGxl
 LmNvbQojYXV0aG9yOiBfX2F1dGhvcl9fIDxlbWFpbEBleGFtcGxlLmNvbT4KCmVudmlyb25tZW50
 OgogIHNkazogJz49Mi4wLjAtZGV2LjUxLjAgPDIuMC4wJwoKI2RlcGVuZGVuY2llczoKIyAgcGF0
@@ -45,7 +49,8 @@ aDogXjEuNC4xCgpkZXZfZGVwZW5kZW5jaWVzOgogIGJ1aWxkX3J1bm5lcjogXjAuOC43CiAgYnVp
 bGRfd2ViX2NvbXBpbGVyczogXjAuNC4wCg==''',
   'web/favicon.ico',
   'binary',
-  '''iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAN
+  '''
+iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAN
 mUlEQVR42tWba3Ab1RXHFSCFJki7cZi2MxA7dkicQEmZhPIoUChpKBlaSMuEllIS27Ilyw+chNjy
 Q3JEWyCl00mhL1zIw3YgiXBI/NCupNXq/fIzGNr0c7/0Q4cpbUIhGUu6PffurrRSLFuStaJ8uF5J
 1uPe3/2fc8+9e44KIaQqVYM/y3ZZrddKz3fzozfrg9yv9WHXRV3IOaePunwNUe6prTrdcvx/K0LX
@@ -110,7 +115,8 @@ EWdRmi7oIFVl+nH3FQjPd+ZTT6RswTSGIM4CVI7eCfV/LogV5qCjF6H46VJxGn9JH+YutcwGLxtm
 VVUV9T8QJnnneGTPfwAAAABJRU5ErkJggg==''',
   'web/index.html',
   'text',
-  '''PCFET0NUWVBFIGh0bWw+Cgo8aHRtbD4KPGhlYWQ+CiAgICA8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+
+  '''
+PCFET0NUWVBFIGh0bWw+Cgo8aHRtbD4KPGhlYWQ+CiAgICA8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+
 CiAgICA8bWV0YSBodHRwLWVxdWl2PSJYLVVBLUNvbXBhdGlibGUiIGNvbnRlbnQ9IklFPWVkZ2Ui
 PgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwg
 aW5pdGlhbC1zY2FsZT0xLjAiPgogICAgPG1ldGEgbmFtZT0ic2NhZmZvbGRlZC1ieSIgY29udGVu
@@ -121,11 +127,13 @@ aXB0IGRlZmVyIHNyYz0ibWFpbi5kYXJ0LmpzIj48L3NjcmlwdD4KPC9oZWFkPgoKPGJvZHk+Cgog
 IDxkaXYgaWQ9Im91dHB1dCI+PC9kaXY+Cgo8L2JvZHk+CjwvaHRtbD4K''',
   'web/main.dart',
   'text',
-  '''aW1wb3J0ICdkYXJ0Omh0bWwnOwoKdm9pZCBtYWluKCkgewogIHF1ZXJ5U2VsZWN0b3IoJyNvdXRw
+  '''
+aW1wb3J0ICdkYXJ0Omh0bWwnOwoKdm9pZCBtYWluKCkgewogIHF1ZXJ5U2VsZWN0b3IoJyNvdXRw
 dXQnKS50ZXh0ID0gJ1lvdXIgRGFydCBhcHAgaXMgcnVubmluZy4nOwp9Cg==''',
   'web/styles.css',
   'text',
-  '''QGltcG9ydCB1cmwoaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PVJvYm90
+  '''
+QGltcG9ydCB1cmwoaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PVJvYm90
 byk7CgpodG1sLCBib2R5IHsKICB3aWR0aDogMTAwJTsKICBoZWlnaHQ6IDEwMCU7CiAgbWFyZ2lu
 OiAwOwogIHBhZGRpbmc6IDA7CiAgZm9udC1mYW1pbHk6ICdSb2JvdG8nLCBzYW5zLXNlcmlmOwp9
 Cgojb3V0cHV0IHsKICBwYWRkaW5nOiAyMHB4OwogIHRleHQtYWxpZ246IGNlbnRlcjsKfQo='''

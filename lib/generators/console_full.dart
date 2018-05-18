@@ -11,7 +11,7 @@ class ConsoleFullGenerator extends DefaultGenerator {
       : super('console-full', 'Console Application',
             'A command-line application sample.',
             categories: const ['dart', 'console']) {
-    for (var file in decodeConcatenatedData(data)) {
+    for (var file in decodeConcatenatedData(_data)) {
       addTemplateFile(file);
     }
 

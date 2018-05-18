@@ -11,7 +11,7 @@ class WebSimpleGenerator extends DefaultGenerator {
       : super('web-simple', 'Bare-bones Web App',
             'A web app that uses only core Dart libraries.',
             categories: const ['dart', 'web']) {
-    for (var file in decodeConcatenatedData(data)) {
+    for (var file in decodeConcatenatedData(_data)) {
       addTemplateFile(file);
     }
 

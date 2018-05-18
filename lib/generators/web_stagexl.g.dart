@@ -10,10 +10,11 @@ part of 'web_stagexl.dart';
 // Generator: DataGenerator
 // **************************************************************************
 
-const List<String> data = const [
+const _data = const <String>[
   '.gitignore',
   'text',
-  '''IyBGaWxlcyBhbmQgZGlyZWN0b3JpZXMgY3JlYXRlZCBieSBwdWIKLmRhcnRfdG9vbC8KLnBhY2th
+  '''
+IyBGaWxlcyBhbmQgZGlyZWN0b3JpZXMgY3JlYXRlZCBieSBwdWIKLmRhcnRfdG9vbC8KLnBhY2th
 Z2VzCi5wdWIvCmJ1aWxkLwojIFJlbW92ZSB0aGUgZm9sbG93aW5nIHBhdHRlcm4gaWYgeW91IHdp
 c2ggdG8gY2hlY2sgaW4geW91ciBsb2NrIGZpbGUKcHVic3BlYy5sb2NrCgojIERpcmVjdG9yeSBj
 cmVhdGVkIGJ5IGRhcnRkb2MKZG9jL2FwaS8K''',
@@ -22,13 +23,15 @@ cmVhdGVkIGJ5IGRhcnRkb2MKZG9jL2FwaS8K''',
   'IyMgMS4wLjAKCi0gSW5pdGlhbCB2ZXJzaW9uLCBjcmVhdGVkIGJ5IFN0YWdlaGFuZAo=',
   'README.md',
   'text',
-  '''IyBfX3Byb2plY3ROYW1lX18KCkEgc2ltcGxlIFtTdGFnZVhMXShodHRwOi8vd3d3LnN0YWdleGwu
+  '''
+IyBfX3Byb2plY3ROYW1lX18KCkEgc2ltcGxlIFtTdGFnZVhMXShodHRwOi8vd3d3LnN0YWdleGwu
 b3JnLykgYXBwLgoKQ3JlYXRlZCBmcm9tIHRlbXBsYXRlcyBtYWRlIGF2YWlsYWJsZSBieSBTdGFn
 ZWhhbmQgdW5kZXIgYSBCU0Qtc3R5bGUKW2xpY2Vuc2VdKGh0dHBzOi8vZ2l0aHViLmNvbS9kYXJ0
 LWxhbmcvc3RhZ2VoYW5kL2Jsb2IvbWFzdGVyL0xJQ0VOU0UpLgo=''',
   'analysis_options.yaml',
   'text',
-  '''YW5hbHl6ZXI6CiAgc3Ryb25nLW1vZGU6IHRydWUKIyAgIGV4Y2x1ZGU6CiMgICAgIC0gcGF0aC90
+  '''
+YW5hbHl6ZXI6CiAgc3Ryb25nLW1vZGU6IHRydWUKIyAgIGV4Y2x1ZGU6CiMgICAgIC0gcGF0aC90
 by9leGNsdWRlZC9maWxlcy8qKgoKIyBMaW50IHJ1bGVzIGFuZCBkb2N1bWVudGF0aW9uLCBzZWUg
 aHR0cDovL2RhcnQtbGFuZy5naXRodWIuaW8vbGludGVyL2xpbnRzCmxpbnRlcjoKICBydWxlczoK
 ICAgIC0gY2FuY2VsX3N1YnNjcmlwdGlvbnMKICAgIC0gaGFzaF9hbmRfZXF1YWxzCiAgICAtIGl0
@@ -37,7 +40,8 @@ ZF90eXBlCiAgICAtIHRlc3RfdHlwZXNfaW5fZXF1YWxzCiAgICAtIHVucmVsYXRlZF90eXBlX2Vx
 dWFsaXR5X2NoZWNrcwogICAgLSB2YWxpZF9yZWdleHBzCg==''',
   'pubspec.yaml',
   'text',
-  '''bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBIHNpbXBsZSBTdGFnZVhMIHdlYiBh
+  '''
+bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBIHNpbXBsZSBTdGFnZVhMIHdlYiBh
 cHAuCiMgdmVyc2lvbjogMS4wLjAKI2hvbWVwYWdlOiBodHRwczovL3d3dy5leGFtcGxlLmNvbQoj
 YXV0aG9yOiBfX2F1dGhvcl9fIDxlbWFpbEBleGFtcGxlLmNvbT4KCmVudmlyb25tZW50OgogIHNk
 azogJz49Mi4wLjAtZGV2LjUxLjAgPDIuMC4wJwoKZGVwZW5kZW5jaWVzOgogIHN0YWdleGw6IF4x
@@ -45,7 +49,8 @@ LjEuMAoKZGV2X2RlcGVuZGVuY2llczoKICBidWlsZF9ydW5uZXI6IF4wLjguNwogIGJ1aWxkX3dl
 Yl9jb21waWxlcnM6IF4wLjQuMAo=''',
   'web/images/dart@1x.png',
   'binary',
-  '''iVBORw0KGgoAAAANSUhEUgAAASwAAABQCAYAAACj6kh7AAAgkElEQVR4AeyaBWzrVhSG/8KYGdvY
+  '''
+iVBORw0KGgoAAAANSUhEUgAAASwAAABQCAYAAACj6kh7AAAgkElEQVR4AeyaBWzrVhSG/8KYGdvY
 jtsxCsZbRROMBWNmwWPmMTMzQ+vWydrw+hJ3zMzMzLyFzo7jXKmKtmjZC76eT/rLcK2cfv3vjdF0
 nHFGOyyrAy7D922ExAP3IzKYQ8RKIxF8DHH7SCiI2tEQBEEQHKcTioR9GOKBz+BEiGWVR9gijA4T
 xqKEhD2Ce+9dB4ySmyAIQmNaVSxwD1IhYmERiyrDoWKyCA+k8XCMEB16DuGwSEsQhAa1qljwCJbU
@@ -195,7 +200,8 @@ PSmyOeKNaeIRUQQQdQsskirf6F0yCym9ZaqOayN/I8cXhYN6rz0zf0hmGpWvPo3XqXUMuZ5yr5Rp
 DhgAAAAASUVORK5CYII=''',
   'web/images/dart@2x.png',
   'binary',
-  '''iVBORw0KGgoAAAANSUhEUgAAAlgAAACgCAYAAADQOBKBAABCuUlEQVR4AeydBXTbyBqFb5JlZo4l
+  '''
+iVBORw0KGgoAAAANSUhEUgAAAlgAAACgCAYAAADQOBKBAABCuUlEQVR4AeydBXTbyBqFb5JlZo4l
 Q5aZmZmZmZkZ/ZiZGQOWwpadpMFlZmZm5t1Y9ryZWp5VtW1av6ya2r7fOfdMwOV2ztc7vyYgKB/L
 akAyWQ9F2oogY/9Wrm/KVcCxVF5HOtWFjHUiuv6xFEokk/PBByGEEEIIEaIOf/rT/CiRsQ+AY72G
 G7MC2XYlVgUZgb4OgZG0wFCvQMZ6Bo59HkY9uRodpWQRQgghhOjWSgmWoqdlRaStf2Nal8C0biVR
@@ -498,7 +504,8 @@ RLvuq7iLN/6aDfg+zWX2WuRZXDHrGIEIFXbtev+DHyADhHvl9eJ6H3HxwT0j7wN1tQbYMZLVDL/R
 LswJAN4PAMezsjE0mqoFq/8PyxKvoACkrp8AAAAASUVORK5CYII=''',
   'web/index.html',
   'text',
-  '''PCFET0NUWVBFIGh0bWw+Cgo8aHRtbD4KPGhlYWQ+CiAgICA8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+
+  '''
+PCFET0NUWVBFIGh0bWw+Cgo8aHRtbD4KPGhlYWQ+CiAgICA8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+
 CiAgICA8bWV0YSBodHRwLWVxdWl2PSJYLVVBLUNvbXBhdGlibGUiIGNvbnRlbnQ9IklFPWVkZ2Ui
 PgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwg
 aW5pdGlhbC1zY2FsZT0xLjAiPgogICAgPG1ldGEgbmFtZT0ic2NhZmZvbGRlZC1ieSIgY29udGVu
@@ -509,7 +516,8 @@ aGVhZD4KCjxib2R5PgoKICAgIDxjYW52YXMgaWQ9InN0YWdlIiBjbGFzcz0ic3RhZ2UtLWZ1bGxz
 Y3JlZW4iPjwvY2FudmFzPgoKPC9ib2R5Pgo8L2h0bWw+Cg==''',
   'web/main.dart',
   'text',
-  '''aW1wb3J0ICdkYXJ0OmFzeW5jJzsKaW1wb3J0ICdkYXJ0Omh0bWwnIGFzIGh0bWw7CmltcG9ydCAn
+  '''
+aW1wb3J0ICdkYXJ0OmFzeW5jJzsKaW1wb3J0ICdkYXJ0Omh0bWwnIGFzIGh0bWw7CmltcG9ydCAn
 cGFja2FnZTpzdGFnZXhsL3N0YWdleGwuZGFydCc7CmltcG9ydCAnZGFydDptYXRoJzsKCkZ1dHVy
 ZTxOdWxsPiBtYWluKCkgYXN5bmMgewogIFN0YWdlT3B0aW9ucyBvcHRpb25zID0gbmV3IFN0YWdl
 T3B0aW9ucygpCiAgICAuLmJhY2tncm91bmRDb2xvciA9IENvbG9yLldoaXRlCiAgICAuLnJlbmRl
@@ -538,7 +546,8 @@ ZSBleGFtcGxlczoKICAvLyBodHRwczovL2dpdGh1Yi5jb20vYnA3NC9TdGFnZVhMX1NhbXBsZXMK
 fQo=''',
   'web/styles.css',
   'text',
-  '''QGltcG9ydCB1cmwoaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PVJvYm90
+  '''
+QGltcG9ydCB1cmwoaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PVJvYm90
 byk7CgpodG1sLCBib2R5LCAuc3RhZ2UtLWZ1bGxzY3JlZW4gewogICAgd2lkdGg6IDEwMCU7CiAg
 ICBoZWlnaHQ6IDEwMCU7CiAgICBtYXJnaW46IDA7CiAgICBwYWRkaW5nOiAwOwogICAgYm9yZGVy
 OiAwOwp9Cg=='''

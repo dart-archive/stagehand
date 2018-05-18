@@ -11,6 +11,11 @@ import 'package:path/path.dart' as p;
 import 'package:glob/glob.dart';
 import 'package:source_gen/source_gen.dart';
 
+const List<String> _allowedDotFiles = const <String>['.gitignore'];
+final RegExp _binaryFileTypes = new RegExp(
+    r'\.(jpe?g|png|gif|ico|svg|ttf|eot|woff|woff2)$',
+    caseSensitive: false);
+
 class DataGenerator extends Generator {
   @override
   FutureOr<String> generate(LibraryReader library, BuildStep buildStep) async {
@@ -43,48 +48,26 @@ class DataGenerator extends Generator {
     }).toList()
       ..sort();
 
-    var items = await _getLines(filteredAssets, buildStep).toList();
+    var items = await _getLines(filteredAssets, buildStep).map((item) {
+      if (item.contains('\n')) {
+        return "'''\n$item'''";
+      }
+      return "'$item'";
+    }).join(',');
 
-    return _getContent(items);
+    return 'const _data = const <String>[$items];';
   }
 }
 
 Stream<String> _getLines(List<AssetId> ids, AssetReader reader) async* {
   for (var id in ids) {
     yield p.url.joinAll(id.pathSegments.skip(2));
-    yield _binaryTag(p.basename(id.path));
-    yield _getEncoded(await reader.readAsBytes(id));
+    yield _binaryFileTypes.hasMatch(p.basename(id.path)) ? 'binary' : 'text';
+    yield _base64encode(await reader.readAsBytes(id));
   }
 }
 
-const List<String> _allowedDotFiles = const <String>['.gitignore'];
-
-final RegExp _binaryFileTypes = new RegExp(
-    r'\.(jpe?g|png|gif|ico|svg|ttf|eot|woff|woff2)$',
-    caseSensitive: false);
-
-String _getContent(Iterable<String> items) {
-  var str = items.map((s) => '  ${_toStr(s)}').join(',\n');
-
-  return '''
-const List<String> data = const [
-$str
-];
-''';
-}
-
-String _toStr(String s) {
-  if (s.contains('\n')) {
-    return "'''$s'''";
-  } else {
-    return "'$s'";
-  }
-}
-
-String _binaryTag(String filename) =>
-    _binaryFileTypes.hasMatch(filename) ? 'binary' : 'text';
-
-String _getEncoded(List<int> bytes) {
+String _base64encode(List<int> bytes) {
   var encoded = base64.encode(bytes);
 
 //
