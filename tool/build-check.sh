@@ -9,7 +9,7 @@
 # Fast fail the script on failures.
 set -x -e -o pipefail
 
-dart tool/grind.dart build
+pub run build_runner build
 git status
 git add .
 git diff-index --quiet HEAD
