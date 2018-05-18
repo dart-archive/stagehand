@@ -9,7 +9,7 @@
 # Fast fail the script on failures.
 set -x -e -o pipefail
 
-pub run build_runner build
+pub run build_runner build --delete-conflicting-outputs
 git status
 git add .
 git diff-index --quiet HEAD
