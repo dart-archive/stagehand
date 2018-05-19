@@ -19,12 +19,7 @@ final RegExp _binaryFileTypes = new RegExp(
 class DataGenerator extends Generator {
   @override
   FutureOr<String> generate(LibraryReader library, BuildStep buildStep) async {
-    if (!p.isWithin('lib/generators', buildStep.inputId.path)) {
-      return null;
-    }
-
-    if (buildStep.inputId.path.endsWith('_data.dart')) {
-      log.warning('temporary excluding ${buildStep.inputId.path}');
+    if (!p.isWithin('lib/src/generators', buildStep.inputId.path)) {
       return null;
     }
 
