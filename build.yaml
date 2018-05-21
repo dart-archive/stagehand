@@ -11,7 +11,7 @@ targets:
       stagehand:
         generate_for:
           - lib/src/cli_app.dart
-          - lib/generators/*.dart
+          - lib/src/generators/*.dart
         enabled: true
 
 builders:

@@ -2,7 +2,7 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-import '../src/common.dart';
+import '../common.dart';
 part 'web_angular.g.dart';
 
 /// A generator for an Angular 2 application.

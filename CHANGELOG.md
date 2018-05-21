@@ -1,3 +1,8 @@
+## 3.0.0
+
+- Move generator files to `lib/src`. Importing them directly is no longer
+  supported.
+
 ## 2.0.2
 
 Project and template file changes:

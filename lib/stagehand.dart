@@ -29,13 +29,13 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'generators/console_full.dart';
-import 'generators/package_simple.dart';
-import 'generators/server_shelf.dart';
-import 'generators/web_angular.dart';
-import 'generators/web_simple.dart';
-import 'generators/web_stagexl.dart';
 import 'src/common.dart';
+import 'src/generators/console_full.dart';
+import 'src/generators/package_simple.dart';
+import 'src/generators/server_shelf.dart';
+import 'src/generators/web_angular.dart';
+import 'src/generators/web_simple.dart';
+import 'src/generators/web_stagexl.dart';
 
 /// A curated, prescriptive list of Dart project generators.
 final List<Generator> generators = [
