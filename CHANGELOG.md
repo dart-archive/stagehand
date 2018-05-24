@@ -2,6 +2,8 @@
 
 - Move generator files to `lib/src`. Importing them directly is no longer
   supported.
+- `web-angular` template: reintroduced use of a pageloader-base page object in
+  the sample test file.
 
 ## 2.0.2
 
