@@ -2,8 +2,12 @@
 
 - Move generator files to `lib/src`. Importing them directly is no longer
   supported.
-- `web-angular` template: reintroduced use of a pageloader-base page object in
-  the sample test file.
+- Set minimal SDK to 2.0.0-dev.55.0 in project and template `pubspec.yaml`.
+- `web-angular` template:
+  - Reintroduced use of a pageloader-base page object in the sample test file.
+  - Upgraded to `-alpha+13` versions of `angular` and
+    `angular_components` packages.
+  - Temporarily pinned version of `sass` to `1.3.2`.
 
 ## 2.0.2
 
