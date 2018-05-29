@@ -25,4 +25,6 @@ void main() {
   test('heading', () {
     expect(appPO.title, contains('My First AngularDart App'));
   });
+
+  // Testing info: https://webdev.dartlang.org/angular/guide/testing
 }

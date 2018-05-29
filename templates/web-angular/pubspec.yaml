@@ -5,20 +5,20 @@ description: A web app that uses AngularDart Components
 # author: __author__ <email@example.com>
 
 environment:
-  sdk: '>=2.0.0-dev.52.0 <2.0.0'
+  sdk: '>=2.0.0-dev.55.0 <2.0.0'
 
 dependencies:
-  angular: 5.0.0-alpha+12
-  angular_components: 0.9.0-alpha+12
+  angular: ^5.0.0-alpha+13
+  angular_components: ^0.9.0-alpha+13
 
 dev_dependencies:
-  angular_test: ^2.0.0-alpha
-  build_runner: ^0.8.7
-  build_test: ^0.10.0
+  angular_test: ^2.0.0-alpha+11
+  build_runner: ^0.8.9
+  build_test: ^0.10.2
   build_web_compilers: ^0.4.0
   pageloader: ^3.0.0-alpha
-  test: ^0.12.30
+  test: ^0.12.38
 
 dependency_overrides:
-  # https://github.com/dart-lang/stagehand/issues/506
-  angular_compiler: 0.4.0-alpha+12
+  # https://github.com/dart-lang/stagehand/issues/524
+  sass: 1.3.2
