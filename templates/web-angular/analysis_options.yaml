@@ -1,4 +1,5 @@
 analyzer:
+  exclude: [.*/**, build/**] # https://github.com/dart-lang/sdk/issues/33112
   strong-mode: true
   errors:
     uri_has_not_been_generated: ignore
