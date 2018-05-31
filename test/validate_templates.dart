@@ -33,6 +33,7 @@ final String _expectedAnalysisOptions =
     _getMetaTemplateFile('templates/analysis_options.yaml');
 final String _expectedAngularAnalysisOptions = [
   _expectedAnalysisOptions.split('\n').take(2),
+  '  exclude: [build/**]',
   '  errors:',
   '    uri_has_not_been_generated: ignore',
   '  plugins:',
