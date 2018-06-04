@@ -4,8 +4,8 @@
   supported.
 - Set minimal SDK to 2.0.0-dev.55.0 in project and template `pubspec.yaml`.
 - `web-angular` template:
-  - Upgraded to `-alpha+13` versions of `angular` and
-    `angular_components` packages.
+  - Upgraded to `-alpha+13` versions of `angular` and `angular_components`
+    packages.
 
 ## 2.0.2
 
