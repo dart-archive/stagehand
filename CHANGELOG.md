@@ -1,3 +1,10 @@
+## 3.0.1
+
+- `web-angular` template:
+  - Temporarily set maximal SDK to 2.0.0-dev.61.0.
+  - Updated dependencies to include `-alpha+14` versions of `angular` and
+    `angular_components` packages.
+
 ## 3.0.0
 
 - Move generator files to `lib/src`. Importing them directly is no longer

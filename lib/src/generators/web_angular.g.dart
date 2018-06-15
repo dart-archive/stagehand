@@ -7,7 +7,7 @@
 part of 'web_angular.dart';
 
 // **************************************************************************
-// Generator: DataGenerator
+// DataGenerator
 // **************************************************************************
 
 const _data = const <String>[
@@ -128,11 +128,11 @@ bmc+PiBnZXRUb2RvTGlzdCgpIGFzeW5jID0+IG1vY2tUb2RvTGlzdDsKfQo=''',
 bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBIHdlYiBhcHAgdGhhdCB1c2VzIEFu
 Z3VsYXJEYXJ0IENvbXBvbmVudHMKIyB2ZXJzaW9uOiAxLjAuMAojIGhvbWVwYWdlOiBodHRwczov
 L3d3dy5leGFtcGxlLmNvbQojIGF1dGhvcjogX19hdXRob3JfXyA8ZW1haWxAZXhhbXBsZS5jb20+
-CgplbnZpcm9ubWVudDoKICBzZGs6ICc+PTIuMC4wLWRldi41NS4wIDwyLjAuMCcKCmRlcGVuZGVu
-Y2llczoKICBhbmd1bGFyOiBeNS4wLjAtYWxwaGErMTMKICBhbmd1bGFyX2NvbXBvbmVudHM6IF4w
-LjkuMC1hbHBoYSsxMwoKZGV2X2RlcGVuZGVuY2llczoKICBhbmd1bGFyX3Rlc3Q6IF4yLjAuMC1h
-bHBoYSsxMQogIGJ1aWxkX3J1bm5lcjogXjAuOC45CiAgYnVpbGRfdGVzdDogXjAuMTAuMgogIGJ1
-aWxkX3dlYl9jb21waWxlcnM6IF4wLjQuMAogIHRlc3Q6IF4wLjEyLjM4Cg==''',
+CgplbnZpcm9ubWVudDoKICBzZGs6ICc+PTIuMC4wLWRldi41NS4wIDwyLjAuMC1kZXYuNjIuMCcK
+CmRlcGVuZGVuY2llczoKICBhbmd1bGFyOiBeNS4wLjAtYWxwaGErMTQKICBhbmd1bGFyX2NvbXBv
+bmVudHM6IF4wLjkuMC1hbHBoYSsxNAoKZGV2X2RlcGVuZGVuY2llczoKICBhbmd1bGFyX3Rlc3Q6
+IF4yLjAuMC1hbHBoYSsxMgogIGJ1aWxkX3J1bm5lcjogXjAuOC45CiAgYnVpbGRfdGVzdDogXjAu
+MTAuMgogIGJ1aWxkX3dlYl9jb21waWxlcnM6IF4wLjQuMAogIHRlc3Q6IF4wLjEyLjM4Cg==''',
   'test/app_test.dart',
   'text',
   '''
