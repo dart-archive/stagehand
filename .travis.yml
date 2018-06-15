@@ -27,10 +27,6 @@ env: # important: w/o this top-level env, no job will be allowed to fail.
     - CI_TASK=tool/build-check.sh
     - CI_TASK=tool/web-angular-test.sh
 
-matrix:
-  allow_failures:
-  - dart: dev
-
 script: $CI_TASK
 
 # Only building on selected branches means that we don't run two builds for each pull request.
