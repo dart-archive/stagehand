@@ -7,7 +7,7 @@
 part of 'server_shelf.dart';
 
 // **************************************************************************
-// Generator: DataGenerator
+// DataGenerator
 // **************************************************************************
 
 const _data = const <String>[
@@ -64,7 +64,7 @@ UmVxdWVzdCBmb3IgIiR7cmVxdWVzdC51cmx9IicpOwo=''',
 bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBIHdlYiBzZXJ2ZXIgYnVpbHQgdXNp
 bmcgdGhlIHNoZWxmIHBhY2thZ2UuCiMgdmVyc2lvbjogMS4wLjAKIyBob21lcGFnZTogaHR0cHM6
 Ly93d3cuZXhhbXBsZS5jb20KIyBhdXRob3I6IF9fYXV0aG9yX18gPGVtYWlsQGV4YW1wbGUuY29t
-PgoKZW52aXJvbm1lbnQ6CiAgc2RrOiAnPj0yLjAuMC1kZXYuNTUuMCA8Mi4wLjAnCgpkZXBlbmRl
+PgoKZW52aXJvbm1lbnQ6CiAgc2RrOiAnPj0yLjAuMC1kZXYuNjAuMCA8Mi4wLjAnCgpkZXBlbmRl
 bmNpZXM6CiAgYXJnczogXjEuNC4yCiAgc2hlbGY6IF4wLjcuMgoKI2Rldl9kZXBlbmRlbmNpZXM6
-CiMgIHRlc3Q6IF4wLjEyLjMwCg=='''
+CiMgIHRlc3Q6IF4wLjEyLjQyCg=='''
 ];

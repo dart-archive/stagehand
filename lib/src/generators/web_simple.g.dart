@@ -7,7 +7,7 @@
 part of 'web_simple.dart';
 
 // **************************************************************************
-// Generator: DataGenerator
+// DataGenerator
 // **************************************************************************
 
 const _data = const <String>[
@@ -44,7 +44,7 @@ dWFsaXR5X2NoZWNrcwogICAgLSB2YWxpZF9yZWdleHBzCg==''',
 bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBbiBhYnNvbHV0ZSBiYXJlLWJvbmVz
 IHdlYiBhcHAuCiMgdmVyc2lvbjogMS4wLjAKI2hvbWVwYWdlOiBodHRwczovL3d3dy5leGFtcGxl
 LmNvbQojYXV0aG9yOiBfX2F1dGhvcl9fIDxlbWFpbEBleGFtcGxlLmNvbT4KCmVudmlyb25tZW50
-OgogIHNkazogJz49Mi4wLjAtZGV2LjU1LjAgPDIuMC4wJwoKI2RlcGVuZGVuY2llczoKIyAgcGF0
+OgogIHNkazogJz49Mi4wLjAtZGV2LjYwLjAgPDIuMC4wJwoKI2RlcGVuZGVuY2llczoKIyAgcGF0
 aDogXjEuNC4xCgpkZXZfZGVwZW5kZW5jaWVzOgogIGJ1aWxkX3J1bm5lcjogXjAuOC43CiAgYnVp
 bGRfd2ViX2NvbXBpbGVyczogXjAuNC4wCg==''',
   'web/favicon.ico',

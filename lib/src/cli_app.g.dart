@@ -7,7 +7,7 @@
 part of 'cli_app.dart';
 
 // **************************************************************************
-// Generator: VersionGenerator
+// VersionGenerator
 // **************************************************************************
 
-const appVersion = '3.0.0';
+const appVersion = '3.0.1';
