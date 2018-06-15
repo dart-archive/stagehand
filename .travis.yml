@@ -4,7 +4,7 @@ language: dart
 # Do not remove without verifying w/ Travis.
 sudo: required
 
-dart: dev
+dart: [dev, 2.0.0-dev.61.0]
 
 cache:
   directories:
@@ -26,6 +26,10 @@ env: # important: w/o this top-level env, no job will be allowed to fail.
     - CI_TASK=tool/version-check.sh
     - CI_TASK=tool/build-check.sh
     - CI_TASK=tool/web-angular-test.sh
+
+matrix:
+  allow_failures:
+  - dart: dev
 
 script: $CI_TASK
 
