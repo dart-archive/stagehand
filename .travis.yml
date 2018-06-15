@@ -4,7 +4,7 @@ language: dart
 # Do not remove without verifying w/ Travis.
 sudo: required
 
-dart: [dev, 2.0.0-dev.61.0]
+dart: dev
 
 cache:
   directories:

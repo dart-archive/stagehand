@@ -1,9 +1,9 @@
 ## 3.0.1
 
 - `web-angular` template:
-  - Temporarily set maximal SDK to 2.0.0-dev.61.0.
-  - Updated dependencies to include `-alpha+14` versions of `angular` and
-    `angular_components` packages.
+  - Set min SDK version to 2.0.0-dev.60.0.
+  - Updated dependencies to include `-alpha+15`.
+- All templates: upgrade `test` to `^0.12.42`.
 
 ## 3.0.0
 

@@ -5,11 +5,11 @@ description: A web server built using the shelf package.
 # author: __author__ <email@example.com>
 
 environment:
-  sdk: '>=2.0.0-dev.55.0 <2.0.0'
+  sdk: '>=2.0.0-dev.60.0 <2.0.0'
 
 dependencies:
   args: ^1.4.2
   shelf: ^0.7.2
 
 #dev_dependencies:
-#  test: ^0.12.30
+#  test: ^0.12.42

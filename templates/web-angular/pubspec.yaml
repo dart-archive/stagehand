@@ -5,15 +5,21 @@ description: A web app that uses AngularDart Components
 # author: __author__ <email@example.com>
 
 environment:
-  sdk: '>=2.0.0-dev.55.0 <2.0.0-dev.62.0'
+  sdk: '>=2.0.0-dev.60.0 <2.0.0'
 
 dependencies:
   angular: ^5.0.0-alpha+14
+  # FIXME: release of angular_components +15 is pending
   angular_components: ^0.9.0-alpha+14
 
 dev_dependencies:
-  angular_test: ^2.0.0-alpha+12
-  build_runner: ^0.8.9
+  angular_test: ^2.0.0-alpha+13
+  build_runner: ^0.8.10
   build_test: ^0.10.2
   build_web_compilers: ^0.4.0
-  test: ^0.12.38
+  test: ^0.12.42
+
+dependency_overrides:
+  angular: ^5.0.0-alpha+15
+  angular_forms: ^2.0.0-alpha+7
+  build_config: ^0.3.0
