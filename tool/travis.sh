@@ -19,7 +19,7 @@ for d in templates/*; do
   pushd $d >> /dev/null
   PUB_ALLOW_PRERELEASE_SDK=quiet pub get
   dartfmt --set-exit-if-changed -w . | grep -Ev "Formatting directory|Skipping|Unchanged" | cat -
-  dartanalyzer --preview-dart-2 --fatal-warnings .
+  dartanalyzer --fatal-warnings .
   popd >> /dev/null
 done
 travis_fold start check_templates

@@ -75,7 +75,6 @@ void main() {
 
 void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   Dart.run(path.join(path.current, 'bin/stagehand.dart'),
-      vmArgs: ['--preview-dart-2'],
       arguments: ['--mock-analytics', generator.id],
       runOptions: new RunOptions(workingDirectory: tempDir.path));
 

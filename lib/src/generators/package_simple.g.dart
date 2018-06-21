@@ -70,7 +70,7 @@ YXJ0IGxpYnJhcmllcyBvciBhcHBsaWNhdGlvbnMuCiMgdmVyc2lvbjogMS4wLjAKIyBob21lcGFn
 ZTogaHR0cHM6Ly93d3cuZXhhbXBsZS5jb20KIyBhdXRob3I6IF9fYXV0aG9yX18gPGVtYWlsQGV4
 YW1wbGUuY29tPgoKZW52aXJvbm1lbnQ6CiAgc2RrOiAnPj0yLjAuMC1kZXYuNjAuMCA8Mi4wLjAn
 CgojZGVwZW5kZW5jaWVzOgojICBwYXRoOiBeMS40LjEKCmRldl9kZXBlbmRlbmNpZXM6CiAgdGVz
-dDogXjAuMTIuNDIK''',
+dDogXjEuMC4wCg==''',
   'test/__projectName___test.dart',
   'text',
   '''
