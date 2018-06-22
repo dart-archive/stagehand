@@ -4,7 +4,6 @@
   - Set min SDK version to 2.0.0-dev.60.0.
   - Updated dependencies to include `-alpha+15` versions
     of `angular` and `angular_components`.
-  - Temporarily override `build_config` with `^0.3.0`.
 - All templates: upgrade `test` to `^1.0.0`.
 
 ## 3.0.0
