@@ -16,8 +16,7 @@ targets:
 
 builders:
   stagehand:
-    # See https://github.com/dart-lang/build/issues/1423
-    import: "../../../tool/builder.dart"
+    import: "tool/builder.dart"
     builder_factories: ["stagehandBuilder"]
     build_extensions: {".dart": [".g.dart"]}
     build_to: source
