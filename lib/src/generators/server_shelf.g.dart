@@ -15,9 +15,10 @@ const _data = const <String>[
   'text',
   '''
 IyBGaWxlcyBhbmQgZGlyZWN0b3JpZXMgY3JlYXRlZCBieSBwdWIKLmRhcnRfdG9vbC8KLnBhY2th
-Z2VzCi5wdWIvCmJ1aWxkLwojIFJlbW92ZSB0aGUgZm9sbG93aW5nIHBhdHRlcm4gaWYgeW91IHdp
-c2ggdG8gY2hlY2sgaW4geW91ciBsb2NrIGZpbGUKcHVic3BlYy5sb2NrCgojIERpcmVjdG9yeSBj
-cmVhdGVkIGJ5IGRhcnRkb2MKZG9jL2FwaS8K''',
+Z2VzCiMgUmVtb3ZlIHRoZSBmb2xsb3dpbmcgcGF0dGVybiBpZiB5b3Ugd2lzaCB0byBjaGVjayBp
+biB5b3VyIGxvY2sgZmlsZQpwdWJzcGVjLmxvY2sKCiMgQ29udmVudGlvbmFsIGRpcmVjdG9yeSBm
+b3IgYnVpbGQgb3V0cHV0cwpidWlsZC8KCiMgRGlyZWN0b3J5IGNyZWF0ZWQgYnkgZGFydGRvYwpk
+b2MvYXBpLwo=''',
   'CHANGELOG.md',
   'text',
   'IyMgMS4wLjAKCi0gSW5pdGlhbCB2ZXJzaW9uLCBjcmVhdGVkIGJ5IFN0YWdlaGFuZAo=',

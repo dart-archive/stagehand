@@ -5,7 +5,9 @@
   - Updated dependencies:
     - `-alpha+15` versions of `angular` and `angular_components`.
     - `build_runner ^0.9.0`
-- All templates: upgrade `test` to `^1.0.0`.
+- All templates:
+  - Upgrade `test` to `^1.0.0`.
+  - Update default `.gitignore`.
 
 ## 3.0.0
 
