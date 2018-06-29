@@ -1,14 +1,16 @@
 ## 3.0.1
 
-- `web-angular` template:
-  - Set min SDK version to 2.0.0-dev.65.0.
-  - Updated dependencies:
-    - `-alpha+15` versions of `angular` and `angular_components`.
-    - `build_runner ^0.9.0`
 - All templates:
+  - Set min SDK version to 2.0.0-dev.65.0.
   - Upgrade `test` to `^1.0.0`.
   - Update default `.gitignore`.
 
+- `web-angular` template:
+  - Simplified `angular_components` import directives.
+  - Updated dependencies:
+    - `-alpha+15` versions of `angular` and `angular_components`.
+    - `build_runner ^0.9.0`
+  - 
 ## 3.0.0
 
 - Move generator files to `lib/src`. Importing them directly is no longer
