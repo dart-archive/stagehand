@@ -5,7 +5,7 @@ description: A web server built using the shelf package.
 # author: __author__ <email@example.com>
 
 environment:
-  sdk: '>=2.0.0-dev.65.0 <2.0.0'
+  sdk: '>=2.0.0-dev.66.0 <2.0.0'
 
 dependencies:
   args: ^1.4.2
