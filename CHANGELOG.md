@@ -1,14 +1,15 @@
 ## 3.0.1
 
 - All templates:
-  - Set min SDK version to 2.0.0-dev.65.0.
+  - Set min SDK version to 2.0.0-dev.66.0.
   - Upgrade `test` to `^1.0.0`.
   - Update default `.gitignore`.
 
 - `web-angular` template:
   - Simplified `angular_components` import directives.
   - Updated dependencies:
-    - `-alpha+15` versions of `angular` and `angular_components`.
+    - `-beta` versions of `angular`, `angular_components`,
+      and `angular_test`
     - `build_runner ^0.9.0`
   - 
 ## 3.0.0
