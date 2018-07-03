@@ -9,7 +9,7 @@
   - Simplified `angular_components` import directives.
   - Updated dependencies:
     - `-beta` versions of `angular`, `angular_components`,
-      and `angular_test`.
+      and `angular_test`
     - `build_runner ^0.9.0`
 
 ## 3.0.0
