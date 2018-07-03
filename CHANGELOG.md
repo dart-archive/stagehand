@@ -2,19 +2,19 @@
 
 - All templates:
   - Set min SDK version to 2.0.0-dev.66.0.
-  - Upgrade `test` to `^1.0.0`.
-  - Update default `.gitignore`.
+  - Upgraded `test` to `^1.0.0`.
+  - Updated default `.gitignore`.
 
 - `web-angular` template:
   - Simplified `angular_components` import directives.
   - Updated dependencies:
     - `-beta` versions of `angular`, `angular_components`,
-      and `angular_test`
+      and `angular_test`.
     - `build_runner ^0.9.0`
-  - 
+
 ## 3.0.0
 
-- Move generator files to `lib/src`. Importing them directly is no longer
+- Moved generator files to `lib/src`. Importing them directly is no longer
   supported.
 - Set minimal SDK to 2.0.0-dev.55.0 in project and template `pubspec.yaml`.
 - `web-angular` template:
