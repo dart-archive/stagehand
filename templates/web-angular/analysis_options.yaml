@@ -1,5 +1,4 @@
 analyzer:
-  strong-mode: true
   exclude: [build/**]
   errors:
     uri_has_not_been_generated: ignore
