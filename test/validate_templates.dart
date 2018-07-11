@@ -32,13 +32,13 @@ final String _expectedGitIgnore = _getMetaTemplateFile('.gitignore');
 final String _expectedAnalysisOptions =
     _getMetaTemplateFile('templates/analysis_options.yaml');
 final String _expectedAngularAnalysisOptions = [
-  _expectedAnalysisOptions.split('\n').take(2),
+  _expectedAnalysisOptions.split('\n').take(1),
   '  exclude: [build/**]',
   '  errors:',
   '    uri_has_not_been_generated: ignore',
   '  plugins:',
   '    - angular',
-  _expectedAnalysisOptions.split('\n').skip(4),
+  _expectedAnalysisOptions.split('\n').skip(3),
 ].expand((e) => e is Iterable ? e : [e]).join('\n');
 
 void main() {
@@ -139,7 +139,7 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   expect(pubspecContent, containsPair('name', 'stagehand'));
   expect(pubspecContent, containsPair('description', isNotEmpty));
 
-  final minSDK = '2.0.0-dev.66.0';
+  final minSDK = '2.0.0-dev.68.0';
   final env = {'sdk': '>=$minSDK <2.0.0'};
   expect(pubspecContent, containsPair('environment', env));
 

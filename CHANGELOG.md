@@ -1,3 +1,8 @@
+## 3.0.2
+
+- Set min SDK version to 2.0.0-dev.68.0 everywhere.
+- Removed `strong-mode: true` from all `analysis_options.yaml` files.
+
 ## 3.0.1
 
 - All templates:
