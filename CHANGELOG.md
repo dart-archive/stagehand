@@ -1,3 +1,7 @@
+## 3.1.0
+
+- Set max SDK version to <3.0.0 everywhere.
+
 ## 3.0.2
 
 - Set min SDK version to 2.0.0-dev.68.0 everywhere.
