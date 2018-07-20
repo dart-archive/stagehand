@@ -43,14 +43,15 @@ travis_fold start validate_templates
 pub run test test/validate_templates.dart
 travis_fold end validate_templates
 
+# DISABLED due to https://github.com/block-forest/dart-coveralls/issues/81.
 # Install dart_coveralls; gather and send coverage data.
-if [ "$COVERALLS_TOKEN" ]; then
-  travis_fold start dart_coveralls
-  pub global activate dart_coveralls
-  pub global run dart_coveralls report \
-    --token $COVERALLS_TOKEN \
-    --retry 2 \
-    --exclude-test-files \
-    test/all.dart
-  travis_fold end dart_coveralls
-fi
+# if [ "$COVERALLS_TOKEN" ]; then
+  # travis_fold start dart_coveralls
+  # pub global activate dart_coveralls
+  # pub global run dart_coveralls report \
+    # --token $COVERALLS_TOKEN \
+    # --retry 2 \
+    # --exclude-test-files \
+    # test/all.dart
+  # travis_fold end dart_coveralls
+# fi
