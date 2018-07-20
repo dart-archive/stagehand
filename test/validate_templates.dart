@@ -36,8 +36,10 @@ final String _expectedAngularAnalysisOptions = [
   '  exclude: [build/**]',
   '  errors:',
   '    uri_has_not_been_generated: ignore',
-  '  plugins:',
-  '    - angular',
+  "  # Angular analysis support is in beta. You're welcome to try it and report",
+  '  # issues: https://github.com/dart-lang/angular_analyzer_plugin/issues',
+  '  # plugins:',
+  '    # - angular',
   _expectedAnalysisOptions.split('\n').skip(3),
 ].expand((e) => e is Iterable ? e : [e]).join('\n');
 
