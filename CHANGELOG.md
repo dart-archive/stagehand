@@ -1,7 +1,7 @@
 ## 3.1.1
 
-- `web-angular` template: Disabled the Angular analyzer. To re-enable the
-  analyzer, edit `analysis_options.yaml` and uncomment the two lines
+- `web-angular` template: Disabled the Angular analyzer plugin. To re-enable
+  the plugin, edit `analysis_options.yaml` and uncomment the two lines
   `plugins: ... angular`.
 
 ## 3.1.0

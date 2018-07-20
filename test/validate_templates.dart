@@ -36,7 +36,7 @@ final String _expectedAngularAnalysisOptions = [
   '  exclude: [build/**]',
   '  errors:',
   '    uri_has_not_been_generated: ignore',
-  "  # Angular analysis support is in beta. You're welcome to try it and report",
+  "  # Angular plugin support is in beta. You're welcome to try it and report",
   '  # issues: https://github.com/dart-lang/angular_analyzer_plugin/issues',
   '  # plugins:',
   '    # - angular',
