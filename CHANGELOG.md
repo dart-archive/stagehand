@@ -1,3 +1,9 @@
+## 3.1.1
+
+- `web-angular` template: Disabled the Angular analyzer. To re-enable the
+  analyzer, edit `analysis_options.yaml` and uncomment the two lines
+  `plugins: ... angular`.
+
 ## 3.1.0
 
 - Set max SDK version to <3.0.0 everywhere.
