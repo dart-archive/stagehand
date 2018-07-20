@@ -2,8 +2,10 @@ analyzer:
   exclude: [build/**]
   errors:
     uri_has_not_been_generated: ignore
-  plugins:
-    - angular
+  # Angular plugin support is in beta. You're welcome to try it and report
+  # issues: https://github.com/dart-lang/angular_analyzer_plugin/issues
+  # plugins:
+    # - angular
 
 # Lint rules and documentation, see http://dart-lang.github.io/linter/lints
 linter:
