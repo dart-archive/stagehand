@@ -1,3 +1,7 @@
+## 3.1.2
+
+- `web-*` templates: Upgraded `build_runner` to `^0.10.0`.
+
 ## 3.1.1
 
 - `web-angular` template: Disabled the Angular analyzer plugin. To re-enable
