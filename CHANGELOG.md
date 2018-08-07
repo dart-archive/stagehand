@@ -1,6 +1,10 @@
 ## 3.1.2
 
-- `web-*` templates: Upgraded `build_runner` to `^0.10.0`.
+- All templates:
+  - Set min SDK version to 2.0.0.
+
+- `web-angular` template:
+  - Depend on stable releases of `angular` packages.
 
 ## 3.1.1
 

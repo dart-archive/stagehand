@@ -4,7 +4,7 @@ language: dart
 # Do not remove without verifying w/ Travis.
 sudo: required
 
-dart: dev
+dart: stable
 
 cache:
   directories:
@@ -31,4 +31,4 @@ script: $CI_TASK
 
 # Only building on selected branches means that we don't run two builds for each pull request.
 branches:
-  only: [master, 2-dev]
+  only: [master]
