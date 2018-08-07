@@ -3,16 +3,16 @@
 # license that can be found in the LICENSE file.
 
 name: stagehand
-# When changing this version, change the lib/src/cli_app.dart version as well.
 description: >
   A scaffolding generator for your Dart projects. Stagehand helps you get set
   up!
-version: 3.1.2-dev
+# After changing the version, run `pub run build_runner build`.
+version: 3.1.2
 homepage: https://github.com/dart-lang/stagehand
 author: Dart Team <misc@dartlang.org>
 
 environment:
-  sdk: '>=2.0.0-dev.68.0 <3.0.0'
+  sdk: '>=2.0.0 <3.0.0'
 
 # Add the bin/stagehand.dart script to the scripts pub installs.
 executables:
