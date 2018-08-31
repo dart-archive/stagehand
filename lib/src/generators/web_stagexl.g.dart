@@ -21,10 +21,10 @@ b2MvYXBpLwo=''',
   'README.md',
   'text',
   '''
-IyBfX3Byb2plY3ROYW1lX18KCkEgc2ltcGxlIFtTdGFnZVhMXShodHRwOi8vd3d3LnN0YWdleGwu
-b3JnLykgYXBwLgoKQ3JlYXRlZCBmcm9tIHRlbXBsYXRlcyBtYWRlIGF2YWlsYWJsZSBieSBTdGFn
-ZWhhbmQgdW5kZXIgYSBCU0Qtc3R5bGUKW2xpY2Vuc2VdKGh0dHBzOi8vZ2l0aHViLmNvbS9kYXJ0
-LWxhbmcvc3RhZ2VoYW5kL2Jsb2IvbWFzdGVyL0xJQ0VOU0UpLgo=''',
+QSBzaW1wbGUgW1N0YWdlWExdKGh0dHA6Ly93d3cuc3RhZ2V4bC5vcmcvKSBhcHAuCgpDcmVhdGVk
+IGZyb20gdGVtcGxhdGVzIG1hZGUgYXZhaWxhYmxlIGJ5IFN0YWdlaGFuZCB1bmRlciBhIEJTRC1z
+dHlsZQpbbGljZW5zZV0oaHR0cHM6Ly9naXRodWIuY29tL2RhcnQtbGFuZy9zdGFnZWhhbmQvYmxv
+Yi9tYXN0ZXIvTElDRU5TRSkuCg==''',
   'analysis_options.yaml',
   'text',
   '''

@@ -1,5 +1,3 @@
-# __projectName__
-
 A library for Dart developers.
 
 Created from templates made available by Stagehand under a BSD-style
@@ -9,11 +7,13 @@ Created from templates made available by Stagehand under a BSD-style
 
 A simple usage example:
 
-    import 'package:__projectName__/__projectName__.dart';
+```dart
+import 'package:__projectName__/__projectName__.dart';
 
-    main() {
-      var awesome = new Awesome();
-    }
+main() {
+  var awesome = new Awesome();
+}
+```
 
 ## Features and bugs
 
