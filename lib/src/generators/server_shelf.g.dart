@@ -21,11 +21,10 @@ b2MvYXBpLwo=''',
   'README.md',
   'text',
   '''
-IyBfX3Byb2plY3ROYW1lX18KCkEgd2ViIHNlcnZlciBidWlsdCB1c2luZyBbU2hlbGZdKGh0dHBz
-Oi8vcHViLmRhcnRsYW5nLm9yZy9wYWNrYWdlcy9zaGVsZikuCgpDcmVhdGVkIGZyb20gdGVtcGxh
-dGVzIG1hZGUgYXZhaWxhYmxlIGJ5IFN0YWdlaGFuZCB1bmRlciBhIEJTRC1zdHlsZQpbbGljZW5z
-ZV0oaHR0cHM6Ly9naXRodWIuY29tL2RhcnQtbGFuZy9zdGFnZWhhbmQvYmxvYi9tYXN0ZXIvTElD
-RU5TRSkuCg==''',
+QSB3ZWIgc2VydmVyIGJ1aWx0IHVzaW5nIFtTaGVsZl0oaHR0cHM6Ly9wdWIuZGFydGxhbmcub3Jn
+L3BhY2thZ2VzL3NoZWxmKS4KCkNyZWF0ZWQgZnJvbSB0ZW1wbGF0ZXMgbWFkZSBhdmFpbGFibGUg
+YnkgU3RhZ2VoYW5kIHVuZGVyIGEgQlNELXN0eWxlCltsaWNlbnNlXShodHRwczovL2dpdGh1Yi5j
+b20vZGFydC1sYW5nL3N0YWdlaGFuZC9ibG9iL21hc3Rlci9MSUNFTlNFKS4K''',
   'analysis_options.yaml',
   'text',
   '''

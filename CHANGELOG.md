@@ -1,5 +1,7 @@
 ## 3.1.3
 
+- All templates: small improvements to `README.md` generation.
+
 ## 3.1.2
 
 - All templates: Set min SDK version to 2.0.0.
