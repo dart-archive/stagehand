@@ -1,6 +1,6 @@
 ## 3.1.3
 
-- All templates: small improvements to `README.md` generation.
+- All templates: small improvements to generated `README.md`.
 
 ## 3.1.2
 

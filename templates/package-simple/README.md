@@ -8,7 +8,6 @@ Created from templates made available by Stagehand under a BSD-style
 A simple usage example:
 
 ```dart
-
 import 'package:__projectName__/__projectName__.dart';
 
 main() {
