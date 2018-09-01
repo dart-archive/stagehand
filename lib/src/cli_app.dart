@@ -14,7 +14,7 @@ import 'package:stagehand/src/common.dart';
 import 'package:stagehand/stagehand.dart';
 import 'package:usage/usage_io.dart';
 
-part 'cli_app.g.dart';
+import 'version.dart';
 
 const String appName = 'stagehand';
 
@@ -38,7 +38,7 @@ class CliApp {
     assert(generators != null);
     assert(logger != null);
 
-    analytics = new AnalyticsIO(_gaTrackingId, appName, appVersion)
+    analytics = new AnalyticsIO(_gaTrackingId, appName, packageVersion)
       // These `cdX` values MUST be tightly coordinated with Analytics config
       // DO NOT modify unless you're certain what you're doing.
       // Contact kevmoo@ if you have questions
@@ -85,10 +85,10 @@ class CliApp {
     }
 
     if (options['version']) {
-      _out('$appName version: $appVersion');
+      _out('$appName version: $packageVersion');
       return http.get(appPubInfo).then((response) {
         List versions = jsonDecode(response.body)['versions'];
-        if (appVersion != versions.last) {
+        if (packageVersion != versions.last) {
           _out('Version ${versions.last} is available! Run `pub global activate'
               ' $appName` to get the latest.');
         }
