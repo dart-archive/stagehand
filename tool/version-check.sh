@@ -15,8 +15,8 @@ VERS_FROM_PUB=$(grep '^version:' pubspec.yaml | awk '{ print $2 }')
 
 echo "Version of stagehand from pubspec.yaml: $VERS_FROM_PUB"
 
-VERSION_FILE=lib/src/cli_app.g.dart
-if grep -qe "appVersion = '$VERS_FROM_PUB';" $VERSION_FILE; then
+VERSION_FILE=lib/src/version.dart
+if grep -qe "packageVersion = '$VERS_FROM_PUB';" $VERSION_FILE; then
   echo "✔ $VERSION_FILE has same version as pubspec."
 else
   EXIT_CODE=2
