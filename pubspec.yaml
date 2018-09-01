@@ -28,6 +28,7 @@ dev_dependencies:
   build: ^0.12.6
   build_config: ^0.3.0
   build_runner: ^0.10.0
+  build_version: ^1.0.0
   glob: ^1.1.5
   grinder: ^0.8.0
   source_gen: ^0.9.0
