@@ -8,8 +8,6 @@ targets:
         - lib/**
         - templates/**
     builders:
-      build_version:
-        enabled: true
       stagehand:
         generate_for:
           - lib/src/cli_app.dart
