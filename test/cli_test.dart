@@ -18,11 +18,11 @@ void main() {
     GeneratorTargetMock target;
 
     setUp(() {
-      logger = new CliLoggerMock();
-      target = new GeneratorTargetMock();
-      app = new CliApp(generators, logger, target);
-      app.cwd = new Directory('test');
-      app.analytics = new AnalyticsMock();
+      logger = CliLoggerMock();
+      target = GeneratorTargetMock();
+      app = CliApp(generators, logger, target);
+      app.cwd = Directory('test');
+      app.analytics = AnalyticsMock();
     });
 
     void _expectOk([_]) {
@@ -78,8 +78,8 @@ void main() {
 }
 
 class CliLoggerMock implements CliLogger {
-  final StringBuffer _stdout = new StringBuffer();
-  final StringBuffer _stderr = new StringBuffer();
+  final StringBuffer _stdout = StringBuffer();
+  final StringBuffer _stderr = StringBuffer();
 
   @override
   void stderr(String message) => _stderr.write(message);
@@ -101,6 +101,6 @@ class GeneratorTargetMock implements GeneratorTarget {
 
     createdCount++;
 
-    return new Future.value();
+    return Future.value();
   }
 }

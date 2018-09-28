@@ -4,24 +4,24 @@ import 'package:stagexl/stagexl.dart';
 import 'dart:math';
 
 Future<Null> main() async {
-  StageOptions options = new StageOptions()
+  StageOptions options = StageOptions()
     ..backgroundColor = Color.White
     ..renderEngine = RenderEngine.WebGL;
 
   var canvas = html.querySelector('#stage');
-  var stage = new Stage(canvas, width: 1280, height: 800, options: options);
+  var stage = Stage(canvas, width: 1280, height: 800, options: options);
 
-  var renderLoop = new RenderLoop();
+  var renderLoop = RenderLoop();
   renderLoop.addStage(stage);
 
-  var resourceManager = new ResourceManager();
+  var resourceManager = ResourceManager();
   resourceManager.addBitmapData("dart", "images/dart@1x.png");
 
   await resourceManager.load();
 
   var logoData = resourceManager.getBitmapData("dart");
-  var logo = new Sprite();
-  logo.addChild(new Bitmap(logoData));
+  var logo = Sprite();
+  logo.addChild(Bitmap(logoData));
 
   logo.pivotX = logoData.width / 2;
   logo.pivotY = logoData.height / 2;

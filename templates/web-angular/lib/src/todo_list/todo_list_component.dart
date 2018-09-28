@@ -17,7 +17,7 @@ import 'todo_list_service.dart';
     NgFor,
     NgIf,
   ],
-  providers: [const ClassProvider(TodoListService)],
+  providers: [ClassProvider(TodoListService)],
 )
 class TodoListComponent implements OnInit {
   final TodoListService todoListService;

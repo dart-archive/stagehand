@@ -10,10 +10,10 @@ import '../stagehand.dart';
 
 const int _runeSpace = 32;
 
-final _substitueRegExp = new RegExp(r'__([a-zA-Z]+)__');
-final _nonValidSubstitueRegExp = new RegExp('[^a-zA-Z]');
+final _substitueRegExp = RegExp(r'__([a-zA-Z]+)__');
+final _nonValidSubstitueRegExp = RegExp('[^a-zA-Z]');
 
-final _whiteSpace = new RegExp(r'\s+');
+final _whiteSpace = RegExp(r'\s+');
 
 List<TemplateFile> decodeConcatenatedData(List<String> data) {
   var results = <TemplateFile>[];
@@ -26,10 +26,10 @@ List<TemplateFile> decodeConcatenatedData(List<String> data) {
     var decoded = base64.decode(raw);
 
     if (type == 'binary') {
-      results.add(new TemplateFile.fromBinary(path, decoded));
+      results.add(TemplateFile.fromBinary(path, decoded));
     } else {
       var source = utf8.decode(decoded);
-      results.add(new TemplateFile(path, source));
+      results.add(TemplateFile(path, source));
     }
   }
 
@@ -73,7 +73,7 @@ String substituteVars(String str, Map<String, String> vars) {
   var nonValidKeys =
       vars.keys.where((k) => k.contains(_nonValidSubstitueRegExp)).toList();
   if (nonValidKeys.isNotEmpty) {
-    throw new ArgumentError('vars.keys can only contain letters.');
+    throw ArgumentError('vars.keys can only contain letters.');
   }
 
   return str.replaceAllMapped(_substitueRegExp, (match) {
@@ -130,11 +130,11 @@ List<String> wrap(String str, [int col = 80]) {
 /// An abstract implementation of a [Generator].
 abstract class DefaultGenerator extends Generator {
   DefaultGenerator(String id, String label, String description,
-      {List<String> categories: const []})
+      {List<String> categories = const []})
       : super(id, label, description, categories: categories);
 
   TemplateFile addFile(String path, String contents) =>
-      addTemplateFile(new TemplateFile(path, contents));
+      addTemplateFile(TemplateFile(path, contents));
 
   @override
   String getInstallInstructions() {

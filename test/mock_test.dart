@@ -17,7 +17,7 @@ void main() {
 Future _testGenerator(Generator generator) async {
   expect(generator.id, isNotNull);
 
-  var target = new MockTarget();
+  var target = MockTarget();
 
   // Assert that we can generate the template.
   await generator.generate('foo', target);

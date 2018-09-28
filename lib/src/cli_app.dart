@@ -38,7 +38,7 @@ class CliApp {
     assert(generators != null);
     assert(logger != null);
 
-    analytics = new AnalyticsIO(_gaTrackingId, appName, packageVersion)
+    analytics = AnalyticsIO(_gaTrackingId, appName, packageVersion)
       // These `cdX` values MUST be tightly coordinated with Analytics config
       // DO NOT modify unless you're certain what you're doing.
       // Contact kevmoo@ if you have questions
@@ -66,9 +66,9 @@ class CliApp {
       // FormatException: Could not find an option named "foo".
       if (e is FormatException) {
         _out('Error: ${e.message}');
-        return new Future.error(new ArgError(e.message));
+        return Future.error(ArgError(e.message));
       } else {
-        return new Future.error(e, st);
+        return Future.error(e, st);
       }
     }
 
@@ -81,7 +81,7 @@ class CliApp {
 
     // This hidden option is used so that our build bots don't emit data.
     if (options['mock-analytics']) {
-      analytics = new AnalyticsMock();
+      analytics = AnalyticsMock();
     }
 
     if (options['version']) {
@@ -127,13 +127,13 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
     if (options.rest.isEmpty) {
       logger.stderr('No generator specified.\n');
       _usage(argParser);
-      return new Future.error(new ArgError('no generator specified'));
+      return Future.error(ArgError('no generator specified'));
     }
 
     if (options.rest.length >= 2) {
       logger.stderr('Error: too many arguments given.\n');
       _usage(argParser);
-      return new Future.error(new ArgError('invalid generator'));
+      return Future.error(ArgError('invalid generator'));
     }
 
     var generatorName = options.rest.first;
@@ -142,7 +142,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
     if (generator == null) {
       logger.stderr("'$generatorName' is not a valid generator.\n");
       _usage(argParser);
-      return new Future.error(new ArgError('invalid generator'));
+      return Future.error(ArgError('invalid generator'));
     }
 
     var dir = cwd;
@@ -151,7 +151,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
       logger.stderr(
           'The current directory is not empty. Please create a new project directory, or '
           'use --override to force generation into the current directory.');
-      return new Future.error(new ArgError('project directory not empty'));
+      return Future.error(ArgError('project directory not empty'));
     }
 
     // Normalize the project name.
@@ -159,7 +159,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
     projectName = normalizeProjectName(projectName);
 
     if (target == null) {
-      target = new _DirectoryGeneratorTarget(logger, dir);
+      target = _DirectoryGeneratorTarget(logger, dir);
     }
 
     _out('Creating $generatorName application `$projectName`:');
@@ -196,7 +196,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
   }
 
   ArgParser _createArgParser() {
-    var argParser = new ArgParser();
+    var argParser = ArgParser();
 
     argParser.addFlag('analytics',
         negatable: true,
@@ -305,7 +305,7 @@ class _DirectoryGeneratorTarget extends GeneratorTarget {
 
   @override
   Future createFile(String filePath, List<int> contents) {
-    var file = new io.File(path.join(dir.path, filePath));
+    var file = io.File(path.join(dir.path, filePath));
 
     logger.stdout('  ${file.path}');
 

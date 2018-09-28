@@ -7,6 +7,6 @@ import 'package:build/build.dart';
 
 import 'src/code_generator.dart';
 
-Builder stagehandBuilder([_]) => new PartBuilder([
-      new DataGenerator(),
+Builder stagehandBuilder([_]) => PartBuilder([
+      DataGenerator(),
     ], '.g.dart');

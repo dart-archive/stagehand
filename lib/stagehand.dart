@@ -25,6 +25,7 @@
 /// ```
 ///
 /// to create a new instance of the `webapp` template in a `foobar` directory.
+library stagehand;
 
 import 'dart:async';
 import 'dart:convert';
@@ -39,12 +40,12 @@ import 'src/generators/web_stagexl.dart';
 
 /// A curated, prescriptive list of Dart project generators.
 final List<Generator> generators = [
-  new ConsoleFullGenerator(),
-  new PackageSimpleGenerator(),
-  new ServerShelfGenerator(),
-  new WebAngularGenerator(),
-  new WebSimpleGenerator(),
-  new WebStageXlGenerator()
+  ConsoleFullGenerator(),
+  PackageSimpleGenerator(),
+  ServerShelfGenerator(),
+  WebAngularGenerator(),
+  WebSimpleGenerator(),
+  WebStageXlGenerator()
 ]..sort();
 
 Generator getGenerator(String id) {
@@ -62,7 +63,8 @@ abstract class Generator implements Comparable<Generator> {
   final List<TemplateFile> files = [];
   TemplateFile _entrypoint;
 
-  Generator(this.id, this.label, this.description, {this.categories: const []});
+  Generator(this.id, this.label, this.description,
+      {this.categories = const []});
 
   /// The entrypoint of the application; the main file for the project, which an
   /// IDE might open after creating the project.
@@ -83,8 +85,8 @@ abstract class Generator implements Comparable<Generator> {
   /// of this template. An IDE might use this information to open this file after
   /// the user's project is generated.
   void setEntrypoint(TemplateFile entrypoint) {
-    if (_entrypoint != null) throw new StateError('entrypoint already set');
-    if (entrypoint == null) throw new StateError('entrypoint is null');
+    if (_entrypoint != null) throw StateError('entrypoint already set');
+    if (entrypoint == null) throw StateError('entrypoint is null');
     this._entrypoint = entrypoint;
   }
 
@@ -93,7 +95,7 @@ abstract class Generator implements Comparable<Generator> {
     var vars = {
       'projectName': projectName,
       'description': description,
-      'year': new DateTime.now().year.toString(),
+      'year': DateTime.now().year.toString(),
       'author': '<your name>'
     };
 
@@ -147,14 +149,14 @@ class TemplateFile {
 
   FileContents runSubstitution(Map<String, String> parameters) {
     if (path == 'pubspec.yaml' && parameters['author'] == '<your name>') {
-      parameters = new Map.from(parameters);
+      parameters = Map.from(parameters);
       parameters['author'] = 'Your Name';
     }
 
     var newPath = substituteVars(path, parameters);
     var newContents = _createContent(parameters);
 
-    return new FileContents(newPath, newContents);
+    return FileContents(newPath, newContents);
   }
 
   bool get isBinary => _binaryData != null;
