@@ -5,8 +5,7 @@ import 'package:shelf/shelf.dart' as shelf;
 import 'package:shelf/shelf_io.dart' as io;
 
 main(List<String> args) async {
-  var parser = new ArgParser()
-    ..addOption('port', abbr: 'p', defaultsTo: '8080');
+  var parser = ArgParser()..addOption('port', abbr: 'p', defaultsTo: '8080');
 
   var result = parser.parse(args);
 
@@ -29,4 +28,4 @@ main(List<String> args) async {
 }
 
 shelf.Response _echoRequest(shelf.Request request) =>
-    new shelf.Response.ok('Request for "${request.url}"');
+    shelf.Response.ok('Request for "${request.url}"');

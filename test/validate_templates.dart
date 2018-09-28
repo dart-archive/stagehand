@@ -24,9 +24,8 @@ final _pubspecOrder = const [
   'dev_dependencies'
 ];
 
-final List<RegExp> _pubspecOrderRegexps = _pubspecOrder
-    .map((s) => new RegExp('^(# *)?$s:', multiLine: true))
-    .toList();
+final List<RegExp> _pubspecOrderRegexps =
+    _pubspecOrder.map((s) => RegExp('^(# *)?$s:', multiLine: true)).toList();
 
 final String _expectedGitIgnore = _getMetaTemplateFile('.gitignore');
 final String _expectedAnalysisOptions =
@@ -64,7 +63,7 @@ void main() {
 
   test('Validate pkg/stagehand pubspec', () {
     var pubspecContent =
-        new File(path.join(path.current, 'pubspec.yaml')).readAsStringSync();
+        File(path.join(path.current, 'pubspec.yaml')).readAsStringSync();
     _validatePubspec(pubspecContent);
   });
 
@@ -78,23 +77,23 @@ void main() {
 void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   Dart.run(path.join(path.current, 'bin/stagehand.dart'),
       arguments: ['--mock-analytics', generator.id],
-      runOptions: new RunOptions(workingDirectory: tempDir.path));
+      runOptions: RunOptions(workingDirectory: tempDir.path));
 
   var gitIgnorePath = path.join(tempDir.path, '.gitignore');
-  var gitIgnoreFile = new File(gitIgnorePath);
+  var gitIgnoreFile = File(gitIgnorePath);
 
   expect(gitIgnoreFile.readAsStringSync(), _expectedGitIgnore,
       reason: 'Expected all of the .gitignore files to be identical.');
 
   var pubspecPath = path.join(tempDir.path, 'pubspec.yaml');
-  var pubspecFile = new File(pubspecPath);
+  var pubspecFile = File(pubspecPath);
   var pubspecContentString = pubspecFile.readAsStringSync();
   var pubspecContent = yaml.loadYaml(pubspecContentString) as yaml.YamlMap;
   final usesAngular =
       pubspecContent['dependencies']?.containsKey('angular') ?? false;
 
   var analysisOptionsPath = path.join(tempDir.path, 'analysis_options.yaml');
-  var analysisOptionsFile = new File(analysisOptionsPath);
+  var analysisOptionsFile = File(analysisOptionsPath);
   expect(analysisOptionsFile.readAsStringSync(),
       usesAngular ? _expectedAngularAnalysisOptions : _expectedAnalysisOptions,
       reason: 'All analysis_options.yaml files should be identical.');
@@ -103,13 +102,13 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
     fail('A pubspec must be defined!');
   }
 
-  Pub.get(runOptions: new RunOptions(workingDirectory: tempDir.path));
+  Pub.get(runOptions: RunOptions(workingDirectory: tempDir.path));
 
   var filePath = path.join(tempDir.path, generator.entrypoint.path);
 
   if (path.extension(filePath) != '.dart' ||
       !FileSystemEntity.isFileSync(filePath)) {
-    var parent = new Directory(path.dirname(filePath));
+    var parent = Directory(path.dirname(filePath));
 
     var file = _listSync(parent)
         .firstWhere((f) => f.path.endsWith('.dart'), orElse: () => null);
@@ -149,8 +148,7 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   var devDeps = pubspecContent['dev_dependencies'];
   if (devDeps != null) {
     if (devDeps.containsKey('test')) {
-      Pub.run('test',
-          runOptions: new RunOptions(workingDirectory: tempDir.path));
+      Pub.run('test', runOptions: RunOptions(workingDirectory: tempDir.path));
     }
   }
 }
@@ -172,7 +170,7 @@ void _validatePubspec(String pubspecContentString) {
 /// (by sorting on the file path) in order to prevent large merge diffs in the
 /// generated template data files.
 List<FileSystemEntity> _listSync(Directory dir,
-    {bool recursive: false, bool followLinks: true}) {
+    {bool recursive = false, bool followLinks = true}) {
   var results = dir.listSync(recursive: recursive, followLinks: followLinks);
   results.sort((entity1, entity2) => entity1.path.compareTo(entity2.path));
   return results;
@@ -181,7 +179,7 @@ List<FileSystemEntity> _listSync(Directory dir,
 // Gets the named meta-template file if available, returns '' otherwise.
 String _getMetaTemplateFile(String fileName) {
   try {
-    return new File(path.join(path.current, fileName)).readAsStringSync();
+    return File(path.join(path.current, fileName)).readAsStringSync();
   } on FileSystemException catch (_) {
     return '';
   }

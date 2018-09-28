@@ -10,7 +10,7 @@ import 'package:stagehand/src/cli_app.dart';
 import 'package:usage/usage_io.dart';
 
 void main(List<String> args) {
-  var app = new CliApp(generators, new CliLogger());
+  var app = CliApp(generators, CliLogger());
 
   try {
     app.process(args).catchError((Object e, StackTrace st) {

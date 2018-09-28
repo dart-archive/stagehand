@@ -6,7 +6,7 @@ void main() {
     Awesome awesome;
 
     setUp(() {
-      awesome = new Awesome();
+      awesome = Awesome();
     });
 
     test('First Test', () {

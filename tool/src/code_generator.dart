@@ -11,8 +11,8 @@ import 'package:path/path.dart' as p;
 import 'package:glob/glob.dart';
 import 'package:source_gen/source_gen.dart';
 
-const List<String> _allowedDotFiles = const <String>['.gitignore'];
-final RegExp _binaryFileTypes = new RegExp(
+const List<String> _allowedDotFiles = <String>['.gitignore'];
+final RegExp _binaryFileTypes = RegExp(
     r'\.(jpe?g|png|gif|ico|svg|ttf|eot|woff|woff2)$',
     caseSensitive: false);
 
@@ -26,9 +26,8 @@ class DataGenerator extends Generator {
     var name =
         p.basenameWithoutExtension(buildStep.inputId.path).replaceAll('_', '-');
 
-    var filteredAssets = await buildStep
-        .findAssets(new Glob('templates/$name/**'))
-        .where((asset) {
+    var filteredAssets =
+        await buildStep.findAssets(Glob('templates/$name/**')).where((asset) {
       var rootSegment = asset.pathSegments[2];
 
       if (rootSegment == 'build' || rootSegment == 'pubspec.lock') {
@@ -41,7 +40,7 @@ class DataGenerator extends Generator {
 
       return !rootSegment.startsWith('.');
     }).toList()
-      ..sort();
+          ..sort();
 
     var items = await _getLines(filteredAssets, buildStep).map((item) {
       if (item.contains('\n')) {
