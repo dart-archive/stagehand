@@ -1,5 +1,7 @@
 ## 3.1.4
 
+- All templates: Removed `new` and unnecessary `const`.
+
 ## 3.1.3
 
 - All templates: Made small improvements to the generated `README.md`.
