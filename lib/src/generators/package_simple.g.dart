@@ -6,7 +6,7 @@ part of 'package_simple.dart';
 // DataGenerator
 // **************************************************************************
 
-const _data = <String>[
+const _data = const <String>[
   '.gitignore',
   'text',
   '''
@@ -44,8 +44,8 @@ dmFsaWRfcmVnZXhwcwo=''',
   'text',
   '''
 aW1wb3J0ICdwYWNrYWdlOl9fcHJvamVjdE5hbWVfXy9fX3Byb2plY3ROYW1lX18uZGFydCc7Cgpt
-YWluKCkgewogIHZhciBhd2Vzb21lID0gbmV3IEF3ZXNvbWUoKTsKICBwcmludCgnYXdlc29tZTog
-JHthd2Vzb21lLmlzQXdlc29tZX0nKTsKfQo=''',
+YWluKCkgewogIHZhciBhd2Vzb21lID0gQXdlc29tZSgpOwogIHByaW50KCdhd2Vzb21lOiAke2F3
+ZXNvbWUuaXNBd2Vzb21lfScpOwp9Cg==''',
   'lib/__projectName__.dart',
   'text',
   '''
@@ -74,7 +74,7 @@ Cg==''',
 aW1wb3J0ICdwYWNrYWdlOl9fcHJvamVjdE5hbWVfXy9fX3Byb2plY3ROYW1lX18uZGFydCc7Cmlt
 cG9ydCAncGFja2FnZTp0ZXN0L3Rlc3QuZGFydCc7Cgp2b2lkIG1haW4oKSB7CiAgZ3JvdXAoJ0Eg
 Z3JvdXAgb2YgdGVzdHMnLCAoKSB7CiAgICBBd2Vzb21lIGF3ZXNvbWU7CgogICAgc2V0VXAoKCkg
-ewogICAgICBhd2Vzb21lID0gbmV3IEF3ZXNvbWUoKTsKICAgIH0pOwoKICAgIHRlc3QoJ0ZpcnN0
-IFRlc3QnLCAoKSB7CiAgICAgIGV4cGVjdChhd2Vzb21lLmlzQXdlc29tZSwgaXNUcnVlKTsKICAg
-IH0pOwogIH0pOwp9Cg=='''
+ewogICAgICBhd2Vzb21lID0gQXdlc29tZSgpOwogICAgfSk7CgogICAgdGVzdCgnRmlyc3QgVGVz
+dCcsICgpIHsKICAgICAgZXhwZWN0KGF3ZXNvbWUuaXNBd2Vzb21lLCBpc1RydWUpOwogICAgfSk7
+CiAgfSk7Cn0K'''
 ];

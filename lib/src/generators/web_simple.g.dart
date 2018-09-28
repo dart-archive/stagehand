@@ -6,7 +6,7 @@ part of 'web_simple.dart';
 // DataGenerator
 // **************************************************************************
 
-const _data = <String>[
+const _data = const <String>[
   '.gitignore',
   'text',
   '''

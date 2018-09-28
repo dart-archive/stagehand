@@ -6,7 +6,7 @@ part of 'console_full.dart';
 // DataGenerator
 // **************************************************************************
 
-const _data = <String>[
+const _data = const <String>[
   '.gitignore',
   'text',
   '''
