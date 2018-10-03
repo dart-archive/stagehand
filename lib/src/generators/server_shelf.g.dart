@@ -6,7 +6,7 @@ part of 'server_shelf.dart';
 // DataGenerator
 // **************************************************************************
 
-const _data = const <String>[
+const _data = <String>[
   '.gitignore',
   'text',
   '''
