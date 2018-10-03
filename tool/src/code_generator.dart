@@ -49,7 +49,7 @@ class DataGenerator extends Generator {
       return "'$item'";
     }).join(',');
 
-    return 'const _data = const <String>[$items];';
+    return 'const _data = <String>[$items];';
   }
 }
 
