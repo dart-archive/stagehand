@@ -41,9 +41,9 @@ dmFsaWRfcmVnZXhwcwo=''',
 bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBIHNpbXBsZSBTdGFnZVhMIHdlYiBh
 cHAuCiMgdmVyc2lvbjogMS4wLjAKI2hvbWVwYWdlOiBodHRwczovL3d3dy5leGFtcGxlLmNvbQoj
 YXV0aG9yOiBfX2F1dGhvcl9fIDxlbWFpbEBleGFtcGxlLmNvbT4KCmVudmlyb25tZW50OgogIHNk
-azogJz49Mi4wLjAgPDMuMC4wJwoKZGVwZW5kZW5jaWVzOgogIHN0YWdleGw6IF4xLjEuMAoKZGV2
-X2RlcGVuZGVuY2llczoKICBidWlsZF9ydW5uZXI6IF4wLjEwLjAKICBidWlsZF93ZWJfY29tcGls
-ZXJzOiBeMC40LjAK''',
+azogJz49Mi4xLjAgPDMuMC4wJwoKZGVwZW5kZW5jaWVzOgogIHN0YWdleGw6IF4xLjEuMAoKZGV2
+X2RlcGVuZGVuY2llczoKICBidWlsZF9ydW5uZXI6IF4xLjEuMgogIGJ1aWxkX3dlYl9jb21waWxl
+cnM6IF4wLjQuMAo=''',
   'web/images/dart@1x.png',
   'binary',
   '''

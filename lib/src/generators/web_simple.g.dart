@@ -41,9 +41,9 @@ dmFsaWRfcmVnZXhwcwo=''',
 bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBbiBhYnNvbHV0ZSBiYXJlLWJvbmVz
 IHdlYiBhcHAuCiMgdmVyc2lvbjogMS4wLjAKI2hvbWVwYWdlOiBodHRwczovL3d3dy5leGFtcGxl
 LmNvbQojYXV0aG9yOiBfX2F1dGhvcl9fIDxlbWFpbEBleGFtcGxlLmNvbT4KCmVudmlyb25tZW50
-OgogIHNkazogJz49Mi4wLjAgPDMuMC4wJwoKI2RlcGVuZGVuY2llczoKIyAgcGF0aDogXjEuNC4x
-CgpkZXZfZGVwZW5kZW5jaWVzOgogIGJ1aWxkX3J1bm5lcjogXjAuMTAuMAogIGJ1aWxkX3dlYl9j
-b21waWxlcnM6IF4wLjQuMAo=''',
+OgogIHNkazogJz49Mi4xLjAgPDMuMC4wJwoKI2RlcGVuZGVuY2llczoKIyAgcGF0aDogXjEuNC4x
+CgpkZXZfZGVwZW5kZW5jaWVzOgogIGJ1aWxkX3J1bm5lcjogXjEuMS4yCiAgYnVpbGRfd2ViX2Nv
+bXBpbGVyczogXjAuNC4wCg==''',
   'web/favicon.ico',
   'binary',
   '''

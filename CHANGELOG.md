@@ -1,6 +1,13 @@
 ## 3.1.4
 
-- All templates: Removed `new` and unnecessary `const`.
+- All templates:
+  - Removed `new` and unnecessary `const`.
+  - Set min SDK version to 2.1.0.
+
+- `web-*` templates: Upgraded `build_runner` to `^1.1.2`.
+
+- `web-angular` template: Upgraded to latest releases of `angular` and
+  `angular_components` packages.
 
 ## 3.1.3
 
@@ -9,7 +16,7 @@
 ## 3.1.2
 
 - All templates: Set min SDK version to 2.0.0.
-  
+
 - `web-*` templates: Upgraded `build_runner` to `^0.10.0`.
 
 - `web-angular` template: Upgraded to stable releases of `angular` packages.
