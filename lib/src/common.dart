@@ -120,7 +120,7 @@ List<String> wrap(String str, [int col = 80]) {
     }
   }
 
-  if (str.length > 0) {
+  if (str.isNotEmpty) {
     lines.add(str);
   }
 
