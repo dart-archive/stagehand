@@ -1,3 +1,10 @@
+## 3.1.5
+
+- `web-*` templates: Upgraded `build_web_compilers` to `^1.0.0`.
+
+- `web-angular` template: Upgraded to latest releases of `angular`,
+  `angular_components`, and `angular_test`.
+
 ## 3.1.4
 
 - All templates:
