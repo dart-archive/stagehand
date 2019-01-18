@@ -12,5 +12,8 @@ dependencies:
   shelf: ^0.7.2
 
 dev_dependencies:
+# include the latest pedantic rules 
 #  pedantic: ^1.0.0
+# alternatively, pin to a specific version, if you want to ensure that newly added rules can't break us
+#  pedantic: 1.4.0
 #  test: ^1.0.0
