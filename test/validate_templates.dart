@@ -31,15 +31,14 @@ final String _expectedGitIgnore = _getMetaTemplateFile('.gitignore');
 final String _expectedAnalysisOptions =
     _getMetaTemplateFile('templates/analysis_options.yaml');
 final String _expectedAngularAnalysisOptions = [
-  _expectedAnalysisOptions.split('\n').take(1),
+  _expectedAnalysisOptions.split('\n').take(12),
   '  exclude: [build/**]',
   '  errors:',
   '    uri_has_not_been_generated: ignore',
   "  # Angular plugin support is in beta. You're welcome to try it and report",
   '  # issues: https://github.com/dart-lang/angular_analyzer_plugin/issues',
   '  # plugins:',
-  '    # - angular',
-  _expectedAnalysisOptions.split('\n').skip(3),
+  '    # - angular\n',
 ].expand((e) => e is Iterable ? e : [e]).join('\n');
 
 void main() {
