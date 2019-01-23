@@ -1,3 +1,8 @@
+## 3.2.0
+
+- All templates: Switched from explicit linter rules to the latest
+  [pedantic lints](https://github.com/dart-lang/pedantic#enabled-lints).
+
 ## 3.1.5
 
 - `web-*` templates: Upgraded `build_web_compilers` to `^1.0.0`.
