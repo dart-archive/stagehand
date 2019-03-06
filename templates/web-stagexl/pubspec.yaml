@@ -2,7 +2,7 @@ name: __projectName__
 description: A simple StageXL web app.
 # version: 1.0.0
 #homepage: https://www.example.com
-#author: __author__ <email@example.com>
+#author: __author__ <__email__>
 
 environment:
   sdk: '>=2.1.0 <3.0.0'

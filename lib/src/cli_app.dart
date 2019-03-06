@@ -178,7 +178,16 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
       }
     }
 
-    var vars = {'author': author};
+    var email = 'email@example.com';
+
+    try {
+      var result = io.Process.runSync('git', ['config', 'user.email']);
+      if (result.exitCode == 0) email = result.stdout.trim();
+    } catch (exception) {
+      // NOOP
+    }
+
+    var vars = {'author': author, 'email': email};
 
     var f = generator.generate(projectName, target, additionalVars: vars);
     return f.then((_) {
