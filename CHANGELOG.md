@@ -1,11 +1,12 @@
 ## 3.3.0-dev
 
-- Include templates `categories` in the `--machine` output.
+- Added `flutter-web-preview` template.
 
-## 3.2.1
+- Include templates `categories` in the `--machine` output.
 
 - All templates:
   - Set min SDK version to 2.2.0.
+
 
 ## 3.2.0
 
