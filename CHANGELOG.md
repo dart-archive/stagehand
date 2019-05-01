@@ -1,3 +1,8 @@
+## 3.2.1
+
+- All templates:
+  - Set min SDK version to 2.2.0.
+
 ## 3.2.0
 
 - All templates: Switched from explicit linter rules to the latest
