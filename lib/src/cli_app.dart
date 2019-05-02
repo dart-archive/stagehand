@@ -234,7 +234,8 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
       var m = {
         'name': generator.id,
         'label': generator.label,
-        'description': generator.description
+        'description': generator.description,
+        'categories': generator.categories
       };
 
       if (generator.entrypoint != null) {

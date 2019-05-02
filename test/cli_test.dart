@@ -60,11 +60,26 @@ void main() {
       return _expectError(app.process(['consoleapp', 'foobar']));
     });
 
-    test('machine format', () {
-      return app.process(['--machine']).then((_) {
+    group('machine format', () {
+      test('returns a list of results', () async {
+        await app.process(['--machine']);
         _expectOk();
         List results = jsonDecode(logger.getStdout());
-        expect(results, isNot(isEmpty));
+        expect(results, isNotEmpty);
+      });
+
+      test('includes categories', () async {
+        await app.process(['--machine']);
+        _expectOk();
+        List results = jsonDecode(logger.getStdout());
+
+        var consoleFull =
+            results.singleWhere((item) => item['name'] == 'console-full');
+        expect(consoleFull, isNotNull);
+        expect(
+          consoleFull['categories'],
+          allOf(isNotNull, isList, contains('dart'), contains('console')),
+        );
       });
     });
 
