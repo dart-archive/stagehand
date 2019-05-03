@@ -1,5 +1,7 @@
 ## 3.3.0-dev
 
+- Include templates `categories` in the `--machine` output.
+
 ## 3.2.1
 
 - All templates:
