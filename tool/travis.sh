@@ -15,6 +15,10 @@ dartanalyzer --fatal-warnings .
 travis_fold start check_templates
 for d in templates/*; do
   if [[ ! -d $d ]]; then continue; fi
+
+  # TODO(devoncarew): Remove flutter-web-preview exclusion.
+  if [[ $d == "templates/flutter-web-preview" ]]; then continue; fi
+
   echo; echo "Checking $d"
   pushd $d >> /dev/null
   PUB_ALLOW_PRERELEASE_SDK=quiet pub get
