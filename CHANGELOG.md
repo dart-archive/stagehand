@@ -1,4 +1,4 @@
-## 3.3.0-dev
+## 3.3.0
 
 - Added `flutter-web-preview` template.
 
