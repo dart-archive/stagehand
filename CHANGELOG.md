@@ -1,3 +1,8 @@
+## 3.3.1
+
+- Added comments to `server-shelf` on how to use it with 
+  [Cloud Run](https://cloud.google.com/run/)
+
 ## 3.3.0
 
 - Added `flutter-web-preview` template.
