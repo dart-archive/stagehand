@@ -1,7 +1,9 @@
 ## 3.3.1
 
-- Added comments to `server-shelf` on how to use it with 
+- `server-shelf` template updated to make it easy to use with 
   [Cloud Run](https://cloud.google.com/run/)
+  - Supports `PORT` environment variable
+  - Comments on how to bind to all interfaces, as required by Cloud Run.
 
 ## 3.3.0
 
