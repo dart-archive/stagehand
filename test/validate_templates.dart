@@ -157,7 +157,7 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   expect(pubspecContent, containsPair('description', isNotEmpty));
 
   if (!usesFlutter) {
-    final minSDK = '2.2.0';
+    final minSDK = '2.3.0';
     expect(pubspecContent,
         containsPair('environment', {'sdk': '>=$minSDK <3.0.0'}));
   }

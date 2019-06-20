@@ -1,3 +1,7 @@
+## 3.3.2
+- Updated minimum Dart SDK to 2.3
+- Updated dependency versions across all templates
+
 ## 3.3.1
 
 - `server-shelf` template updated to make it easy to use with 
