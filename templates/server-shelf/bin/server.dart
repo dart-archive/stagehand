@@ -16,8 +16,7 @@ main(List<String> args) async {
   var port = int.tryParse(portStr);
 
   if (port == null) {
-    stdout.writeln(
-        'Could not parse port value "$portStr" into a number.');
+    stdout.writeln('Could not parse port value "$portStr" into a number.');
     // 64: command line usage error
     exitCode = 64;
     return;
