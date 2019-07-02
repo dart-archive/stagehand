@@ -156,11 +156,9 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   expect(pubspecContent, containsPair('name', 'stagehand'));
   expect(pubspecContent, containsPair('description', isNotEmpty));
 
-  if (!usesFlutter) {
-    final minSDK = '2.2.0';
-    expect(pubspecContent,
-        containsPair('environment', {'sdk': '>=$minSDK <3.0.0'}));
-  }
+  final minSDK = (!usesFlutter) ? '2.4.0' : '2.3.0';
+  expect(
+      pubspecContent, containsPair('environment', {'sdk': '>=$minSDK <3.0.0'}));
 
   // Run package tests, if `test` is included.
   var devDeps = pubspecContent['dev_dependencies'];

@@ -5,7 +5,7 @@ language: dart
 sudo: required
 
 dart:
-  - 2.2.0
+  - 2.4.0
   - dev
 
 cache:

@@ -69,7 +69,7 @@ Please file reports on the
 ## Contributing
 
 Contributions welcome! Please read this short
-[guide](https://github.com/dart-lang/stagehand/wiki/Contributing) first.
+[guide](https://github.com/dart-lang/stagehand/blob/master/CONTRIBUTING.md) first.
 
 ## Analytics and crash reports
 
