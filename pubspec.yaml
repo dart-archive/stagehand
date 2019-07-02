@@ -12,7 +12,7 @@ homepage: https://github.com/dart-lang/stagehand
 author: Dart Team <misc@dartlang.org>
 
 environment:
-  sdk: '>=2.3.0 <3.0.0'
+  sdk: '>=2.4.0 <3.0.0'
 
 # Add the bin/stagehand.dart script to the scripts pub installs.
 executables:
