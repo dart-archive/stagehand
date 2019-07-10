@@ -5,6 +5,9 @@ language: dart
 sudo: required
 
 dart:
+  # Make sure this Dart SDK version is the same as the stable Flutter Dart SDK
+  # version to prevent errors when using Stagehand from inside VSCode's Dart
+  # and Flutter plugins.
   - 2.4.0
   - dev
 

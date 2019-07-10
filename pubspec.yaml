@@ -12,6 +12,9 @@ homepage: https://github.com/dart-lang/stagehand
 author: Dart Team <misc@dartlang.org>
 
 environment:
+  # Make sure this Dart SDK version is the same as the stable Flutter Dart SDK
+  # version to prevent errors when using Stagehand from inside VSCode's Dart
+  # and Flutter plugins.
   sdk: '>=2.4.0 <3.0.0'
 
 # Add the bin/stagehand.dart script to the scripts pub installs.
