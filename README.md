@@ -12,7 +12,7 @@ Stagehand helps you get your Dart projects set up and ready for the big show.
 It's a Dart project scaffolding generator, inspired by tools like Web Starter
 Kit and Yeoman.
 
-Dart-savvy IDEs and editors use Stagehand behind the scenes to provide templates,
+Dart-savvy IDEs and editors use Stagehand behind the scenes to get project templates,
 but you can also use Stagehand on the command line (`stagehand`).
 
 ## Stagehand templates
