@@ -2,15 +2,18 @@
 
 ![Stagehand banner](https://raw.githubusercontent.com/dart-lang/stagehand/master/site/banner_stagehand.jpg)
 
-[![pub package](https://img.shields.io/pub/v/stagehand.svg)](https://pub.dartlang.org/packages/stagehand)
-[![Build Status](https://travis-ci.org/dart-lang/stagehand.svg?branch=master)](https://travis-ci.org/dart-lang/stagehand)
-[![Coverage Status](https://coveralls.io/repos/dart-lang/stagehand/badge.svg?branch=master)](https://coveralls.io/r/dart-lang/stagehand?branch=master)
+[![Pub package](https://img.shields.io/pub/v/stagehand.svg)](https://pub.dartlang.org/packages/stagehand)
+[![Build status](https://travis-ci.org/dart-lang/stagehand.svg?branch=master)](https://travis-ci.org/dart-lang/stagehand)
+[![Coverage status](https://coveralls.io/repos/dart-lang/stagehand/badge.svg?branch=master)](https://coveralls.io/r/dart-lang/stagehand?branch=master)
 
 ## Helps you get set up!
 
 Stagehand helps you get your Dart projects set up and ready for the big show.
-It is a Dart project scaffolding generator, inspired by tools like Web Starter
+It's a Dart project scaffolding generator, inspired by tools like Web Starter
 Kit and Yeoman.
+
+Dart-savvy IDEs and editors use Stagehand behind the scenes to get project templates,
+but you can also use Stagehand on the command line (`stagehand`).
 
 ## Stagehand templates
 * `console-full` - A command-line application sample.
@@ -22,24 +25,19 @@ Kit and Yeoman.
 
 ## Installation
 
-Requirements:
-
-To install:
-
-```console
-> pub global activate stagehand
-```
-
-To update, run activate again:
+If you want to use Stagehand on the command line,
+install it using `pub global activate`:
 
 ```console
 > pub global activate stagehand
 ```
+
+To update Stagehand, use the same `pub global activate` command.
 
 ## Usage
 
-Stagehand will generate a project skeleton into the current directory. As an
-example, here is how you create a package with Stagehand:
+Stagehand generates a project skeleton into the current directory.
+For example, here's how you create a package with Stagehand:
 
 ```console
 > mkdir fancy_project
@@ -47,7 +45,7 @@ example, here is how you create a package with Stagehand:
 > stagehand package-simple
 ```
 
-And to list all of the project templates:
+Here's how you list all of the project templates:
 
 ```console
 > stagehand
@@ -64,7 +62,7 @@ And to list all of the project templates:
 ## Issues and bugs
 
 Please file reports on the
-[GitHub Issue Tracker](https://github.com/dart-lang/stagehand/issues).
+[GitHub issue tracker](https://github.com/dart-lang/stagehand/issues).
 
 ## Contributing
 
