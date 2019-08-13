@@ -26,7 +26,8 @@ If you make changes to template files, recompress the template:
 pub run build_runner build
 ```
 
-Make sure to use Unix line endings when you are editing template files, especially on Windows maschines, otherwise the template files might get polluted with the wrong line endings.
+Make sure to use Unix line endings when you edit template files, especially on Windows machines.
+Otherwise the template files might get the wrong line endings.
 
 ### Run tests
 
@@ -38,7 +39,8 @@ pub run test
 dart test/validate_templates.dart
 ```
 
-The `validate_templates.dart` test currently doesn't support the different line endings on Windows maschines and fails, so prefer using a Linux or Mac maschine for contributing to this project.
+The `validate_templates.dart` test currently doesn't support the different line endings
+on Windows machines and fails, so prefer using a Linux or Mac machine for contributing to this project.
 
 
 ## Resources
