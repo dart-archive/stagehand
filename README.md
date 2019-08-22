@@ -56,7 +56,7 @@ Here's how you list all of the project templates:
 * Opinionated and prescriptive; minimal to no options
 * Support for server and client apps
 * The best way to create a new Dart project
-* Used by IntelliJ, WebStorm, Atom, Sublime, and more
+* Used by IntelliJ, WebStorm, Visual Studio Code, Atom, Sublime, and more
 * Distributed as a pub package
 
 ## Issues and bugs
