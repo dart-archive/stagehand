@@ -1,3 +1,9 @@
+## 3.3.3
+
+- Updated minimum Dart SDK to 2.5.
+
+- Updated dependency versions across all templates.
+
 ## 3.3.2
 
 - Updated minimum Dart SDK to 2.4, except `flutter_web_preview`.
@@ -6,7 +12,7 @@
 
 ## 3.3.1
 
-- `server-shelf` template updated to make it easy to use with 
+- `server-shelf` template updated to make it easy to use with
   [Cloud Run](https://cloud.google.com/run/)
   - Supports `PORT` environment variable
   - Comments on how to bind to all interfaces, as required by Cloud Run.
