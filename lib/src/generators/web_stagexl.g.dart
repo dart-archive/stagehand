@@ -42,9 +42,9 @@ CiMgICAgIC0gcGF0aC90by9leGNsdWRlZC9maWxlcy8qKgo=''',
 bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBIHNpbXBsZSBTdGFnZVhMIHdlYiBh
 cHAuCiMgdmVyc2lvbjogMS4wLjAKI2hvbWVwYWdlOiBodHRwczovL3d3dy5leGFtcGxlLmNvbQoj
 YXV0aG9yOiBfX2F1dGhvcl9fIDxfX2VtYWlsX18+CgplbnZpcm9ubWVudDoKICBzZGs6ICc+PTIu
-NC4wIDwzLjAuMCcKCmRlcGVuZGVuY2llczoKICBzdGFnZXhsOiBeMS40LjAKCmRldl9kZXBlbmRl
-bmNpZXM6CiAgYnVpbGRfcnVubmVyOiBeMS41LjAKICBidWlsZF93ZWJfY29tcGlsZXJzOiBeMi4x
-LjAKICBwZWRhbnRpYzogXjEuNy4wCg==''',
+NS4wIDwzLjAuMCcKCmRlcGVuZGVuY2llczoKICBzdGFnZXhsOiBeMS40LjAKCmRldl9kZXBlbmRl
+bmNpZXM6CiAgYnVpbGRfcnVubmVyOiBeMS42LjAKICBidWlsZF93ZWJfY29tcGlsZXJzOiBeMi4z
+LjAKICBwZWRhbnRpYzogXjEuOC4wCg==''',
   'web/images/dart@1x.png',
   'binary',
   '''
