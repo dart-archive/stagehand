@@ -10,6 +10,7 @@ import 'dart:math';
 import 'package:args/args.dart';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart' as path;
+import 'package:pedantic/pedantic.dart';
 import 'package:stagehand/src/common.dart';
 import 'package:stagehand/stagehand.dart';
 import 'package:usage/usage_io.dart';
@@ -55,7 +56,7 @@ class CliApp {
     _cwd = value;
   }
 
-  Future process(List<String> args) {
+  Future process(List<String> args) async {
     var argParser = _createArgParser();
 
     ArgResults options;
@@ -75,7 +76,7 @@ class CliApp {
     if (options.wasParsed('analytics')) {
       analytics.enabled = options['analytics'];
       _out("Analytics ${analytics.enabled ? 'enabled' : 'disabled'}.");
-      if (analytics.enabled) analytics.sendScreenView('analytics');
+      if (analytics.enabled) unawaited(analytics.sendScreenView('analytics'));
       return analytics.waitForLastPing(timeout: _timeout);
     }
 
@@ -102,7 +103,7 @@ class CliApp {
 Welcome to Stagehand! We collect anonymous usage statistics and crash reports in
 order to improve the tool (http://goo.gl/6wsncI). Would you like to opt-in to
 additional analytics to help us improve Stagehand [y/yes/no]?''');
-        io.stdout.flush();
+        await io.stdout.flush();
         var response = io.stdin.readLineSync();
         response = response.toLowerCase().trim();
         analytics.enabled = (response == 'y' || response == 'yes');
@@ -147,7 +148,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
 
     var dir = cwd;
 
-    if (!options['override'] && !_isDirEmpty(dir)) {
+    if (!options['override'] && !await _isDirEmpty(dir)) {
       logger.stderr(
           'The current directory is not empty. Please create a new project directory, or '
           'use --override to force generation into the current directory.');
@@ -165,7 +166,8 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
     _out('Creating $generatorName application `$projectName`:');
 
     _screenView('create');
-    analytics.sendEvent('create', generatorName, label: generator.description);
+    unawaited(analytics.sendEvent('create', generatorName,
+        label: generator.description));
 
     String author = options['author'];
 
@@ -281,11 +283,11 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
 
   /// Returns true if the given directory does not contain non-symlinked,
   /// non-hidden subdirectories.
-  static bool _isDirEmpty(io.Directory dir) {
+  static Future<bool> _isDirEmpty(io.Directory dir) async {
     var isHiddenDir = (dir) => path.basename(dir.path).startsWith('.');
 
     return dir
-        .listSync(followLinks: false)
+        .list(followLinks: false)
         .where((entity) => entity is io.Directory)
         .where((entity) => !isHiddenDir(entity))
         .isEmpty;

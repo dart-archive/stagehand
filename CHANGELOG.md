@@ -1,3 +1,8 @@
+## 3.3.4
+
+- Dropped `flutter_web_preview`, because you can now use the Flutter SDK to 
+[build a web application with Flutter](https://flutter.dev/docs/get-started/web).
+
 ## 3.3.3
 
 - Updated minimum Dart SDK to 2.5.
