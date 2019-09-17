@@ -1,3 +1,9 @@
+## 3.3.4
+
+- Dropping `flutter_web_preview`. Please see 
+[Building a web application with Flutter](https://flutter.dev/docs/get-started/web)
+for how to build web apps with Flutter.
+
 ## 3.3.3
 
 - Updated minimum Dart SDK to 2.5.
