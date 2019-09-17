@@ -1,8 +1,7 @@
 ## 3.3.4
 
-- Dropping `flutter_web_preview`. Please see 
-[Building a web application with Flutter](https://flutter.dev/docs/get-started/web)
-for how to build web apps with Flutter.
+- Dropped `flutter_web_preview`, because you can now use the Flutter SDK to 
+[build a web application with Flutter](https://flutter.dev/docs/get-started/web).
 
 ## 3.3.3
 
