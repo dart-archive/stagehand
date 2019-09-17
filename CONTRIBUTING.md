@@ -8,7 +8,7 @@ Here are a couple of ways that you can contribute:
   **[help wanted](https://github.com/dart-lang/stagehand/issues?utf8=%E2%9C%93&q=is%3Aopen%20is%3Aissue%20label%3A%22help%20wanted%22%20)**).
   * If this is your first contribution—_welcome!_—please
   [sign the CLA](https://developers.google.com/open-source/cla/individual)
-  and check out issues that are 
+  and check out issues that are
   labeled **[beginner](https://github.com/dart-lang/stagehand/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20label%3A%22help%20wanted%22%20label%3Abeginner%20)**.
   * We use the usual [GitHub pull request](https://help.github.com/articles/about-pull-requests/) process.
 
