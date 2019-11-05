@@ -17,7 +17,10 @@ environment:
   # Dart and Flutter plugins. For more detail, please see:
   # https://github.com/dart-lang/stagehand/issues/617
   #
-  # Also make sure this minimmum sdk version is reflected in `.travis.yml`.
+  # This is currently out of step with `.travis.yml` to enable
+  # generating Dart projects using v2.6 of the SDK from the
+  # v2.5 SDK that ships with Flutter stable. We will bring these
+  # two values back into sync at the next release of Flutter.
   sdk: '>=2.5.0 <3.0.0'
 
 # Add the bin/stagehand.dart script to the scripts pub installs.
