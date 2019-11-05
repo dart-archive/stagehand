@@ -5,7 +5,7 @@ description: A simple StageXL web app.
 #author: __author__ <__email__>
 
 environment:
-  sdk: '>=2.5.0 <3.0.0'
+  sdk: '>=2.6.0 <3.0.0'
 
 dependencies:
   stagexl: ^1.4.0

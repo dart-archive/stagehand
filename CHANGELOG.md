@@ -1,3 +1,7 @@
+## 3.3.5
+
+ - Updated minimum dependency version for templates to Dart SDK 2.6.
+
 ## 3.3.4
 
 - Dropped `flutter_web_preview`, because you can now use the Flutter SDK to 
