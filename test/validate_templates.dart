@@ -18,7 +18,6 @@ final _pubspecOrder = const [
   'description',
   'version',
   'homepage',
-  'author(s)?',
   'environment',
   'dependencies',
   'dev_dependencies',
