@@ -87,7 +87,7 @@ abstract class Generator implements Comparable<Generator> {
   void setEntrypoint(TemplateFile entrypoint) {
     if (_entrypoint != null) throw StateError('entrypoint already set');
     if (entrypoint == null) throw StateError('entrypoint is null');
-    this._entrypoint = entrypoint;
+    _entrypoint = entrypoint;
   }
 
   Future generate(String projectName, GeneratorTarget target,
@@ -116,7 +116,7 @@ abstract class Generator implements Comparable<Generator> {
 
   @override
   int compareTo(Generator other) =>
-      this.id.toLowerCase().compareTo(other.id.toLowerCase());
+      id.toLowerCase().compareTo(other.id.toLowerCase());
 
   /// Return some user facing instructions about how to finish installation of
   /// the template.
@@ -145,7 +145,7 @@ class TemplateFile {
 
   TemplateFile(this.path, this.content);
 
-  TemplateFile.fromBinary(this.path, this._binaryData) : this.content = null;
+  TemplateFile.fromBinary(this.path, this._binaryData) : content = null;
 
   FileContents runSubstitution(Map<String, String> parameters) {
     if (path == 'pubspec.yaml' && parameters['author'] == '<your name>') {

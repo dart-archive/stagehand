@@ -3,8 +3,8 @@ import 'dart:html' as html;
 import 'package:stagexl/stagexl.dart';
 import 'dart:math';
 
-Future<Null> main() async {
-  StageOptions options = StageOptions()
+Future<void> main() async {
+  var options = StageOptions()
     ..backgroundColor = Color.White
     ..renderEngine = RenderEngine.WebGL;
 
@@ -15,11 +15,11 @@ Future<Null> main() async {
   renderLoop.addStage(stage);
 
   var resourceManager = ResourceManager();
-  resourceManager.addBitmapData("dart", "images/dart@1x.png");
+  resourceManager.addBitmapData('dart', 'images/dart@1x.png');
 
   await resourceManager.load();
 
-  var logoData = resourceManager.getBitmapData("dart");
+  var logoData = resourceManager.getBitmapData('dart');
   var logo = Sprite();
   logo.addChild(Bitmap(logoData));
 

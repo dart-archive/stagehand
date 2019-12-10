@@ -7,9 +7,8 @@ description: >
   A scaffolding generator for your Dart projects. Stagehand helps you get set
   up!
 # After changing the version, run `pub run build_runner build`.
-version: 3.3.4
+version: 3.3.5-dev
 homepage: https://github.com/dart-lang/stagehand
-author: Dart Team <misc@dartlang.org>
 
 environment:
   # Make sure this Dart SDK version is no higher than the stable Flutter Dart

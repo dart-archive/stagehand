@@ -49,7 +49,7 @@ class CliApp {
     generators.sort();
   }
 
-  io.Directory get cwd => _cwd != null ? _cwd : io.Directory.current;
+  io.Directory get cwd => _cwd ?? io.Directory.current;
 
   /// An override for the directory to generate into; public for testing.
   set cwd(io.Directory value) {
@@ -159,9 +159,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
     var projectName = path.basename(dir.path);
     projectName = normalizeProjectName(projectName);
 
-    if (target == null) {
-      target = _DirectoryGeneratorTarget(logger, dir);
-    }
+    target ??= _DirectoryGeneratorTarget(logger, dir);
 
     _out('Creating $generatorName application `$projectName`:');
 
