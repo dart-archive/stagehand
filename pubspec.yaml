@@ -7,7 +7,7 @@ description: >
   A scaffolding generator for your Dart projects. Stagehand helps you get set
   up!
 # After changing the version, run `pub run build_runner build`.
-version: 3.3.5-dev
+version: 3.3.5
 homepage: https://github.com/dart-lang/stagehand
 
 environment:
@@ -17,7 +17,7 @@ environment:
   # https://github.com/dart-lang/stagehand/issues/617
   #
   # Also make sure this minimmum sdk version is reflected in `.travis.yml`.
-  sdk: '>=2.5.0 <3.0.0'
+  sdk: '>=2.7.0 <3.0.0'
 
 # Add the bin/stagehand.dart script to the scripts pub installs.
 executables:
@@ -27,7 +27,7 @@ dependencies:
   args: ^1.5.0
   http: ^0.12.0
   path: ^1.6.0
-  pedantic: ^1.8.0
+  pedantic: ^1.9.0
   usage: ^3.4.0
 
 dev_dependencies:
