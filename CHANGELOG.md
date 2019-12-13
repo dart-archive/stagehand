@@ -1,3 +1,7 @@
+## 3.3.5
+
+- Updated minimum Dart SDK to 2.7 in stagehand tool and templates.
+
 ## 3.3.5-dev
 
 - Internal cleanup.
