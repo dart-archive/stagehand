@@ -19,7 +19,7 @@ import 'version.dart';
 
 const String appName = 'stagehand';
 
-const String appPubInfo = 'https://pub.dartlang.org/packages/$appName.json';
+const String appPubInfo = 'https://pub.dev/packages/$appName.json';
 
 // The Google Analytics tracking ID for stagehand.
 const String _gaTrackingId = 'UA-26406144-31';

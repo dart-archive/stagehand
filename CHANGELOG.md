@@ -1,3 +1,8 @@
+## 3.3.6
+
+- Updated URLs in generated README.md files
+  (changed dartlang.org to dart.dev, pub.dev, or angulardart.dev).
+
 ## 3.3.5
 
 - Updated minimum Dart SDK to 2.7 in stagehand tool and templates.

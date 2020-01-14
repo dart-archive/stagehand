@@ -19,5 +19,5 @@ void main() {
     expect(fixture.text, contains('My First AngularDart App'));
   });
 
-  // Testing info: https://webdev.dartlang.org/angular/guide/testing
+  // Testing info: https://angulardart.dev/guide/testing
 }

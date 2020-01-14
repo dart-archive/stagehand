@@ -50,4 +50,4 @@ For more information on contributing to Dart, see the
 
 <!-- Put link to dart-lang/site-www and other receptive repos here?-->
 
-[Stagehand]: https://pub.dartlang.org/packages/stagehand
+[Stagehand]: https://pub.dev/packages/stagehand
