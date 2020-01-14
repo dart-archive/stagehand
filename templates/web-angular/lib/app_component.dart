@@ -2,8 +2,8 @@ import 'package:angular/angular.dart';
 
 import 'src/todo_list/todo_list_component.dart';
 
-// AngularDart info: https://webdev.dartlang.org/angular
-// Components info: https://webdev.dartlang.org/components
+// AngularDart info: https://angulardart.dev
+// Components info: https://angulardart.dev/components
 
 @Component(
   selector: 'my-app',
