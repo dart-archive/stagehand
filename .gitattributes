@@ -1,1 +1,4 @@
 * -text
+
+# Don't collapse in github code reviews by default.
+lib/src/version.dart linguist-generated=false
