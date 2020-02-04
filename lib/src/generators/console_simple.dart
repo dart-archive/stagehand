@@ -4,13 +4,13 @@
 
 import '../common.dart';
 
-part 'console_full.g.dart';
+part 'console_simple.g.dart';
 
-/// A generator for a hello world command-line application.
-class ConsoleFullGenerator extends DefaultGenerator {
-  ConsoleFullGenerator()
-      : super('console-full', 'Console Application',
-            'A command-line application sample.',
+/// A generator for a simple command-line application.
+class ConsoleSimpleGenerator extends DefaultGenerator {
+  ConsoleSimpleGenerator()
+      : super('console-simple', 'Simple Console Application',
+            'A simple command-line application.',
             categories: const ['dart', 'console']) {
     for (var file in decodeConcatenatedData(_data)) {
       addTemplateFile(file);

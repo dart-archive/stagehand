@@ -3,6 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import '../common.dart';
+
 part 'web_simple.g.dart';
 
 /// A generator for a uber-simple web application.

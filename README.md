@@ -16,6 +16,7 @@ Dart-savvy IDEs and editors use Stagehand behind the scenes to get project templ
 but you can also use Stagehand on the command line (`stagehand`).
 
 ## Stagehand templates
+* `console-simple` - A simple command-line application.
 * `console-full` - A command-line application sample.
 * `package-simple` - A starting point for Dart libraries or applications.
 * `server-shelf` - A web server built using the shelf package.

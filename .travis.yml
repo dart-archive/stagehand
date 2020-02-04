@@ -15,6 +15,7 @@ dart:
 cache:
   directories:
   - $HOME/.pub-cache
+  - templates/console-simple/.dart_tool
   - templates/console-full/.dart_tool
   - templates/package-simple/.dart_tool
   - templates/web-angular/.dart_tool

@@ -1,3 +1,7 @@
+## 3.3.7-dev
+
+- Add a new `console-simple` template.
+
 ## 3.3.6
 
 - Updated URLs in generated README.md files
@@ -13,7 +17,7 @@
 
 ## 3.3.4
 
-- Dropped `flutter_web_preview`, because you can now use the Flutter SDK to 
+- Dropped `flutter-web-preview`, because you can now use the Flutter SDK to 
 [build a web application with Flutter](https://flutter.dev/docs/get-started/web).
 
 ## 3.3.3
@@ -24,7 +28,7 @@
 
 ## 3.3.2
 
-- Updated minimum Dart SDK to 2.4, except `flutter_web_preview`.
+- Updated minimum Dart SDK to 2.4, except `flutter-web-preview`.
 
 - Updated dependency versions across all templates.
 
