@@ -19,7 +19,7 @@ other ways such as email and [Gitter](https://gitter.im/dart-lang/TALK-general).
 
 ### Compress templates
 
-If you make changes to template files, re-generate the templates:
+If you make changes to template files, regenerate the templates:
 
 ```
 pub run build_runner build --delete-conflicting-outputs
