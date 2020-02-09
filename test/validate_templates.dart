@@ -69,11 +69,6 @@ void main() {
 
   group('generator', () {
     for (var generator in stagehand.generators) {
-      // TODO(devoncarew): Remove flutter-web-preview exclusion.
-      if (generator.id == 'flutter-web-preview') {
-        continue;
-      }
-
       test(generator.id, () {
         _testGenerator(generator, dir);
       });
