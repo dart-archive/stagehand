@@ -1,6 +1,6 @@
-## 3.3.7-dev
+## 3.3.7
 
-- Add a new `console-simple` template.
+- Added a new template: `console-simple`.
 
 ## 3.3.6
 
@@ -10,10 +10,6 @@
 ## 3.3.5
 
 - Updated minimum Dart SDK to 2.7 in stagehand tool and templates.
-
-## 3.3.5-dev
-
-- Internal cleanup.
 
 ## 3.3.4
 
