@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'console_full.dart';
+part of 'console_simple.dart';
 
 // **************************************************************************
 // DataGenerator
@@ -21,11 +21,10 @@ b2MvYXBpLwo=''',
   'README.md',
   'text',
   '''
-QSBzYW1wbGUgY29tbWFuZC1saW5lIGFwcGxpY2F0aW9uIHdpdGggYW4gZW50cnlwb2ludCBpbiBg
-YmluL2AsIGxpYnJhcnkgY29kZQppbiBgbGliL2AsIGFuZCBleGFtcGxlIHVuaXQgdGVzdCBpbiBg
-dGVzdC9gLgoKQ3JlYXRlZCBmcm9tIHRlbXBsYXRlcyBtYWRlIGF2YWlsYWJsZSBieSBTdGFnZWhh
-bmQgdW5kZXIgYSBCU0Qtc3R5bGUKW2xpY2Vuc2VdKGh0dHBzOi8vZ2l0aHViLmNvbS9kYXJ0LWxh
-bmcvc3RhZ2VoYW5kL2Jsb2IvbWFzdGVyL0xJQ0VOU0UpLgo=''',
+QSBzaW1wbGUgY29tbWFuZC1saW5lIGFwcGxpY2F0aW9uLgoKQ3JlYXRlZCBmcm9tIHRlbXBsYXRl
+cyBtYWRlIGF2YWlsYWJsZSBieSBTdGFnZWhhbmQgdW5kZXIgYSBCU0Qtc3R5bGUKW2xpY2Vuc2Vd
+KGh0dHBzOi8vZ2l0aHViLmNvbS9kYXJ0LWxhbmcvc3RhZ2VoYW5kL2Jsb2IvbWFzdGVyL0xJQ0VO
+U0UpLgo=''',
   'analysis_options.yaml',
   'text',
   '''
@@ -40,24 +39,14 @@ CiMgICAgIC0gcGF0aC90by9leGNsdWRlZC9maWxlcy8qKgo=''',
   'bin/main.dart',
   'text',
   '''
-aW1wb3J0ICdwYWNrYWdlOl9fcHJvamVjdE5hbWVfXy9fX3Byb2plY3ROYW1lX18uZGFydCcgYXMg
-X19wcm9qZWN0TmFtZV9fOwoKdm9pZCBtYWluKExpc3Q8U3RyaW5nPiBhcmd1bWVudHMpIHsKICBw
-cmludCgnSGVsbG8gd29ybGQ6ICR7X19wcm9qZWN0TmFtZV9fLmNhbGN1bGF0ZSgpfSEnKTsKfQo=''',
-  'lib/__projectName__.dart',
-  'text',
-  'aW50IGNhbGN1bGF0ZSgpIHsKICByZXR1cm4gNiAqIDc7Cn0K',
+dm9pZCBtYWluKExpc3Q8U3RyaW5nPiBhcmd1bWVudHMpIHsKICBwcmludCgnSGVsbG8gd29ybGQh
+Jyk7Cn0K''',
   'pubspec.yaml',
   'text',
   '''
-bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBIHNhbXBsZSBjb21tYW5kLWxpbmUg
+bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBIHNpbXBsZSBjb21tYW5kLWxpbmUg
 YXBwbGljYXRpb24uCiMgdmVyc2lvbjogMS4wLjAKIyBob21lcGFnZTogaHR0cHM6Ly93d3cuZXhh
 bXBsZS5jb20KCmVudmlyb25tZW50OgogIHNkazogJz49Mi43LjAgPDMuMC4wJwoKI2RlcGVuZGVu
 Y2llczoKIyAgcGF0aDogXjEuNi4wCgpkZXZfZGVwZW5kZW5jaWVzOgogIHBlZGFudGljOiBeMS44
-LjAKICB0ZXN0OiBeMS42LjAK''',
-  'test/__projectName___test.dart',
-  'text',
-  '''
-aW1wb3J0ICdwYWNrYWdlOl9fcHJvamVjdE5hbWVfXy9fX3Byb2plY3ROYW1lX18uZGFydCc7Cmlt
-cG9ydCAncGFja2FnZTp0ZXN0L3Rlc3QuZGFydCc7Cgp2b2lkIG1haW4oKSB7CiAgdGVzdCgnY2Fs
-Y3VsYXRlJywgKCkgewogICAgZXhwZWN0KGNhbGN1bGF0ZSgpLCA0Mik7CiAgfSk7Cn0K'''
+LjAK'''
 ];

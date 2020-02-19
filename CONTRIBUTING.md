@@ -17,13 +17,12 @@ pull request. The [issue tracker](https://github.com/dart-lang/stagehand/issues)
 is a good way to track your progress publicly, but we can also communicate
 other ways such as email and [Gitter](https://gitter.im/dart-lang/TALK-general).
 
-
 ### Compress templates
 
-If you make changes to template files, recompress the template:
+If you make changes to template files, regenerate the templates:
 
 ```
-pub run build_runner build
+pub run build_runner build --delete-conflicting-outputs
 ```
 
 Make sure to use Unix line endings when you edit template files, especially on Windows machines.

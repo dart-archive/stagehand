@@ -3,6 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import '../common.dart';
+
 part 'server_shelf.g.dart';
 
 /// A generator for a server app built on `package:shelf`.
