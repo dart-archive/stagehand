@@ -29,8 +29,6 @@ final List<RegExp> _pubspecOrderRegexps =
 final String _expectedGitIgnore = _getMetaTemplateFile('.gitignore');
 final String _expectedAnalysisOptions =
     _getMetaTemplateFile('templates/analysis_options.yaml');
-final String _expectedExcludeBuildAnalysisOptions =
-    _getMetaTemplateFile('templates/analysis_options_exclude_build.yaml');
 final String _expectedAngularAnalysisOptions = [
   _expectedAnalysisOptions.split('\n').take(12),
   '  exclude: [build/**]',
@@ -93,8 +91,6 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   var pubspecContent = yaml.loadYaml(pubspecContentString) as yaml.YamlMap;
   final usesAngular =
       pubspecContent['dependencies']?.containsKey('angular') ?? false;
-  final usesFlutter =
-      pubspecContent['dependencies']?.containsKey('flutter_web') ?? false;
 
   var analysisOptionsPath = path.join(tempDir.path, 'analysis_options.yaml');
   var analysisOptionsFile = File(analysisOptionsPath);
@@ -102,9 +98,7 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
       analysisOptionsFile.readAsStringSync(),
       usesAngular
           ? _expectedAngularAnalysisOptions
-          : usesFlutter
-              ? _expectedExcludeBuildAnalysisOptions
-              : _expectedAnalysisOptions,
+          : _expectedAnalysisOptions,
       reason: 'All analysis_options.yaml files should be identical.');
 
   if (!pubspecFile.existsSync()) {
