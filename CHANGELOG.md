@@ -1,3 +1,7 @@
+## 3.3.8-dev
+
+- Changed the dev dependency for new projects for package:test to `any`.
+
 ## 3.3.7
 
 - Added a new template: `console-simple`.
