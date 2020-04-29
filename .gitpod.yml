@@ -1,7 +1,6 @@
 tasks:
-  - init: echo "Replace me with a build script for the project."
-    command: echo "Replace me with something that should run on every start, or just
-      remove me entirely."
+  - init: for file in `find . -name pubspec.yaml`; do (cd `dirname $file` && echo "Updating $PWD" && pub update); done
+    command: for file in `find . -name pubspec.yaml`; do (cd `dirname $file` && echo "Checking $PWD" && pub outdated); done
 
 image:
   file: .gitpod.Dockerfile
