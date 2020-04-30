@@ -4,7 +4,7 @@ description: A web server built using the shelf package.
 # homepage: https://www.example.com
 
 environment:
-  sdk: '>=2.8.0 <3.0.0'
+  sdk: '>=2.8.0-20.11.beta <3.0.0'
 
 dependencies:
   args: ^1.5.0

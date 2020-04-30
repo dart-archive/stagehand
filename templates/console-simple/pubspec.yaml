@@ -4,7 +4,7 @@ description: A simple command-line application.
 # homepage: https://www.example.com
 
 environment:
-  sdk: '>=2.8.0 <3.0.0'
+  sdk: '>=2.8.0-20.11.beta <3.0.0'
 
 #dependencies:
 #  path: ^1.6.0
