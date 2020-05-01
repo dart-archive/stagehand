@@ -7,7 +7,7 @@ environment:
   sdk: '>=2.8.0-20.11.beta <3.0.0'
 
 #dependencies:
-#  path: ^1.6.0
+#  path: ^1.7.0
 
 dev_dependencies:
   build_runner: ^1.6.0
