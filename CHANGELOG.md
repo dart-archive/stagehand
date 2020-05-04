@@ -1,4 +1,10 @@
+## 3.3.9
+
+ - Change the entry points to follow the pattern `packageName/bin/packageName.dart`
+   instead of `packageName/bin/main.dart`
+
 ## 3.3.8
+
  - Updated minimum Dart SDK to 2.8.1 in stagehand tool and templates.
 
 ## 3.3.7
