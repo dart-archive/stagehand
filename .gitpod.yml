@@ -1,0 +1,12 @@
+tasks:
+  - init: for file in `find . -name pubspec.yaml`; do (cd `dirname $file` && echo "Updating $PWD" && pub update); done
+    command: for file in `find . -name pubspec.yaml`; do (cd `dirname $file` && echo "Checking $PWD" && pub outdated); done; pub get && pub run build_runner build --delete-conflicting-outputs
+    
+
+image:
+  file: .gitpod.Dockerfile
+
+# Add the DartCode extension. See https://www.gitpod.io/docs/vscode-extensions/
+vscode:
+  extensions:
+    - Dart-Code.dart-code@3.9.0:umvoqCQMs3NpksmwhVtStw==

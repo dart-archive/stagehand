@@ -9,7 +9,9 @@ dart:
   # SDK version to prevent errors when using Stagehand from inside VSCode's
   # Dart and Flutter plugins. For more detail, please see:
   # https://github.com/dart-lang/stagehand/issues/617
-  - 2.7.0
+  - "2.8.1"
+  # TODO(domesticmouse): Uncomment when travis' beta Dart image is >= 2.8.1
+  # - beta
   - dev
 
 cache:
