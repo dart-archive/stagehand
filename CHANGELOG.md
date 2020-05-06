@@ -1,3 +1,6 @@
+## 3.3.8
+ - Updated minimum Dart SDK to 2.8.1 in stagehand tool and templates.
+
 ## 3.3.7
 
 - Added a new template: `console-simple`.
