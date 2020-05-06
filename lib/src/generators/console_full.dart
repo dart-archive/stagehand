@@ -16,7 +16,7 @@ class ConsoleFullGenerator extends DefaultGenerator {
       addTemplateFile(file);
     }
 
-    setEntrypoint(getFile('bin/main.dart'));
+    setEntrypoint(getFile('bin/__projectName__.dart'));
   }
 
   @override
