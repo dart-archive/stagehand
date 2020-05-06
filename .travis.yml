@@ -10,7 +10,8 @@ dart:
   # Dart and Flutter plugins. For more detail, please see:
   # https://github.com/dart-lang/stagehand/issues/617
   - "2.8.1"
-  - beta
+  # TODO(domesticmouse): Uncomment when travis' beta Dart image is >= 2.8.1
+  # - beta
   - dev
 
 cache:
