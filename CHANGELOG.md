@@ -1,3 +1,7 @@
+## 3.3.10
+ - Update `.gitignore` files to match current `pubspec.lock` guidance:
+   https://dart.dev/guides/libraries/private-files#pubspeclock
+
 ## 3.3.9
 
  - Change the entry points to follow the pattern `packageName/bin/packageName.dart`
