@@ -79,12 +79,6 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
       arguments: ['--mock-analytics', generator.id],
       runOptions: RunOptions(workingDirectory: tempDir.path));
 
-  var gitIgnorePath = path.join(tempDir.path, '.gitignore');
-  var gitIgnoreFile = File(gitIgnorePath);
-
-  expect(gitIgnoreFile.readAsStringSync(), _expectedGitIgnore,
-      reason: 'Expected all of the .gitignore files to be identical.');
-
   var pubspecPath = path.join(tempDir.path, 'pubspec.yaml');
   var pubspecFile = File(pubspecPath);
   var pubspecContentString = pubspecFile.readAsStringSync();

@@ -11,10 +11,8 @@ const _data = <String>[
   'text',
   '''
 IyBGaWxlcyBhbmQgZGlyZWN0b3JpZXMgY3JlYXRlZCBieSBwdWIKLmRhcnRfdG9vbC8KLnBhY2th
-Z2VzCiMgUmVtb3ZlIHRoZSBmb2xsb3dpbmcgcGF0dGVybiBpZiB5b3Ugd2lzaCB0byBjaGVjayBp
-biB5b3VyIGxvY2sgZmlsZQpwdWJzcGVjLmxvY2sKCiMgQ29udmVudGlvbmFsIGRpcmVjdG9yeSBm
-b3IgYnVpbGQgb3V0cHV0cwpidWlsZC8KCiMgRGlyZWN0b3J5IGNyZWF0ZWQgYnkgZGFydGRvYwpk
-b2MvYXBpLwo=''',
+Z2VzCgojIENvbnZlbnRpb25hbCBkaXJlY3RvcnkgZm9yIGJ1aWxkIG91dHB1dHMKYnVpbGQvCgoj
+IERpcmVjdG9yeSBjcmVhdGVkIGJ5IGRhcnRkb2MKZG9jL2FwaS8K''',
   'CHANGELOG.md',
   'text',
   'IyMgMS4wLjAKCi0gSW5pdGlhbCB2ZXJzaW9uLCBjcmVhdGVkIGJ5IFN0YWdlaGFuZAo=',

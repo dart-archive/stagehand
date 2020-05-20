@@ -1,8 +1,8 @@
 ## 3.3.9
 
- - Change the entry points to follow the pattern `packageName/bin/packageName.dart`
+ - Changed the entry points to follow the pattern `packageName/bin/packageName.dart`
    instead of `packageName/bin/main.dart`
- - Update `.gitignore` files to match current `pubspec.lock` guidance:
+ - Updated `.gitignore` files to match current `pubspec.lock` guidance:
    https://dart.dev/guides/libraries/private-files#pubspeclock
 
 ## 3.3.8
