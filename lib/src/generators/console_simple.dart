@@ -21,5 +21,5 @@ class ConsoleSimpleGenerator extends DefaultGenerator {
 
   @override
   String getInstallInstructions() => '${super.getInstallInstructions()}\n'
-      'run your app using `dart ${entrypoint.path}`.';
+      'run your app using `dart run`.';
 }
