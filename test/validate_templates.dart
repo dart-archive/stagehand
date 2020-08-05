@@ -88,11 +88,8 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
 
   var analysisOptionsPath = path.join(tempDir.path, 'analysis_options.yaml');
   var analysisOptionsFile = File(analysisOptionsPath);
-  expect(
-      analysisOptionsFile.readAsStringSync(),
-      usesAngular
-          ? _expectedAngularAnalysisOptions
-          : _expectedAnalysisOptions,
+  expect(analysisOptionsFile.readAsStringSync(),
+      usesAngular ? _expectedAngularAnalysisOptions : _expectedAnalysisOptions,
       reason: 'All analysis_options.yaml files should be identical.');
 
   if (!pubspecFile.existsSync()) {
@@ -139,7 +136,7 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   expect(pubspecContent, containsPair('description', isNotEmpty));
 
   expect(
-      pubspecContent, containsPair('environment', {'sdk': '>=2.8.1 <3.0.0'}));
+      pubspecContent, containsPair('environment', {'sdk': '>=2.9.0 <3.0.0'}));
 
   // Run package tests, if `test` is included.
   var devDeps = pubspecContent['dev_dependencies'];
