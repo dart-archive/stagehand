@@ -88,9 +88,11 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
 
   var analysisOptionsPath = path.join(tempDir.path, 'analysis_options.yaml');
   var analysisOptionsFile = File(analysisOptionsPath);
-  expect(analysisOptionsFile.readAsStringSync(),
-      usesAngular ? _expectedAngularAnalysisOptions : _expectedAnalysisOptions,
-      reason: 'All analysis_options.yaml files should be identical.');
+  expect(
+    analysisOptionsFile.readAsStringSync(),
+    usesAngular ? _expectedAngularAnalysisOptions : _expectedAnalysisOptions,
+    reason: 'All analysis_options.yaml files should be identical.',
+  );
 
   if (!pubspecFile.existsSync()) {
     fail('A pubspec must be defined!');
@@ -141,10 +143,22 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   );
 
   // Run package tests, if `test` is included.
-  var devDeps = pubspecContent['dev_dependencies'];
+  var devDeps = pubspecContent['dev_dependencies'] as Map;
   if (devDeps != null) {
     if (devDeps.containsKey('test')) {
-      Pub.run('test', runOptions: RunOptions(workingDirectory: tempDir.path));
+      if (devDeps.containsKey('build_test')) {
+        // Use build_runner test – and try both VM and Chrome
+        Pub.run(
+          'build_runner',
+          arguments: ['test', '--', '-p', 'vm,chrome'],
+          runOptions: RunOptions(workingDirectory: tempDir.path),
+        );
+      } else {
+        Pub.run(
+          'test',
+          runOptions: RunOptions(workingDirectory: tempDir.path),
+        );
+      }
     }
   }
 }
