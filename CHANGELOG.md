@@ -1,6 +1,7 @@
 ## 3.3.10
 
 - Updated dependency versions for `web-angular`.
+- Updated minimum Dart SDK to 2.9.3 in stagehand tool and templates.
 
 ## 3.3.9
 
