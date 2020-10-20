@@ -1,3 +1,7 @@
+## 3.3.10
+
+- Updated dependency versions for `web-angular`.
+
 ## 3.3.9
 
  - Changed the entry points to follow the pattern `packageName/bin/packageName.dart`
