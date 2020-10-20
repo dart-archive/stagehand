@@ -12,7 +12,7 @@ void main() {
       expect(normalizeProjectName('foo-bar'), 'foo_bar');
     });
 
-    group('substitueVars', () {
+    group('substituteVars', () {
       test('simple', () {
         _expect('foo __bar__ baz', {'bar': 'baz'}, 'foo baz baz');
       });

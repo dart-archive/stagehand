@@ -483,7 +483,7 @@ Web-stagexl template changes:
 - Renamed the `shelfapp` template to `shelfserver`.
 - Added a `--version` command-line option.
 - Clarified and simplified some template descriptions.
-- Made useage of Sass in the `webapp` template optional; added instructions in
+- Made usage of Sass in the `webapp` template optional; added instructions in
   the template about how to enable it.
 - Added instructions after project generation to tell the user how best to run
   the project.

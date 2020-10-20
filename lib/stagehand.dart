@@ -129,7 +129,7 @@ abstract class Generator implements Comparable<Generator> {
 }
 
 /// A target for a [Generator]. This class knows how to create files given a path
-/// for the file (relavtive to the particular [GeneratorTarget] instance), and
+/// for the file (relative to the particular [GeneratorTarget] instance), and
 /// the binary content for the file.
 abstract class GeneratorTarget {
   /// Create a file at the given path with the given contents.
