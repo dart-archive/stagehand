@@ -10,8 +10,8 @@ import '../stagehand.dart';
 
 const int _runeSpace = 32;
 
-final _substitueRegExp = RegExp(r'__([a-zA-Z]+)__');
-final _nonValidSubstitueRegExp = RegExp('[^a-zA-Z]');
+final _substituteRegExp = RegExp(r'__([a-zA-Z]+)__');
+final _nonValidSubstituteRegExp = RegExp('[^a-zA-Z]');
 
 final _whiteSpace = RegExp(r'\s+');
 
@@ -71,12 +71,12 @@ String normalizeProjectName(String name) {
 /// No whitespace, numbers, or other characters are allowed.
 String substituteVars(String str, Map<String, String> vars) {
   var nonValidKeys =
-      vars.keys.where((k) => k.contains(_nonValidSubstitueRegExp)).toList();
+      vars.keys.where((k) => k.contains(_nonValidSubstituteRegExp)).toList();
   if (nonValidKeys.isNotEmpty) {
     throw ArgumentError('vars.keys can only contain letters.');
   }
 
-  return str.replaceAllMapped(_substitueRegExp, (match) {
+  return str.replaceAllMapped(_substituteRegExp, (match) {
     var item = vars[match[1]];
 
     if (item == null) {
