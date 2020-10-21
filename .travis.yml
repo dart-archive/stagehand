@@ -1,9 +1,5 @@
 language: dart
 
-# Gives more resources on Travis (8GB Ram, 2CPUs).
-# Do not remove without verifying w/ Travis.
-sudo: required
-
 dart:
   # Make sure this Dart SDK version is no higher than the stable Flutter Dart
   # SDK version to prevent errors when using Stagehand from inside VSCode's
@@ -23,12 +19,17 @@ addons:
 env: # important: w/o this top-level env, no job will be allowed to fail.
   global:
     - DISPLAY=:99.0
-  matrix:
+  jobs:
     - CI_TASK=tool/travis.sh
-    - CI_TASK=tool/version-check.sh
-    - CI_TASK=tool/build-check.sh
 
 script: $CI_TASK
+
+jobs:
+  include:
+  - dart: dev
+    env: CI_TASK=tool/version-check.sh
+  - dart: dev
+    env: CI_TASK=tool/build-check.sh
 
 # Only building on selected branches means that we don't run two builds for each pull request.
 branches:
