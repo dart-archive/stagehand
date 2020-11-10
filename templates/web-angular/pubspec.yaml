@@ -4,7 +4,7 @@ description: A web app that uses AngularDart Components
 # homepage: https://www.example.com
 
 environment:
-  sdk: '>=2.9.3 <3.0.0'
+  sdk: '>=2.10.0 <3.0.0'
 
 dependencies:
   angular: ^6.0.0
