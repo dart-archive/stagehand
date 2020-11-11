@@ -10,7 +10,7 @@ set -e
 source ./tool/env-set.sh
 
 # Verify that the libraries are error free.
-dartanalyzer --fatal-warnings .
+dart analyze
 
 travis_fold start check_templates
 for d in templates/*; do
@@ -20,7 +20,7 @@ for d in templates/*; do
   pushd $d >> /dev/null
   PUB_ALLOW_PRERELEASE_SDK=quiet pub get
   dartfmt --set-exit-if-changed -w . | grep -Ev "Formatting directory|Skipping|Unchanged" | cat -
-  dartanalyzer --fatal-warnings .
+  dart analyze
   popd >> /dev/null
 done
 travis_fold start check_templates
