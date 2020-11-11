@@ -139,7 +139,7 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
 
   expect(
     pubspecContent,
-    containsPair('environment', {'sdk': '>=2.9.3 <3.0.0'}),
+    containsPair('environment', {'sdk': '>=2.10.0 <3.0.0'}),
   );
 
   // Run package tests, if `test` is included.
