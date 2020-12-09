@@ -19,7 +19,7 @@ import 'version.dart';
 
 const String appName = 'stagehand';
 
-const String appPubInfo = 'https://pub.dev/packages/$appName.json';
+final _appPubInfo = Uri.https('pub.dev', '/packages/$appName.json');
 
 // The Google Analytics tracking ID for stagehand.
 const String _gaTrackingId = 'UA-26406144-31';
@@ -87,7 +87,7 @@ class CliApp {
 
     if (options['version']) {
       _out('$appName version: $packageVersion');
-      return http.get(appPubInfo).then((response) {
+      return http.get(_appPubInfo).then((response) {
         List versions = jsonDecode(response.body)['versions'];
         if (packageVersion != versions.last) {
           _out('Version ${versions.last} is available! Run `pub global activate'
