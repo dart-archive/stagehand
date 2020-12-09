@@ -1,5 +1,8 @@
 ## 3.3.12-dev
 
+- Prepare for breaking changes in `package:http` for environments where the pub
+  constraint is not used.
+
 ## 3.3.11
 
 - Updated minimum Dart SDK to 2.10.0 in stagehand tool and templates.
