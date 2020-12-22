@@ -16,19 +16,19 @@ final _nonValidSubstituteRegExp = RegExp('[^a-zA-Z]');
 final _whiteSpace = RegExp(r'\s+');
 
 List<TemplateFile> decodeConcatenatedData(List<String> data) {
-  var results = <TemplateFile>[];
+  final results = <TemplateFile>[];
 
   for (var i = 0; i < data.length; i += 3) {
-    var path = data[i];
-    var type = data[i + 1];
-    var raw = data[i + 2].replaceAll(_whiteSpace, '');
+    final path = data[i];
+    final type = data[i + 1];
+    final raw = data[i + 2].replaceAll(_whiteSpace, '');
 
-    var decoded = base64.decode(raw);
+    final decoded = base64.decode(raw);
 
     if (type == 'binary') {
       results.add(TemplateFile.fromBinary(path, decoded));
     } else {
-      var source = utf8.decode(decoded);
+      final source = utf8.decode(decoded);
       results.add(TemplateFile(path, source));
     }
   }
@@ -70,14 +70,14 @@ String normalizeProjectName(String name) {
 /// A key value can only be an ASCII string made up of letters: A-Z, a-z.
 /// No whitespace, numbers, or other characters are allowed.
 String substituteVars(String str, Map<String, String> vars) {
-  var nonValidKeys =
+  final nonValidKeys =
       vars.keys.where((k) => k.contains(_nonValidSubstituteRegExp)).toList();
   if (nonValidKeys.isNotEmpty) {
     throw ArgumentError('vars.keys can only contain letters.');
   }
 
   return str.replaceAllMapped(_substituteRegExp, (match) {
-    var item = vars[match[1]];
+    final item = vars[match[1]];
 
     if (item == null) {
       return match[0];
@@ -89,13 +89,12 @@ String substituteVars(String str, Map<String, String> vars) {
 
 /// Convert the given String into a String with newlines wrapped at an 80 column
 /// boundary, with 2 leading spaces for each line.
-String convertToYamlMultiLine(String str) {
-  return wrap(str, 78).map((line) => '  $line').join('\n');
-}
+String convertToYamlMultiLine(String str) =>
+    wrap(str, 78).map((line) => '  $line').join('\n');
 
 /// Break the given String into lines wrapped on a [col] boundary.
 List<String> wrap(String str, [int col = 80]) {
-  var lines = <String>[];
+  final lines = <String>[];
 
   while (str.length > col) {
     var index = col;

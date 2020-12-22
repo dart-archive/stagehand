@@ -50,9 +50,8 @@ final List<Generator> generators = [
   WebStageXlGenerator()
 ]..sort();
 
-Generator getGenerator(String id) {
-  return generators.firstWhere((g) => g.id == id, orElse: () => null);
-}
+Generator getGenerator(String id) =>
+    generators.firstWhere((g) => g.id == id, orElse: () => null);
 
 /// An abstract class which both defines a template generator and can generate a
 /// user project based on this template.
@@ -79,37 +78,34 @@ abstract class Generator implements Comparable<Generator> {
   }
 
   /// Return the template file wih the given [path].
-  TemplateFile getFile(String path) {
-    return files.firstWhere((file) => file.path == path, orElse: () => null);
-  }
+  TemplateFile getFile(String path) =>
+      files.firstWhere((file) => file.path == path, orElse: () => null);
 
-  /// Set the main entrypoint of this template. This is the 'most important' file
-  /// of this template. An IDE might use this information to open this file after
-  /// the user's project is generated.
+  /// Set the main entrypoint of this template. This is the 'most important'
+  /// file of this template. An IDE might use this information to open this file
+  /// after the user's project is generated.
   void setEntrypoint(TemplateFile entrypoint) {
     if (_entrypoint != null) throw StateError('entrypoint already set');
     if (entrypoint == null) throw StateError('entrypoint is null');
     _entrypoint = entrypoint;
   }
 
-  Future generate(String projectName, GeneratorTarget target,
-      {Map<String, String> additionalVars}) {
-    var vars = {
+  Future generate(
+    String projectName,
+    GeneratorTarget target, {
+    Map<String, String> additionalVars,
+  }) {
+    final vars = {
       'projectName': projectName,
       'description': description,
       'year': DateTime.now().year.toString(),
-      'author': '<your name>'
+      'author': '<your name>',
+      if (additionalVars != null) ...additionalVars,
     };
 
-    if (additionalVars != null) {
-      additionalVars.keys.forEach((key) {
-        vars[key] = additionalVars[key];
-      });
-    }
-
     return Future.forEach(files, (TemplateFile file) {
-      var resultFile = file.runSubstitution(vars);
-      var filePath = resultFile.path;
+      final resultFile = file.runSubstitution(vars);
+      final filePath = resultFile.path;
       return target.createFile(filePath, resultFile.content);
     });
   }
@@ -128,9 +124,9 @@ abstract class Generator implements Comparable<Generator> {
   String toString() => '[$id: $description]';
 }
 
-/// A target for a [Generator]. This class knows how to create files given a path
-/// for the file (relative to the particular [GeneratorTarget] instance), and
-/// the binary content for the file.
+/// A target for a [Generator]. This class knows how to create files given a
+/// path for the file (relative to the particular [GeneratorTarget] instance),
+/// and the binary content for the file.
 abstract class GeneratorTarget {
   /// Create a file at the given path with the given contents.
   Future createFile(String path, List<int> contents);
@@ -155,8 +151,8 @@ class TemplateFile {
       parameters['author'] = 'Your Name';
     }
 
-    var newPath = substituteVars(path, parameters);
-    var newContents = _createContent(parameters);
+    final newPath = substituteVars(path, parameters);
+    final newContents = _createContent(parameters);
 
     return FileContents(newPath, newContents);
   }

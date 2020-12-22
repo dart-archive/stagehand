@@ -6,8 +6,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:stagehand/stagehand.dart';
 import 'package:stagehand/src/cli_app.dart';
+import 'package:stagehand/stagehand.dart';
 import 'package:test/test.dart';
 import 'package:usage/usage.dart';
 
@@ -20,60 +20,63 @@ void main() {
     setUp(() {
       logger = CliLoggerMock();
       target = GeneratorTargetMock();
-      app = CliApp(generators, logger, target);
-      app.cwd = Directory('test');
-      app.analytics = AnalyticsMock();
+      app = CliApp(generators, logger, target)
+        ..cwd = Directory('test')
+        ..analytics = AnalyticsMock();
     });
 
-    void _expectOk([_]) {
+    void _expectOk() {
       expect(logger.getStderr(), isEmpty);
       expect(logger.getStdout(), isNot(isEmpty));
     }
 
-    Future _expectError(Future f, [bool hasStdout = true]) {
-      return f.then((_) => fail('error expected')).catchError((e) {
+    Future<void> _expectError(Future f, [bool hasStdout = true]) async {
+      try {
+        await f;
+        fail('error expected');
+      } catch (e) {
         expect(logger.getStderr(), isNot(isEmpty));
         if (hasStdout) {
           expect(logger.getStdout(), isNot(isEmpty));
         } else {
           expect(logger.getStdout(), isEmpty);
         }
-      });
+      }
     }
 
-    test('no args', () {
-      return app.process([]).then(_expectOk);
+    test('no args', () async {
+      await app.process([]);
+      _expectOk();
     });
 
-    test('one arg', () {
-      return app.process(['console-full']).then((_) {
-        _expectOk();
-        expect(target.createdCount, isPositive);
-      });
+    test('one arg', () async {
+      await app.process(['console-full']);
+      _expectOk();
+      expect(target.createdCount, isPositive);
     });
 
-    test('one arg (bad)', () {
-      return _expectError(app.process(['bad_generator']));
+    test('one arg (bad)', () async {
+      await _expectError(app.process(['bad_generator']));
     });
 
-    test('two args', () {
-      return _expectError(app.process(['consoleapp', 'foobar']));
+    test('two args', () async {
+      await _expectError(app.process(['consoleapp', 'foobar']));
     });
 
     group('machine format', () {
       test('returns a list of results', () async {
         await app.process(['--machine']);
         _expectOk();
-        List results = jsonDecode(logger.getStdout());
+        final List results = jsonDecode(logger.getStdout());
         expect(results, isNotEmpty);
       });
 
       test('includes categories', () async {
         await app.process(['--machine']);
         _expectOk();
-        List results = jsonDecode(logger.getStdout());
+        final List results = jsonDecode(logger.getStdout());
 
-        var consoleFull =
+        final consoleFull =
             results.singleWhere((item) => item['name'] == 'console-full');
         expect(consoleFull, isNotNull);
         expect(
@@ -83,11 +86,10 @@ void main() {
       });
     });
 
-    test('version', () {
-      return app.process(['--version']).then((_) {
-        _expectOk();
-        expect(logger.getStdout(), contains('stagehand version'));
-      });
+    test('version', () async {
+      await app.process(['--version']);
+      _expectOk();
+      expect(logger.getStdout(), contains('stagehand version'));
     });
   });
 }
@@ -103,6 +105,7 @@ class CliLoggerMock implements CliLogger {
   void stdout(String message) => _stdout.write(message);
 
   String getStdout() => _stdout.toString();
+
   String getStderr() => _stderr.toString();
 }
 

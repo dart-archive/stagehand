@@ -11,10 +11,10 @@ import 'package:args/args.dart';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart' as path;
 import 'package:pedantic/pedantic.dart';
-import 'package:stagehand/src/common.dart';
-import 'package:stagehand/stagehand.dart';
 import 'package:usage/usage_io.dart';
 
+import '../stagehand.dart';
+import 'common.dart';
 import 'version.dart';
 
 const String appName = 'stagehand';
@@ -25,7 +25,7 @@ final _appPubInfo = Uri.https('pub.dev', '/packages/$appName.json');
 const String _gaTrackingId = 'UA-26406144-31';
 
 class CliApp {
-  static final Duration _timeout = const Duration(milliseconds: 500);
+  static const Duration _timeout = Duration(milliseconds: 500);
 
   final List<Generator> generators;
   final CliLogger logger;
@@ -35,10 +35,9 @@ class CliApp {
   io.Directory _cwd;
   bool _firstScreen = true;
 
-  CliApp(this.generators, this.logger, [this.target]) {
-    assert(generators != null);
-    assert(logger != null);
-
+  CliApp(this.generators, this.logger, [this.target])
+      : assert(generators != null),
+        assert(logger != null) {
     analytics = AnalyticsIO(_gaTrackingId, appName, packageVersion)
       // These `cdX` values MUST be tightly coordinated with Analytics config
       // DO NOT modify unless you're certain what you're doing.
@@ -57,7 +56,7 @@ class CliApp {
   }
 
   Future process(List<String> args) async {
-    var argParser = _createArgParser();
+    final argParser = _createArgParser();
 
     ArgResults options;
 
@@ -88,7 +87,7 @@ class CliApp {
     if (options['version']) {
       _out('$appName version: $packageVersion');
       return http.get(_appPubInfo).then((response) {
-        List versions = jsonDecode(response.body)['versions'];
+        final List versions = jsonDecode(response.body)['versions'];
         if (packageVersion != versions.last) {
           _out('Version ${versions.last} is available! Run `pub global activate'
               ' $appName` to get the latest.');
@@ -106,7 +105,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
         await io.stdout.flush();
         var response = io.stdin.readLineSync();
         response = response.toLowerCase().trim();
-        analytics.enabled = (response == 'y' || response == 'yes');
+        analytics.enabled = response == 'y' || response == 'yes';
         _out('');
       }
 
@@ -137,8 +136,8 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
       return Future.error(ArgError('invalid generator'));
     }
 
-    var generatorName = options.rest.first;
-    var generator = _getGenerator(generatorName);
+    final generatorName = options.rest.first;
+    final generator = _getGenerator(generatorName);
 
     if (generator == null) {
       logger.stderr("'$generatorName' is not a valid generator.\n");
@@ -146,12 +145,14 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
       return Future.error(ArgError('invalid generator'));
     }
 
-    var dir = cwd;
+    final dir = cwd;
 
     if (!options['override'] && !await _isDirEmpty(dir)) {
       logger.stderr(
-          'The current directory is not empty. Please create a new project directory, or '
-          'use --override to force generation into the current directory.');
+        'The current directory is not empty. Please create a new project '
+        'directory, or use --override to force generation into the current '
+        'directory.',
+      );
       return Future.error(ArgError('project directory not empty'));
     }
 
@@ -171,7 +172,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
 
     if (!options.wasParsed('author')) {
       try {
-        var result = io.Process.runSync('git', ['config', 'user.name']);
+        final result = io.Process.runSync('git', ['config', 'user.name']);
         if (result.exitCode == 0) author = result.stdout.trim();
       } catch (exception) {
         // NOOP
@@ -181,15 +182,15 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
     var email = 'email@example.com';
 
     try {
-      var result = io.Process.runSync('git', ['config', 'user.email']);
+      final result = io.Process.runSync('git', ['config', 'user.email']);
       if (result.exitCode == 0) email = result.stdout.trim();
     } catch (exception) {
       // NOOP
     }
 
-    var vars = {'author': author, 'email': email};
+    final vars = {'author': author, 'email': email};
 
-    var f = generator.generate(projectName, target, additionalVars: vars);
+    final f = generator.generate(projectName, target, additionalVars: vars);
     return f.then((_) {
       _out('${generator.numFiles()} files written.');
 
@@ -199,39 +200,35 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
         message = message.split('\n').map((line) => '--> $line').join('\n');
         _out('\n$message');
       }
-    }).then((_) {
-      return analytics.waitForLastPing(timeout: _timeout);
-    });
+    }).then((_) => analytics.waitForLastPing(timeout: _timeout));
   }
 
-  ArgParser _createArgParser() {
-    var argParser = ArgParser();
-
-    argParser.addFlag('analytics',
-        negatable: true,
-        help: 'Opt out of anonymous usage and crash reporting.');
-    argParser.addFlag('help', abbr: 'h', negatable: false, help: 'Help!');
-    argParser.addFlag('version',
-        negatable: false, help: 'Display the version for $appName.');
-    argParser.addOption('author',
-        defaultsTo: '<your name>',
-        help: 'The author name to use for file headers.');
-
+  ArgParser _createArgParser() => ArgParser()
+    ..addFlag(
+      'analytics',
+      help: 'Opt out of anonymous usage and crash reporting.',
+    )
+    ..addFlag('help', abbr: 'h', negatable: false, help: 'Help!')
+    ..addFlag(
+      'version',
+      negatable: false,
+      help: 'Display the version for $appName.',
+    )
+    ..addOption(
+      'author',
+      defaultsTo: '<your name>',
+      help: 'The author name to use for file headers.',
+    )
     // Really, really generate into the current directory.
-    argParser.addFlag('override', negatable: false, hide: true);
-
+    ..addFlag('override', negatable: false, hide: true)
     // Output the list of available projects as JSON to stdout.
-    argParser.addFlag('machine', negatable: false, hide: true);
-
+    ..addFlag('machine', negatable: false, hide: true)
     // Mock out analytics - for use on our testing bots.
-    argParser.addFlag('mock-analytics', negatable: false, hide: true);
-
-    return argParser;
-  }
+    ..addFlag('mock-analytics', negatable: false, hide: true);
 
   String _createMachineInfo(List<Generator> generators) {
-    var itor = generators.map((Generator generator) {
-      var m = {
+    final itor = generators.map((Generator generator) {
+      final m = {
         'name': generator.id,
         'label': generator.label,
         'description': generator.description,
@@ -249,21 +246,22 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
 
   void _usage(ArgParser argParser) {
     _out(
-        'Stagehand will generate the given application type into the current directory.');
+      'Stagehand will generate the given application type into the current '
+      'directory.',
+    );
     _out('');
     _out('usage: $appName <generator-name>');
     _out(argParser.usage);
     _out('');
     _out('Available generators:');
-    var len = generators.fold(0, (int length, g) => max(length, g.id.length));
+    final len = generators.fold(0, (int length, g) => max(length, g.id.length));
     generators
         .map((g) => '  ${g.id.padRight(len)} - ${g.description}')
         .forEach(logger.stdout);
   }
 
-  Generator _getGenerator(String id) {
-    return generators.firstWhere((g) => g.id == id, orElse: () => null);
-  }
+  Generator _getGenerator(String id) =>
+      generators.firstWhere((g) => g.id == id, orElse: () => null);
 
   void _out(String str) => logger.stdout(str);
 
@@ -282,7 +280,7 @@ additional analytics to help us improve Stagehand [y/yes/no]?''');
   /// Returns true if the given directory does not contain non-symlinked,
   /// non-hidden subdirectories.
   static Future<bool> _isDirEmpty(io.Directory dir) async {
-    var isHiddenDir = (dir) => path.basename(dir.path).startsWith('.');
+    bool isHiddenDir(dir) => path.basename(dir.path).startsWith('.');
 
     return dir
         .list(followLinks: false)
@@ -315,7 +313,7 @@ class _DirectoryGeneratorTarget extends GeneratorTarget {
 
   @override
   Future createFile(String filePath, List<int> contents) {
-    var file = io.File(path.join(dir.path, filePath));
+    final file = io.File(path.join(dir.path, filePath));
 
     logger.stdout('  ${file.path}');
 
