@@ -3,7 +3,6 @@
 // license that can be found in the LICENSE file.
 
 /// Some utility methods for stagehand.
-
 import 'dart:convert' show base64, utf8;
 
 import '../stagehand.dart';
@@ -70,9 +69,7 @@ String normalizeProjectName(String name) {
 /// A key value can only be an ASCII string made up of letters: A-Z, a-z.
 /// No whitespace, numbers, or other characters are allowed.
 String substituteVars(String str, Map<String, String> vars) {
-  final nonValidKeys =
-      vars.keys.where((k) => k.contains(_nonValidSubstituteRegExp)).toList();
-  if (nonValidKeys.isNotEmpty) {
+  if (vars.keys.any((element) => element.contains(_nonValidSubstituteRegExp))) {
     throw ArgumentError('vars.keys can only contain letters.');
   }
 
