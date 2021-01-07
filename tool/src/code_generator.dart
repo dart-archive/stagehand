@@ -23,12 +23,12 @@ class DataGenerator extends Generator {
       return null;
     }
 
-    var name =
+    final name =
         p.basenameWithoutExtension(buildStep.inputId.path).replaceAll('_', '-');
 
-    var filteredAssets =
+    final filteredAssets =
         await buildStep.findAssets(Glob('templates/$name/**')).where((asset) {
-      var rootSegment = asset.pathSegments[2];
+      final rootSegment = asset.pathSegments[2];
 
       if (rootSegment == 'build' || rootSegment == 'pubspec.lock') {
         return false;
@@ -42,7 +42,7 @@ class DataGenerator extends Generator {
     }).toList()
           ..sort();
 
-    var items = await _getLines(filteredAssets, buildStep).map((item) {
+    final items = await _getLines(filteredAssets, buildStep).map((item) {
       if (item.contains('\n')) {
         return "'''\n$item'''";
       }
@@ -62,17 +62,17 @@ Stream<String> _getLines(List<AssetId> ids, AssetReader reader) async* {
 }
 
 String _base64encode(List<int> bytes) {
-  var encoded = base64.encode(bytes);
+  final encoded = base64.encode(bytes);
 
 //
 // Logic to cut lines into 76-character chunks
 // – makes for prettier source code
 //
-  var lines = <String>[];
+  final lines = <String>[];
   var index = 0;
 
   while (index < encoded.length) {
-    var line = encoded.substring(index, math.min(index + 76, encoded.length));
+    final line = encoded.substring(index, math.min(index + 76, encoded.length));
     lines.add(line);
     index += line.length;
   }

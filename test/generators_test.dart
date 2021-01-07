@@ -7,9 +7,9 @@ import 'package:test/test.dart';
 
 void main() {
   group('generators', () {
-    generators.forEach((generator) {
+    for (var generator in generators) {
       test(generator.id, () => validate(getGenerator(generator.id)));
-    });
+    }
   });
 }
 
