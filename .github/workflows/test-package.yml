@@ -35,6 +35,10 @@ jobs:
       - name: Analyze code
         run: dart analyze --fatal-infos
         if: always() && steps.install.outcome == 'success'
+      - name: Version check
+        run: ./tool/version-check.sh
+      - name: Build check
+        run: ./tool/build-check.sh
 
   test:
     needs: analyze
@@ -56,3 +60,4 @@ jobs:
       - name: Run tests
         run: dart test
         if: always() && steps.install.outcome == 'success'
+      - run: ./tool/travis.sh
