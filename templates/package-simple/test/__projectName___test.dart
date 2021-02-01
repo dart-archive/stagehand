@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('A group of tests', () {
-    Awesome awesome;
+    late Awesome awesome;
 
     setUp(() {
       awesome = Awesome();
