@@ -3,7 +3,7 @@
 ![Stagehand banner](https://raw.githubusercontent.com/dart-lang/stagehand/master/site/banner_stagehand.jpg)
 
 [![Pub package](https://img.shields.io/pub/v/stagehand.svg)](https://pub.dev/packages/stagehand)
-[![Build status](https://travis-ci.org/dart-lang/stagehand.svg?branch=master)](https://travis-ci.org/dart-lang/stagehand)
+[![Build Status](https://github.com/dart-lang/stagehand/workflows/stagehand/badge.svg)](https://github.com/dart-lang/stagehand/actions?workflow=stagehand)
 [![Coverage status](https://coveralls.io/repos/dart-lang/stagehand/badge.svg?branch=master)](https://coveralls.io/r/dart-lang/stagehand?branch=master)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/dart-lang/stagehand) 
 
