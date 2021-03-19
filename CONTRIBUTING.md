@@ -22,7 +22,7 @@ other ways such as email and [Gitter](https://gitter.im/dart-lang/TALK-general).
 If you make changes to template files, regenerate the templates:
 
 ```
-pub run build_runner build --delete-conflicting-outputs
+dart run build_runner build --delete-conflicting-outputs
 ```
 
 Make sure to use Unix line endings when you edit template files, especially on Windows machines.
@@ -34,7 +34,7 @@ Travis runs these too, but your PR will look better if all tests pass the
 first time:
 
 ```
-pub run test
+dart run test
 dart test/validate_templates.dart
 ```
 
