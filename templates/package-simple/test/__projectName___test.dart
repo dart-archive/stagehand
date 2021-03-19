@@ -3,10 +3,11 @@ import 'package:test/test.dart';
 
 void main() {
   group('A group of tests', () {
-    Awesome awesome;
+  group('A group of tests', () {
+    final awesome = Awesome();
 
     setUp(() {
-      awesome = Awesome();
+      // Additional setup goes here.
     });
 
     test('First Test', () {
