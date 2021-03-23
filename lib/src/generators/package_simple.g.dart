@@ -67,7 +67,7 @@ bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBIHN0YXJ0aW5nIHBvaW50IGZvciBE
 YXJ0IGxpYnJhcmllcyBvciBhcHBsaWNhdGlvbnMuCiMgdmVyc2lvbjogMS4wLjAKIyBob21lcGFn
 ZTogaHR0cHM6Ly93d3cuZXhhbXBsZS5jb20KCmVudmlyb25tZW50OgogIHNkazogJz49Mi4xMi4w
 IDwzLjAuMCcKCiNkZXBlbmRlbmNpZXM6CiMgIHBhdGg6IF4xLjguMAoKZGV2X2RlcGVuZGVuY2ll
-czoKICBwZWRhbnRpYzogXjEuMTAuMAogIHRlc3Q6IF4xLjE2LjYK''',
+czoKICBwZWRhbnRpYzogXjEuMTAuMAogIHRlc3Q6IF4xLjE2LjAK''',
   'test/__projectName___test.dart',
   'text',
   '''

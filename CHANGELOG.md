@@ -1,4 +1,4 @@
-## 4.0.0-dev
+## 4.0.0
 
 - Enable null safety by default (min SDK constraint is 2.12)
 

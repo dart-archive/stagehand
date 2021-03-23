@@ -7,7 +7,7 @@ description: >
   A scaffolding generator for your Dart projects. Stagehand helps you get set
   up!
 # After changing the version, run `pub run build_runner build`.
-version: 4.0.0-dev
+version: 4.0.0
 homepage: https://github.com/dart-lang/stagehand
 
 environment:
@@ -26,8 +26,8 @@ executables:
 dependencies:
   args: ^2.0.0
   http: ^0.13.0
-  path: ^1.7.0
-  pedantic: ^1.9.0
+  path: ^1.8.0
+  pedantic: ^1.10.0
   usage: ^4.0.0
 
 dev_dependencies:
