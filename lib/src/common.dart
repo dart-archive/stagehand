@@ -7,8 +7,6 @@ import 'dart:convert' show base64, utf8;
 
 import '../stagehand.dart';
 
-const int _runeSpace = 32;
-
 final _substituteRegExp = RegExp(r'__([a-zA-Z]+)__');
 final _nonValidSubstituteRegExp = RegExp('[^a-zA-Z]');
 
@@ -82,45 +80,6 @@ String substituteVars(String str, Map<String, String> vars) {
       return item;
     }
   });
-}
-
-/// Convert the given String into a String with newlines wrapped at an 80 column
-/// boundary, with 2 leading spaces for each line.
-String convertToYamlMultiLine(String str) =>
-    wrap(str, 78).map((line) => '  $line').join('\n');
-
-/// Break the given String into lines wrapped on a [col] boundary.
-List<String> wrap(String str, [int col = 80]) {
-  final lines = <String>[];
-
-  while (str.length > col) {
-    var index = col;
-
-    while (index > 0 && str.codeUnitAt(index) != _runeSpace) {
-      index--;
-    }
-
-    if (index == 0) {
-      index = str.indexOf(' ');
-
-      if (index == -1) {
-        lines.add(str);
-        str = '';
-      } else {
-        lines.add(str.substring(0, index).trim());
-        str = str.substring(index).trim();
-      }
-    } else {
-      lines.add(str.substring(0, index).trim());
-      str = str.substring(index).trim();
-    }
-  }
-
-  if (str.isNotEmpty) {
-    lines.add(str);
-  }
-
-  return lines;
 }
 
 /// An abstract implementation of a [Generator].
