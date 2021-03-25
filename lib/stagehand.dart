@@ -96,7 +96,7 @@ abstract class Generator implements Comparable<Generator> {
     Map<String, String> additionalVars,
   }) {
     final vars = {
-      'projectName': projectName,
+      'projectName': normalizeProjectName(projectName),
       'description': description,
       'year': DateTime.now().year.toString(),
       'author': '<your name>',
