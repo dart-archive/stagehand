@@ -1,3 +1,7 @@
+## 4.0.0
+
+- Enable null safety by default (min SDK constraint is 2.12)
+
 ## 3.3.12-dev
 
 - Prepare for breaking changes in `package:http` for environments where the pub
