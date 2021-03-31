@@ -137,11 +137,6 @@ void _testGenerator(stagehand.Generator generator, Directory tempDir) {
   expect(pubspecContent, containsPair('name', 'stagehand'));
   expect(pubspecContent, containsPair('description', isNotEmpty));
 
-  expect(
-    pubspecContent,
-    containsPair('environment', {'sdk': '>=2.10.0 <3.0.0'}),
-  );
-
   // Run package tests, if `test` is included.
   final devDeps = pubspecContent['dev_dependencies'] as Map;
   if (devDeps != null) {
