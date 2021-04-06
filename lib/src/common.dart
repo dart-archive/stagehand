@@ -2,6 +2,8 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+// @dart=2.9
+
 /// Some utility methods for stagehand.
 import 'dart:convert' show base64, utf8;
 
