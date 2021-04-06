@@ -39,7 +39,7 @@ CiMgICAgIC0gcGF0aC90by9leGNsdWRlZC9maWxlcy8qKgo=''',
   '''
 bmFtZTogX19wcm9qZWN0TmFtZV9fCmRlc2NyaXB0aW9uOiBBbiBhYnNvbHV0ZSBiYXJlLWJvbmVz
 IHdlYiBhcHAuCiMgdmVyc2lvbjogMS4wLjAKI2hvbWVwYWdlOiBodHRwczovL3d3dy5leGFtcGxl
-LmNvbQoKZW52aXJvbm1lbnQ6CiAgc2RrOiAnPj0yLjEwLjAgPDMuMC4wJwoKI2RlcGVuZGVuY2ll
+LmNvbQoKZW52aXJvbm1lbnQ6CiAgc2RrOiAnPj0yLjEyLjAgPDMuMC4wJwoKI2RlcGVuZGVuY2ll
 czoKIyAgcGF0aDogXjEuNy4wCgpkZXZfZGVwZW5kZW5jaWVzOgogIGJ1aWxkX3J1bm5lcjogXjEu
 MTAuMAogIGJ1aWxkX3dlYl9jb21waWxlcnM6IF4yLjExLjAKICBwZWRhbnRpYzogXjEuOS4wCg==''',
   'web/favicon.ico',
@@ -124,7 +124,7 @@ CgogIDxkaXYgaWQ9Im91dHB1dCI+PC9kaXY+Cgo8L2JvZHk+CjwvaHRtbD4K''',
   'text',
   '''
 aW1wb3J0ICdkYXJ0Omh0bWwnOwoKdm9pZCBtYWluKCkgewogIHF1ZXJ5U2VsZWN0b3IoJyNvdXRw
-dXQnKS50ZXh0ID0gJ1lvdXIgRGFydCBhcHAgaXMgcnVubmluZy4nOwp9Cg==''',
+dXQnKT8udGV4dCA9ICdZb3VyIERhcnQgYXBwIGlzIHJ1bm5pbmcuJzsKfQo=''',
   'web/styles.css',
   'text',
   '''
