@@ -1,6 +1,7 @@
-## 4.0.0
+## 4.0.0-beta.1
 
-- Enable null safety by default (min SDK constraint is 2.12)
+- Enable null safety by default (min SDK constraint is 2.12).
+  This will be released as a stable version with the next stable Dart SDK.
 
 ## 3.3.12-dev
 

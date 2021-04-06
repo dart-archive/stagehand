@@ -2,6 +2,8 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+// @dart=2.9
+
 import 'cli_test.dart' as cli_test;
 import 'common_test.dart' as common_test;
 import 'generators_test.dart' as generators_test;

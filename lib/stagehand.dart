@@ -2,6 +2,8 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+// @dart=2.9
+
 /// Stagehand is a Dart project generator.
 ///
 /// Stagehand helps you get your Dart projects set up and ready for the big
