@@ -1,6 +1,7 @@
 ## 4.0.0
 
-- Full release, same as 4.0.0-beta.1
+- Full release
+- Alphabetized imports
 
 ## 4.0.0-beta.1
 
