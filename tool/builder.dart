@@ -3,9 +3,8 @@
 // BSD-style license that can be found in the LICENSE file.
 
 // @dart=2.9
-
-import 'package:source_gen/source_gen.dart';
 import 'package:build/build.dart';
+import 'package:source_gen/source_gen.dart';
 
 import 'src/code_generator.dart';
 
