@@ -7,8 +7,8 @@
 import 'dart:async';
 import 'dart:io' as io;
 
-import 'package:stagehand/stagehand.dart';
 import 'package:stagehand/src/cli_app.dart';
+import 'package:stagehand/stagehand.dart';
 import 'package:usage/usage_io.dart';
 
 void main(List<String> args) {
