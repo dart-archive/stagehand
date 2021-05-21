@@ -1,3 +1,12 @@
+## 4.0.1
+
+- Added deprecation warning. See https://github.com/dart-lang/sdk/issues/46100 for details.
+
+## 4.0.0
+
+- Full release
+- Alphabetized imports
+
 ## 4.0.0-beta.1
 
 - Enable null safety by default (min SDK constraint is 2.12).
