@@ -3,7 +3,7 @@
 # see https://github.com/dart-lang/pedantic#enabled-lints.
 include: package:pedantic/analysis_options.yaml
 
-# For lint rules and documentation, see http://dart-lang.github.io/linter/lints.
+# For lint rules and documentation, see https://dart-lang.github.io/linter/lints.
 # Uncomment to specify additional rules.
 # linter:
 #   rules:

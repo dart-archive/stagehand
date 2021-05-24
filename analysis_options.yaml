@@ -3,7 +3,7 @@ analyzer:
   exclude:
     - 'templates/**'
 
-# Lint rules and documentation, see http://dart-lang.github.io/linter/lints
+# Lint rules and documentation, see https://dart-lang.github.io/linter/lints
   errors:
     unused_element: error
     unused_import: error
