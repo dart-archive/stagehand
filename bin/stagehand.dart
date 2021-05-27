@@ -14,6 +14,9 @@ import 'package:usage/usage_io.dart';
 void main(List<String> args) {
   final app = CliApp(generators, CliLogger());
 
+  io.stderr.write("Warning: 'stagehand' has been discontinued."
+      " Please use 'dart create'.\n\n");
+
   try {
     app.process(args).catchError((Object e, StackTrace st) {
       if (e is ArgError) {
